@@ -4,25 +4,30 @@ using UnityEngine;
 
 public class PlatformsManager : MonoBehaviour
 {
-    private GameObject[] _platforms;
-    private IEnumerator FlipAndWait()
+    public static PlatformsManager Instance;
+    void Awake()
     {
-        foreach(GameObject platform in _platforms)
+        if (Instance == null)
         {
-            platform.GetComponent<PlatformEffector2D>().surfaceArc = -180;
+            Instance = this;
         }
-        yield return new WaitForSeconds(1);
-        foreach (GameObject platform in _platforms)
-        {
-            platform.GetComponent<PlatformEffector2D>().surfaceArc = 180;
-        }
+    }
+
+    private IEnumerator FlipAndWait(GameObject Platform)
+    {
+        Platform.GetComponent<PlatformEffector2D>().rotationalOffset = 180;
+        yield return new WaitForSeconds(0.4f);
+        Platform.GetComponent<PlatformEffector2D>().rotationalOffset = 0;
 
     }
 
-    public void FlipPlatform()
+    public void FlipPlatform(GameObject Platform)
     {
-        _platforms = GameObject.FindGameObjectsWithTag("Platform");
-        StartCoroutine(FlipAndWait());
+        if(Platform.GetComponent<PlatformEffector2D>() == null)
+        {
+            return;
+        }
+        StartCoroutine(FlipAndWait(Platform));
     }
 
 

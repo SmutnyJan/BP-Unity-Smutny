@@ -3,19 +3,27 @@ using UnityEngine;
 public class PlatformCollisionController : MonoBehaviour
 {
     public bool IsGrounded = false;
+    public bool IsOnPlatform = false;
+    public GameObject TouchingPlatform = null;
 
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         IsGrounded = true;
-        Debug.Log("True");
+        
+        if(collision.tag == "Platform")
+        {
+            IsOnPlatform = true;
+            TouchingPlatform = collision.gameObject;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         IsGrounded = false;
-        Debug.Log("False");
+        IsOnPlatform = false;
+        TouchingPlatform = null;
     }
 }
 

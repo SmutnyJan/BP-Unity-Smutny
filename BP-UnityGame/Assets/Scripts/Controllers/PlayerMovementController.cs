@@ -38,7 +38,10 @@ public class PlayerMovementController : MonoBehaviour
 
     private void OnDown()
     {
-        //if is on ground
+        if(PlatformCollisionController.IsOnPlatform)
+        {
+            PlatformsManager.Instance.FlipPlatform(PlatformCollisionController.TouchingPlatform);
+        }
 
 
     }
@@ -55,8 +58,4 @@ public class PlayerMovementController : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter2D(Collision2D colalision)
-    {
-        int xdd = 5;
-    }
 }

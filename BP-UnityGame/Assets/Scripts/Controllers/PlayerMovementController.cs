@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerMovementController : MonoBehaviour
 {
     public int MovementSpeed;
+    public int JumpForce;
+    public PlatformCollisionController PlatformCollisionController;
 
     private PlayerInputSystem _inputSystem;
     private Rigidbody2D _rigidbody;
@@ -18,7 +20,7 @@ public class PlayerMovementController : MonoBehaviour
     private void OnEnable()
     {
 
-        _inputSystem.Enable();
+        _inputSystem.Player.Enable();
     }
 
     void Start()
@@ -26,20 +28,35 @@ public class PlayerMovementController : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
+    private void OnJump()
     {
-        float moveDir = _inputSystem.Player.Horizontal.ReadValue<float>();
-
-        if (moveDir != 0)
+        if (PlatformCollisionController.IsGrounded)
         {
-            _rigidbody.linearVelocity = new Vector2(moveDir * MovementSpeed, 0);
+            _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, JumpForce);            
         }
+    }
+
+    private void OnDown()
+    {
+        //if is on ground
 
 
     }
 
+    private void FixedUpdate()
+    {
+        float moveDir = _inputSystem.Player.Horizontal.ReadValue<float>();
+         _rigidbody.linearVelocity = new Vector2(moveDir * MovementSpeed, _rigidbody.linearVelocity.y);
+    }
+
     private void OnDisable()
     {
-        _inputSystem?.Disable();
+        _inputSystem?.Player.Disable();
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D colalision)
+    {
+        int xdd = 5;
     }
 }

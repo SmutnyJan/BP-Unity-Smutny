@@ -24,7 +24,7 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
     ""name"": ""PlayerInputSystem"",
     ""maps"": [
         {
-            ""name"": ""Player"",
+            ""name"": ""PlayerPlatformer"",
             ""id"": ""f6044581-0bd0-49c3-86bc-83082027a9ce"",
             ""actions"": [
                 {
@@ -112,20 +112,96 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""PlayerLobby"",
+            ""id"": ""2d8aa995-afc3-4bcb-8155-e9b83d8e005f"",
+            ""actions"": [
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""Value"",
+                    ""id"": ""58551c97-2622-4707-9afd-f9f8a1995600"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""1635be66-8934-4c8a-b4a7-b214b34d7f06"",
+                    ""path"": ""2DVector(mode=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""96421ce3-44c2-4e29-bbee-0bcc5a106e9a"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""b678ed8e-b1c7-492c-ac33-1526ea919068"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""a50e0963-3a9e-4b87-b270-11aa5e978425"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""9dee93a7-703c-444e-8fd7-f1abebd9af4a"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
 }");
-        // Player
-        m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_Horizontal = m_Player.FindAction("Horizontal", throwIfNotFound: true);
-        m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
-        m_Player_Down = m_Player.FindAction("Down", throwIfNotFound: true);
+        // PlayerPlatformer
+        m_PlayerPlatformer = asset.FindActionMap("PlayerPlatformer", throwIfNotFound: true);
+        m_PlayerPlatformer_Horizontal = m_PlayerPlatformer.FindAction("Horizontal", throwIfNotFound: true);
+        m_PlayerPlatformer_Jump = m_PlayerPlatformer.FindAction("Jump", throwIfNotFound: true);
+        m_PlayerPlatformer_Down = m_PlayerPlatformer.FindAction("Down", throwIfNotFound: true);
+        // PlayerLobby
+        m_PlayerLobby = asset.FindActionMap("PlayerLobby", throwIfNotFound: true);
+        m_PlayerLobby_Movement = m_PlayerLobby.FindAction("Movement", throwIfNotFound: true);
     }
 
     ~@PlayerInputSystem()
     {
-        UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, PlayerInputSystem.Player.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_PlayerPlatformer.enabled, "This will cause a leak and performance issues, PlayerInputSystem.PlayerPlatformer.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_PlayerLobby.enabled, "This will cause a leak and performance issues, PlayerInputSystem.PlayerLobby.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -184,28 +260,28 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // Player
-    private readonly InputActionMap m_Player;
-    private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
-    private readonly InputAction m_Player_Horizontal;
-    private readonly InputAction m_Player_Jump;
-    private readonly InputAction m_Player_Down;
-    public struct PlayerActions
+    // PlayerPlatformer
+    private readonly InputActionMap m_PlayerPlatformer;
+    private List<IPlayerPlatformerActions> m_PlayerPlatformerActionsCallbackInterfaces = new List<IPlayerPlatformerActions>();
+    private readonly InputAction m_PlayerPlatformer_Horizontal;
+    private readonly InputAction m_PlayerPlatformer_Jump;
+    private readonly InputAction m_PlayerPlatformer_Down;
+    public struct PlayerPlatformerActions
     {
         private @PlayerInputSystem m_Wrapper;
-        public PlayerActions(@PlayerInputSystem wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Horizontal => m_Wrapper.m_Player_Horizontal;
-        public InputAction @Jump => m_Wrapper.m_Player_Jump;
-        public InputAction @Down => m_Wrapper.m_Player_Down;
-        public InputActionMap Get() { return m_Wrapper.m_Player; }
+        public PlayerPlatformerActions(@PlayerInputSystem wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Horizontal => m_Wrapper.m_PlayerPlatformer_Horizontal;
+        public InputAction @Jump => m_Wrapper.m_PlayerPlatformer_Jump;
+        public InputAction @Down => m_Wrapper.m_PlayerPlatformer_Down;
+        public InputActionMap Get() { return m_Wrapper.m_PlayerPlatformer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
-        public void AddCallbacks(IPlayerActions instance)
+        public static implicit operator InputActionMap(PlayerPlatformerActions set) { return set.Get(); }
+        public void AddCallbacks(IPlayerPlatformerActions instance)
         {
-            if (instance == null || m_Wrapper.m_PlayerActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_PlayerActionsCallbackInterfaces.Add(instance);
+            if (instance == null || m_Wrapper.m_PlayerPlatformerActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PlayerPlatformerActionsCallbackInterfaces.Add(instance);
             @Horizontal.started += instance.OnHorizontal;
             @Horizontal.performed += instance.OnHorizontal;
             @Horizontal.canceled += instance.OnHorizontal;
@@ -217,7 +293,7 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
             @Down.canceled += instance.OnDown;
         }
 
-        private void UnregisterCallbacks(IPlayerActions instance)
+        private void UnregisterCallbacks(IPlayerPlatformerActions instance)
         {
             @Horizontal.started -= instance.OnHorizontal;
             @Horizontal.performed -= instance.OnHorizontal;
@@ -230,25 +306,75 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
             @Down.canceled -= instance.OnDown;
         }
 
-        public void RemoveCallbacks(IPlayerActions instance)
+        public void RemoveCallbacks(IPlayerPlatformerActions instance)
         {
-            if (m_Wrapper.m_PlayerActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_PlayerPlatformerActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(IPlayerActions instance)
+        public void SetCallbacks(IPlayerPlatformerActions instance)
         {
-            foreach (var item in m_Wrapper.m_PlayerActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_PlayerPlatformerActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_PlayerActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_PlayerPlatformerActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public PlayerActions @Player => new PlayerActions(this);
-    public interface IPlayerActions
+    public PlayerPlatformerActions @PlayerPlatformer => new PlayerPlatformerActions(this);
+
+    // PlayerLobby
+    private readonly InputActionMap m_PlayerLobby;
+    private List<IPlayerLobbyActions> m_PlayerLobbyActionsCallbackInterfaces = new List<IPlayerLobbyActions>();
+    private readonly InputAction m_PlayerLobby_Movement;
+    public struct PlayerLobbyActions
+    {
+        private @PlayerInputSystem m_Wrapper;
+        public PlayerLobbyActions(@PlayerInputSystem wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_PlayerLobby_Movement;
+        public InputActionMap Get() { return m_Wrapper.m_PlayerLobby; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PlayerLobbyActions set) { return set.Get(); }
+        public void AddCallbacks(IPlayerLobbyActions instance)
+        {
+            if (instance == null || m_Wrapper.m_PlayerLobbyActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PlayerLobbyActionsCallbackInterfaces.Add(instance);
+            @Movement.started += instance.OnMovement;
+            @Movement.performed += instance.OnMovement;
+            @Movement.canceled += instance.OnMovement;
+        }
+
+        private void UnregisterCallbacks(IPlayerLobbyActions instance)
+        {
+            @Movement.started -= instance.OnMovement;
+            @Movement.performed -= instance.OnMovement;
+            @Movement.canceled -= instance.OnMovement;
+        }
+
+        public void RemoveCallbacks(IPlayerLobbyActions instance)
+        {
+            if (m_Wrapper.m_PlayerLobbyActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IPlayerLobbyActions instance)
+        {
+            foreach (var item in m_Wrapper.m_PlayerLobbyActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_PlayerLobbyActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public PlayerLobbyActions @PlayerLobby => new PlayerLobbyActions(this);
+    public interface IPlayerPlatformerActions
     {
         void OnHorizontal(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnDown(InputAction.CallbackContext context);
+    }
+    public interface IPlayerLobbyActions
+    {
+        void OnMovement(InputAction.CallbackContext context);
     }
 }

@@ -1,7 +1,6 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class PlayerMovementController : MonoBehaviour
+public class PlayerPlatformerMovementController : MonoBehaviour
 {
     public int MovementSpeed;
     public int JumpForce;
@@ -20,7 +19,7 @@ public class PlayerMovementController : MonoBehaviour
     private void OnEnable()
     {
 
-        _inputSystem.Player.Enable();
+        _inputSystem.PlayerPlatformer.Enable();
     }
 
     void Start()
@@ -32,13 +31,13 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (PlatformCollisionController.IsGrounded)
         {
-            _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, JumpForce);            
+            _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, JumpForce);
         }
     }
 
     private void OnDown()
     {
-        if(PlatformCollisionController.IsOnPlatform)
+        if (PlatformCollisionController.IsOnPlatform)
         {
             PlatformsManager.Instance.FlipPlatform(PlatformCollisionController.TouchingPlatform);
         }
@@ -48,14 +47,12 @@ public class PlayerMovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float moveDir = _inputSystem.Player.Horizontal.ReadValue<float>();
-         _rigidbody.linearVelocity = new Vector2(moveDir * MovementSpeed, _rigidbody.linearVelocity.y);
+        float moveDir = _inputSystem.PlayerPlatformer.Horizontal.ReadValue<float>();
+        _rigidbody.linearVelocity = new Vector2(moveDir * MovementSpeed, _rigidbody.linearVelocity.y);
     }
 
     private void OnDisable()
     {
-        _inputSystem?.Player.Disable();
+        _inputSystem?.PlayerPlatformer.Disable();
     }
-
-
 }

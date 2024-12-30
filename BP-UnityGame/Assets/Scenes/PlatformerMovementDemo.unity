@@ -581,7 +581,7 @@ GameObject:
   - component: {fileID: 985846334}
   - component: {fileID: 985846333}
   - component: {fileID: 985846332}
-  - component: {fileID: 985846331}
+  - component: {fileID: 985846336}
   - component: {fileID: 985846330}
   m_Layer: 0
   m_Name: Player
@@ -617,24 +617,9 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: PlayerPlatformer
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &985846331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 985846329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a99e9d1927bf3c47a5d40f0d17e0743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MovementSpeed: 10
-  JumpForce: 25
-  PlatformCollisionController: {fileID: 1069016767}
 --- !u!61 &985846332
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -780,6 +765,21 @@ Transform:
   - {fileID: 1069016766}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &985846336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985846329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7953ceae3d383074682c96c0ff8a5d89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MovementSpeed: 10
+  JumpForce: 25
+  PlatformCollisionController: {fileID: 1069016767}
 --- !u!1 &1069016765
 GameObject:
   m_ObjectHideFlags: 0
@@ -1229,6 +1229,7 @@ GameObject:
   - component: {fileID: 1944528343}
   - component: {fileID: 1944528342}
   - component: {fileID: 1944528341}
+  - component: {fileID: 1944528344}
   m_Layer: 0
   m_Name: Oneway Square (1)
   m_TagString: Platform
@@ -1267,7 +1268,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
@@ -1352,6 +1353,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!251 &1944528344
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944528339}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

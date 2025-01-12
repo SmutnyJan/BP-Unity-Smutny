@@ -7,7 +7,8 @@ public class SceneLoaderManager : MonoBehaviour
 
     public enum Scene
     {
-        MainMenu
+        MainMenu,
+        Intro
     }
 
     void Awake()

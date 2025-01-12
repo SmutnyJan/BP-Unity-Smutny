@@ -6,22 +6,22 @@ public class MainMenuUIController : MonoBehaviour
     {
     }
 
-    void OnNewGameButtonPressed()
+    public void OnNewGameButtonPressed()
+    {
+        SceneLoaderManager.Instance.LoadScene(SceneLoaderManager.Scene.Intro);
+    }
+
+    public void OnLoadGameButtonPressed()
     {
 
     }
 
-    void OnLoadGameButtonPressed()
+    public void OnSettingsButtonPressed()
     {
 
     }
 
-    void OnSettingsButtonPressed()
-    {
-
-    }
-
-    void OnQuitGameButtonPressed()
+    public void OnQuitGameButtonPressed()
     {
         #if UNITY_STANDALONE
                 Application.Quit();

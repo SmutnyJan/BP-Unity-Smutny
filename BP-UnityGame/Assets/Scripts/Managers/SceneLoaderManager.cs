@@ -1,9 +1,13 @@
+using System;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoaderManager : MonoBehaviour
 {
     public static SceneLoaderManager Instance;
+    public Animator SceneTransitionAnimator;
+    public GameObject CrossfadeCanvas;
 
     public enum Scene
     {
@@ -17,6 +21,8 @@ public class SceneLoaderManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded;
+
         }
         else
         {
@@ -25,10 +31,22 @@ public class SceneLoaderManager : MonoBehaviour
 
     }
 
+    private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
+    {
+        SceneTransitionAnimator.SetTrigger("End");
+    }
+
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
     public void LoadScene(Scene scene)
     {
-        SceneManager.LoadScene(nameof(scene), LoadSceneMode.Single);
+        SceneManager.LoadScene(scene.ToString(), LoadSceneMode.Single);
     }
+
+
 
     void Start()
     {

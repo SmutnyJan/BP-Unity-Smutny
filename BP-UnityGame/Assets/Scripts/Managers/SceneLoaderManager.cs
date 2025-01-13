@@ -9,6 +9,8 @@ public class SceneLoaderManager : MonoBehaviour
     public Animator SceneTransitionAnimator;
     public GameObject CrossfadeCanvas;
 
+    private bool _firstSceneLoaded = false;
+
     public enum Scene
     {
         MainMenu,
@@ -33,7 +35,12 @@ public class SceneLoaderManager : MonoBehaviour
 
     private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
     {
-        SceneTransitionAnimator.SetTrigger("End");
+        if(_firstSceneLoaded)
+        {
+            SceneTransitionAnimator.SetTrigger("End");
+        }
+        _firstSceneLoaded = true;
+
     }
 
     void OnDestroy()

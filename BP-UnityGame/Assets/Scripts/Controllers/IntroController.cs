@@ -1,27 +1,40 @@
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
+using static SceneLoaderManager;
 
 public class IntroController : MonoBehaviour
 {
     public PlayableDirector director;
-    public KeyCode skipKey = KeyCode.Return;
+    private GameInputSystem _inputSystem;
 
-
-    public void SkipTimelineAndLoadScene()
+    private void Awake()
     {
-        if (director != null)
-        {
-            director.Stop();
-        }
-        Debug.Log("Jump to another scene");
+        _inputSystem = new GameInputSystem();
     }
 
-    void Update()
+    private void OnEnable()
     {
-        if (Input.GetKeyDown(skipKey))
-        {
-            SkipTimelineAndLoadScene();
-        }
+        _inputSystem.Cutscene.Enable();
+        director.stopped += OnTimelineEnd;
+
+    }
+
+    public void OnSkip()
+    {
+        director.Stop();
+
+    }
+   
+
+    void OnTimelineEnd(PlayableDirector pd)
+    {
+        SceneLoaderManager.Instance.LoadScene(ActiveScene.Lobby);
+    }
+
+    private void OnDisable()
+    {
+        _inputSystem.Cutscene.Disable();
+        director.stopped -= OnTimelineEnd;
     }
 }

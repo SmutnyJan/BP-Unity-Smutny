@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using static SceneLoaderManager;
 
 public class MainMenuUIController : MonoBehaviour
 {
@@ -9,17 +10,9 @@ public class MainMenuUIController : MonoBehaviour
 
     public void OnNewGameButtonPressed()
     {
-        StartCoroutine(LoadWithAnimationCoroutine(SceneLoaderManager.Scene.Intro));
+        SceneLoaderManager.Instance.LoadScene(ActiveScene.Intro);
     }
 
-    private IEnumerator LoadWithAnimationCoroutine(SceneLoaderManager.Scene scene)
-    {
-        SceneLoaderManager.Instance.SceneTransitionAnimator.SetTrigger("Start");
-
-        yield return new WaitForSeconds(1f);
-
-        SceneLoaderManager.Instance.LoadScene(scene);
-    }
 
     public void OnLoadGameButtonPressed()
     {

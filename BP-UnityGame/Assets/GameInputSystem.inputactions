@@ -1,0 +1,67 @@
+{
+    "name": "GameInputSystem",
+    "maps": [
+        {
+            "name": "Cutscene",
+            "id": "bfba92eb-109d-4814-89e2-ffa897079ad5",
+            "actions": [
+                {
+                    "name": "Skip",
+                    "type": "Button",
+                    "id": "47ffa190-06dc-4ad6-b2cc-77275a9c8cdd",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c1ba9c39-cf3c-41a6-b0e3-f1643b84d083",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Skip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8ecff1a7-f923-4adb-bd4d-147330fcc7dd",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Skip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "28c772d6-dd35-44c9-9699-d9ef1c2074ea",
+                    "path": "<Keyboard>/numpadEnter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Skip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5dbf346f-d28b-46da-8848-feb7aa2a8846",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Skip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

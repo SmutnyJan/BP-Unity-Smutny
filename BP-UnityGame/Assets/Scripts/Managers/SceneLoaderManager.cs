@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,10 +12,11 @@ public class SceneLoaderManager : MonoBehaviour
 
     private bool _firstSceneLoaded = false;
 
-    public enum Scene
+    public enum ActiveScene
     {
         MainMenu,
-        Intro
+        Intro,
+        Lobby
     }
 
     void Awake()
@@ -48,8 +50,17 @@ public class SceneLoaderManager : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    public void LoadScene(Scene scene)
+    public void LoadScene(ActiveScene scene)
     {
+        StartCoroutine(LoadWithAnimationCoroutine(scene));
+    }
+
+    private IEnumerator LoadWithAnimationCoroutine(ActiveScene scene)
+    {
+        SceneTransitionAnimator.SetTrigger("Start");
+
+        yield return new WaitForSeconds(1f);
+
         SceneManager.LoadScene(scene.ToString(), LoadSceneMode.Single);
     }
 

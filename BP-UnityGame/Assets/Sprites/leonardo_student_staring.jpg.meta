@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      leonardo_student_staring_0: 8959400556183763713
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

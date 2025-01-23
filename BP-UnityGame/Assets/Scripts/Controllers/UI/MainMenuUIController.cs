@@ -21,7 +21,7 @@ public class MainMenuUIController : MonoBehaviour
 
     public void OnSettingsButtonPressed()
     {
-
+        SceneLoaderManager.Instance.LoadScene(ActiveScene.Settings);
     }
 
     public void OnQuitGameButtonPressed()

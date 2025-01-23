@@ -68,7 +68,6 @@ public class SceneLoaderManager : MonoBehaviour
 
     void Start()
     {
-        
     }
 
     void Update()

@@ -19,7 +19,7 @@ public class IntroController : MonoBehaviour
     void Start()
     {
         var timelineAsset = (TimelineAsset)director.playableAsset;
-        director.SetGenericBinding(timelineAsset.GetOutputTracks().Where(x => x is AudioTrack).First(), AudioManager.Instance.DefaultMusicAudioSource);
+        director.SetGenericBinding(timelineAsset.GetOutputTracks().Where(x => x is AudioTrack).First(), AudioManager.Instance.MusicAudioSource);
             
 
     }

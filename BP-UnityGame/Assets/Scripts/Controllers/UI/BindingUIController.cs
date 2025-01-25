@@ -1,3 +1,4 @@
+using System.IO;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -22,6 +23,8 @@ public class BindingUIController : MonoBehaviour
         inputActions.Demo.Hi.performed += ctx => OnHi();
         inputActions.Demo.HowAreYou.performed += ctx => OnHowAreYou();
     }
+
+
 
     private void OnEnable()
     {

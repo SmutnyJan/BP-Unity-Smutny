@@ -724,8 +724,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40c0d8d5b3d4ad24ea4eecd2678e9bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputActions: {fileID: -944628639613478452, guid: 99c511b4cbee4304a8a525cbf8141a7c, type: 3}
-  bindingsText: {fileID: 627811424}
+  hiText: {fileID: 429754757}
+  howAreYouText: {fileID: 747350315}
+  hiButton: {fileID: 1756281210}
+  howAreYouButton: {fileID: 1714344713}
 --- !u!1 &747350313
 GameObject:
   m_ObjectHideFlags: 0

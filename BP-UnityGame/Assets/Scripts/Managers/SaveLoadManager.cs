@@ -1,5 +1,8 @@
 using System.IO;
+using Unity.VisualScripting;
 using UnityEngine;
+using static AudioManager;
+
 
 public class SaveLoadManager : MonoBehaviour
 {
@@ -41,8 +44,6 @@ public class SaveLoadManager : MonoBehaviour
     void Start()
     {
         Load(SaveType.Settings);
-        Save(SaveType.Settings);
-
     }
 
     void Update()
@@ -71,18 +72,13 @@ public class SaveLoadManager : MonoBehaviour
 
             switch (saveType)
             {
-                case SaveType.Settings:
-                    float sfxVolume = 0;
-                    AudioManager.Instance.AudioMixer.GetFloat("SFXVolume", out sfxVolume);
-            
-                    float musicVolume = 0;
-                    AudioManager.Instance.AudioMixer.GetFloat("MusicVolume", out musicVolume);
-            
+                case SaveType.Settings:            
                     Settings = new MainMenuSettings
                     {
-                        SFXVolume = sfxVolume,
-                        MusicVolume = musicVolume
+                        SFXVolume = AudioManager.Instance.AudioMixer.ConvertToNormalizedValue(AudioManager.Instance.SFXVolume),
+                        MusicVolume = AudioManager.Instance.AudioMixer.ConvertToNormalizedValue(AudioManager.Instance.MusicVolume),
                     };
+                    Save(SaveType.Settings);
                     return;
             }
 
@@ -117,6 +113,8 @@ public class SaveLoadManager : MonoBehaviour
     }
 
 }
+
+
 
 public class MainMenuSettings
 {

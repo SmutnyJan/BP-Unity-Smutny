@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
+using static UnityEngine.Rendering.DebugUI;
 
 public class AudioManager : MonoBehaviour
 {
@@ -12,12 +14,41 @@ public class AudioManager : MonoBehaviour
     public AudioMixer AudioMixer;
     public AudioLibrary AudioLibrary;
 
+
+    public float SFXVolume
+    {
+        get
+        {
+            float value = 0;
+            AudioMixer.GetFloat("SFXVolume", out value);
+            return value;
+        }
+        set
+        {
+            AudioMixer.SetFloat("SFXVolume", value);
+        }
+    }
+
+    public float MusicVolume
+    {
+        get {
+            float value = 0;
+            AudioMixer.GetFloat("MusicVolume", out value);
+            return value;
+        }
+        set
+        {
+            AudioMixer.SetFloat("MusicVolume", value);
+        }
+    }
+
+
+
     void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            SaveLoadManager.Instance.OnSettingsLoaded += UpdateAudioSettings;
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -29,13 +60,14 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
+        SaveLoadManager.Instance.OnSettingsLoaded += UpdateAudioSettings;
 
     }
 
     void UpdateAudioSettings(MainMenuSettings settings)
     {
-        AudioMixer.SetFloat("SFXVolume", settings.SFXVolume);
-        AudioMixer.SetFloat("MusicVolume", settings.MusicVolume);
+        MusicVolume = AudioMixer.ConvertToDecibelValue(settings.MusicVolume);
+        SFXVolume = AudioMixer.ConvertToDecibelValue(settings.SFXVolume);
     }
 
     void Update()
@@ -100,4 +132,21 @@ public class NamedAudioClip
 {
     public string Name;
     public AudioClip Clip;
+}
+
+
+public static class AudioMixerExtensions
+{
+
+    public static float ConvertToNormalizedValue(this AudioMixer audioMixer, float dBVolume)
+    {
+        dBVolume = Mathf.Clamp(dBVolume, -80f, 0f);
+        return (dBVolume + 80f) / 80f;
+    }
+
+    public static float ConvertToDecibelValue(this AudioMixer audioMixer, float normalizedValue)
+    {
+        normalizedValue = Mathf.Clamp01(normalizedValue);
+        return (normalizedValue * 80f) - 80f;
+    }
 }

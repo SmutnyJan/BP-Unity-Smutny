@@ -16,7 +16,8 @@ public class SceneLoaderManager : MonoBehaviour
     {
         MainMenu,
         Intro,
-        Lobby
+        Lobby,
+        Settings
     }
 
     void Awake()
@@ -68,7 +69,6 @@ public class SceneLoaderManager : MonoBehaviour
 
     void Start()
     {
-        
     }
 
     void Update()

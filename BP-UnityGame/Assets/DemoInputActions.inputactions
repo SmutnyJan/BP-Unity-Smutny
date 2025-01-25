@@ -1,0 +1,54 @@
+{
+    "name": "DemoInputActions",
+    "maps": [
+        {
+            "name": "Demo",
+            "id": "ef9902a7-a5b6-4d6d-b6f4-1eea84a88167",
+            "actions": [
+                {
+                    "name": "Hi",
+                    "type": "Button",
+                    "id": "b2aa1ab3-c2df-44f1-8cbe-ca483932351e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "HowAreYou",
+                    "type": "Button",
+                    "id": "2e2103d6-189f-4155-8385-4a24c74ff11c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e2747ce5-c2f3-49d6-9abc-5514481af087",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hi",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7ed8254a-d8ec-4252-bf06-9ced0cd79617",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HowAreYou",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

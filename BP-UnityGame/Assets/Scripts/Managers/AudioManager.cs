@@ -21,11 +21,11 @@ public class AudioManager : MonoBehaviour
         {
             float value = 0;
             AudioMixer.GetFloat("SFXVolume", out value);
-            return value;
+            return AudioMixer.ConvertToNormalizedValue(value);
         }
         set
         {
-            AudioMixer.SetFloat("SFXVolume", value);
+            AudioMixer.SetFloat("SFXVolume", AudioMixer.ConvertToDecibelValue(value));
         }
     }
 
@@ -34,11 +34,12 @@ public class AudioManager : MonoBehaviour
         get {
             float value = 0;
             AudioMixer.GetFloat("MusicVolume", out value);
-            return value;
+            return AudioMixer.ConvertToNormalizedValue(value);
         }
         set
         {
-            AudioMixer.SetFloat("MusicVolume", value);
+            AudioMixer.SetFloat("MusicVolume", AudioMixer.ConvertToDecibelValue(value));
+
         }
     }
 
@@ -66,8 +67,8 @@ public class AudioManager : MonoBehaviour
 
     void UpdateAudioSettings(MainMenuSettings settings)
     {
-        MusicVolume = AudioMixer.ConvertToDecibelValue(settings.MusicVolume);
-        SFXVolume = AudioMixer.ConvertToDecibelValue(settings.SFXVolume);
+        MusicVolume = settings.MusicVolume;
+        SFXVolume = settings.SFXVolume;
     }
 
     void Update()

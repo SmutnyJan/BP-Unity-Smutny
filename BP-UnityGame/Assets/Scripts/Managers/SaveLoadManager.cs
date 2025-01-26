@@ -1,6 +1,7 @@
 using System.IO;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static AudioManager;
 
 
@@ -43,6 +44,7 @@ public class SaveLoadManager : MonoBehaviour
 
     void Start()
     {
+        OnSettingsLoaded += OnSettingsLoadedLocal;
         Load(SaveType.Settings);
     }
 
@@ -62,27 +64,26 @@ public class SaveLoadManager : MonoBehaviour
             {
                 case SaveType.Settings:
                     Settings = JsonUtility.FromJson<MainMenuSettings>(json);
-                    OnSettingsLoaded?.Invoke(Settings);
-                    return;
+                    InvokeLoadEvent(saveType);
+                    break;
             }
-
         }
         else
         {
-
             switch (saveType)
             {
                 case SaveType.Settings:            
                     Settings = new MainMenuSettings
                     {
-                        SFXVolume = AudioManager.Instance.AudioMixer.ConvertToNormalizedValue(AudioManager.Instance.SFXVolume),
-                        MusicVolume = AudioManager.Instance.AudioMixer.ConvertToNormalizedValue(AudioManager.Instance.MusicVolume),
+                        SFXVolume = AudioManager.Instance.SFXVolume,
+                        MusicVolume = AudioManager.Instance.MusicVolume,
+                        IsFullScreen = Screen.fullScreen
                     };
                     Save(SaveType.Settings);
-                    return;
+                    break;
             }
-
         }
+
 
 
     }
@@ -112,6 +113,21 @@ public class SaveLoadManager : MonoBehaviour
         }
     }
 
+    public void InvokeLoadEvent(SaveType saveType)
+    {
+        switch (saveType)
+        {
+            case SaveType.Settings:
+                OnSettingsLoaded?.Invoke(Settings);
+                break;
+        }
+    }
+
+    private void OnSettingsLoadedLocal(MainMenuSettings settings)
+    {
+        Screen.fullScreen = settings.IsFullScreen;
+    }
+
 }
 
 
@@ -120,4 +136,5 @@ public class MainMenuSettings
 {
     public float SFXVolume;
     public float MusicVolume;
+    public bool IsFullScreen;
 }

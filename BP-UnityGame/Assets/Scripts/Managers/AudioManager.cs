@@ -75,25 +75,17 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    public void PlayClipByName(string name, AudioSource audioSource)
+    public void PlayClipByName(string name, AudioCategory audioCategory, AudioSource audioSource)
     {
-        AudioClip clip = null;
+        NamedAudioClip namedClip = audioCategory.Clips.Find(clip => clip.Name == name);
 
-        foreach (var audioGroup in new[] { AudioLibrary.UI, AudioLibrary.Player })
-        {
-            NamedAudioClip namedClip = audioGroup.Clips.Find(clip => clip.Name == name);
-            if (namedClip != null)
-            {
-                clip = namedClip.Clip;
-                break;
-            }
-        }
-        if (clip == null)
+        if (namedClip == null)
         {
             Debug.LogError("Clip not found: " + name);
             return;
         }
-        audioSource.PlayOneShot(clip);
+
+        audioSource.PlayOneShot(namedClip.Clip);
     }
 
     private void PlayCustomClipOnAudioSource(AudioClip clip, AudioSource audioSource)
@@ -130,8 +122,16 @@ public class AudioCategory
 [System.Serializable]
 public class NamedAudioClip
 {
-    public string Name;
     public AudioClip Clip;
+
+    [HideInInspector]
+    public string Name
+    {
+        get
+        {
+            return Clip != null ? Clip.name : string.Empty;
+        }
+    }
 }
 
 

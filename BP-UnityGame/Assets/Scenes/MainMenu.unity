@@ -500,7 +500,8 @@ MonoBehaviour:
   AudioMixer: {fileID: 24100000, guid: 80bb04fc6bc22df4192fa44772311d83, type: 2}
   AudioLibrary:
     UI:
-      Clips: []
+      Clips:
+      - Clip: {fileID: 8300000, guid: af34943fb0dbbed449c67e0445113e65, type: 3}
     Player:
       Clips: []
 --- !u!82 &359446619

@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,7 +15,8 @@ public class SceneLoaderManager : MonoBehaviour
         MainMenu,
         Intro,
         Lobby,
-        Settings
+        Settings,
+        Test
     }
 
     void Awake()
@@ -69,6 +68,7 @@ public class SceneLoaderManager : MonoBehaviour
 
     void Start()
     {
+
     }
 
     void Update()

@@ -39,7 +39,7 @@ public class IntroController : MonoBehaviour
 
     void OnTimelineEnd(PlayableDirector pd)
     {
-        SceneLoaderManager.Instance.LoadScene(ActiveScene.Lobby);
+        SceneLoaderManager.Instance.LoadScene(ActiveScene.Test);
     }
 
     private void OnDisable()

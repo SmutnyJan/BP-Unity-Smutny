@@ -10,17 +10,19 @@ public class MainMenuUIController : MonoBehaviour
 
     public void OnNewGameButtonPressed()
     {
+        AudioManager.Instance.PlayClipByName("UI_Button_Click_1", AudioManager.Instance.AudioLibrary.UI, AudioManager.Instance.SFXAudioSource);
         SceneLoaderManager.Instance.LoadScene(ActiveScene.Intro);
     }
 
 
     public void OnLoadGameButtonPressed()
     {
-
+        AudioManager.Instance.PlayClipByName("UI_Button_Click_1", AudioManager.Instance.AudioLibrary.UI, AudioManager.Instance.SFXAudioSource);
     }
 
     public void OnSettingsButtonPressed()
     {
+        AudioManager.Instance.PlayClipByName("UI_Button_Click_1", AudioManager.Instance.AudioLibrary.UI, AudioManager.Instance.SFXAudioSource);
         SceneLoaderManager.Instance.LoadScene(ActiveScene.Settings);
     }
 

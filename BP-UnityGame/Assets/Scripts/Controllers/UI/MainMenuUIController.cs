@@ -6,6 +6,8 @@ public class MainMenuUIController : MonoBehaviour
 {
     void Start()
     {
+        
+
     }
 
     public void OnNewGameButtonPressed()

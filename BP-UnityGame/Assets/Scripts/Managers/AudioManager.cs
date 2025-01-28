@@ -14,6 +14,12 @@ public class AudioManager : MonoBehaviour
     public AudioMixer AudioMixer;
     public AudioLibrary AudioLibrary;
 
+    public enum PlayType
+    {
+        Play,
+        PlayOneShot
+    }
+
 
     public float SFXVolume
     {
@@ -76,7 +82,7 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    public void PlayClipByName(string name, AudioCategory audioCategory, AudioSource audioSource)
+    public void PlayClipByName(string name, AudioCategory audioCategory, AudioSource audioSource, PlayType playType = PlayType.PlayOneShot)
     {
         NamedAudioClip namedClip = audioCategory.Clips.Find(clip => clip.Name == name);
 
@@ -85,8 +91,19 @@ public class AudioManager : MonoBehaviour
             Debug.LogError("Clip not found: " + name);
             return;
         }
+        switch(playType)
+        {
+            case PlayType.PlayOneShot:
+                audioSource.PlayOneShot(namedClip.Clip);
+                break;
 
-        audioSource.PlayOneShot(namedClip.Clip);
+            case PlayType.Play:
+                audioSource.clip = namedClip.Clip;
+                audioSource.Play();
+                break;
+        }
+
+        
     }
 
     private void PlayCustomClipOnAudioSource(AudioClip clip, AudioSource audioSource)
@@ -106,6 +123,7 @@ public class AudioLibrary
 {
     public AudioCategory UI;
     public AudioCategory Player;
+    public AudioCategory Music;
 }
 
 [System.Serializable]

@@ -504,6 +504,9 @@ MonoBehaviour:
       - Clip: {fileID: 8300000, guid: af34943fb0dbbed449c67e0445113e65, type: 3}
     Player:
       Clips: []
+    Music:
+      Clips:
+      - Clip: {fileID: 8300000, guid: a4dc9fee1d4862048a8fdfc62339b934, type: 3}
 --- !u!82 &359446619
 AudioSource:
   m_ObjectHideFlags: 0

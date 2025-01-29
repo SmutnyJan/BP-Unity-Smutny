@@ -14,9 +14,10 @@ public class SceneLoaderManager : MonoBehaviour
     {
         MainMenu,
         Intro,
-        Lobby,
+        LobbyMenza,
         Settings,
-        Test
+        Test,
+        PostTest
     }
 
     void Awake()

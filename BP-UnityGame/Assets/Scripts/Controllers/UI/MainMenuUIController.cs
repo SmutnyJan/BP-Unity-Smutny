@@ -1,9 +1,12 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Playables;
 using static SceneLoaderManager;
 
 public class MainMenuUIController : MonoBehaviour
 {
+    public PlayableDirector director;
+
     void Start()
     {
         

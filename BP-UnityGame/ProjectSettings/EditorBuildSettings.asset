@@ -23,6 +23,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PostTest.unity
     guid: 294e09abec510ce4e9153df6e364efd8
+  - enabled: 1
+    path: Assets/Scenes/Lobby/LobbyG.unity
+    guid: 6d27ffc73f6903d44a225022aad0ad4d
+  - enabled: 1
+    path: Assets/Scenes/Lobby/LobbyC.unity
+    guid: 7847a7f80769c0841bf657be4d778771
+  - enabled: 1
+    path: Assets/Scenes/Lobby/LobbyAB.unity
+    guid: ec92372ad6542954e8e0e9391919a04b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

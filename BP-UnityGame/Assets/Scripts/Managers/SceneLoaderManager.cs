@@ -7,6 +7,11 @@ public class SceneLoaderManager : MonoBehaviour
     public static SceneLoaderManager Instance;
     public Animator SceneTransitionAnimator;
     public GameObject CrossfadeCanvas;
+    
+    [HideInInspector]
+    public ActiveScene PreviousScene = ActiveScene.None;
+    [HideInInspector]
+    public ActiveScene CurrentScene = ActiveScene.None;
 
     private bool _firstSceneLoaded = false;
 
@@ -15,9 +20,13 @@ public class SceneLoaderManager : MonoBehaviour
         MainMenu,
         Intro,
         LobbyMenza,
+        LobbyG,
+        LobbyC,
+        LobbyAB,
         Settings,
         Test,
-        PostTest
+        PostTest,
+        None
     }
 
     void Awake()
@@ -27,6 +36,7 @@ public class SceneLoaderManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             SceneManager.sceneLoaded += OnSceneLoaded;
+            CurrentScene = ActiveScene.MainMenu;
 
         }
         else
@@ -53,6 +63,8 @@ public class SceneLoaderManager : MonoBehaviour
 
     public void LoadScene(ActiveScene scene)
     {
+        PreviousScene = CurrentScene;
+        CurrentScene = scene;
         StartCoroutine(LoadWithAnimationCoroutine(scene));
     }
 

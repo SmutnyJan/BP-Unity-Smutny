@@ -1,8 +1,8 @@
+using System;
+using System.Collections;
 using System.IO;
-using Unity.VisualScripting;
+using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using static AudioManager;
 
 
 public class SaveLoadManager : MonoBehaviour
@@ -11,6 +11,8 @@ public class SaveLoadManager : MonoBehaviour
     public static SaveLoadManager Instance;
     public MainMenuSettings Settings;
     public Progress Progress;
+    public TextMeshProUGUI SavingText;
+    public TextMeshProUGUI LoadingText;
 
     public delegate void SettingsLoadedHandler(MainMenuSettings settings);
     public event SettingsLoadedHandler OnSettingsLoaded;
@@ -20,6 +22,11 @@ public class SaveLoadManager : MonoBehaviour
 
     private const string _settingsFileName = "settings.json";
     private const string _progressFileName = "progress.json";
+    private Progress _NewGameProgress = new Progress()
+    {
+        SpawnScene = SceneLoaderManager.ActiveScene.None,
+        GameState = GameState.Beggining
+    };
 
 
 
@@ -34,6 +41,7 @@ public class SaveLoadManager : MonoBehaviour
     public enum GameState
     {
         Beggining, // Hráè se poprvé objeví v lobby pøed menzou
+        RoadToG, //Hráø si pøeèetl titulky a má se dostat na G
     }
 
 
@@ -67,6 +75,7 @@ public class SaveLoadManager : MonoBehaviour
 
     public void Load(SaveType saveType)
     {
+        LoadingText.gameObject.SetActive(true);
         string filePath = GetSettingsFilePath(saveType);
 
         if (File.Exists(filePath))
@@ -97,23 +106,20 @@ public class SaveLoadManager : MonoBehaviour
                     };
                     break;
                 case SaveType.Progress:
-                    Progress = new Progress
-                    {
-                        SpawnScene = SceneLoaderManager.ActiveScene.None,
-                        GameState = GameState.Beggining
-                    };
+                    ResetToDefaults(saveType);
                     break;
             }
             Save(saveType);
         }
 
-
-
+        StartCoroutine(DisableTextAfter(LoadingText));
     }
 
 
     public void Save(SaveType saveType)
     {
+        SavingText.gameObject.SetActive(true);
+
         string json = "";
         switch (saveType)
         {
@@ -126,6 +132,25 @@ public class SaveLoadManager : MonoBehaviour
         }
 
         File.WriteAllText(GetSettingsFilePath(saveType), json);
+        StartCoroutine(DisableTextAfter(SavingText));
+
+
+    }
+
+    public void ResetToDefaults(SaveType saveType)
+    {
+        switch (saveType)
+        {
+            case SaveType.Settings:
+                throw new NotImplementedException();
+            case SaveType.Progress:
+                Progress = new Progress
+                {
+                    SpawnScene = _NewGameProgress.SpawnScene,
+                    GameState = _NewGameProgress.GameState
+                };
+                break;
+        }
     }
 
     private string GetSettingsFilePath(SaveType saveType)
@@ -157,6 +182,13 @@ public class SaveLoadManager : MonoBehaviour
     private void OnSettingsLoadedLocal(MainMenuSettings settings)
     {
         Screen.fullScreen = settings.IsFullScreen;
+    }
+
+    private IEnumerator DisableTextAfter(TextMeshProUGUI text)
+    {
+        yield return new WaitForSeconds(2.5f);
+        text.gameObject.SetActive(false);
+        
     }
 
 }

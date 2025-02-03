@@ -10,8 +10,8 @@ public class LobbySpawnPositionController : MonoBehaviour
     public Transform RightSpawnPosition;
     public Transform LeftSpawnPosition;
     public GameObject Player;
-    public LobbyColliderController LeftColliderController;
-    public LobbyColliderController RightColliderController;
+    public LobbyExitColliderController LeftColliderController;
+    public LobbyExitColliderController RightColliderController;
 
     public static LobbySpawnPositionController Instance;
 

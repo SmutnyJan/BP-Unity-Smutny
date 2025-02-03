@@ -22,11 +22,7 @@ public class TipsController : MonoBehaviour
 
     void Start()
     {
-        if(SceneLoaderManager.Instance.CurrentScene == SceneLoaderManager.ActiveScene.LobbyMenza && SaveLoadManager.Instance.Progress.GameState == SaveLoadManager.GameState.Beggining)
-        {
-            ShowMessages(new string[] { "Ještì jsem se nepøedstavil, jmenuji se -jmeno- a budu Tvým prùvodcem.",
-            "Poøádnì ses prospal, ale teï je naèase odhodit splín stranou a pustit se do práce. Nejdøíve se stav na budovì G. Èervená šipka ti ukáže cestu."});
-        }
+
     }
 
     // Update is called once per frame

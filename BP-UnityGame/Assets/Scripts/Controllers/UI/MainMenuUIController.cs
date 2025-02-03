@@ -19,7 +19,7 @@ public class MainMenuUIController : MonoBehaviour
 
     public void OnNewGameButtonPressed()
     {
-        SaveLoadManager.Instance.Progress.SpawnScene = ActiveScene.LobbyMenza;
+        SaveLoadManager.Instance.ResetToDefaults(SaveLoadManager.SaveType.Progress);
         SaveLoadManager.Instance.Save(SaveLoadManager.SaveType.Progress);
 
         AudioManager.Instance.PlayClipByName("UI_Button_Click_1", AudioManager.Instance.AudioLibrary.UI, AudioManager.Instance.SFXAudioSource);

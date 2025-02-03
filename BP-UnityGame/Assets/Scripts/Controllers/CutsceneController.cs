@@ -9,6 +9,7 @@ public class IntroController : MonoBehaviour
 {
     public PlayableDirector director;
     private GameInputSystem _inputSystem;
+    public SceneLoaderManager.ActiveScene LoadAfterScene;
 
 
     private void Awake()
@@ -39,7 +40,7 @@ public class IntroController : MonoBehaviour
 
     void OnTimelineEnd(PlayableDirector pd)
     {
-        SceneLoaderManager.Instance.LoadScene(ActiveScene.Test);
+        SceneLoaderManager.Instance.LoadScene(LoadAfterScene);
     }
 
     private void OnDisable()

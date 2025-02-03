@@ -10,12 +10,17 @@ public class SaveLoadManager : MonoBehaviour
     // C:\Users\smutn\AppData\LocalLow\DefaultCompany\BP-UnityGame
     public static SaveLoadManager Instance;
     public MainMenuSettings Settings;
+    public Progress Progress;
 
     public delegate void SettingsLoadedHandler(MainMenuSettings settings);
     public event SettingsLoadedHandler OnSettingsLoaded;
 
+    public delegate void ProgressLoadedHandler(Progress settings);
+    public event ProgressLoadedHandler OnProgressLoaded;
 
     private const string _settingsFileName = "settings.json";
+    private const string _progressFileName = "progress.json";
+
 
 
     public enum SaveType
@@ -23,7 +28,12 @@ public class SaveLoadManager : MonoBehaviour
         Settings,
         LobbyBinding,
         GameBinding,
-        Game_Progress
+        Progress
+    }
+
+    public enum GameState
+    {
+        Beggining, // Hráè se poprvé objeví v lobby pøed menzou
     }
 
 
@@ -33,6 +43,8 @@ public class SaveLoadManager : MonoBehaviour
         {
             Instance = this;
             Instance.Settings = null;
+            Load(SaveType.Settings);
+            Load(SaveType.Progress);
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -45,7 +57,7 @@ public class SaveLoadManager : MonoBehaviour
     void Start()
     {
         OnSettingsLoaded += OnSettingsLoadedLocal;
-        Load(SaveType.Settings);
+
     }
 
     void Update()
@@ -66,6 +78,10 @@ public class SaveLoadManager : MonoBehaviour
                     Settings = JsonUtility.FromJson<MainMenuSettings>(json);
                     InvokeLoadEvent(saveType);
                     break;
+                case SaveType.Progress:
+                    Progress = JsonUtility.FromJson<Progress>(json);
+                    InvokeLoadEvent(saveType);
+                    break;
             }
         }
         else
@@ -79,9 +95,16 @@ public class SaveLoadManager : MonoBehaviour
                         MusicVolume = AudioManager.Instance.MusicVolume,
                         IsFullScreen = Screen.fullScreen
                     };
-                    Save(SaveType.Settings);
+                    break;
+                case SaveType.Progress:
+                    Progress = new Progress
+                    {
+                        SpawnScene = SceneLoaderManager.ActiveScene.None,
+                        GameState = GameState.Beggining
+                    };
                     break;
             }
+            Save(saveType);
         }
 
 
@@ -97,6 +120,9 @@ public class SaveLoadManager : MonoBehaviour
             case SaveType.Settings:
                 json = JsonUtility.ToJson(Settings, true);
                 break;
+            case SaveType.Progress:
+                json = JsonUtility.ToJson(Progress, true);
+                break;
         }
 
         File.WriteAllText(GetSettingsFilePath(saveType), json);
@@ -108,6 +134,8 @@ public class SaveLoadManager : MonoBehaviour
         {
             case SaveType.Settings:
                 return Path.Combine(Application.persistentDataPath, _settingsFileName);
+            case SaveType.Progress:
+                return Path.Combine(Application.persistentDataPath, _progressFileName);
             default:
                 return "";
         }
@@ -119,6 +147,9 @@ public class SaveLoadManager : MonoBehaviour
         {
             case SaveType.Settings:
                 OnSettingsLoaded?.Invoke(Settings);
+                break;
+            case SaveType.Progress:
+                OnProgressLoaded?.Invoke(Progress);
                 break;
         }
     }
@@ -137,4 +168,11 @@ public class MainMenuSettings
     public float SFXVolume;
     public float MusicVolume;
     public bool IsFullScreen;
+}
+
+public class Progress
+{
+    public SceneLoaderManager.ActiveScene SpawnScene;
+    public SaveLoadManager.GameState GameState;
+
 }

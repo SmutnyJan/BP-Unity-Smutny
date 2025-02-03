@@ -176,14 +176,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Je noc a j\xE1 nem\u016F\u017Eu sp\xE1t. Z\xEDtra m\u011B \u010Dek\xE1
-    zkou\u0161ka, kterou mus\xEDm zvl\xE1dnout. Pokud neusp\u011Bju, nebude to je\u0161t\u011B
-    \xFApln\xFD konec, ale v\u0161echno se t\xEDm v\xFDrazn\u011B zkomplikuje. Opakuji
-    si l\xE1tku znovu a znovu, ale my\u0161lenky mi ut\xEDkaj\xED jinam. Stoj\xEDm
-    u okna a sleduji m\u011Bsto pono\u0159en\xE9 do tmy. Tolik lid\xED tam venku
-    m\xE1 sv\xE9 vlastn\xED starosti\u2026 a j\xE1 se boj\xEDm, \u017Ee z\xEDtra
-    sel\u017Eu. Mo\u017En\xE1 to zvl\xE1dnu. Mo\u017En\xE1 ne. Ale u\u017E nen\xED
-    cesty zp\u011Bt."
+  m_text: "\u201EDneska nem\xE1\u0161 zrovna sv\u016Fj den, co?\u201C ozve se najednou
+    hlas za barem. Zvednu hlavu. Barmanka m\u011B pozoruje s m\xEDrn\u011B pobaven\xFDm
+    v\xFDrazem, ale v o\u010D\xEDch m\xE1 n\u011Bco jin\xE9ho \u2013 pochopen\xED.
+    Mo\u017En\xE1 mi jen chce prodat dal\u0161\xED drink\u2026 nebo ji to v\xE1\u017En\u011B
+    zaj\xEDm\xE1?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -262,6 +259,145 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77173991}
   m_CullTransparentMesh: 1
+--- !u!1 &99130718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 99130719}
+  - component: {fileID: 99130721}
+  - component: {fileID: 99130720}
+  m_Layer: 0
+  m_Name: Text 5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &99130719
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99130718}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1701935287}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -40, y: 169.5}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &99130720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99130718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "Vyjde to ze m\u011B skoro samo. Ne\xFAsp\u011B\u0161n\xE1 zkou\u0161ka,
+    nejist\xE1 budoucnost, pocit, \u017Ee jsem v\u0161echno zkazil. Mluv\xEDm a mluv\xEDm,
+    zat\xEDmco ona jen ti\u0161e poslouch\xE1. A poprv\xE9 za dne\u0161ek m\xE1m
+    pocit, \u017Ee m\u011B n\u011Bkdo opravdu sly\u0161\xED."
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 16777215
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &99130721
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99130718}
+  m_CullTransparentMesh: 1
 --- !u!1 &369104316
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +426,7 @@ PlayableDirector:
   m_GameObject: {fileID: 369104316}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 1b24c29d30b35c2438ffeca982acb9d0, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: cf76e7b448fa326408b73ce920b3bf53, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -299,6 +435,8 @@ PlayableDirector:
   - key: {fileID: -3956936025010263660, guid: 1b24c29d30b35c2438ffeca982acb9d0, type: 2}
     value: {fileID: 0}
   - key: {fileID: -6144096237507934600, guid: 1b24c29d30b35c2438ffeca982acb9d0, type: 2}
+    value: {fileID: 1701935291}
+  - key: {fileID: 1537660001161120429, guid: cf76e7b448fa326408b73ce920b3bf53, type: 2}
     value: {fileID: 1701935291}
   m_ExposedReferences:
     m_References: []
@@ -331,7 +469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   director: {fileID: 369104318}
-  LoadAfterScene: 8
+  LoadAfterScene: 3
 --- !u!114 &369104321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,14 +550,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7284454351871450067, guid: bb0e6b20232d42147a77efe439116782, type: 3}
+  m_Sprite: {fileID: -8348690472861555170, guid: 11ac34b288c0c5f4e8a167d4791c8e75, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -436,6 +574,147 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604317436}
+  m_CullTransparentMesh: 1
+--- !u!1 &773400276
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 773400277}
+  - component: {fileID: 773400279}
+  - component: {fileID: 773400278}
+  m_Layer: 0
+  m_Name: Text 6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &773400277
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773400276}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1701935287}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -40, y: 169.5}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &773400278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773400276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "\u201ETohle j\xE1 bohu\u017Eel nevy\u0159e\u0161\xEDm,\u201C \u0159\xEDk\xE1
+    a nat\xE1hne se pod bar. Cinknut\xED skla. Na pultu p\u0159istane l\xE1hev, kterou
+    bych rozhodn\u011B neozna\u010Dil za lehk\xFD drink. \u201EAle mo\u017En\xE1
+    v\xEDm, co ti pom\u016F\u017Ee.\u201C Zvedne obo\u010D\xED a j\xE1 se neubr\xE1n\xEDm
+    \xFAsm\u011Bvu. Asi to nen\xED nejchyt\u0159ej\u0161\xED \u0159e\u0161en\xED\u2026
+    ale dneska na chytr\xE1 rozhodnut\xED ka\u0161lu."
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 16777215
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &773400279
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773400276}
   m_CullTransparentMesh: 1
 --- !u!1 &920768695
 GameObject:
@@ -494,12 +773,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Zkou\u0161kov\xE9 se bl\xED\u017E\xED a j\xE1 nest\xEDh\xE1m. K\xF3d,
-    kter\xFD d\u0159\xEDve d\xE1val smysl, se te\u010F m\u011Bn\xED v nesrozumiteln\xFD
-    chaos. Ka\u017Ed\xFD ve\u010Der sed\xEDm nad monitorem s pr\xE1zdn\xFDm v\xFDrazem,
-    p\u0159i\u010Dem\u017E hlava mi t\u0159e\u0161t\xED \xFAnavou. K\xE1va a energetick\xE9
-    n\xE1poje se staly mou ka\u017Edodenn\xED stravou. P\u0159ipad\xE1m si jako stroj,
-    kter\xFD se pomalu porouch\xE1v\xE1."
+  m_text: "Nev\xEDm, kam j\xEDt. Nechci zp\xE1tky na kolej, nechci vid\u011Bt nikoho
+    ze spolu\u017E\xE1k\u016F. Pot\u0159ebuju aspo\u0148 na chv\xEDli vypnout. Mo\u017En\xE1
+    mi p\xE1r piv pom\u016F\u017Ee zapomenout, aspo\u0148 na jeden ve\u010Der"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -926,12 +1202,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "T\u0159et\xED ro\u010Dn\xEDk vysok\xE9 \u0161koly. Je\u0161t\u011B p\u0159ed
-    p\xE1r m\u011Bs\xEDci bylo v\u0161echno v po\u0159\xE1dku. Programov\xE1n\xED
-    m\u011B bavilo, \xFAkoly jsem zvl\xE1dal a budoucnost vypadala slibn\u011B. Sed\xEDm
-    v univerzitn\xED knihovn\u011B, obklopen knihami, a p\u0159em\xFD\u0161l\xEDm,
-    jak rychle ten \u010Das utekl. Tehdy jsem je\u0161t\u011B v\u011B\u0159il, \u017Ee
-    tohle zvl\xE1dnu."
+  m_text: "Nem\u016F\u017Eu tomu uv\u011B\u0159it. Po v\u0161ech t\u011Bch hodin\xE1ch
+    u\u010Den\xED, po v\u0161ech probd\u011Bl\xFDch noc\xEDch... a stejn\u011B jsem
+    to pokazil. Kdy\u017E se pod\xEDv\xE1m na ten velk\xFD \u010Derven\xFD k\u0159\xED\u017E
+    na testu, m\xE1m pocit, jako by se mi zhroutil cel\xFD sv\u011Bt. Co te\u010F?
+    Jak tohle naprav\xEDm?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1201,6 +1476,8 @@ RectTransform:
   - {fileID: 920768696}
   - {fileID: 2031702823}
   - {fileID: 77173992}
+  - {fileID: 99130719}
+  - {fileID: 773400277}
   m_Father: {fileID: 369104319}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1447,12 +1724,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Pro\u010D mi to najednou nejde? D\u0159\xEDv jsem to zvl\xE1dal, ale te\u010F
-    m\xE1m pocit, \u017Ee nerozum\xEDm v\u016Fbec ni\u010Demu. Ka\u017Ed\xE1 dal\u0161\xED
-    hodina nad u\u010Den\xEDm m\u011B jen v\xEDc utvrzuje v tom, \u017Ee to nem\xE1
-    smysl. Co kdy\u017E m\u011B vyhod\xED? Co kdy\u017E jsem prost\u011B jen hloup\xFD?
-    Sed\xEDm na posteli, hlavu v dlan\xEDch, a zoufale se sna\u017E\xEDm naj\xEDt
-    odpov\u011Bdi, kter\xE9 nep\u0159ich\xE1zej\xED."
+  m_text: "Sed\xEDm u baru a pozoruju sv\u016Fj odraz ve sklenici piva. Nem\xE1m
+    s\xEDlu p\u0159em\xFD\u0161let o z\xEDt\u0159ku, o tom, co bude d\xE1l. Hlava
+    mi t\u0159e\u0161t\xED, ale ne z alkoholu \u2013 sp\xED\u0161 z t\u011Bch my\u0161lenek,
+    kter\xE9 se mi po\u0159\xE1d dokola hon\xED hlavou."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

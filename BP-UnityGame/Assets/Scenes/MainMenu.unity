@@ -502,8 +502,12 @@ MonoBehaviour:
     UI:
       Clips:
       - Clip: {fileID: 8300000, guid: af34943fb0dbbed449c67e0445113e65, type: 3}
+      - Clip: {fileID: 8300000, guid: bf099225f6a621743b7cff1784011275, type: 3}
     Player:
       Clips: []
+    Music:
+      Clips:
+      - Clip: {fileID: 8300000, guid: a4dc9fee1d4862048a8fdfc62339b934, type: 3}
 --- !u!82 &359446619
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1090,6 +1094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76f1c5547f8fea44a6c2dd1f8686ead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LoadGameButton: {fileID: 924341378}
 --- !u!1 &698718356
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,7 +1449,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 610699261}
         m_TargetAssemblyTypeName: MainMenuUIController, Assembly-CSharp
-        m_MethodName: OnNewGameButtonPressed
+        m_MethodName: OnLoadGameButtonPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2287,6 +2292,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneTransitionAnimator: {fileID: 1689595583}
   CrossfadeCanvas: {fileID: 287744744}
+  PreviousScene: 9
+  CurrentScene: 9
 --- !u!1 &2024952467
 GameObject:
   m_ObjectHideFlags: 0

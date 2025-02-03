@@ -1,22 +1,37 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.UI;
 using static SceneLoaderManager;
 
 public class MainMenuUIController : MonoBehaviour
 {
+    public Button LoadGameButton;
+
     void Start()
     {
+        if(SaveLoadManager.Instance.Progress.SpawnScene == ActiveScene.None)
+        {
+            LoadGameButton.interactable = false;
+        }
+
     }
 
     public void OnNewGameButtonPressed()
     {
+        SaveLoadManager.Instance.Progress.SpawnScene = ActiveScene.LobbyMenza;
+        SaveLoadManager.Instance.Save(SaveLoadManager.SaveType.Progress);
+
         AudioManager.Instance.PlayClipByName("UI_Button_Click_1", AudioManager.Instance.AudioLibrary.UI, AudioManager.Instance.SFXAudioSource);
         SceneLoaderManager.Instance.LoadScene(ActiveScene.Intro);
+        //SceneLoaderManager.Instance.LoadScene(ActiveScene.LobbyMenza);//skip intra
     }
 
 
     public void OnLoadGameButtonPressed()
     {
+        SceneLoaderManager.Instance.LoadScene(SaveLoadManager.Instance.Progress.SpawnScene);
+
         AudioManager.Instance.PlayClipByName("UI_Button_Click_1", AudioManager.Instance.AudioLibrary.UI, AudioManager.Instance.SFXAudioSource);
     }
 

@@ -469,7 +469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   director: {fileID: 369104318}
-  LoadAfterScene: 2
+  LoadAfterScene: 3
 --- !u!114 &369104321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -646,7 +646,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 3925868543
+    rgba: 16777215
   m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3

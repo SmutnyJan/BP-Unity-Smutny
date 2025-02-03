@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   director: {fileID: 369104318}
-  LoadAfterScene: 7
+  LoadAfterScene: 8
 --- !u!114 &369104321
 MonoBehaviour:
   m_ObjectHideFlags: 0

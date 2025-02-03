@@ -17,6 +17,7 @@ public class SceneLoaderManager : MonoBehaviour
 
     public enum ActiveScene
     {
+        None,
         MainMenu,
         Intro,
         LobbyMenza,
@@ -25,8 +26,7 @@ public class SceneLoaderManager : MonoBehaviour
         LobbyAB,
         Settings,
         Test,
-        PostTest,
-        None
+        PostTest
     }
 
     void Awake()

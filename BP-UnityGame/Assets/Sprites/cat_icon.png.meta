@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c54e140ded4fefb4e8902a1cc3e27f33
+guid: e92ed00baafe2b444a174ec22d9d3dd6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1456998965711160823
-    second: leonardo_student_bar_0
+      213: -8912865990464054095
+    second: cat_icon_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: leonardo_student_bar_0
+      name: cat_icon_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1472
-        height: 832
+        x: 279
+        y: 309
+        width: 2320
+        height: 2468
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 90abca20923b7cbe0800000000000000
-      internalID: -1456998965711160823
+      spriteID: 1bcdab3aa932f4480800000000000000
+      internalID: -8912865990464054095
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      leonardo_student_bar_0: -1456998965711160823
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

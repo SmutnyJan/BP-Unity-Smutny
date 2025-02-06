@@ -3,9 +3,9 @@ using static SceneLoaderManager;
 
 public class PathFinder : MonoBehaviour
 {
-    public Transform LeftExit;
-    public Transform RightExit;
-    public Transform BuildingEnter;
+    public GameObject LeftExit;
+    public GameObject RightExit;
+    public GameObject BuildingEnter;
 
 
 

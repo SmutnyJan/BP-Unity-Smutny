@@ -730,9 +730,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69bf653946707c3439db8fc338b11577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LeftExit: {fileID: 1594878645}
-  RightExit: {fileID: 245361685}
-  BuildingEnter: {fileID: 109522806}
+  LeftExit: {fileID: 1594878644}
+  RightExit: {fileID: 245361684}
+  BuildingEnter: {fileID: 109522805}
 --- !u!4 &974509160
 Transform:
   m_ObjectHideFlags: 0

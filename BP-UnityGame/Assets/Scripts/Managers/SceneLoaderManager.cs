@@ -26,7 +26,7 @@ public class SceneLoaderManager : MonoBehaviour
         LobbyAB,
         Settings,
         Test,
-        PostTest
+        PostTest,
     }
 
     void Awake()

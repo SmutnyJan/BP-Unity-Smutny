@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.IO;
 using TMPro;
@@ -22,11 +21,7 @@ public class SaveLoadManager : MonoBehaviour
 
     private const string _settingsFileName = "settings.json";
     private const string _progressFileName = "progress.json";
-    private Progress _NewGameProgress = new Progress()
-    {
-        SpawnScene = SceneLoaderManager.ActiveScene.None,
-        GameState = GameState.Beggining
-    };
+
 
 
 
@@ -70,7 +65,7 @@ public class SaveLoadManager : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     public void Load(SaveType saveType)
@@ -95,20 +90,7 @@ public class SaveLoadManager : MonoBehaviour
         }
         else
         {
-            switch (saveType)
-            {
-                case SaveType.Settings:            
-                    Settings = new MainMenuSettings
-                    {
-                        SFXVolume = AudioManager.Instance.SFXVolume,
-                        MusicVolume = AudioManager.Instance.MusicVolume,
-                        IsFullScreen = Screen.fullScreen
-                    };
-                    break;
-                case SaveType.Progress:
-                    ResetToDefaults(saveType);
-                    break;
-            }
+            ResetToDefaults(saveType);
             Save(saveType);
         }
 
@@ -142,12 +124,19 @@ public class SaveLoadManager : MonoBehaviour
         switch (saveType)
         {
             case SaveType.Settings:
-                throw new NotImplementedException();
+                Settings = new MainMenuSettings
+                {
+                    SFXVolume = AudioManager.Instance.SFXVolume,
+                    MusicVolume = AudioManager.Instance.MusicVolume,
+                    IsFullScreen = Screen.fullScreen
+                };
+                break;
             case SaveType.Progress:
                 Progress = new Progress
                 {
-                    SpawnScene = _NewGameProgress.SpawnScene,
-                    GameState = _NewGameProgress.GameState
+                    SpawnScene = SceneLoaderManager.ActiveScene.None,
+                    GameState = GameState.Beggining,
+                    Money = UnityEngine.Random.Range(0, 100)
                 };
                 break;
         }
@@ -188,7 +177,7 @@ public class SaveLoadManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2.5f);
         text.gameObject.SetActive(false);
-        
+
     }
 
 }
@@ -206,5 +195,6 @@ public class Progress
 {
     public SceneLoaderManager.ActiveScene SpawnScene;
     public SaveLoadManager.GameState GameState;
+    public int Money;
 
 }

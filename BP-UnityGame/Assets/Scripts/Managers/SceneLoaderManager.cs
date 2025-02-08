@@ -7,7 +7,7 @@ public class SceneLoaderManager : MonoBehaviour
     public static SceneLoaderManager Instance;
     public Animator SceneTransitionAnimator;
     public GameObject CrossfadeCanvas;
-    
+
     [HideInInspector]
     public ActiveScene PreviousScene = ActiveScene.None;
     [HideInInspector]
@@ -27,6 +27,7 @@ public class SceneLoaderManager : MonoBehaviour
         Settings,
         Test,
         PostTest,
+        Menza
     }
 
     void Awake()
@@ -48,7 +49,7 @@ public class SceneLoaderManager : MonoBehaviour
 
     private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
     {
-        if(_firstSceneLoaded)
+        if (_firstSceneLoaded)
         {
             SceneTransitionAnimator.SetTrigger("End");
         }
@@ -86,6 +87,6 @@ public class SceneLoaderManager : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 }

@@ -23,6 +23,7 @@ public class MenzaShopVisibilityController : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         MenzaShopCanvas.SetActive(false);
+        SaveLoadManager.Instance.Save(SaveLoadManager.SaveType.Progress);
 
     }
 }

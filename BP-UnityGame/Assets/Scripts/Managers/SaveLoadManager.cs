@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
@@ -75,15 +76,14 @@ public class SaveLoadManager : MonoBehaviour
 
         if (File.Exists(filePath))
         {
-            string json = File.ReadAllText(filePath);
             switch (saveType)
             {
                 case SaveType.Settings:
-                    Settings = JsonUtility.FromJson<MainMenuSettings>(json);
+                    Settings = JsonUtility.FromJson<MainMenuSettings>(File.ReadAllText(filePath));
                     InvokeLoadEvent(saveType);
                     break;
                 case SaveType.Progress:
-                    Progress = JsonUtility.FromJson<Progress>(json);
+                    Progress = JsonUtility.FromJson<Progress>(File.ReadAllText(filePath));
                     InvokeLoadEvent(saveType);
                     break;
             }
@@ -136,7 +136,12 @@ public class SaveLoadManager : MonoBehaviour
                 {
                     SpawnScene = SceneLoaderManager.ActiveScene.None,
                     GameState = GameState.Beggining,
-                    Money = UnityEngine.Random.Range(0, 100)
+                    Money = UnityEngine.Random.Range(0, 100),
+                    Items = new List<ItemAmount>()
+                    {
+                        new() { ItemType = ItemType.Pencil, Amount = 5},
+                        new() { ItemType = ItemType.Pearl, Amount = 50}
+                    }
                 };
                 break;
         }
@@ -196,5 +201,13 @@ public class Progress
     public SceneLoaderManager.ActiveScene SpawnScene;
     public SaveLoadManager.GameState GameState;
     public int Money;
+    public List<ItemAmount> Items;
+}
 
+
+[System.Serializable]
+public class ItemAmount
+{
+    public ItemType ItemType;
+    public int Amount;
 }

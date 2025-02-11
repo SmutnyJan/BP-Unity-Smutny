@@ -37,7 +37,8 @@ public class SaveLoadManager : MonoBehaviour
     public enum GameState
     {
         Beggining, // Hráè se poprvé objeví v lobby pøed menzou
-        RoadToG, //Hráø si pøeèetl titulky a má se dostat na G
+        RoadToG, //Hráø si pøeèetl titulky a má se dostat na G,
+        RoadToMenza, //Hráè splnil level G a má za úkol dojít do Menzy
     }
 
 

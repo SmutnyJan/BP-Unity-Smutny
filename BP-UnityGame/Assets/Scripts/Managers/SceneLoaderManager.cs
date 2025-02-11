@@ -27,7 +27,8 @@ public class SceneLoaderManager : MonoBehaviour
         Settings,
         Test,
         PostTest,
-        Menza
+        Menza,
+        LevelG
     }
 
     void Awake()

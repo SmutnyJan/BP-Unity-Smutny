@@ -3,7 +3,7 @@ using UnityEngine;
 public class LobbyGameFlowController : MonoBehaviour
 {
     public ArrowNavigationController ArrowNavigationController;
-    public PathFinder PathFinder;
+    public PathFinder PathFinder; 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,6 +27,11 @@ public class LobbyGameFlowController : MonoBehaviour
             case SaveLoadManager.GameState.RoadToG:
                 //PathFinder.BuildingEnter.SetActive(false);
                 ArrowNavigationController.StartNavigating(PathFinder.GetTransformOfTarget(SceneLoaderManager.ActiveScene.LobbyG));
+                break;
+
+            case SaveLoadManager.GameState.RoadToMenza:
+                ArrowNavigationController.StartNavigating(PathFinder.GetTransformOfTarget(SceneLoaderManager.ActiveScene.LobbyMenza));
+                TipsController.Instance.ShowMessages(new string[] { "Jupí", "Jupí"});
                 break;
 
         }

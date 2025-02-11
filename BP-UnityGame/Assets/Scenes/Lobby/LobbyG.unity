@@ -322,13 +322,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9a666ddc269ab441be8340b6572d38a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RightScene: 0
-  LeftScene: 4
-  RightSpawnPosition: {fileID: 0}
-  LeftSpawnPosition: {fileID: 423452774}
+  RightScene: 4
+  LeftScene: 0
+  RightSpawnPosition: {fileID: 423452774}
+  LeftSpawnPosition: {fileID: 0}
   Player: {fileID: 1876922603}
-  LeftColliderController: {fileID: 1594878647}
-  RightColliderController: {fileID: 0}
+  LeftColliderController: {fileID: 0}
+  RightColliderController: {fileID: 1594878647}
 --- !u!1 &673809193
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,8 +514,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69bf653946707c3439db8fc338b11577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LeftExit: {fileID: 1594878644}
-  RightExit: {fileID: 0}
+  LeftExit: {fileID: 0}
+  RightExit: {fileID: 1594878644}
   BuildingEnter: {fileID: 1598902557}
 --- !u!4 &1119702088
 Transform:
@@ -669,7 +669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b012c251c3b5414b846f44633ddd2a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LoadToScene: 0
+  LoadToScene: 11
 --- !u!61 &1598902560
 BoxCollider2D:
   m_ObjectHideFlags: 0

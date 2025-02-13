@@ -38,7 +38,11 @@ public class SaveLoadManager : MonoBehaviour
     {
         Beggining, // Hráè se poprvé objeví v lobby pøed menzou
         RoadToG, //Hráø si pøeèetl titulky a má se dostat na G,
-        RoadToMenza, //Hráè splnil level G a má za úkol dojít do Menzy
+        GFinished, //Hráø splnil level G
+        RoadToMenza, //Hráè je na cestì do Menzy
+        RoadToC, //Hráè došel do Menzy, mùže si nakoupit a potom má jít na C
+        CFinished, //Hráè dokonèil level C a šipka ho vede na finální level na budovì A
+        RoadToA //Hráè je na cestì na A
     }
 
 

@@ -342,7 +342,7 @@ Transform:
   m_GameObject: {fileID: 515764353}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.909, y: -3.933, z: 0}
+  m_LocalPosition: {x: 0.007, y: -1.097, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b012c251c3b5414b846f44633ddd2a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LoadToScene: 0
+  LoadToScene: 13
 --- !u!61 &515764356
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -395,7 +395,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 21.91776, y: 2.8298779}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -483,7 +483,7 @@ Transform:
   m_GameObject: {fileID: 687591457}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.82, y: -4.63, z: 0}
+  m_LocalPosition: {x: 19.35, y: -4.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -860,7 +860,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1163178994
 RectTransform:

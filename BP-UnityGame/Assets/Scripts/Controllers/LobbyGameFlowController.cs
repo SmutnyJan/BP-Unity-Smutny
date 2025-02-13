@@ -29,10 +29,46 @@ public class LobbyGameFlowController : MonoBehaviour
                 ArrowNavigationController.StartNavigating(PathFinder.GetTransformOfTarget(SceneLoaderManager.ActiveScene.LobbyG));
                 break;
 
-            case SaveLoadManager.GameState.RoadToMenza:
+            case SaveLoadManager.GameState.GFinished:
+                TipsController.Instance.ShowMessages(new string[] { "Jdi do Menzy", "Jupí" });
+
+
+                SaveLoadManager.Instance.Progress.GameState = SaveLoadManager.GameState.RoadToMenza;
+                SaveLoadManager.Instance.Progress.SpawnScene = SceneLoaderManager.ActiveScene.LobbyG;
+                SaveLoadManager.Instance.Save(SaveLoadManager.SaveType.Progress);
                 ArrowNavigationController.StartNavigating(PathFinder.GetTransformOfTarget(SceneLoaderManager.ActiveScene.LobbyMenza));
-                TipsController.Instance.ShowMessages(new string[] { "Jupí", "Jupí"});
                 break;
+
+            case SaveLoadManager.GameState.RoadToMenza:
+                if (CurrentScene == SceneLoaderManager.ActiveScene.Menza)
+                {
+                    TipsController.Instance.ShowMessages(new string[] { "Tohle je menza", "bla bla bla, kup si nìco" });
+                    SaveLoadManager.Instance.Progress.GameState = SaveLoadManager.GameState.RoadToC;
+                    SaveLoadManager.Instance.Progress.SpawnScene = SceneLoaderManager.ActiveScene.Menza;
+                    SaveLoadManager.Instance.Save(SaveLoadManager.SaveType.Progress);
+                    ArrowNavigationController.StartNavigating(PathFinder.GetTransformOfTarget(SceneLoaderManager.ActiveScene.LobbyC));
+
+                }
+                ArrowNavigationController.StartNavigating(PathFinder.GetTransformOfTarget(SceneLoaderManager.ActiveScene.LobbyMenza));
+                break;
+
+            case SaveLoadManager.GameState.RoadToC:
+                ArrowNavigationController.StartNavigating(PathFinder.GetTransformOfTarget(SceneLoaderManager.ActiveScene.LobbyC));
+                break;
+
+            case SaveLoadManager.GameState.CFinished:
+                TipsController.Instance.ShowMessages(new string[] { "Zvládl jsi to!", "Jupí, paráda" });
+
+                SaveLoadManager.Instance.Progress.GameState = SaveLoadManager.GameState.RoadToA;
+                SaveLoadManager.Instance.Progress.SpawnScene = SceneLoaderManager.ActiveScene.LobbyC;
+                SaveLoadManager.Instance.Save(SaveLoadManager.SaveType.Progress);
+                ArrowNavigationController.StartNavigating(PathFinder.GetTransformOfTarget(SceneLoaderManager.ActiveScene.LobbyAB));
+                break;
+
+            case SaveLoadManager.GameState.RoadToA:
+                ArrowNavigationController.StartNavigating(PathFinder.GetTransformOfTarget(SceneLoaderManager.ActiveScene.LobbyAB));
+                break;
+
 
         }
     }

@@ -13,6 +13,7 @@ public class MenzaShopController : MonoBehaviour
     public TextMeshProUGUI MoneyText;
 
     #region Item Details
+    public GameObject ItemDetailsPanel;
     public TextMeshProUGUI TitleText;
     public Image Icon;
     public TextMeshProUGUI PriceText;
@@ -84,6 +85,8 @@ public class MenzaShopController : MonoBehaviour
     public void ChangeDetailsShop(ItemType itemType)
     {
         _selectedItem = itemType;
+        if (!ItemDetailsPanel.activeSelf) ItemDetailsPanel.SetActive(true);
+
         AmountPanel.SetActive(false);
         ItemPricePanel.SetActive(true);
         BuyButton.gameObject.SetActive(true);
@@ -100,6 +103,9 @@ public class MenzaShopController : MonoBehaviour
     public void ChangeDetailsInventory(ItemType itemType)
     {
         _selectedItem = itemType;
+        if (!ItemDetailsPanel.activeSelf) ItemDetailsPanel.SetActive(true);
+
+
         AmountPanel.SetActive(true);
         ItemPricePanel.SetActive(false);
         BuyButton.gameObject.SetActive(false);
@@ -116,7 +122,7 @@ public class MenzaShopController : MonoBehaviour
     private void OnBuyButtonClick()
     {
         int price = ItemLibraryManager.Instance.UIItems[_selectedItem].UnitPrice;
-        if(price > SaveLoadManager.Instance.Progress.Money)
+        if (price > SaveLoadManager.Instance.Progress.Money)
         {
             //nedostatek penìz
             return;

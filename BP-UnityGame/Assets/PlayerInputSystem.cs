@@ -24,6 +24,67 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
     ""name"": ""PlayerInputSystem"",
     ""maps"": [
         {
+            ""name"": ""Cutscene"",
+            ""id"": ""1bbb1f44-544a-4b6e-9dc2-37a8a8aad6b6"",
+            ""actions"": [
+                {
+                    ""name"": ""Skip"",
+                    ""type"": ""Button"",
+                    ""id"": ""3fa154f0-3f9e-4146-80e0-a0a90b802f91"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""1d8468df-add1-4e04-905d-da76c9383d95"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Skip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""27faabdb-99df-4edc-bf80-48f4fa4c2314"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Skip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""55d417e0-8e83-4e78-b6ab-c61a2c731703"",
+                    ""path"": ""<Keyboard>/numpadEnter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Skip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""804f2dd5-c2fa-4975-aa63-04601e17f72d"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Skip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""PlayerPlatformer"",
             ""id"": ""f6044581-0bd0-49c3-86bc-83082027a9ce"",
             ""actions"": [
@@ -125,6 +186,15 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""DisplayInventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""ad67673c-af47-4ada-8f24-daab36c1d22b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -182,12 +252,26 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8a7cd567-a7bb-45b3-bcf3-bd42cb42216b"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DisplayInventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
     ],
     ""controlSchemes"": []
 }");
+        // Cutscene
+        m_Cutscene = asset.FindActionMap("Cutscene", throwIfNotFound: true);
+        m_Cutscene_Skip = m_Cutscene.FindAction("Skip", throwIfNotFound: true);
         // PlayerPlatformer
         m_PlayerPlatformer = asset.FindActionMap("PlayerPlatformer", throwIfNotFound: true);
         m_PlayerPlatformer_Horizontal = m_PlayerPlatformer.FindAction("Horizontal", throwIfNotFound: true);
@@ -196,10 +280,12 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         // PlayerLobby
         m_PlayerLobby = asset.FindActionMap("PlayerLobby", throwIfNotFound: true);
         m_PlayerLobby_Movement = m_PlayerLobby.FindAction("Movement", throwIfNotFound: true);
+        m_PlayerLobby_DisplayInventory = m_PlayerLobby.FindAction("DisplayInventory", throwIfNotFound: true);
     }
 
     ~@PlayerInputSystem()
     {
+        UnityEngine.Debug.Assert(!m_Cutscene.enabled, "This will cause a leak and performance issues, PlayerInputSystem.Cutscene.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_PlayerPlatformer.enabled, "This will cause a leak and performance issues, PlayerInputSystem.PlayerPlatformer.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_PlayerLobby.enabled, "This will cause a leak and performance issues, PlayerInputSystem.PlayerLobby.Disable() has not been called.");
     }
@@ -259,6 +345,52 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
     {
         return asset.FindBinding(bindingMask, out action);
     }
+
+    // Cutscene
+    private readonly InputActionMap m_Cutscene;
+    private List<ICutsceneActions> m_CutsceneActionsCallbackInterfaces = new List<ICutsceneActions>();
+    private readonly InputAction m_Cutscene_Skip;
+    public struct CutsceneActions
+    {
+        private @PlayerInputSystem m_Wrapper;
+        public CutsceneActions(@PlayerInputSystem wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Skip => m_Wrapper.m_Cutscene_Skip;
+        public InputActionMap Get() { return m_Wrapper.m_Cutscene; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CutsceneActions set) { return set.Get(); }
+        public void AddCallbacks(ICutsceneActions instance)
+        {
+            if (instance == null || m_Wrapper.m_CutsceneActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_CutsceneActionsCallbackInterfaces.Add(instance);
+            @Skip.started += instance.OnSkip;
+            @Skip.performed += instance.OnSkip;
+            @Skip.canceled += instance.OnSkip;
+        }
+
+        private void UnregisterCallbacks(ICutsceneActions instance)
+        {
+            @Skip.started -= instance.OnSkip;
+            @Skip.performed -= instance.OnSkip;
+            @Skip.canceled -= instance.OnSkip;
+        }
+
+        public void RemoveCallbacks(ICutsceneActions instance)
+        {
+            if (m_Wrapper.m_CutsceneActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ICutsceneActions instance)
+        {
+            foreach (var item in m_Wrapper.m_CutsceneActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_CutsceneActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public CutsceneActions @Cutscene => new CutsceneActions(this);
 
     // PlayerPlatformer
     private readonly InputActionMap m_PlayerPlatformer;
@@ -326,11 +458,13 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_PlayerLobby;
     private List<IPlayerLobbyActions> m_PlayerLobbyActionsCallbackInterfaces = new List<IPlayerLobbyActions>();
     private readonly InputAction m_PlayerLobby_Movement;
+    private readonly InputAction m_PlayerLobby_DisplayInventory;
     public struct PlayerLobbyActions
     {
         private @PlayerInputSystem m_Wrapper;
         public PlayerLobbyActions(@PlayerInputSystem wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_PlayerLobby_Movement;
+        public InputAction @DisplayInventory => m_Wrapper.m_PlayerLobby_DisplayInventory;
         public InputActionMap Get() { return m_Wrapper.m_PlayerLobby; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -343,6 +477,9 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
+            @DisplayInventory.started += instance.OnDisplayInventory;
+            @DisplayInventory.performed += instance.OnDisplayInventory;
+            @DisplayInventory.canceled += instance.OnDisplayInventory;
         }
 
         private void UnregisterCallbacks(IPlayerLobbyActions instance)
@@ -350,6 +487,9 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
             @Movement.canceled -= instance.OnMovement;
+            @DisplayInventory.started -= instance.OnDisplayInventory;
+            @DisplayInventory.performed -= instance.OnDisplayInventory;
+            @DisplayInventory.canceled -= instance.OnDisplayInventory;
         }
 
         public void RemoveCallbacks(IPlayerLobbyActions instance)
@@ -367,6 +507,10 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         }
     }
     public PlayerLobbyActions @PlayerLobby => new PlayerLobbyActions(this);
+    public interface ICutsceneActions
+    {
+        void OnSkip(InputAction.CallbackContext context);
+    }
     public interface IPlayerPlatformerActions
     {
         void OnHorizontal(InputAction.CallbackContext context);
@@ -376,5 +520,6 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
     public interface IPlayerLobbyActions
     {
         void OnMovement(InputAction.CallbackContext context);
+        void OnDisplayInventory(InputAction.CallbackContext context);
     }
 }

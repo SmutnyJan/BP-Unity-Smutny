@@ -2,6 +2,67 @@
     "name": "PlayerInputSystem",
     "maps": [
         {
+            "name": "Cutscene",
+            "id": "1bbb1f44-544a-4b6e-9dc2-37a8a8aad6b6",
+            "actions": [
+                {
+                    "name": "Skip",
+                    "type": "Button",
+                    "id": "3fa154f0-3f9e-4146-80e0-a0a90b802f91",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1d8468df-add1-4e04-905d-da76c9383d95",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Skip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "27faabdb-99df-4edc-bf80-48f4fa4c2314",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Skip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "55d417e0-8e83-4e78-b6ab-c61a2c731703",
+                    "path": "<Keyboard>/numpadEnter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Skip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "804f2dd5-c2fa-4975-aa63-04601e17f72d",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Skip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "PlayerPlatformer",
             "id": "f6044581-0bd0-49c3-86bc-83082027a9ce",
             "actions": [
@@ -103,6 +164,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "DisplayInventory",
+                    "type": "Button",
+                    "id": "ad67673c-af47-4ada-8f24-daab36c1d22b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -160,6 +230,17 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "8a7cd567-a7bb-45b3-bcf3-bd42cb42216b",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DisplayInventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

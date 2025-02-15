@@ -1,6 +1,4 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.Playables;
 using UnityEngine.UI;
 using static SceneLoaderManager;
 
@@ -10,7 +8,7 @@ public class MainMenuUIController : MonoBehaviour
 
     void Start()
     {
-        if(SaveLoadManager.Instance.Progress.SpawnScene == ActiveScene.None)
+        if (SaveLoadManager.Instance.Progress.SpawnScene == ActiveScene.None)
         {
             LoadGameButton.interactable = false;
         }
@@ -23,8 +21,8 @@ public class MainMenuUIController : MonoBehaviour
         SaveLoadManager.Instance.Save(SaveLoadManager.SaveType.Progress);
 
         AudioManager.Instance.PlayClipByName("UI_Button_Click_1", AudioManager.Instance.AudioLibrary.UI, AudioManager.Instance.SFXAudioSource);
-        //SceneLoaderManager.Instance.LoadScene(ActiveScene.Intro);
-        SceneLoaderManager.Instance.LoadScene(ActiveScene.LobbyMenza);//skip intra
+        SceneLoaderManager.Instance.LoadScene(ActiveScene.Intro);
+        //SceneLoaderManager.Instance.LoadScene(ActiveScene.LobbyMenza);//skip intra
     }
 
 
@@ -43,11 +41,11 @@ public class MainMenuUIController : MonoBehaviour
 
     public void OnQuitGameButtonPressed()
     {
-        #if UNITY_STANDALONE
-                Application.Quit();
-        #endif
-        #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-        #endif
+#if UNITY_STANDALONE
+        Application.Quit();
+#endif
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 }

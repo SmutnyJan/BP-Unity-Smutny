@@ -1,27 +1,25 @@
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Playables;
-using UnityEngine.SceneManagement;
 using UnityEngine.Timeline;
-using static SceneLoaderManager;
 
 public class IntroController : MonoBehaviour
 {
     public PlayableDirector director;
-    private GameInputSystem _inputSystem;
+    private PlayerInputSystem _inputSystem;
     public SceneLoaderManager.ActiveScene LoadAfterScene;
 
 
     private void Awake()
     {
-        _inputSystem = new GameInputSystem();
+        _inputSystem = new PlayerInputSystem();
     }
 
     void Start()
     {
-        var timelineAsset = (TimelineAsset)director.playableAsset;
+        TimelineAsset timelineAsset = (TimelineAsset)director.playableAsset;
         director.SetGenericBinding(timelineAsset.GetOutputTracks().Where(x => x is AudioTrack).First(), AudioManager.Instance.MusicAudioSource);
-            
+
 
     }
     private void OnEnable()

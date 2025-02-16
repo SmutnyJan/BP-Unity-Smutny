@@ -114,6 +114,15 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DisplayInventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""793e6511-a843-47a1-a8a0-bd0b74ee463a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -149,6 +158,17 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                     ""action"": ""Horizontal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9ab30a14-7341-4029-903f-8e2d6eb567a2"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DisplayInventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -277,6 +297,7 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         m_PlayerPlatformer_Horizontal = m_PlayerPlatformer.FindAction("Horizontal", throwIfNotFound: true);
         m_PlayerPlatformer_Jump = m_PlayerPlatformer.FindAction("Jump", throwIfNotFound: true);
         m_PlayerPlatformer_Down = m_PlayerPlatformer.FindAction("Down", throwIfNotFound: true);
+        m_PlayerPlatformer_DisplayInventory = m_PlayerPlatformer.FindAction("DisplayInventory", throwIfNotFound: true);
         // PlayerLobby
         m_PlayerLobby = asset.FindActionMap("PlayerLobby", throwIfNotFound: true);
         m_PlayerLobby_Movement = m_PlayerLobby.FindAction("Movement", throwIfNotFound: true);
@@ -398,6 +419,7 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerPlatformer_Horizontal;
     private readonly InputAction m_PlayerPlatformer_Jump;
     private readonly InputAction m_PlayerPlatformer_Down;
+    private readonly InputAction m_PlayerPlatformer_DisplayInventory;
     public struct PlayerPlatformerActions
     {
         private @PlayerInputSystem m_Wrapper;
@@ -405,6 +427,7 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         public InputAction @Horizontal => m_Wrapper.m_PlayerPlatformer_Horizontal;
         public InputAction @Jump => m_Wrapper.m_PlayerPlatformer_Jump;
         public InputAction @Down => m_Wrapper.m_PlayerPlatformer_Down;
+        public InputAction @DisplayInventory => m_Wrapper.m_PlayerPlatformer_DisplayInventory;
         public InputActionMap Get() { return m_Wrapper.m_PlayerPlatformer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -423,6 +446,9 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
             @Down.started += instance.OnDown;
             @Down.performed += instance.OnDown;
             @Down.canceled += instance.OnDown;
+            @DisplayInventory.started += instance.OnDisplayInventory;
+            @DisplayInventory.performed += instance.OnDisplayInventory;
+            @DisplayInventory.canceled += instance.OnDisplayInventory;
         }
 
         private void UnregisterCallbacks(IPlayerPlatformerActions instance)
@@ -436,6 +462,9 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
             @Down.started -= instance.OnDown;
             @Down.performed -= instance.OnDown;
             @Down.canceled -= instance.OnDown;
+            @DisplayInventory.started -= instance.OnDisplayInventory;
+            @DisplayInventory.performed -= instance.OnDisplayInventory;
+            @DisplayInventory.canceled -= instance.OnDisplayInventory;
         }
 
         public void RemoveCallbacks(IPlayerPlatformerActions instance)
@@ -516,6 +545,7 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         void OnHorizontal(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnDown(InputAction.CallbackContext context);
+        void OnDisplayInventory(InputAction.CallbackContext context);
     }
     public interface IPlayerLobbyActions
     {

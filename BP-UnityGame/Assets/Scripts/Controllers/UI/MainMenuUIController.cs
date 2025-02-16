@@ -21,8 +21,8 @@ public class MainMenuUIController : MonoBehaviour
         SaveLoadManager.Instance.Save(SaveLoadManager.SaveType.Progress);
 
         AudioManager.Instance.PlayClipByName("UI_Button_Click_1", AudioManager.Instance.AudioLibrary.UI, AudioManager.Instance.SFXAudioSource);
-        SceneLoaderManager.Instance.LoadScene(ActiveScene.Intro);
-        //SceneLoaderManager.Instance.LoadScene(ActiveScene.LobbyMenza);//skip intra
+        //SceneLoaderManager.Instance.LoadScene(ActiveScene.Intro);
+        SceneLoaderManager.Instance.LoadScene(ActiveScene.LobbyMenza);//skip intra
     }
 
 

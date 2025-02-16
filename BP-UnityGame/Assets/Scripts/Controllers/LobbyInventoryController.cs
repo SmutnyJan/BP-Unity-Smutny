@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class LobbyInventoryController : MonoBehaviour
 {
-    public GameObject InventoryGrid;
-    public GameObject InventoryItemPrefab;
+    public GameObject InventoryGrid; public GameObject InventoryItemPrefab;
     public GameObject InventoryWrapper;
 
     #region Item Details

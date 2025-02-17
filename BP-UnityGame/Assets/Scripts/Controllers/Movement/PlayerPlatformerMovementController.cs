@@ -5,6 +5,8 @@ public class PlayerPlatformerMovementController : MonoBehaviour
     public int MovementSpeed;
     public int JumpForce;
     public PlatformCollisionController PlatformCollisionController;
+    public LobbyInventoryController LobbyInventoryController;
+
 
     private PlayerInputSystem _inputSystem;
     private Rigidbody2D _rigidbody;
@@ -25,6 +27,11 @@ public class PlayerPlatformerMovementController : MonoBehaviour
     void Start()
     {
 
+    }
+
+    private void OnDisplayInventory()
+    {
+        LobbyInventoryController.ToggleInventory();
     }
 
     private void OnJump()

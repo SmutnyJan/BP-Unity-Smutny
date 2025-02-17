@@ -1,5 +1,5 @@
-using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
@@ -22,11 +22,7 @@ public class SaveLoadManager : MonoBehaviour
 
     private const string _settingsFileName = "settings.json";
     private const string _progressFileName = "progress.json";
-    private Progress _NewGameProgress = new Progress()
-    {
-        SpawnScene = SceneLoaderManager.ActiveScene.None,
-        GameState = GameState.Beggining
-    };
+
 
 
 
@@ -41,7 +37,12 @@ public class SaveLoadManager : MonoBehaviour
     public enum GameState
     {
         Beggining, // Hráè se poprvé objeví v lobby pøed menzou
-        RoadToG, //Hráø si pøeèetl titulky a má se dostat na G
+        RoadToG, //Hráø si pøeèetl titulky a má se dostat na G,
+        GFinished, //Hráø splnil level G
+        RoadToMenza, //Hráè je na cestì do Menzy
+        RoadToC, //Hráè došel do Menzy, mùže si nakoupit a potom má jít na C
+        CFinished, //Hráè dokonèil level C a šipka ho vede na finální level na budovì A
+        RoadToA //Hráè je na cestì na A
     }
 
 
@@ -70,7 +71,7 @@ public class SaveLoadManager : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     public void Load(SaveType saveType)
@@ -80,35 +81,21 @@ public class SaveLoadManager : MonoBehaviour
 
         if (File.Exists(filePath))
         {
-            string json = File.ReadAllText(filePath);
             switch (saveType)
             {
                 case SaveType.Settings:
-                    Settings = JsonUtility.FromJson<MainMenuSettings>(json);
+                    Settings = JsonUtility.FromJson<MainMenuSettings>(File.ReadAllText(filePath));
                     InvokeLoadEvent(saveType);
                     break;
                 case SaveType.Progress:
-                    Progress = JsonUtility.FromJson<Progress>(json);
+                    Progress = JsonUtility.FromJson<Progress>(File.ReadAllText(filePath));
                     InvokeLoadEvent(saveType);
                     break;
             }
         }
         else
         {
-            switch (saveType)
-            {
-                case SaveType.Settings:            
-                    Settings = new MainMenuSettings
-                    {
-                        SFXVolume = AudioManager.Instance.SFXVolume,
-                        MusicVolume = AudioManager.Instance.MusicVolume,
-                        IsFullScreen = Screen.fullScreen
-                    };
-                    break;
-                case SaveType.Progress:
-                    ResetToDefaults(saveType);
-                    break;
-            }
+            ResetToDefaults(saveType);
             Save(saveType);
         }
 
@@ -142,12 +129,25 @@ public class SaveLoadManager : MonoBehaviour
         switch (saveType)
         {
             case SaveType.Settings:
-                throw new NotImplementedException();
+                Settings = new MainMenuSettings
+                {
+                    SFXVolume = AudioManager.Instance.SFXVolume,
+                    MusicVolume = AudioManager.Instance.MusicVolume,
+                    IsFullScreen = Screen.fullScreen
+                };
+                break;
             case SaveType.Progress:
                 Progress = new Progress
                 {
-                    SpawnScene = _NewGameProgress.SpawnScene,
-                    GameState = _NewGameProgress.GameState
+                    SpawnScene = SceneLoaderManager.ActiveScene.None,
+                    GameState = GameState.Beggining,
+                    Money = UnityEngine.Random.Range(0, 100),
+                    /*Items = new List<ItemAmount>()
+                    {
+                        new() { ItemType = ItemType.Pencil, Amount = 5},
+                        new() { ItemType = ItemType.Pearl, Amount = 50}
+                    }*/
+                    Items = new List<ItemAmount>()
                 };
                 break;
         }
@@ -188,7 +188,7 @@ public class SaveLoadManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2.5f);
         text.gameObject.SetActive(false);
-        
+
     }
 
 }
@@ -206,5 +206,14 @@ public class Progress
 {
     public SceneLoaderManager.ActiveScene SpawnScene;
     public SaveLoadManager.GameState GameState;
+    public int Money;
+    public List<ItemAmount> Items;
+}
 
+
+[System.Serializable]
+public class ItemAmount
+{
+    public ItemType ItemType;
+    public int Amount;
 }

@@ -11,8 +11,8 @@ public class PlatformCollisionController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         IsGrounded = true;
-        
-        if(collision.tag == "Platform")
+
+        if (collision.tag == "Platform")
         {
             IsOnPlatform = true;
             TouchingPlatform = collision.gameObject;

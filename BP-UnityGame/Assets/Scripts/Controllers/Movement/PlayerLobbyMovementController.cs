@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerLobbyMovementController : MonoBehaviour
 {
     public int MovementSpeed;
+    public LobbyInventoryController LobbyInventoryController;
     private PlayerInputSystem _inputSystem;
     private Rigidbody2D _rigidbody;
 
@@ -18,6 +19,10 @@ public class PlayerLobbyMovementController : MonoBehaviour
         _inputSystem.PlayerLobby.Enable();
     }
 
+    private void OnDisplayInventory()
+    {
+        LobbyInventoryController.ToggleInventory();
+    }
     void Start()
     {
 

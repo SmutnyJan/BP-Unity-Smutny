@@ -1,8 +1,6 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
-using static UnityEngine.Rendering.DebugUI;
 
 public class AudioManager : MonoBehaviour
 {
@@ -37,7 +35,8 @@ public class AudioManager : MonoBehaviour
 
     public float MusicVolume
     {
-        get {
+        get
+        {
             float value = 0;
             AudioMixer.GetFloat("MusicVolume", out value);
             return AudioMixer.ConvertToNormalizedValue(value);
@@ -91,7 +90,7 @@ public class AudioManager : MonoBehaviour
             Debug.LogError("Clip not found: " + name);
             return;
         }
-        switch(playType)
+        switch (playType)
         {
             case PlayType.PlayOneShot:
                 audioSource.PlayOneShot(namedClip.Clip);
@@ -103,7 +102,7 @@ public class AudioManager : MonoBehaviour
                 break;
         }
 
-        
+
     }
 
     private void PlayCustomClipOnAudioSource(AudioClip clip, AudioSource audioSource)
@@ -129,7 +128,7 @@ public class AudioLibrary
 [System.Serializable]
 public class AudioCategory
 {
-    public List<NamedAudioClip> Clips = new List<NamedAudioClip>();
+    public List<NamedAudioClip> Clips = new();
 
     public AudioClip GetRandom()
     {

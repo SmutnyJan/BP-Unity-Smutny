@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class LobbyInventoryController : MonoBehaviour
 {
-    public GameObject InventoryGrid; public GameObject InventoryItemPrefab;
+    public GameObject InventoryGrid;
+    public GameObject InventoryItemPrefab;
     public GameObject InventoryWrapper;
+    public ActiveUIItem ActiveUIItem;
+    public bool IsIngameInventory;
 
     #region Item Details
     public GameObject ItemDetailsPanel;
@@ -59,6 +62,13 @@ public class LobbyInventoryController : MonoBehaviour
     public void ChangeDetailsInventory(ItemType itemType)
     {
         if (!ItemDetailsPanel.activeSelf) ItemDetailsPanel.SetActive(true);
+
+        if(IsIngameInventory)
+        {
+            ActiveUIItem.gameObject.SetActive(true);
+            ActiveUIItem.ItemType = itemType;
+            ActiveUIItem.LoadValues();
+        }
 
 
         UIItem ItemClicked = ItemLibraryManager.Instance.UIItems[itemType];

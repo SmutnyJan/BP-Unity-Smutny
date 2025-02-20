@@ -141,7 +141,8 @@ public class SaveLoadManager : MonoBehaviour
                 {
                     SpawnScene = SceneLoaderManager.ActiveScene.None,
                     GameState = GameState.Beggining,
-                    Money = UnityEngine.Random.Range(0, 100),
+                    //Money = UnityEngine.Random.Range(0, 100),
+                    Money = 1000,
                     /*Items = new List<ItemAmount>()
                     {
                         new() { ItemType = ItemType.Pencil, Amount = 5},

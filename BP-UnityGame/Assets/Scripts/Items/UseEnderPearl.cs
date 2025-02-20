@@ -1,15 +1,15 @@
 using System.Collections;
 using UnityEngine;
 
-public class UsePencil : MonoBehaviour
+public class UseEnderPearl : MonoBehaviour
 {
     private Rigidbody2D _rigidBody;
+    public GameObject Player;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
         _rigidBody.AddForce(new Vector2(1, 1) * 10, ForceMode2D.Impulse);
-        _rigidBody.AddTorque(-1, ForceMode2D.Impulse);
         StartCoroutine(DestroyAfterTime());
 
     }
@@ -30,6 +30,7 @@ public class UsePencil : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Player.transform.position = this.transform.position;
         Destroy(gameObject);
     }
 }

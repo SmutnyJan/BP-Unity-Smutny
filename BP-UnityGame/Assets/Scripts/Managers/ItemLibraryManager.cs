@@ -59,7 +59,8 @@ public class ItemLibraryManager : MonoBehaviour
     {
         InGameItems = new Dictionary<ItemType, IUsableItem>
         {
-            { ItemType.Pencil, ScriptableObject.CreateInstance<PencilItem>() }
+            { ItemType.Pencil, ScriptableObject.CreateInstance<PencilItem>() },
+            { ItemType.Pearl, ScriptableObject.CreateInstance<EnderPearlItem>() },
         };
     }
 }

@@ -123,6 +123,15 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""UseItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""5facb04f-14b2-4441-85c7-e6cc8ea79e1a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -189,6 +198,17 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""62df8dab-4e04-4d94-bf1b-2c7a5c9096d6"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UseItem"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -298,6 +318,7 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         m_PlayerPlatformer_Jump = m_PlayerPlatformer.FindAction("Jump", throwIfNotFound: true);
         m_PlayerPlatformer_Down = m_PlayerPlatformer.FindAction("Down", throwIfNotFound: true);
         m_PlayerPlatformer_DisplayInventory = m_PlayerPlatformer.FindAction("DisplayInventory", throwIfNotFound: true);
+        m_PlayerPlatformer_UseItem = m_PlayerPlatformer.FindAction("UseItem", throwIfNotFound: true);
         // PlayerLobby
         m_PlayerLobby = asset.FindActionMap("PlayerLobby", throwIfNotFound: true);
         m_PlayerLobby_Movement = m_PlayerLobby.FindAction("Movement", throwIfNotFound: true);
@@ -420,6 +441,7 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerPlatformer_Jump;
     private readonly InputAction m_PlayerPlatformer_Down;
     private readonly InputAction m_PlayerPlatformer_DisplayInventory;
+    private readonly InputAction m_PlayerPlatformer_UseItem;
     public struct PlayerPlatformerActions
     {
         private @PlayerInputSystem m_Wrapper;
@@ -428,6 +450,7 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_PlayerPlatformer_Jump;
         public InputAction @Down => m_Wrapper.m_PlayerPlatformer_Down;
         public InputAction @DisplayInventory => m_Wrapper.m_PlayerPlatformer_DisplayInventory;
+        public InputAction @UseItem => m_Wrapper.m_PlayerPlatformer_UseItem;
         public InputActionMap Get() { return m_Wrapper.m_PlayerPlatformer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -449,6 +472,9 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
             @DisplayInventory.started += instance.OnDisplayInventory;
             @DisplayInventory.performed += instance.OnDisplayInventory;
             @DisplayInventory.canceled += instance.OnDisplayInventory;
+            @UseItem.started += instance.OnUseItem;
+            @UseItem.performed += instance.OnUseItem;
+            @UseItem.canceled += instance.OnUseItem;
         }
 
         private void UnregisterCallbacks(IPlayerPlatformerActions instance)
@@ -465,6 +491,9 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
             @DisplayInventory.started -= instance.OnDisplayInventory;
             @DisplayInventory.performed -= instance.OnDisplayInventory;
             @DisplayInventory.canceled -= instance.OnDisplayInventory;
+            @UseItem.started -= instance.OnUseItem;
+            @UseItem.performed -= instance.OnUseItem;
+            @UseItem.canceled -= instance.OnUseItem;
         }
 
         public void RemoveCallbacks(IPlayerPlatformerActions instance)
@@ -546,6 +575,7 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnDown(InputAction.CallbackContext context);
         void OnDisplayInventory(InputAction.CallbackContext context);
+        void OnUseItem(InputAction.CallbackContext context);
     }
     public interface IPlayerLobbyActions
     {

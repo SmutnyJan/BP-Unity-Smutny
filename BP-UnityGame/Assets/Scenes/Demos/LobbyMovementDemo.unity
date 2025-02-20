@@ -340,7 +340,7 @@ Transform:
   m_GameObject: {fileID: 582136410}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.53, y: 1.63, z: 0}
+  m_LocalPosition: {x: 1.45, y: 5.46, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -433,6 +433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: 10
+  LobbyInventoryController: {fileID: 0}
 --- !u!1 &672828127
 GameObject:
   m_ObjectHideFlags: 0

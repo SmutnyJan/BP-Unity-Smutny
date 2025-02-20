@@ -7,7 +7,6 @@ public class PlayerPlatformerMovementController : MonoBehaviour
     public PlatformCollisionController PlatformCollisionController;
     public LobbyInventoryController LobbyInventoryController;
 
-
     private PlayerInputSystem _inputSystem;
     private Rigidbody2D _rigidbody;
 
@@ -48,8 +47,11 @@ public class PlayerPlatformerMovementController : MonoBehaviour
         {
             PlatformsManager.Instance.FlipPlatform(PlatformCollisionController.TouchingPlatform);
         }
+    }
 
-
+    private void OnUseItem()
+    {
+        LobbyInventoryController.UseItem();
     }
 
     private void FixedUpdate()

@@ -22,6 +22,9 @@ public class InventoryUIItem : MonoBehaviour
 
     }
 
+
+
+
     // Update is called once per frame
     void Update()
     {

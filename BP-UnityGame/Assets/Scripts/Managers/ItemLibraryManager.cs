@@ -4,6 +4,7 @@ using UnityEngine;
 public class ItemLibraryManager : MonoBehaviour
 {
     public Dictionary<ItemType, UIItem> UIItems;
+    public Dictionary<ItemType, IUsableItem> InGameItems;
 
 
     public static ItemLibraryManager Instance;
@@ -24,6 +25,7 @@ public class ItemLibraryManager : MonoBehaviour
     void Start()
     {
         LoadUIItems();
+        LoadIngameItems();
     }
 
     void Update()
@@ -50,6 +52,14 @@ public class ItemLibraryManager : MonoBehaviour
                 Icon = Resources.Load<Sprite>("Sprites/pearlUI")}
             }
 
+        };
+    }
+
+    private void LoadIngameItems()
+    {
+        InGameItems = new Dictionary<ItemType, IUsableItem>
+        {
+            { ItemType.Pencil, ScriptableObject.CreateInstance<PencilItem>() }
         };
     }
 }

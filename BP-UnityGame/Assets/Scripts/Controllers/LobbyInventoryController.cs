@@ -33,6 +33,14 @@ public class LobbyInventoryController : MonoBehaviour
 
     }
 
+    public void UseItem()
+    {
+        if (ActiveUIItem.gameObject.activeSelf)
+        {
+            ItemLibraryManager.Instance.InGameItems[ActiveUIItem.ItemType].UseItem();
+        }
+    }
+
     public void ToggleInventory()
     {
         InventoryWrapper.SetActive(!InventoryWrapper.activeSelf);
@@ -61,6 +69,7 @@ public class LobbyInventoryController : MonoBehaviour
 
     public void ChangeDetailsInventory(ItemType itemType)
     {
+
         if (!ItemDetailsPanel.activeSelf) ItemDetailsPanel.SetActive(true);
 
         if(IsIngameInventory)

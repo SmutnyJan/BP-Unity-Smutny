@@ -1,5 +1,4 @@
 using System.Linq;
-using System.Xml.Linq;
 using UnityEngine;
 
 public class PencilItem : ScriptableObject, IUsableItem
@@ -17,7 +16,12 @@ public class PencilItem : ScriptableObject, IUsableItem
         Player = GameObject.FindGameObjectsWithTag("Player").First();
         ItemPrefab = Resources.Load<GameObject>("InGameItems/PencilInGameItem");
 
-        Instantiate(ItemPrefab, Player.transform.position + new Vector3(2, 0, 0), Player.transform.localRotation);
+        UsePencil UsePencil = ItemPrefab.GetComponent<UsePencil>();
+        UsePencil.Player = Player;
+
+        int offset = Player.GetComponent<SpriteRenderer>().flipX ? 1 : -1;
+
+        Instantiate(ItemPrefab, Player.transform.position + new Vector3(2 * offset, 0, 0), Player.transform.localRotation);
     }
 
 }

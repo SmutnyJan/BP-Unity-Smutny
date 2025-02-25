@@ -18,7 +18,9 @@ public class EnderPearlItem : ScriptableObject, IUsableItem
         UseEnderPearl UseEnderPearl = ItemPrefab.GetComponent<UseEnderPearl>();
         UseEnderPearl.Player = Player;
 
-        Instantiate(ItemPrefab, Player.transform.position + new Vector3(2, 0, 0), Player.transform.localRotation);
+        int offset = Player.GetComponent<SpriteRenderer>().flipX ? 1 : -1;
+
+        Instantiate(ItemPrefab, Player.transform.position + new Vector3(2 * offset, 0, 0), Player.transform.localRotation);
     }
 
 }

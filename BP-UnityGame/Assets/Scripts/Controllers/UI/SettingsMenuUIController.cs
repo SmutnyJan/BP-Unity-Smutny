@@ -8,6 +8,7 @@ public class SettingsMenuController : MonoBehaviour
     public Toggle IsFullScreenToggle;
     public Button SaveButton;
     public Button BackButton;
+    public MicrophoneUIController MicrophoneUIController;
 
 
     void Start()
@@ -15,6 +16,7 @@ public class SettingsMenuController : MonoBehaviour
         SFXVolumeSlider.value = SaveLoadManager.Instance.Settings.SFXVolume;
         MusicVolumeSlider.value = SaveLoadManager.Instance.Settings.MusicVolume;
         IsFullScreenToggle.isOn = SaveLoadManager.Instance.Settings.IsFullScreen;
+
 
     }
 
@@ -40,6 +42,9 @@ public class SettingsMenuController : MonoBehaviour
         SaveLoadManager.Instance.Settings.SFXVolume = SFXVolumeSlider.value;
         SaveLoadManager.Instance.Settings.MusicVolume = MusicVolumeSlider.value;
         SaveLoadManager.Instance.Settings.IsFullScreen = IsFullScreenToggle.isOn;
+        SaveLoadManager.Instance.Settings.Microphone = MicrophoneUIController.SelectedMicrophone;
+
+        MicrophoneManager.Instance.ChangeActiveMicrophone(MicrophoneUIController.SelectedMicrophone);
 
         SaveLoadManager.Instance.Save(SaveLoadManager.SaveType.Settings);
     }

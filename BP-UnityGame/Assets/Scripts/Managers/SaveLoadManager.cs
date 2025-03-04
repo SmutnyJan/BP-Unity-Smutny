@@ -133,7 +133,8 @@ public class SaveLoadManager : MonoBehaviour
                 {
                     SFXVolume = AudioManager.Instance.SFXVolume,
                     MusicVolume = AudioManager.Instance.MusicVolume,
-                    IsFullScreen = Screen.fullScreen
+                    IsFullScreen = Screen.fullScreen,
+                    Microphone = ""
                 };
                 break;
             case SaveType.Progress:
@@ -201,6 +202,7 @@ public class MainMenuSettings
     public float SFXVolume;
     public float MusicVolume;
     public bool IsFullScreen;
+    public string Microphone;
 }
 
 public class Progress

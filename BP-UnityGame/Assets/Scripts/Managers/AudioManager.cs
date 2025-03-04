@@ -44,7 +44,6 @@ public class AudioManager : MonoBehaviour
         set
         {
             AudioMixer.SetFloat("MusicVolume", AudioMixer.ConvertToDecibelValue(value));
-
         }
     }
 
@@ -56,6 +55,8 @@ public class AudioManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+
         }
         else
         {
@@ -70,7 +71,7 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    void UpdateAudioSettings(MainMenuSettings settings)
+    public void UpdateAudioSettings(MainMenuSettings settings)
     {
         MusicVolume = settings.MusicVolume;
         SFXVolume = settings.SFXVolume;
@@ -101,7 +102,6 @@ public class AudioManager : MonoBehaviour
                 audioSource.Play();
                 break;
         }
-
 
     }
 

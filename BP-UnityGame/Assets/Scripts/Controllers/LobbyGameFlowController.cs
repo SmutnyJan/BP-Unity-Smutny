@@ -15,8 +15,10 @@ public class LobbyGameFlowController : MonoBehaviour
                 {
                     //PathFinder.BuildingEnter.SetActive(false);
                 }
-                TipsController.Instance.ShowMessages(new string[] { "Poøádnì ses prospal, ale teï je naèase odhodit splín stranou a pustit se do práce. Nejdøíve jdi na budovu G. Èervená šipka ti ukáže cestu.",
-                "Ta velká budova pøed tebou je menza. To jen tak pro jistotu, jestli jsi to náhodou nezapomnìl. Až se vrátíš z budovy G, tak se tam zastavíš. Teï mají totiž zavøeno."});
+                TipsController.Instance.ShowMessages(new string[] { "Poøádnì ses prospal, ale teï je naèase odhodit splín stranou a pustit se do práce.",
+                    "Možná budeš mít trochu výpadky pamìti, ale to je normální. Já ti všechno pøipomenu.",
+                    "Nejdøíve jdi na budovu G. Èerná šipka ti ukáže cestu.",
+                "Ta velká budova pøed tebou je menza. Až se vrátíš z budovy G, tak se tam zastavíš. Teï mají totiž zavøeno."});
 
                 SaveLoadManager.Instance.Progress.GameState = SaveLoadManager.GameState.RoadToG;
                 SaveLoadManager.Instance.Progress.SpawnScene = SceneLoaderManager.ActiveScene.LobbyMenza;
@@ -30,7 +32,8 @@ public class LobbyGameFlowController : MonoBehaviour
                 break;
 
             case SaveLoadManager.GameState.GFinished:
-                TipsController.Instance.ShowMessages(new string[] { "Jdi do Menzy", "Jupí" });
+                TipsController.Instance.ShowMessages(new string[] { "Dobrá práce, teï už víš, jak to tu chodí",
+                    "Teï vyraž do menzy. Už by mìli mít otevøeno" });
 
 
                 SaveLoadManager.Instance.Progress.GameState = SaveLoadManager.GameState.RoadToMenza;
@@ -42,7 +45,7 @@ public class LobbyGameFlowController : MonoBehaviour
             case SaveLoadManager.GameState.RoadToMenza:
                 if (CurrentScene == SceneLoaderManager.ActiveScene.Menza)
                 {
-                    TipsController.Instance.ShowMessages(new string[] { "Tohle je menza", "bla bla bla, kup si nìco" });
+                    TipsController.Instance.ShowMessages(new string[] { "Tohle je menza a kantýna. Na obìd je sice brzy, ale v kantýnì mají zajímavé vìci. Urèitì se ti nìco z toho bude hodit.", "Mùžeš si sem zajít kdykoliv budeš chtít. Vìci, co tu mají, ti pomùžou prokousat se až k akademickému úspìchu." });
                     SaveLoadManager.Instance.Progress.GameState = SaveLoadManager.GameState.RoadToC;
                     SaveLoadManager.Instance.Progress.SpawnScene = SceneLoaderManager.ActiveScene.Menza;
                     SaveLoadManager.Instance.Save(SaveLoadManager.SaveType.Progress);
@@ -57,7 +60,7 @@ public class LobbyGameFlowController : MonoBehaviour
                 break;
 
             case SaveLoadManager.GameState.CFinished:
-                TipsController.Instance.ShowMessages(new string[] { "Zvládl jsi to!", "Jupí, paráda" });
+                TipsController.Instance.ShowMessages(new string[] { "Výbornì, další výzva za tebou.", "Teï nás èeká budova A. Znáš to, opìt staèí jít podle šipky." });
 
                 SaveLoadManager.Instance.Progress.GameState = SaveLoadManager.GameState.RoadToA;
                 SaveLoadManager.Instance.Progress.SpawnScene = SceneLoaderManager.ActiveScene.LobbyC;

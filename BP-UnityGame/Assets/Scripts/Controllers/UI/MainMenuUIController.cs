@@ -12,6 +12,11 @@ public class MainMenuUIController : MonoBehaviour
         {
             LoadGameButton.interactable = false;
         }
+        if(!AudioManager.Instance.MusicAudioSource.isPlaying)
+        {
+            AudioManager.Instance.PlayClipByName("Resonant Victory - Glbml", AudioManager.Instance.AudioLibrary.Music, AudioManager.Instance.MusicAudioSource, AudioManager.PlayType.Play);
+        }
+
 
     }
 
@@ -21,8 +26,9 @@ public class MainMenuUIController : MonoBehaviour
         SaveLoadManager.Instance.Save(SaveLoadManager.SaveType.Progress);
 
         AudioManager.Instance.PlayClipByName("UI_Button_Click_1", AudioManager.Instance.AudioLibrary.UI, AudioManager.Instance.SFXAudioSource);
-        //SceneLoaderManager.Instance.LoadScene(ActiveScene.Intro);
-        SceneLoaderManager.Instance.LoadScene(ActiveScene.LobbyMenza);//skip intra
+        AudioManager.Instance.MusicAudioSource.Stop();
+        SceneLoaderManager.Instance.LoadScene(ActiveScene.Intro);
+        //SceneLoaderManager.Instance.LoadScene(ActiveScene.LobbyMenza);//skip intra
     }
 
 

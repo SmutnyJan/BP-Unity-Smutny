@@ -13,7 +13,7 @@ public class LobbyGameFlowController : MonoBehaviour
             case SaveLoadManager.GameState.Beggining:
                 if (CurrentScene != SceneLoaderManager.ActiveScene.LobbyG)
                 {
-                    //PathFinder.BuildingEnter.SetActive(false);
+                    PathFinder.BuildingEnter.SetActive(false);
                 }
                 TipsController.Instance.ShowMessages(new string[] { "Poøádnì ses prospal, ale teï je naèase odhodit splín stranou a pustit se do práce.",
                     "Možná budeš mít trochu výpadky pamìti, ale to je normální. Já ti všechno pøipomenu.",
@@ -27,13 +27,20 @@ public class LobbyGameFlowController : MonoBehaviour
                 break;
 
             case SaveLoadManager.GameState.RoadToG:
-                //PathFinder.BuildingEnter.SetActive(false);
+                if (CurrentScene != SceneLoaderManager.ActiveScene.LobbyG)
+                {
+                    PathFinder.BuildingEnter.SetActive(false);
+                }
                 ArrowNavigationController.StartNavigating(PathFinder.GetTransformOfTarget(SceneLoaderManager.ActiveScene.LobbyG));
                 break;
 
             case SaveLoadManager.GameState.GFinished:
+                if (CurrentScene != SceneLoaderManager.ActiveScene.LobbyMenza)
+                {
+                    PathFinder.BuildingEnter.SetActive(false);
+                }
                 TipsController.Instance.ShowMessages(new string[] { "Dobrá práce, teï už víš, jak to tu chodí",
-                    "Teï vyraž do menzy. Už by mìli mít otevøeno" });
+                    "Teï vyraz do menzy. Už by mìli mít otevøeno" });
 
 
                 SaveLoadManager.Instance.Progress.GameState = SaveLoadManager.GameState.RoadToMenza;
@@ -43,6 +50,10 @@ public class LobbyGameFlowController : MonoBehaviour
                 break;
 
             case SaveLoadManager.GameState.RoadToMenza:
+                if (CurrentScene != SceneLoaderManager.ActiveScene.LobbyMenza)
+                {
+                    PathFinder.BuildingEnter.SetActive(false);
+                }
                 if (CurrentScene == SceneLoaderManager.ActiveScene.Menza)
                 {
                     TipsController.Instance.ShowMessages(new string[] { "Tohle je menza a kantýna. Na obìd je sice brzy, ale v kantýnì mají zajímavé vìci. Urèitì se ti nìco z toho bude hodit.", "Mùžeš si sem zajít kdykoliv budeš chtít. Vìci, co tu mají, ti pomùžou prokousat se až k akademickému úspìchu." });
@@ -50,17 +61,28 @@ public class LobbyGameFlowController : MonoBehaviour
                     SaveLoadManager.Instance.Progress.SpawnScene = SceneLoaderManager.ActiveScene.Menza;
                     SaveLoadManager.Instance.Save(SaveLoadManager.SaveType.Progress);
                     ArrowNavigationController.StartNavigating(PathFinder.GetTransformOfTarget(SceneLoaderManager.ActiveScene.LobbyC));
+                    PathFinder.BuildingEnter.SetActive(true);
+
 
                 }
                 ArrowNavigationController.StartNavigating(PathFinder.GetTransformOfTarget(SceneLoaderManager.ActiveScene.LobbyMenza));
                 break;
 
             case SaveLoadManager.GameState.RoadToC:
+                if (CurrentScene != SceneLoaderManager.ActiveScene.LobbyC)
+                {
+                    PathFinder.BuildingEnter.SetActive(false);
+                }
                 ArrowNavigationController.StartNavigating(PathFinder.GetTransformOfTarget(SceneLoaderManager.ActiveScene.LobbyC));
                 break;
 
             case SaveLoadManager.GameState.CFinished:
+                if (CurrentScene != SceneLoaderManager.ActiveScene.LobbyAB)
+                {
+                    PathFinder.BuildingEnter.SetActive(false);
+                }
                 TipsController.Instance.ShowMessages(new string[] { "Výbornì, další výzva za tebou.", "Teï nás èeká budova A. Znáš to, opìt staèí jít podle šipky." });
+
 
                 SaveLoadManager.Instance.Progress.GameState = SaveLoadManager.GameState.RoadToA;
                 SaveLoadManager.Instance.Progress.SpawnScene = SceneLoaderManager.ActiveScene.LobbyC;
@@ -69,6 +91,10 @@ public class LobbyGameFlowController : MonoBehaviour
                 break;
 
             case SaveLoadManager.GameState.RoadToA:
+                if (CurrentScene != SceneLoaderManager.ActiveScene.LobbyAB)
+                {
+                    PathFinder.BuildingEnter.SetActive(false);
+                }
                 ArrowNavigationController.StartNavigating(PathFinder.GetTransformOfTarget(SceneLoaderManager.ActiveScene.LobbyAB));
                 break;
 

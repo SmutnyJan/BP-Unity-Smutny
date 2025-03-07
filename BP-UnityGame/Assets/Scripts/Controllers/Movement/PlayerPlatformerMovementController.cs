@@ -68,8 +68,30 @@ public class PlayerPlatformerMovementController : MonoBehaviour
             _spriteRenderer.flipX = false;
         }
 
-        _rigidbody.linearVelocity = new Vector2(moveDir * MovementSpeed, _rigidbody.linearVelocity.y);
+        if(!PlatformCollisionController.IsTouchingMovingPlatform)
+        {
+            _rigidbody.linearVelocity = new Vector2(moveDir * MovementSpeed, _rigidbody.linearVelocity.y);
+        }
 
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Oneway Moving Platform" && 
+            collision.otherCollider.gameObject.tag == "Player" &&
+            !PlatformCollisionController.IsOnPlatform)
+        {
+            PlatformCollisionController.IsTouchingMovingPlatform = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Oneway Moving Platform" && collision.otherCollider.gameObject.tag == "Player")
+        {
+            PlatformCollisionController.IsTouchingMovingPlatform = false;
+        }
     }
 
     private void OnDisable()

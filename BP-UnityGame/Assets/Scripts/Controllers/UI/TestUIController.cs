@@ -19,6 +19,7 @@ public class TestUIController : MonoBehaviour
         DateText.text = "Datum: " + DateTime.Now.ToString("dd. MM. yyyy");
         var timelineAsset = (TimelineAsset)director.playableAsset;
         director.SetGenericBinding(timelineAsset.GetOutputTracks().Where(x => x is AudioTrack).First(), AudioManager.Instance.SFXAudioSource);
+        AudioManager.Instance.PlayClipByName("Clock Ticking", AudioManager.Instance.AudioLibrary.Music, AudioManager.Instance.MusicAudioSource, AudioManager.PlayType.Play);
     }
 
     private void OnEnable()
@@ -33,6 +34,7 @@ public class TestUIController : MonoBehaviour
 
     void OnTimelineEnd(PlayableDirector pd)
     {
+        AudioManager.Instance.MusicAudioSource.Stop();
         SceneLoaderManager.Instance.LoadScene(ActiveScene.PostTest);
     }
 

@@ -507,7 +507,7 @@ MonoBehaviour:
       Clips: []
     Music:
       Clips:
-      - Clip: {fileID: 8300000, guid: a4dc9fee1d4862048a8fdfc62339b934, type: 3}
+      - Clip: {fileID: 8300000, guid: 2573d2448ce3b3b448619dade6aec78f, type: 3}
       - Clip: {fileID: 8300000, guid: fb4b00d2b56aaf44d945d0e8578b3dba, type: 3}
 --- !u!82 &359446619
 AudioSource:
@@ -2506,7 +2506,7 @@ GameObject:
   - component: {fileID: 1817495377}
   - component: {fileID: 1817495376}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Microphone Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

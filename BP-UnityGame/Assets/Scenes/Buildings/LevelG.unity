@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 173145606}
   m_Layer: 3
   m_Name: GroundCheck
-  m_TagString: Untagged
+  m_TagString: Groundcheck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -572,6 +572,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsGrounded: 0
   IsOnPlatform: 0
+  IsTouchingMovingPlatform: 0
   TouchingPlatform: {fileID: 0}
 --- !u!212 &173145604
 SpriteRenderer:
@@ -637,7 +638,7 @@ Transform:
   m_GameObject: {fileID: 173145601}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5.61511, z: 0}
+  m_LocalPosition: {x: 0, y: -5.62, z: 0}
   m_LocalScale: {x: 1.52, y: 1.52, z: 1.52}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2024,7 +2025,7 @@ GameObject:
   - component: {fileID: 1312830105}
   - component: {fileID: 1312830106}
   m_Layer: 0
-  m_Name: Oneway Platform
+  m_Name: Oneway Moving Platform
   m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2801,7 +2802,7 @@ Transform:
   m_GameObject: {fileID: 1684812543}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.24, y: -2.88, z: 0}
+  m_LocalPosition: {x: 11.74, y: -2.83, z: 0}
   m_LocalScale: {x: 5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3394,7 +3395,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.0006403923}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3404,7 +3405,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.61, y: 11.23}
+  m_Size: {x: 3.61, y: 11.23128}
   m_EdgeRadius: 0
 --- !u!1 &1941145513
 GameObject:

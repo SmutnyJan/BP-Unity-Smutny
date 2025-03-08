@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      leonardo_ranger_with_potion_0: 1482148819155767875
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

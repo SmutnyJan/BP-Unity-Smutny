@@ -19,8 +19,10 @@ public class InventoryUIItem : MonoBehaviour
     {
         _button = GetComponent<Button>();
         _button.onClick.AddListener(() => OnItemClick());
-
     }
+
+
+
 
     // Update is called once per frame
     void Update()

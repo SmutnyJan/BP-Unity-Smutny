@@ -33,6 +33,14 @@ public class LobbyInventoryController : MonoBehaviour
 
     }
 
+    public void UseItem()
+    {
+        if (ActiveUIItem.gameObject.activeSelf)
+        {
+            ItemLibraryManager.Instance.InGameItems[ActiveUIItem.ItemType].UseItem();
+        }
+    }
+
     public void ToggleInventory()
     {
         InventoryWrapper.SetActive(!InventoryWrapper.activeSelf);
@@ -61,13 +69,20 @@ public class LobbyInventoryController : MonoBehaviour
 
     public void ChangeDetailsInventory(ItemType itemType)
     {
+
         if (!ItemDetailsPanel.activeSelf) ItemDetailsPanel.SetActive(true);
 
-        if(IsIngameInventory)
+        if (IsIngameInventory)
         {
+            if (ActiveUIItem.ItemType != itemType)
+            {
+                ItemLibraryManager.Instance.InGameItems[ActiveUIItem.ItemType].UnselectItem();
+            }
+
             ActiveUIItem.gameObject.SetActive(true);
             ActiveUIItem.ItemType = itemType;
             ActiveUIItem.LoadValues();
+            ItemLibraryManager.Instance.InGameItems[ActiveUIItem.ItemType].InitializeItem();
         }
 
 
@@ -77,5 +92,7 @@ public class LobbyInventoryController : MonoBehaviour
         AmountText.text = SaveLoadManager.Instance.Progress.Items.First(x => x.ItemType == itemType).Amount.ToString();
         SubtitleText.text = ItemClicked.Subtitle;
         DescriptionText.text = ItemClicked.Description;
+
+
     }
 }

@@ -52,6 +52,8 @@ public class SaveLoadManager : MonoBehaviour
         {
             Instance = this;
             Instance.Settings = null;
+            OnSettingsLoaded += OnSettingsLoadedLocal;
+
             Load(SaveType.Settings);
             Load(SaveType.Progress);
             DontDestroyOnLoad(gameObject);
@@ -65,7 +67,7 @@ public class SaveLoadManager : MonoBehaviour
 
     void Start()
     {
-        OnSettingsLoaded += OnSettingsLoadedLocal;
+        AudioManager.Instance.UpdateAudioSettings(Settings);
 
     }
 
@@ -76,7 +78,7 @@ public class SaveLoadManager : MonoBehaviour
 
     public void Load(SaveType saveType)
     {
-        LoadingText.gameObject.SetActive(true);
+        //LoadingText.gameObject.SetActive(true);
         string filePath = GetSettingsFilePath(saveType);
 
         if (File.Exists(filePath))
@@ -99,13 +101,13 @@ public class SaveLoadManager : MonoBehaviour
             Save(saveType);
         }
 
-        StartCoroutine(DisableTextAfter(LoadingText));
+        //StartCoroutine(DisableTextAfter(LoadingText));
     }
 
 
     public void Save(SaveType saveType)
     {
-        SavingText.gameObject.SetActive(true);
+        //SavingText.gameObject.SetActive(true);
 
         string json = "";
         switch (saveType)
@@ -119,7 +121,7 @@ public class SaveLoadManager : MonoBehaviour
         }
 
         File.WriteAllText(GetSettingsFilePath(saveType), json);
-        StartCoroutine(DisableTextAfter(SavingText));
+        //StartCoroutine(DisableTextAfter(SavingText));
 
 
     }
@@ -133,7 +135,8 @@ public class SaveLoadManager : MonoBehaviour
                 {
                     SFXVolume = AudioManager.Instance.SFXVolume,
                     MusicVolume = AudioManager.Instance.MusicVolume,
-                    IsFullScreen = Screen.fullScreen
+                    IsFullScreen = Screen.fullScreen,
+                    Microphone = ""
                 };
                 break;
             case SaveType.Progress:
@@ -141,13 +144,16 @@ public class SaveLoadManager : MonoBehaviour
                 {
                     SpawnScene = SceneLoaderManager.ActiveScene.None,
                     GameState = GameState.Beggining,
-                    Money = UnityEngine.Random.Range(0, 100),
-                    /*Items = new List<ItemAmount>()
+                    //Money = UnityEngine.Random.Range(0, 100),
+                    Money = 1000,
+                    Items = new List<ItemAmount>()
                     {
                         new() { ItemType = ItemType.Pencil, Amount = 5},
-                        new() { ItemType = ItemType.Pearl, Amount = 50}
-                    }*/
-                    Items = new List<ItemAmount>()
+                        new() { ItemType = ItemType.Pearl, Amount = 50},
+                        new() { ItemType = ItemType.Hourglass, Amount = 10}
+
+                    }
+                    //Items = new List<ItemAmount>()
                 };
                 break;
         }
@@ -200,6 +206,7 @@ public class MainMenuSettings
     public float SFXVolume;
     public float MusicVolume;
     public bool IsFullScreen;
+    public string Microphone;
 }
 
 public class Progress

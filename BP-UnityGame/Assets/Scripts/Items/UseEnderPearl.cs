@@ -1,0 +1,38 @@
+using System.Collections;
+using UnityEngine;
+
+public class UseEnderPearl : MonoBehaviour
+{
+    public GameObject Player;
+
+    private Rigidbody2D _rigidBody;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        int offset = Player.GetComponent<SpriteRenderer>().flipX ? 1 : -1;
+        _rigidBody = GetComponent<Rigidbody2D>();
+        _rigidBody.AddForce(new Vector2(1 * offset, 1) * 10, ForceMode2D.Impulse);
+        StartCoroutine(DestroyAfterTime());
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    private IEnumerator DestroyAfterTime()
+    {
+        yield return new WaitForSeconds(25);
+
+        Destroy(gameObject);
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Player.transform.position = this.transform.position;
+        Destroy(gameObject);
+    }
+}

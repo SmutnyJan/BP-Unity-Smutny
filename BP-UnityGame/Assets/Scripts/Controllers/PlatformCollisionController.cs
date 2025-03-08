@@ -17,10 +17,10 @@ public class PlatformCollisionController : MonoBehaviour
             TouchingPlatform = collision.gameObject;
         }
 
-        if(collision.gameObject.name == "Oneway Moving Platform")
+        if (collision.gameObject.name == "Oneway Moving Platform")
         {
 
-            this.transform.parent.SetParent(collision.gameObject.transform);
+            this.transform.parent.SetParent(collision.gameObject.transform, true);
         }
     }
 
@@ -32,7 +32,7 @@ public class PlatformCollisionController : MonoBehaviour
 
         if (collision.gameObject.name == "Oneway Moving Platform")
         {
-            this.transform.parent.SetParent(null);
+            this.transform.parent.SetParent(null, true);
         }
     }
 

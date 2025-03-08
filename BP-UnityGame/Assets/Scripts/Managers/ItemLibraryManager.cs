@@ -50,6 +50,13 @@ public class ItemLibraryManager : MonoBehaviour
                 Description = "Hoï ji a objevíš se na místì, kde dopadne!",
                 UnitPrice = 25,
                 Icon = Resources.Load<Sprite>("Sprites/pearlUI")}
+            },
+            { ItemType.Hourglass, new UIItem(){
+                Title = "Obraceè èasu",
+                Subtitle = "Jedineèná pøíležitost napravit chyby",
+                Description = "Po použití se vrátíš na místo, kde jsi byl pøed 5 vteøinami",
+                UnitPrice = 50,
+                Icon = Resources.Load<Sprite>("Sprites/hourglassUI")}
             }
 
         };
@@ -61,6 +68,7 @@ public class ItemLibraryManager : MonoBehaviour
         {
             { ItemType.Pencil, ScriptableObject.CreateInstance<PencilItem>() },
             { ItemType.Pearl, ScriptableObject.CreateInstance<EnderPearlItem>() },
+            { ItemType.Hourglass, ScriptableObject.CreateInstance<HourglassItem>() },
         };
     }
 }
@@ -68,7 +76,8 @@ public class ItemLibraryManager : MonoBehaviour
 public enum ItemType
 {
     Pencil,
-    Pearl
+    Pearl,
+    Hourglass
 }
 
 public class UIItem

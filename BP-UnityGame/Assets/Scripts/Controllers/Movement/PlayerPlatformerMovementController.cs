@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerPlatformerMovementController : MonoBehaviour
@@ -6,6 +8,7 @@ public class PlayerPlatformerMovementController : MonoBehaviour
     public int JumpForce;
     public PlatformCollisionController PlatformCollisionController;
     public LobbyInventoryController LobbyInventoryController;
+    public GameObject TimewarpPoint;
 
     private PlayerInputSystem _inputSystem;
     private Rigidbody2D _rigidbody;
@@ -68,7 +71,7 @@ public class PlayerPlatformerMovementController : MonoBehaviour
             _spriteRenderer.flipX = false;
         }
 
-        if(!PlatformCollisionController.IsTouchingMovingPlatform)
+        if (!PlatformCollisionController.IsTouchingMovingPlatform)
         {
             _rigidbody.linearVelocity = new Vector2(moveDir * MovementSpeed, _rigidbody.linearVelocity.y);
         }
@@ -76,9 +79,65 @@ public class PlayerPlatformerMovementController : MonoBehaviour
     }
 
 
+    #region TimeWarping
+    private Queue<Vector3> Positions;
+
+    public void StartPositionTracking()
+    {
+        Positions = new Queue<Vector3>();
+
+        TimewarpPoint.transform.SetParent(null);
+
+
+        StartCoroutine("Track");
+    }
+
+    public Vector3 ResetPositionTracking()
+    {
+        Vector3 returnPoint = Positions.Dequeue();
+        Positions.Clear();
+
+        return returnPoint;
+    }
+
+    public void StopPositionTracking()
+    {
+        StopCoroutine("Track");
+
+        Positions.Clear();
+
+        TimewarpPoint.transform.SetParent(this.transform);
+        TimewarpPoint.transform.localPosition = new Vector3(0, 0, 0);
+    }
+
+
+
+    private IEnumerator Track()
+    {
+
+
+        while (true)
+        {
+            Positions.Enqueue(this.transform.position);
+
+            if (Positions.Count > 500) // 5 vteøin zpìt, mezera každých 0.1 sekund
+            {
+                Positions.Dequeue();
+            }
+
+            TimewarpPoint.transform.position = Positions.Peek();
+
+            yield return new WaitForSeconds(0.01f);
+
+        }
+    }
+
+    #endregion
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Oneway Moving Platform" && 
+        if (collision.gameObject.name == "Oneway Moving Platform" &&
             collision.otherCollider.gameObject.tag == "Player" &&
             !PlatformCollisionController.IsOnPlatform)
         {

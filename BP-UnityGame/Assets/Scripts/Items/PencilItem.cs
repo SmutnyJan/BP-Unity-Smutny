@@ -11,9 +11,13 @@ public class PencilItem : ScriptableObject, IUsableItem
     {
     }
 
-    public void UseItem()
+    public void InitializeItem()
     {
         Player = GameObject.FindGameObjectsWithTag("Player").First();
+    }
+
+    public void UseItem()
+    {
         ItemPrefab = Resources.Load<GameObject>("InGameItems/PencilInGameItem");
 
         UsePencil UsePencil = ItemPrefab.GetComponent<UsePencil>();
@@ -22,6 +26,10 @@ public class PencilItem : ScriptableObject, IUsableItem
         int offset = Player.GetComponent<SpriteRenderer>().flipX ? 1 : -1;
 
         Instantiate(ItemPrefab, Player.transform.position + new Vector3(2 * offset, 0, 0), Player.transform.localRotation);
+    }
+
+    public void UnselectItem()
+    {
     }
 
 }

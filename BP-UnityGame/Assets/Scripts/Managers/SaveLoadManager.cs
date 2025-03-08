@@ -146,12 +146,14 @@ public class SaveLoadManager : MonoBehaviour
                     GameState = GameState.Beggining,
                     //Money = UnityEngine.Random.Range(0, 100),
                     Money = 1000,
-                    /*Items = new List<ItemAmount>()
+                    Items = new List<ItemAmount>()
                     {
                         new() { ItemType = ItemType.Pencil, Amount = 5},
-                        new() { ItemType = ItemType.Pearl, Amount = 50}
-                    }*/
-                    Items = new List<ItemAmount>()
+                        new() { ItemType = ItemType.Pearl, Amount = 50},
+                        new() { ItemType = ItemType.Hourglass, Amount = 10}
+
+                    }
+                    //Items = new List<ItemAmount>()
                 };
                 break;
         }

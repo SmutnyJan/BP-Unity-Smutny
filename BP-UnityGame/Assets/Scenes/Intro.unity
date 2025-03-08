@@ -176,14 +176,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Je noc a j\xE1 nem\u016F\u017Eu sp\xE1t. Z\xEDtra m\u011B \u010Dek\xE1
-    zkou\u0161ka, kterou mus\xEDm zvl\xE1dnout. Pokud neusp\u011Bju, nebude to je\u0161t\u011B
-    \xFApln\xFD konec, ale v\u0161echno se t\xEDm v\xFDrazn\u011B zkomplikuje. Opakuji
-    si l\xE1tku znovu a znovu, ale my\u0161lenky mi ut\xEDkaj\xED jinam. Stoj\xEDm
-    u okna a sleduji m\u011Bsto pono\u0159en\xE9 do tmy. Tolik lid\xED tam venku
-    m\xE1 sv\xE9 vlastn\xED starosti\u2026 a j\xE1 se boj\xEDm, \u017Ee z\xEDtra
-    sel\u017Eu. Mo\u017En\xE1 to zvl\xE1dnu. Mo\u017En\xE1 ne. Ale u\u017E nen\xED
-    cesty zp\u011Bt."
+  m_text: "Je hlubok\xE1 noc, ale sp\xE1nek nep\u0159ich\xE1z\xED. Z\xEDtra m\u011B
+    \u010Dek\xE1 zkou\u0161ka, na kterou se nec\xEDt\xEDm p\u0159ipraven\xFD. Pokud
+    sel\u017Eu, nebude to je\u0161t\u011B definitivn\xED konec, ale v\xEDm, \u017Ee
+    by to byl za\u010D\xE1tek konce. Stoj\xEDm u okna a hled\xEDm na m\u011Bsto pono\u0159en\xE9
+    do tmy. Tolik lid\xED tam venku m\xE1 sv\xE9 vlastn\xED probl\xE9my\u2026 ale
+    j\xE1 mysl\xEDm jen na jedin\xE9. Mo\u017En\xE1 to zvl\xE1dnu. Mo\u017En\xE1
+    ne. Ale u\u017E nen\xED cesty zp\u011Bt."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
   m_sharedMaterial: {fileID: 2825862324939018218, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}

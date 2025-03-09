@@ -1053,9 +1053,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Nev\xEDm, kam j\xEDt. Nechci zp\xE1tky na kolej, nechci vid\u011Bt nikoho
-    ze spolu\u017E\xE1k\u016F. Pot\u0159ebuju aspo\u0148 na chv\xEDli vypnout. Mo\u017En\xE1
-    mi p\xE1r piv pom\u016F\u017Ee zapomenout, aspo\u0148 na jeden ve\u010Der"
+  m_text: "Stoj\xEDm p\u0159ed barem a d\xEDv\xE1m se na neonov\xFD n\xE1pis nad
+    dve\u0159mi. V hlav\u011B mi b\u011B\u017E\xED tis\xEDc my\u0161lenek, ale \u017E\xE1dn\xE1
+    mi ned\xE1v\xE1 odpov\u011B\u010F na ot\xE1zku, co m\xE1m d\u011Blat d\xE1l.
+    Nechci zp\xE1tky na kolej. Nechci vid\u011Bt nikoho ze spolu\u017E\xE1k\u016F.
+    Mo\u017En\xE1 mi p\xE1r piv pom\u016F\u017Ee zapomenout, aspo\u0148 na jeden
+    ve\u010Der."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
   m_sharedMaterial: {fileID: 2825862324939018218, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
@@ -1763,11 +1766,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Nem\u016F\u017Eu tomu uv\u011B\u0159it. Po v\u0161ech t\u011Bch hodin\xE1ch
-    u\u010Den\xED, po v\u0161ech probd\u011Bl\xFDch noc\xEDch... a stejn\u011B jsem
-    to pokazil. Kdy\u017E se pod\xEDv\xE1m na ty velk\xE9 \u010Derven\xE9 k\u0159\xED\u017Ee
-    na testu, m\xE1m pocit, jako by se mi zhroutil cel\xFD sv\u011Bt. Co te\u010F?
-    Jak tohle naprav\xEDm?"
+  m_text: "V hlav\u011B m\xE1m pr\xE1zdno. Pohled mi sklouzne na test, kde \u010Derven\xE9
+    k\u0159\xED\u017Eky bez milosti ozna\u010Duj\xED ka\u017Edou chybu. Po v\u0161ech
+    t\u011Bch hodin\xE1ch u\u010Den\xED, po ka\u017Ed\xE9 noci str\xE1ven\xE9 nad
+    knihami\u2026 a stejn\u011B to nesta\u010Dilo. Ostatn\xED studenti se bal\xED
+    a odch\xE1zej\xED, ale j\xE1 z\u016Fst\xE1v\xE1m sed\u011Bt, neschopen se pohnout.
+    Co budu d\u011Blat te\u010F?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
   m_sharedMaterial: {fileID: 2825862324939018218, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
@@ -1920,7 +1924,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 16777215
   m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -2720,10 +2724,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Sed\xEDm u baru a pozoruju sv\u016Fj odraz ve sklenici piva. Nem\xE1m
-    s\xEDlu p\u0159em\xFD\u0161let o z\xEDt\u0159ku, o tom, co bude d\xE1l. Hlava
-    mi t\u0159e\u0161t\xED, ale ne z alkoholu \u2013 sp\xED\u0161 z t\u011Bch my\u0161lenek,
-    kter\xE9 se mi po\u0159\xE1d dokola hon\xED hlavou."
+  m_text: "Sed\xEDm u baru, prsty l\xEDn\u011B obkresluju okraj sklenice s pivem.
+    P\u011Bna u\u017E d\xE1vno opadla, stejn\u011B jako moje odhodl\xE1n\xED. V hlav\u011B
+    mi hu\u010D\xED, ale ne z alkoholu \u2013 sp\xED\u0161 z nekone\u010Dn\xE9ho
+    toku my\u0161lenek, kter\xE9 se mi po\u0159\xE1d dokola vrac\xED. Pro\u010D p\u0159em\xFD\u0161let
+    o z\xEDt\u0159ku? Dneska na tom nez\xE1le\u017E\xED."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
   m_sharedMaterial: {fileID: 2825862324939018218, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
@@ -2732,7 +2737,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3

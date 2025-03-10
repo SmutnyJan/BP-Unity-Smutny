@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
+using static SceneLoaderManager;
 
 
 public class SaveLoadManager : MonoBehaviour
@@ -152,8 +153,9 @@ public class SaveLoadManager : MonoBehaviour
                         new() { ItemType = ItemType.Pearl, Amount = 50},
                         new() { ItemType = ItemType.Hourglass, Amount = 10}
 
-                    }
+                    },
                     //Items = new List<ItemAmount>()
+                    LevelConfig = new LevelProgress()
                 };
                 break;
         }
@@ -215,6 +217,7 @@ public class Progress
     public SaveLoadManager.GameState GameState;
     public int Money;
     public List<ItemAmount> Items;
+    public LevelProgress LevelConfig;
 }
 
 
@@ -223,4 +226,11 @@ public class ItemAmount
 {
     public ItemType ItemType;
     public int Amount;
+}
+
+[System.Serializable]
+public class LevelProgress
+{
+    public ActiveScene Scene;
+    public Vector3 SpawnPoint;
 }

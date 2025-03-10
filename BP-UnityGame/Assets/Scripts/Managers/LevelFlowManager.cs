@@ -26,6 +26,7 @@ public class LevelFlowManager : MonoBehaviour
         if (SaveLoadManager.Instance.Progress.LevelConfig.Scene == SceneLoaderManager.Instance.CurrentScene)
         {
             Player.transform.position = SaveLoadManager.Instance.Progress.LevelConfig.SpawnPoint;
+
         }
         else
         {
@@ -37,7 +38,9 @@ public class LevelFlowManager : MonoBehaviour
         }
 
         SaveLoadManager.Instance.Save(SaveLoadManager.SaveType.Progress);
+
         Player.transform.position = SaveLoadManager.Instance.Progress.LevelConfig.SpawnPoint;
+
 
     }
 
@@ -45,7 +48,7 @@ public class LevelFlowManager : MonoBehaviour
     {
         if (Player.transform.position.y < YDespawn)
         {
-            Player.transform.position = StartSpawningPoint.position + new Vector3(0, 5, 0);
+            Player.transform.position = SaveLoadManager.Instance.Progress.LevelConfig.SpawnPoint + new Vector3(0, 5, 0);
         }
     }
 

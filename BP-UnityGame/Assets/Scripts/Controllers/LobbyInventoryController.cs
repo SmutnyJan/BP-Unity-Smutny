@@ -37,7 +37,26 @@ public class LobbyInventoryController : MonoBehaviour
     {
         if (ActiveUIItem.gameObject.activeSelf)
         {
-            ItemLibraryManager.Instance.InGameItems[ActiveUIItem.ItemType].UseItem();
+            var item = SaveLoadManager.Instance.Progress.Items.FirstOrDefault(x => x.ItemType == ActiveUIItem.ItemType);
+            if (item != null && item.Amount > 0)
+            {
+                ItemLibraryManager.Instance.InGameItems[ActiveUIItem.ItemType].UseItem();
+                item.Amount--;
+
+                ActiveUIItem.UpdateAmountValue(item.Amount);
+                UpdateInventoryAmount(item.Amount);
+            }
+            if(item.Amount == 0)
+            {
+                SaveLoadManager.Instance.Progress.Items.RemoveAll(x => x.ItemType == item.ItemType);
+                ActiveUIItem.gameObject.SetActive(false);
+                ItemDetailsPanel.gameObject.SetActive(false);
+
+                LoadUserInventory();
+            }
+
+
+
         }
     }
 
@@ -65,6 +84,22 @@ public class LobbyInventoryController : MonoBehaviour
             itemController.LoadValues();
 
         }
+    }
+
+    private void UpdateInventoryAmount(int newAmount)
+    {
+        foreach (Transform child in InventoryGrid.transform)
+        {
+            InventoryUIItem itemController = child.GetComponent<InventoryUIItem>();
+            if (itemController.ItemType == ActiveUIItem.ItemType)
+            {
+                itemController.UpdateAmountText(newAmount);
+                break;
+            }
+        }
+
+
+        AmountText.text = newAmount.ToString();
     }
 
     public void ChangeDetailsInventory(ItemType itemType)

@@ -46,4 +46,9 @@ public class InventoryUIItem : MonoBehaviour
         LobbyInventoryController.ChangeDetailsInventory(ItemType);
 
     }
+
+    public void UpdateAmountText(int newAmount)
+    {
+        AmountText.text = newAmount.ToString();
+    }
 }

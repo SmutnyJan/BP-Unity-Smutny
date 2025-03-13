@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ActiveUIItem : MonoBehaviour
 {
     public ItemType ItemType;
+
     public TextMeshProUGUI AmountText;
 
     private Sprite _UISprite;
@@ -30,5 +31,10 @@ public class ActiveUIItem : MonoBehaviour
 
         AmountText.text = SaveLoadManager.Instance.Progress.Items.First(x => x.ItemType == ItemType).Amount.ToString();
 
+    }
+
+    public void UpdateAmountValue(int amount)
+    {
+        AmountText.text = amount.ToString();
     }
 }

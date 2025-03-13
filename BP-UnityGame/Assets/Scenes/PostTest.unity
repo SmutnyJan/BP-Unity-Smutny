@@ -1276,8 +1276,8 @@ MonoBehaviour:
   m_text: "\u201EJestli chce\u0161 svou budoucnost zachr\xE1nit\u2026\u201C \u0159ekne
     a nat\xE1hne tlapu. V prstech dr\u017E\xED sklen\u011Bnou zkumavku, ve kter\xE9
     v\xED\u0159\xED zvl\xE1\u0161tn\xED kapalina. Barvy se p\u0159el\xE9vaj\xED mezi
-    modrou, zelenou a fialovou, odlesky se odr\xE1\u017Eej\xED na m\xE9 tv\xE1\u0159i.
-    \u201ECo to sakra je?\u201C vydechnu. Kocour se usm\u011Bje. \u201EDruh\xE1 \u0161ance.\u201C"
+    modrou a fialovou, odlesky se odr\xE1\u017Eej\xED na m\xE9 tv\xE1\u0159i. \u201ECo
+    to sakra je?\u201C vydechnu. Kocour se usm\u011Bje. \u201EDruh\xE1 \u0161ance.\u201C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
   m_sharedMaterial: {fileID: 2825862324939018218, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
@@ -1286,7 +1286,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1909,13 +1909,11 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Srdce mi tlu\u010De v krku. Prsty sv\xEDraj\xED chladn\xE9 sklo tak pevn\u011B,
     a\u017E m\xE1m pocit, \u017Ee praskne. Barevn\xE9 odlesky tancuj\xED po m\xE9
-    k\u016F\u017Ei, jak se tekutina uvnit\u0159 zkumavky pomalu p\u0159el\xE9v\xE1.
-    Modr\xE1. Zelen\xE1. Fialov\xE1. P\u0159ipad\xE1m si jako figurka ve h\u0159e,
-    jej\xED\u017E pravidla nezn\xE1m. Hn\u011Bd\xE9 o\u010Di mi t\u011Bkaj\xED mezi
-    kocourem a podivnou substanc\xED. \u201ECo se stane, kdy\u017E to vypiju?\u201C
-    pt\xE1m se. Kocour se ani nehne. Modr\xE9 o\u010Di na m\u011B z\xEDraj\xED s
-    ne\u010Ditelnost\xED hlubok\xE9ho vesm\xEDru. \u201ETo zjist\xED\u0161,\u201C
-    odpov\xED ti\u0161e."
+    k\u016F\u017Ei, jak se tekutina uvnit\u0159 pomalu p\u0159el\xE9v\xE1\u2014modr\xE1,
+    fialov\xE1. Hn\u011Bd\xE9 o\u010Di mi t\u011Bkaj\xED mezi zkumavkou a pr\xE1zdnem
+    p\u0159ede mnou. \u201ECo se stane, kdy\u017E to vypiju?\u201C \u0161eptnu. Kocour
+    se ani nehne, jeho modr\xE9 o\u010Di z\u016Fst\xE1vaj\xED ne\u010Diteln\xE9.
+    \u201EDokon\u010D\xED\u0161 \u0161kolu,\u201C odpov\xED ti\u0161e."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
   m_sharedMaterial: {fileID: 2825862324939018218, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}

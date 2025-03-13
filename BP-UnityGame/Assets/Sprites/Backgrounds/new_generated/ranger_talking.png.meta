@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8cf82bf6568f849448b75178a71bcf94
+guid: 6c2f5975af1589b4a9dd4ea28205df50
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4669333545204258198
-    second: student_ranger_0
+      213: 9108715188599412311
+    second: ranger_talking_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: student_ranger_0
+      name: ranger_talking_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 69517b3ce1eccc040800000000000000
-      internalID: 4669333545204258198
+      spriteID: 7565ca83438a86e70800000000000000
+      internalID: 9108715188599412311
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      student_ranger_0: 4669333545204258198
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

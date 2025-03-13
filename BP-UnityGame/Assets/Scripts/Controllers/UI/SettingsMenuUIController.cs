@@ -6,6 +6,8 @@ public class SettingsMenuController : MonoBehaviour
     public Slider SFXVolumeSlider;
     public Slider MusicVolumeSlider;
     public Toggle IsFullScreenToggle;
+    public Toggle IsFPSShowToggle;
+    public Toggle VSyncToggle;
     public Button SaveButton;
     public Button BackButton;
     public MicrophoneUIController MicrophoneUIController;
@@ -16,6 +18,8 @@ public class SettingsMenuController : MonoBehaviour
         SFXVolumeSlider.value = SaveLoadManager.Instance.Settings.SFXVolume;
         MusicVolumeSlider.value = SaveLoadManager.Instance.Settings.MusicVolume;
         IsFullScreenToggle.isOn = SaveLoadManager.Instance.Settings.IsFullScreen;
+        IsFPSShowToggle.isOn = SaveLoadManager.Instance.Settings.IsShowingFPS;
+        VSyncToggle.isOn = SaveLoadManager.Instance.Settings.VSync;
 
 
     }
@@ -42,6 +46,8 @@ public class SettingsMenuController : MonoBehaviour
         SaveLoadManager.Instance.Settings.SFXVolume = SFXVolumeSlider.value;
         SaveLoadManager.Instance.Settings.MusicVolume = MusicVolumeSlider.value;
         SaveLoadManager.Instance.Settings.IsFullScreen = IsFullScreenToggle.isOn;
+        SaveLoadManager.Instance.Settings.VSync = VSyncToggle.isOn;
+        SaveLoadManager.Instance.Settings.IsShowingFPS = IsFPSShowToggle.isOn;
         SaveLoadManager.Instance.Settings.Microphone = MicrophoneUIController.SelectedMicrophone;
 
         MicrophoneManager.Instance.ChangeActiveMicrophone(MicrophoneUIController.SelectedMicrophone);
@@ -62,6 +68,16 @@ public class SettingsMenuController : MonoBehaviour
     public void OnToggleFullScreenClick()
     {
         Screen.fullScreen = IsFullScreenToggle.isOn;
+    }
+
+    public void OnToggleFPSShowClick()
+    {
+        FPSDisplayController.Instance.ToggleShow(IsFPSShowToggle.isOn);
+    }
+
+    public void OnToggleVSyncClick()
+    {
+        QualitySettings.vSyncCount = VSyncToggle.isOn ? 1 : 0;
     }
 
 }

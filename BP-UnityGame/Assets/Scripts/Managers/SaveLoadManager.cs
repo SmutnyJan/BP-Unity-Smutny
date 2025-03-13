@@ -69,6 +69,7 @@ public class SaveLoadManager : MonoBehaviour
     void Start()
     {
         AudioManager.Instance.UpdateAudioSettings(Settings);
+        FPSDisplayController.Instance.UpdateFPSText(Settings);
 
     }
 
@@ -137,6 +138,8 @@ public class SaveLoadManager : MonoBehaviour
                     SFXVolume = AudioManager.Instance.SFXVolume,
                     MusicVolume = AudioManager.Instance.MusicVolume,
                     IsFullScreen = Screen.fullScreen,
+                    IsShowingFPS = false,
+                    VSync = false,
                     Microphone = ""
                 };
                 break;
@@ -190,6 +193,8 @@ public class SaveLoadManager : MonoBehaviour
     private void OnSettingsLoadedLocal(MainMenuSettings settings)
     {
         Screen.fullScreen = settings.IsFullScreen;
+        QualitySettings.vSyncCount = settings.VSync ? 1 : 0;
+
     }
 
     private IEnumerator DisableTextAfter(TextMeshProUGUI text)
@@ -208,6 +213,8 @@ public class MainMenuSettings
     public float SFXVolume;
     public float MusicVolume;
     public bool IsFullScreen;
+    public bool IsShowingFPS;
+    public bool VSync;
     public string Microphone;
 }
 

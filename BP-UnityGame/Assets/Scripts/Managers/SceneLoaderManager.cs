@@ -86,7 +86,7 @@ public class SceneLoaderManager : MonoBehaviour
 
     void Start()
     {
-
+        //Application.targetFrameRate = -1;
     }
 
     void Update()

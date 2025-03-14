@@ -38,26 +38,33 @@ public class ItemLibraryManager : MonoBehaviour
         UIItems = new Dictionary<ItemType, UIItem>
         {
             { ItemType.Pencil, new UIItem(){
-                Title = "Tužka",
-                Subtitle = "Obyèejná, ale efektivní",
-                Description = "Pomáhá se zbavit obtížných nepøátel nebo projektilù",
+                Title = "Kreslíøùv pomocník",
+                Subtitle = "Nepøátelé nejsou omalovánky, ale i tak je vybarvíš",
+                Description = "Hráè mùže tužku hodit jako projektil. Pokud zasáhne nepøítele, zpùsobí mu poškození. Pokud trefí nepøátelský projektil, obì støely se vzájemnì znièí. Ideální pro obranu proti letícím útokùm a zároveò efektivní zpùsob, jak udržet vzdálenost od nepøátel.",
                 UnitPrice = 10,
                 Icon = Resources.Load<Sprite>("Sprites/pencilUI")}
             },
             { ItemType.Pearl, new UIItem(){
-                Title = "Endová perla",
-                Subtitle = "Jak se sem dostala?",
-                Description = "Hoï ji a objevíš se na místì, kde dopadne!",
+                Title = "Dimenzionální perla",
+                Subtitle = "Nejrychlejší zpùsob, jak zmìnit adresu",
+                Description = "Po hodu se hráè okamžitì teleportuje na místo, kam perla dopadne. Umožòuje rychlý únik z nebezpeèí nebo pøekonání pøekážek, ale špatnì zvolený cíl mùže znamenat teleport pøímo do pasti nebo mezi nepøátele.",
                 UnitPrice = 25,
                 Icon = Resources.Load<Sprite>("Sprites/pearlUI")}
             },
             { ItemType.Hourglass, new UIItem(){
-                Title = "Obraceè èasu",
-                Subtitle = "Jedineèná pøíležitost napravit chyby",
-                Description = "Po použití se vrátíš na místo, kde jsi byl pøed 5 vteøinami",
+                Title = "Písek èasu",
+                Subtitle = "Tak trochu podvádìní, ale koho to zajímá?",
+                Description = "Po aktivaci se hráè vrátí pøesnì na místo, kde byl pøed 5 vteøinami. Ideální pro opravu špatných rozhodnutí, útìk z nebezpeèné situace nebo druhý pokus na špatnì provedený skok. Èas se sice vrátí, ale okolí zùstává beze zmìny, takže si dávej pozor, kde resetuješ svou cestu.",
                 UnitPrice = 50,
                 Icon = Resources.Load<Sprite>("Sprites/hourglassUI")}
-            }
+            },
+            { ItemType.Boots, new UIItem(){
+                Title = "Bleskoboty",
+                Subtitle = "Èas na maraton? Ne, jen utíkáš o život",
+                Description = "Po použití se hráè na omezenou dobu pohybuje výraznì rychleji. Zrychlený pohyb usnadòuje vyhýbání se nepøátelským útokùm, rychlé pøesuny po mapì nebo efektivnìjší uniky pøed nebezpeèím. Pozor však na ovládání – vìtší rychlost znamená i horší manévrování v úzkých prostorách.",
+                UnitPrice = 15,
+                Icon = Resources.Load<Sprite>("Sprites/speedUI")}
+            },
 
         };
     }
@@ -69,6 +76,7 @@ public class ItemLibraryManager : MonoBehaviour
             { ItemType.Pencil, ScriptableObject.CreateInstance<PencilItem>() },
             { ItemType.Pearl, ScriptableObject.CreateInstance<EnderPearlItem>() },
             { ItemType.Hourglass, ScriptableObject.CreateInstance<HourglassItem>() },
+            { ItemType.Boots, ScriptableObject.CreateInstance<BootsItem>() }
         };
     }
 }
@@ -77,7 +85,8 @@ public enum ItemType
 {
     Pencil,
     Pearl,
-    Hourglass
+    Hourglass,
+    Boots
 }
 
 public class UIItem

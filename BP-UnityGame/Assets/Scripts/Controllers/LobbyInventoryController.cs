@@ -62,6 +62,7 @@ public class LobbyInventoryController : MonoBehaviour
 
     public void ToggleInventory()
     {
+        AudioManager.Instance.PlayClipByName("UI_Button_Click_1", AudioManager.Instance.AudioLibrary.UI, AudioManager.Instance.SFXAudioSource);
         InventoryWrapper.SetActive(!InventoryWrapper.activeSelf);
     }
 

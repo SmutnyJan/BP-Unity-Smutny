@@ -30,7 +30,6 @@ public class PlayerPlatformerMovementController : MonoBehaviour
 
     void Start()
     {
-
     }
 
     private void OnDisplayInventory()
@@ -62,6 +61,7 @@ public class PlayerPlatformerMovementController : MonoBehaviour
     private void FixedUpdate()
     {
         float moveDir = _inputSystem.PlayerPlatformer.Horizontal.ReadValue<float>();
+
         if (!_spriteRenderer.flipX && moveDir > 0)
         {
             _spriteRenderer.flipX = true;
@@ -77,6 +77,20 @@ public class PlayerPlatformerMovementController : MonoBehaviour
         }
 
     }
+
+    /*private void Update() SuperHot
+    {
+
+        if (this._rigidbody.linearVelocity == Vector2.zero)
+        {
+            Time.timeScale = 0.1f;
+        }
+        else
+        {
+            Time.timeScale = 1;
+
+        }
+    }*/
 
 
     #region TimeWarping

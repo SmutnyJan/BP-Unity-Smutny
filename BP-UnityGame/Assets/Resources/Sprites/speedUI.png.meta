@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5c0c3a8abc64e174ca9db8fb5662f2f3
+guid: 9064d8ce093ce794d8e2b14566814be3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3282299252888170108
-    second: ranger_drink_0
+      213: -2237825700530584658
+    second: speedUI_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ranger_drink_0
+      name: speedUI_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1472
-        height: 832
+        y: 10
+        width: 100
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c7eede6b7c11d8d20800000000000000
-      internalID: 3282299252888170108
+      spriteID: ea382a2c165a1f0e0800000000000000
+      internalID: -2237825700530584658
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      ranger_drink_0: 3282299252888170108
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

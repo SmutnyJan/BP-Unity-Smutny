@@ -1,8 +1,5 @@
 using TMPro;
 using UnityEngine;
-using static SceneLoaderManager;
-using UnityEngine.SceneManagement;
-using System;
 
 public class FPSDisplayController : MonoBehaviour
 {

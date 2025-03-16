@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -8,10 +9,10 @@ public class ActiveUIItem : MonoBehaviour
     public ItemType ItemType;
 
     public TextMeshProUGUI AmountText;
+    public Image CooldownImage;
 
     private Sprite _UISprite;
-
-
+    private Coroutine _cooldownCoroutine;
 
     void Start()
     {
@@ -21,6 +22,48 @@ public class ActiveUIItem : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void StartCooldown(float duration)
+    {
+        if (duration < 0)
+        {
+            return;
+        }
+
+        // Pokud už bìží cooldown, ukonèíme ho pøed spuštìním nového
+        if (_cooldownCoroutine != null)
+        {
+            StopCoroutine(_cooldownCoroutine);
+        }
+
+        _cooldownCoroutine = StartCoroutine(CooldownRoutine(duration));
+    }
+
+    public void ResetCoolDownUI()
+    {
+        if (_cooldownCoroutine != null)
+        {
+            StopCoroutine(_cooldownCoroutine);
+            _cooldownCoroutine = null;
+        }
+
+        CooldownImage.fillAmount = 0f;
+    }
+
+    private IEnumerator CooldownRoutine(float duration)
+    {
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            CooldownImage.fillAmount = 1f - (elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        CooldownImage.fillAmount = 0f;
+        _cooldownCoroutine = null; // Resetování po skonèení
     }
 
     public void LoadValues()

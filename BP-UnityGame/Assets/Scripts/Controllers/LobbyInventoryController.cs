@@ -37,16 +37,17 @@ public class LobbyInventoryController : MonoBehaviour
     {
         if (ActiveUIItem.gameObject.activeSelf)
         {
-            var item = SaveLoadManager.Instance.Progress.Items.FirstOrDefault(x => x.ItemType == ActiveUIItem.ItemType);
+            ItemAmount item = SaveLoadManager.Instance.Progress.Items.FirstOrDefault(x => x.ItemType == ActiveUIItem.ItemType);
             if (item != null && item.Amount > 0)
             {
                 ItemLibraryManager.Instance.InGameItems[ActiveUIItem.ItemType].UseItem();
+                ActiveUIItem.StartCooldown(ItemLibraryManager.Instance.UIItems[ActiveUIItem.ItemType].UpTime);
                 item.Amount--;
 
                 ActiveUIItem.UpdateAmountValue(item.Amount);
                 UpdateInventoryAmount(item.Amount);
             }
-            if(item.Amount == 0)
+            if (item.Amount == 0)
             {
                 SaveLoadManager.Instance.Progress.Items.RemoveAll(x => x.ItemType == item.ItemType);
                 ActiveUIItem.gameObject.SetActive(false);
@@ -115,6 +116,7 @@ public class LobbyInventoryController : MonoBehaviour
                 ItemLibraryManager.Instance.InGameItems[ActiveUIItem.ItemType].UnselectItem();
             }
 
+            ActiveUIItem.ResetCoolDownUI();
             ActiveUIItem.gameObject.SetActive(true);
             ActiveUIItem.ItemType = itemType;
             ActiveUIItem.LoadValues();

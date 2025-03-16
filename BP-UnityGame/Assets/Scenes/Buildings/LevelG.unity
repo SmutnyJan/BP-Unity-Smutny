@@ -2769,7 +2769,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.4749632, y: 3.4749632, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1857892894}
@@ -4032,6 +4032,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementSpeed: 10
   JumpForce: 25
+  Camera: {fileID: 99091880}
+  Background: {fileID: 1541341770}
   PlatformCollisionController: {fileID: 173145602}
   LobbyInventoryController: {fileID: 634800700}
   TimewarpPoint: {fileID: 829468937}
@@ -4126,7 +4128,7 @@ Transform:
   m_GameObject: {fileID: 1857892888}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.6, y: 29.7, z: 0}
+  m_LocalPosition: {x: -12.73, y: 12.14, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -4836,7 +4838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5760330978003434591, guid: cf2307a1ae29c4a40a0ee65f06881351, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6152584992676425816, guid: cf2307a1ae29c4a40a0ee65f06881351, type: 3}
       propertyPath: m_Pivot.x

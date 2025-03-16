@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6c2f5975af1589b4a9dd4ea28205df50
+guid: e02e67c552696d340bc5577c9897295b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9108715188599412311
-    second: ranger_talking_0
+      213: -7518406291002196957
+    second: coilUI_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ranger_talking_0
+      name: coilUI_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1472
-        height: 832
+        x: 4
+        y: 3
+        width: 92
+        height: 94
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7565ca83438a86e70800000000000000
-      internalID: 9108715188599412311
+      spriteID: 32c70c3005149a790800000000000000
+      internalID: -7518406291002196957
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      ranger_talking_0: 9108715188599412311
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

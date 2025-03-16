@@ -155,7 +155,9 @@ public class SaveLoadManager : MonoBehaviour
                         new() { ItemType = ItemType.Pencil, Amount = 5},
                         new() { ItemType = ItemType.Pearl, Amount = 50},
                         new() { ItemType = ItemType.Hourglass, Amount = 10},
-                        new() { ItemType = ItemType.Boots, Amount = 10}
+                        new() { ItemType = ItemType.Boots, Amount = 10},
+                        new() { ItemType = ItemType.JumpCoil, Amount = 10},
+                        new() { ItemType = ItemType.Binoculars, Amount = 10},
 
                     },
                     //Items = new List<ItemAmount>()

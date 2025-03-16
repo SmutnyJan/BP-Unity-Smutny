@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class PlayerPlatformerMovementController : MonoBehaviour
 {
-    public int MovementSpeed;
-    public int JumpForce;
+    public const int MOVEMENT_SPEED = 10;
+    public const int MOVEMENT_SPEED_AFFECTED = 25; //rychlost pøi použití ítemu "Boots"
+
+    public const int JUMP_FORCE = 25;
+    public const int JUMP_FORCE_AFFECTED = 50; //rychlost pøi použití ítemu "JumpCoil"
+
+    [HideInInspector]
+    public int MovementSpeed = MOVEMENT_SPEED;
+    [HideInInspector]
+    public int JumpForce = JUMP_FORCE;
+    public Camera Camera;
+    public GameObject Background;
     public PlatformCollisionController PlatformCollisionController;
     public LobbyInventoryController LobbyInventoryController;
     public GameObject TimewarpPoint;
@@ -13,6 +23,11 @@ public class PlayerPlatformerMovementController : MonoBehaviour
     private PlayerInputSystem _inputSystem;
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _spriteRenderer;
+    private float _cameraSize;
+    private const float CAMERA_SIZE_ZOOMED = 8;
+    private Vector3 _backgroundScale;
+    private Vector3 _backgroundScaleZoomed = new(5, 5, 0);
+
 
 
     private void Awake()
@@ -20,6 +35,8 @@ public class PlayerPlatformerMovementController : MonoBehaviour
         _inputSystem = new PlayerInputSystem();
         _rigidbody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _cameraSize = Camera.orthographicSize;
+        _backgroundScale = Background.transform.localScale;
     }
 
     private void OnEnable()
@@ -56,6 +73,19 @@ public class PlayerPlatformerMovementController : MonoBehaviour
     private void OnUseItem()
     {
         LobbyInventoryController.UseItem();
+    }
+
+    public void DeactivateBinoculars()
+    {
+        Camera.orthographicSize = _cameraSize;
+        Background.transform.localScale = _backgroundScale;
+    }
+
+    public void ActivateBinoculars()
+    {
+        Camera.orthographicSize = CAMERA_SIZE_ZOOMED;
+        Background.transform.localScale = _backgroundScaleZoomed;
+
     }
 
     private void FixedUpdate()

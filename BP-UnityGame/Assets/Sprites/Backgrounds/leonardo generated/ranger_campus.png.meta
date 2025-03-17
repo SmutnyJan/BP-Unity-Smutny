@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e02e67c552696d340bc5577c9897295b
+guid: 5acd960d79df0394aafb913edf2df525
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7518406291002196957
-    second: coilUI_0
+      213: 8386455097053080136
+    second: ranger_campus_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: coilUI_0
+      name: ranger_campus_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 3
-        width: 92
-        height: 94
+        x: 0
+        y: 0
+        width: 1472
+        height: 832
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 32c70c3005149a790800000000000000
-      internalID: -7518406291002196957
+      spriteID: 84aec983a7ca26470800000000000000
+      internalID: 8386455097053080136
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      coilUI_0: -7518406291002196957
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

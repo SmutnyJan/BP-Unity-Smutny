@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoaderManager : MonoBehaviour
 {
+    //C:\Users\smutn\AppData\LocalLow\FM TUL Smutny Strecanska\TULtimatní hra
+
     public static SceneLoaderManager Instance;
     public Animator SceneTransitionAnimator;
     public GameObject CrossfadeCanvas;

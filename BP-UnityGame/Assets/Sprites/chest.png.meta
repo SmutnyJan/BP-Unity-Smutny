@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a4cf6d03f7d3a3c429e915042b76cf05
+guid: e5544545b2b251a40bfd284cebb19394
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8644325081075827603
-    second: LobbyC_0
+      213: -6834524911116659543
+    second: chest_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LobbyC_0
+      name: chest_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 6644
-        height: 3097
+        width: 6045
+        height: 3260
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 39346849cdfc6f770800000000000000
-      internalID: 8644325081075827603
+      spriteID: 9a45550edc3e621a0800000000000000
+      internalID: -6834524911116659543
       vertices: []
       indices: 
       edges: []

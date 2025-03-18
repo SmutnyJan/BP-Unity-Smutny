@@ -73,6 +73,7 @@ public class SettingsMenuController : MonoBehaviour
     public void OnToggleFPSShowClick()
     {
         FPSDisplayController.Instance.ToggleShow(IsFPSShowToggle.isOn);
+
     }
 
     public void OnToggleVSyncClick()

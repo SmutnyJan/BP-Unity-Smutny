@@ -4,8 +4,9 @@ using UnityEngine;
 public class FPSDisplayController : MonoBehaviour
 {
     public static FPSDisplayController Instance;
-
     public TextMeshProUGUI FpsText;
+    public bool IsFpsOn;
+
     private float deltaTime = 0.0f;
     private float updateInterval = 0.1f;
     private float nextUpdate = 0.0f;
@@ -37,19 +38,24 @@ public class FPSDisplayController : MonoBehaviour
 
     void Update()
     {
-        deltaTime += (Time.unscaledDeltaTime - deltaTime) * 0.1f;
-
-        if (Time.unscaledTime > nextUpdate)
+        if(IsFpsOn)
         {
-            nextUpdate = Time.unscaledTime + updateInterval;
-            float fps = 1.0f / deltaTime;
-            FpsText.text = $"FPS: {Mathf.Ceil(fps)}";
+            deltaTime += (Time.unscaledDeltaTime - deltaTime) * 0.1f;
+
+            if (Time.unscaledTime > nextUpdate)
+            {
+                nextUpdate = Time.unscaledTime + updateInterval;
+                float fps = 1.0f / deltaTime;
+                FpsText.text = $"FPS: {Mathf.Ceil(fps)}";
+                Debug.Log($"{SceneLoaderManager.Instance.CurrentScene} FPS: {Mathf.Ceil(fps)}");
+            }
         }
     }
 
     public void ToggleShow(bool show)
     {
         FpsText.gameObject.SetActive(show);
+        IsFpsOn = show;
     }
 
 }

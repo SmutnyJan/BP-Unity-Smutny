@@ -26,7 +26,7 @@ public class PlayerPlatformerMovementController : MonoBehaviour
     private float _cameraSize;
     private const float CAMERA_SIZE_ZOOMED = 8;
     private Vector3 _backgroundScale;
-    private Vector3 _backgroundScaleZoomed = new(5, 5, 0);
+    private Vector3 _backgroundScaleZoomed = new(7.4f, 7.4f, 0);
 
 
 

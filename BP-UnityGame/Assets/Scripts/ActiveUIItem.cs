@@ -31,7 +31,6 @@ public class ActiveUIItem : MonoBehaviour
             return;
         }
 
-        // Pokud už bìží cooldown, ukonèíme ho pøed spuštìním nového
         if (_cooldownCoroutine != null)
         {
             StopCoroutine(_cooldownCoroutine);
@@ -63,7 +62,7 @@ public class ActiveUIItem : MonoBehaviour
         }
 
         CooldownImage.fillAmount = 0f;
-        _cooldownCoroutine = null; // Resetování po skonèení
+        _cooldownCoroutine = null;
     }
 
     public void LoadValues()

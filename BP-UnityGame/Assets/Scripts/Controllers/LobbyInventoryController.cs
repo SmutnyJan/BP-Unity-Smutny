@@ -2,6 +2,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class LobbyInventoryController : MonoBehaviour
 {
@@ -55,9 +56,6 @@ public class LobbyInventoryController : MonoBehaviour
 
                 LoadUserInventory();
             }
-
-
-
         }
     }
 
@@ -85,6 +83,15 @@ public class LobbyInventoryController : MonoBehaviour
 
             itemController.LoadValues();
 
+        }
+    }
+
+    public void NewItemRecieved(ItemType type, int newAmount)
+    {
+        LoadUserInventory();
+        if (ActiveUIItem.ItemType == type) { 
+            AmountText.text = newAmount.ToString();
+            ActiveUIItem.UpdateAmountValue(newAmount);
         }
     }
 

@@ -26,14 +26,18 @@ public class LevelFlowManager : MonoBehaviour
         if (SaveLoadManager.Instance.Progress.LevelConfig.Scene == SceneLoaderManager.Instance.CurrentScene)
         {
             Player.transform.position = SaveLoadManager.Instance.Progress.LevelConfig.SpawnPoint;
-
+            foreach(int chestIndex in SaveLoadManager.Instance.Progress.LevelConfig.ChestsOpenedIndexes)
+            {
+                GameObject.Find("Chest (" +  chestIndex + ")").GetComponent<OpenChestController>().SetStateToOpen();
+            }
         }
         else
         {
             SaveLoadManager.Instance.Progress.LevelConfig = new LevelProgress()
             {
                 Scene = SceneLoaderManager.Instance.CurrentScene,
-                SpawnPoint = StartSpawningPoint.position
+                SpawnPoint = StartSpawningPoint.position,
+                ChestsOpenedIndexes = new System.Collections.Generic.List<int>(),
             };
         }
 

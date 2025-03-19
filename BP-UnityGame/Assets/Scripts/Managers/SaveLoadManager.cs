@@ -8,7 +8,7 @@ using static SceneLoaderManager;
 
 public class SaveLoadManager : MonoBehaviour
 {
-    // C:\Users\smutn\AppData\LocalLow\FM TUL Smutny & Strecanska\TULtimatní hra
+    // C:\Users\smutn\AppData\LocalLow\FM TUL Smutny Strecanska\TULtimatní hra
     public static SaveLoadManager Instance;
     public MainMenuSettings Settings;
     public Progress Progress;
@@ -243,4 +243,5 @@ public class LevelProgress
 {
     public ActiveScene Scene;
     public Vector3 SpawnPoint;
+    public List<int> ChestsOpenedIndexes;
 }

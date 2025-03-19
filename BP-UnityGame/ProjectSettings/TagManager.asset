@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Platform
   - Groundcheck
+  - Inventory
   layers:
   - Default
   - TransparentFX

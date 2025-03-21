@@ -24,9 +24,9 @@ public class PlayerPlatformerMovementController : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _spriteRenderer;
     private float _cameraSize;
-    private const float CAMERA_SIZE_ZOOMED = 8;
+    private const float CAMERA_SIZE_ZOOMED = 10;
     private Vector3 _backgroundScale;
-    private Vector3 _backgroundScaleZoomed = new(7.4f, 7.4f, 0);
+    private Vector3 _backgroundScaleZoomed = new(12.1f, 12.1f, 0);
 
 
 

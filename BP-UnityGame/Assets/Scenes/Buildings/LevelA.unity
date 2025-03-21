@@ -333,7 +333,7 @@ MonoBehaviour:
   m_text: Budova A
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
-  m_sharedMaterial: {fileID: -4001345900356862470, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
+  m_sharedMaterial: {fileID: 2825862324939018218, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -596,6 +596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsGrounded: 0
   IsOnPlatform: 0
+  IsTouchingMovingPlatform: 0
   TouchingPlatform: {fileID: 0}
 --- !u!61 &220911173
 BoxCollider2D:
@@ -891,6 +892,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SetGameStateAfterFinish: 0
   LoadSceneAfterFinish: 14
+  Player: {fileID: 0}
+  StartSpawningPoint: {fileID: 0}
+  YDespawn: 0
 --- !u!4 &319233601
 Transform:
   m_ObjectHideFlags: 0
@@ -1519,8 +1523,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementSpeed: 10
   JumpForce: 25
+  Camera: {fileID: 0}
+  Background: {fileID: 0}
   PlatformCollisionController: {fileID: 220911172}
   LobbyInventoryController: {fileID: 0}
+  TimewarpPoint: {fileID: 0}
 --- !u!61 &1180085297
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1755,7 +1762,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &1875576739
 Canvas:
   m_ObjectHideFlags: 0

@@ -53,6 +53,8 @@ public class SettingsMenuController : MonoBehaviour
         MicrophoneManager.Instance.ChangeActiveMicrophone(MicrophoneUIController.SelectedMicrophone);
 
         SaveLoadManager.Instance.Save(SaveLoadManager.SaveType.Settings);
+
+        SceneLoaderManager.Instance.LoadScene(SceneLoaderManager.ActiveScene.MainMenu);
     }
     public void OnSFXVolumeSliderChanged()
     {

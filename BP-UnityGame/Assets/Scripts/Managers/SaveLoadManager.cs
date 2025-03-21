@@ -8,7 +8,7 @@ using static SceneLoaderManager;
 
 public class SaveLoadManager : MonoBehaviour
 {
-    // C:\Users\smutn\AppData\LocalLow\FM TUL Smutny Strecanska\TULtimatní hra
+    // C:\Users\smutn\AppData\LocalLow\FM TUL Smutny Strecanska\TULtimátní hra
     public static SaveLoadManager Instance;
     public MainMenuSettings Settings;
     public Progress Progress;

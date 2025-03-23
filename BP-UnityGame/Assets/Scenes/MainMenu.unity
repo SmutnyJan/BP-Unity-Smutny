@@ -639,6 +639,8 @@ MonoBehaviour:
       Clips:
       - Clip: {fileID: 8300000, guid: af34943fb0dbbed449c67e0445113e65, type: 3}
       - Clip: {fileID: 8300000, guid: bf099225f6a621743b7cff1784011275, type: 3}
+      - Clip: {fileID: 8300000, guid: 21195101abf13b84088b82fdc07f484f, type: 3}
+      - Clip: {fileID: 8300000, guid: a61ff627558059e4db7119384101dfed, type: 3}
     Player:
       Clips: []
     Music:

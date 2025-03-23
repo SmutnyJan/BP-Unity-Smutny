@@ -25,7 +25,10 @@ public class PlayerLobbyMovementController : MonoBehaviour
 
     private void OnDisplayInventory()
     {
-        LobbyInventoryController.ToggleInventory();
+        if (LobbyInventoryController != null)
+        {
+            LobbyInventoryController.ToggleInventory();
+        }
     }
     void Start()
     {

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6612831632339497421}
   - component: {fileID: 7724818598426212761}
-  - component: {fileID: 1245699583105996630}
+  - component: {fileID: 7220400875468669749}
   - component: {fileID: 8075403959403641911}
   m_Layer: 0
   m_Name: Chest
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 8122742845725568292}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 125.39, y: -14.691, z: 0}
-  m_LocalScale: {x: 0.0691, y: 0.0691, z: 0.0691}
+  m_LocalPosition: {x: 125.6388, y: -14.514, z: 0}
+  m_LocalScale: {x: 0.5422436, y: 0.5422436, z: 0.5422436}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,18 +78,18 @@ SpriteRenderer:
   m_SortingLayerID: -1518705837
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6834524911116659543, guid: e5544545b2b251a40bfd284cebb19394, type: 3}
+  m_Sprite: {fileID: 4931053149192371854, guid: 8b7e3232182b0e14e8528b6a6bca6d60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 60.47536, y: 32.6}
+  m_Size: {x: 4.12, y: 2.93}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1245699583105996630
+--- !u!61 &7220400875468669749
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,13 +127,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 60.47536, y: 32.6}
-    newSize: {x: 60.47536, y: 32.6}
+    oldSize: {x: 4.12, y: 2.93}
+    newSize: {x: 4.12, y: 2.93}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 60.47536, y: 32.6}
+  m_Size: {x: 4.12, y: 2.93}
   m_EdgeRadius: 0
 --- !u!114 &8075403959403641911
 MonoBehaviour:
@@ -147,5 +147,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c45754c7ab49a464099aadb1ba9ae2ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Content: {fileID: 3181458315132007948, guid: 28fdce6d86b214e4c959ac76afe72e06, type: 3}
-  Amount: 5
+  ChestContent: []

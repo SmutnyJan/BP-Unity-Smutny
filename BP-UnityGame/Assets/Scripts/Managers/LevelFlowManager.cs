@@ -9,7 +9,11 @@ public class LevelFlowManager : MonoBehaviour
 
     public GameObject Player;
     public Transform StartSpawningPoint;
-    public float YDespawn;
+
+
+    public Transform DeathPointLevel;
+
+
     void Awake()
     {
         if (Instance == null)
@@ -26,9 +30,9 @@ public class LevelFlowManager : MonoBehaviour
         if (SaveLoadManager.Instance.Progress.LevelConfig.Scene == SceneLoaderManager.Instance.CurrentScene)
         {
             Player.transform.position = SaveLoadManager.Instance.Progress.LevelConfig.SpawnPoint;
-            foreach(int chestIndex in SaveLoadManager.Instance.Progress.LevelConfig.ChestsOpenedIndexes)
+            foreach (int chestIndex in SaveLoadManager.Instance.Progress.LevelConfig.ChestsOpenedIndexes)
             {
-                GameObject.Find("Chest (" +  chestIndex + ")").GetComponent<OpenChestController>().SetStateToOpen();
+                GameObject.Find("Chest (" + chestIndex + ")").GetComponent<OpenChestController>().SetStateToOpen();
             }
         }
         else
@@ -50,7 +54,7 @@ public class LevelFlowManager : MonoBehaviour
 
     void Update()
     {
-        if (Player.transform.position.y < YDespawn)
+        if (Player.transform.position.y < DeathPointLevel.position.y)
         {
             Player.transform.position = SaveLoadManager.Instance.Progress.LevelConfig.SpawnPoint + new Vector3(0, 5, 0);
         }

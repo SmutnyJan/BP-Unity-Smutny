@@ -32,7 +32,7 @@ public class UseEnderPearl : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Player.transform.position = this.transform.position;
+        Player.transform.position = this.transform.position + new Vector3(0, 1.5f, 0);
         Destroy(gameObject);
     }
 }

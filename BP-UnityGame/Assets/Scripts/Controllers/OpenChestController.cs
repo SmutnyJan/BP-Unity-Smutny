@@ -1,7 +1,7 @@
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using UnityEngine;
 
 public class OpenChestController : MonoBehaviour
 {
@@ -20,7 +20,7 @@ public class OpenChestController : MonoBehaviour
             Debug.LogWarning("Chest name " + this.name + " incorrect format!");
         }
 
-            _animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
         _lobbyInventoryController = GameObject.FindGameObjectWithTag("Inventory").GetComponent<LobbyInventoryController>();
     }
 
@@ -28,7 +28,7 @@ public class OpenChestController : MonoBehaviour
     {
         if (!_isOpened && collision.gameObject.CompareTag("Player"))
         {
-            _isOpened = true;
+            SetStateToOpen();
             //_animator.SetTrigger("Open");
             GetComponent<SpriteRenderer>().color = (Color)(new Color32(255, 0, 0, 255));
 
@@ -49,7 +49,7 @@ public class OpenChestController : MonoBehaviour
 
     IEnumerator SpawnContent()
     {
-        foreach (var item in ChestContent)
+        foreach (GameObject item in ChestContent)
         {
             {
                 GameObject spawnedItem = Instantiate(item, transform.position, Quaternion.identity);
@@ -61,6 +61,5 @@ public class OpenChestController : MonoBehaviour
                 yield return new WaitForSeconds(_spawnDelay);
             }
         }
-        _isOpened = true;
     }
 }

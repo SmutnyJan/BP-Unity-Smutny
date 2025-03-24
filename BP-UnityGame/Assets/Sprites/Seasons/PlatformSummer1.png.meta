@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 061deb2b484147a44868b72f2eaebfd1
+guid: 0bc4cddb7770b6f4db2e3b08881a2417
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8503348252735758223
-    second: PlatformWinter2_0
+      213: 4393411053918881296
+    second: PlatformSummer1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -47,7 +47,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 0
+  spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlatformWinter2_0
+      name: PlatformSummer1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 371
-        height: 75
+        width: 189
+        height: 77
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f8fd0c5ee26f10670800000000000000
-      internalID: 8503348252735758223
+      spriteID: 0160c15831888fc30800000000000000
+      internalID: 4393411053918881296
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      PlatformWinter2_0: 8503348252735758223
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

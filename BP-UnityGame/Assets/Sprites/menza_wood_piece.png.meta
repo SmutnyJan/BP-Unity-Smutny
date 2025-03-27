@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      menza_wood_piece_0: 4860279071989693609
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

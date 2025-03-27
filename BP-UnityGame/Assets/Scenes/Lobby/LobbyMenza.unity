@@ -1688,6 +1688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Overlay: {fileID: 125327916}
   MenuPanel: {fileID: 497371629}
+  LobbyInventoryController: {fileID: 2435166285160872724}
 --- !u!1 &1537562196
 GameObject:
   m_ObjectHideFlags: 0
@@ -1770,7 +1771,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1537562199}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1529501163}
+        m_TargetAssemblyTypeName: LobbyMenuController, Assembly-CSharp
+        m_MethodName: CloseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1537562199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2181,7 +2194,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2061583795}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1529501163}
+        m_TargetAssemblyTypeName: LobbyMenuController, Assembly-CSharp
+        m_MethodName: BackToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2061583795
 MonoBehaviour:
   m_ObjectHideFlags: 0

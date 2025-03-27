@@ -5,7 +5,7 @@ public class PlayerLobbyMovementController : MonoBehaviour
     public int MovementSpeed;
     public LobbyInventoryController LobbyInventoryController;
     public LobbyMenuController LobbyMenuController;
-    
+
     private PlayerInputSystem _inputSystem;
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _spriteRenderer;
@@ -37,7 +37,7 @@ public class PlayerLobbyMovementController : MonoBehaviour
 
     private void OnDisplayMenu()
     {
-        LobbyMenuController.ToggleInventory();
+        LobbyMenuController.ToggleMenu();
     }
     void Start()
     {

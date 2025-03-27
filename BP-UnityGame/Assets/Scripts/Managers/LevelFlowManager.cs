@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class LevelFlowManager : MonoBehaviour
@@ -42,6 +43,11 @@ public class LevelFlowManager : MonoBehaviour
                 Scene = SceneLoaderManager.Instance.CurrentScene,
                 SpawnPoint = StartSpawningPoint.position,
                 ChestsOpenedIndexes = new System.Collections.Generic.List<int>(),
+                ItemsRevert = SaveLoadManager.Instance.Progress.Items.Select(item => new ItemAmount
+                {
+                    ItemType = item.ItemType,
+                    Amount = item.Amount,
+                }).ToList()
             };
         }
 

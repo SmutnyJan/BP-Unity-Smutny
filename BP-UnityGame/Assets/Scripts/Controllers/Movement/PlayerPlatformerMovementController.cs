@@ -19,6 +19,9 @@ public class PlayerPlatformerMovementController : MonoBehaviour
     public PlatformCollisionController PlatformCollisionController;
     public LobbyInventoryController LobbyInventoryController;
     public GameObject TimewarpPoint;
+    public BuildingMenuController BuildingMenuController;
+
+
 
     private PlayerInputSystem _inputSystem;
     private Rigidbody2D _rigidbody;
@@ -52,6 +55,11 @@ public class PlayerPlatformerMovementController : MonoBehaviour
     private void OnDisplayInventory()
     {
         LobbyInventoryController.ToggleInventory();
+    }
+
+    private void OnDisplayMenu()
+    {
+        BuildingMenuController.ToggleMenu();
     }
 
     private void OnJump()

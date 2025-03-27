@@ -244,4 +244,6 @@ public class LevelProgress
     public ActiveScene Scene;
     public Vector3 SpawnPoint;
     public List<int> ChestsOpenedIndexes;
+    public List<ItemAmount> ItemsRevert;
+
 }

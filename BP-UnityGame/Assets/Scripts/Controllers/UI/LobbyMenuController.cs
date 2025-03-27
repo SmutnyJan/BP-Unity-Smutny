@@ -5,7 +5,6 @@ public class LobbyMenuController : MonoBehaviour
     public GameObject Overlay;
     public GameObject MenuPanel;
 
-    public LobbyInventoryController LobbyInventoryController;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,14 +31,9 @@ public class LobbyMenuController : MonoBehaviour
         }
     }
 
-    public void CloseMenu()
-    {
-        MenuPanel.SetActive(false);
-        Overlay.SetActive(false);
-    }
 
     public void BackToMenu()
     {
-
+        SceneLoaderManager.Instance.LoadScene(SceneLoaderManager.ActiveScene.MainMenu);
     }
 }

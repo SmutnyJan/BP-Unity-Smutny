@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -12,12 +11,14 @@ public class MicrophoneUIController : MonoBehaviour
     void Start()
     {
         PopulateMicrophoneDropdown();
+        MicrophoneDropdown.onValueChanged.AddListener(delegate { ChangeMicrophone(); });
+
     }
 
     void PopulateMicrophoneDropdown()
     {
         MicrophoneDropdown.ClearOptions();
-        var micOptions = Microphone.devices.ToList();
+        System.Collections.Generic.List<string> micOptions = Microphone.devices.ToList();
 
         if (micOptions.Count > 0)
         {
@@ -25,7 +26,8 @@ public class MicrophoneUIController : MonoBehaviour
 
             if (SaveLoadManager.Instance.Settings.Microphone != "")
             {
-                var activeMic = SaveLoadManager.Instance.Settings.Microphone;
+                string activeMic = SaveLoadManager.Instance.Settings.Microphone;
+                SelectedMicrophone = activeMic;
 
                 int activeIndex = MicrophoneDropdown.options.FindIndex(option => option.text == activeMic);
 
@@ -41,7 +43,6 @@ public class MicrophoneUIController : MonoBehaviour
             Debug.LogWarning("Žádný mikrofon nebyl nalezen!");
         }
 
-        MicrophoneDropdown.onValueChanged.AddListener(delegate { ChangeMicrophone(); });
     }
 
     void ChangeMicrophone()

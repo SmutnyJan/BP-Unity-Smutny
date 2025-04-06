@@ -5,7 +5,6 @@ using UnityEngine;
 public class BootsItem : ScriptableObject, IUsableItem
 {
     private PlayerPlatformerMovementController PlayerPlatformerMovementController { get; set; }
-    private Coroutine _resetSpeedCoroutine;
 
     public void InitializeItem()
     {
@@ -14,21 +13,10 @@ public class BootsItem : ScriptableObject, IUsableItem
 
     public void UseItem()
     {
-        if (_resetSpeedCoroutine != null)
-        {
-            PlayerPlatformerMovementController.StopCoroutine(_resetSpeedCoroutine);
-        }
-
-        PlayerPlatformerMovementController.MovementSpeed = PlayerPlatformerMovementController.MOVEMENT_SPEED_AFFECTED;
-        _resetSpeedCoroutine = PlayerPlatformerMovementController.StartCoroutine(ResetSpeedAfterDelay(ItemLibraryManager.Instance.UIItems[ItemType.Boots].UpTime));
+        PlayerPlatformerMovementController.PlayerEffectsController.AddEffect(PlayerEffectsController.PlayerEffect.Speed);
     }
 
-    private IEnumerator ResetSpeedAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        PlayerPlatformerMovementController.MovementSpeed = PlayerPlatformerMovementController.MOVEMENT_SPEED;
-        _resetSpeedCoroutine = null;
-    }
+
 
     public void UnselectItem()
     {

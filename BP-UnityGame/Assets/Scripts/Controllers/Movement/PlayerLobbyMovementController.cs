@@ -67,8 +67,4 @@ public class PlayerLobbyMovementController : MonoBehaviour
     {
         _inputSystem?.PlayerLobby.Disable();
     }
-
-
-
-
 }

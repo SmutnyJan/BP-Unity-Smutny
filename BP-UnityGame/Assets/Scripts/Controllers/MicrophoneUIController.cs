@@ -50,8 +50,4 @@ public class MicrophoneUIController : MonoBehaviour
         SelectedMicrophone = MicrophoneDropdown.options[MicrophoneDropdown.value].text;
     }
 
-
-
-
-
 }

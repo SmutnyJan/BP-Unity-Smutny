@@ -6,14 +6,18 @@ public class SeasonsManager : MonoBehaviour
 {
     public Transform ColliderEndPoint;
     public static SeasonsManager Instance;
-    public static event Action<Season> OnSeasonChangeStarted;
+    public event Action<Season> OnSeasonChangeStarted;
 
 
 
     public Season CurrentSeason;
-    private float _colliderMoveSpeed = 10f;
+    private float _colliderMoveSpeed = 15f;
     private Axis _usedAxis = Axis.X;
     private bool _seasonChanging = false;
+
+
+
+    public GameObject SnowParticles;
     private enum Axis { X, Y }
     public enum Season
     {
@@ -25,15 +29,7 @@ public class SeasonsManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Instance = this;
     }
 
     void Start()
@@ -54,7 +50,12 @@ public class SeasonsManager : MonoBehaviour
     {
         _usedAxis = _usedAxis == Axis.X ? Axis.Y : Axis.X;
         OnSeasonChangeStarted?.Invoke(CurrentSeason);
+        Debug.Log("Invoked");
+
         StartCoroutine(MoveCollider(this.transform, _usedAxis));
+
+
+
     }
 
     private IEnumerator MoveCollider(Transform targetTransform, Axis axis)
@@ -79,6 +80,8 @@ public class SeasonsManager : MonoBehaviour
         }
 
         targetTransform.position = startPos;
+
+
         _seasonChanging = false;
     }
 
@@ -101,9 +104,13 @@ public class SeasonsManager : MonoBehaviour
                 break;
             case Season.Autumn:
                 CurrentSeason = Season.Winter;
+                SnowParticles.SetActive(true);
+                FullScreenShaderManager.Instance.SwitchToShader(FullScreenShaderManager.FullScreenShader.Freezing);
                 break;
             case Season.Winter:
                 CurrentSeason = Season.Spring;
+                SnowParticles.SetActive(false);
+                FullScreenShaderManager.Instance.SwitchToShader(FullScreenShaderManager.FullScreenShader.None);
                 break;
             default:
                 CurrentSeason = Season.Spring;
@@ -122,6 +129,13 @@ public class SeasonsManager : MonoBehaviour
             {
                 (comp as ISeasonChange).SwitchToSeason(CurrentSeason);
             }
+
+            if (comp is PlatformCracker)
+            {
+                (comp as PlatformCracker).Crack();
+            }
+
+
         }
     }
 

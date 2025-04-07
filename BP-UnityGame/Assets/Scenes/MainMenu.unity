@@ -255,6 +255,61 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17419669}
   m_CullTransparentMesh: 1
+--- !u!1 &34983054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 34983056}
+  - component: {fileID: 34983055}
+  m_Layer: 0
+  m_Name: Full Screen Shader Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &34983055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34983054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e843b1c0ba05598439e8cb77f991bf27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShaderList:
+  - shader: 0
+    material: {fileID: 2100000, guid: 95c7f97978570ae4195ad7fe6e7c957b, type: 2}
+  - shader: 1
+    material: {fileID: 2100000, guid: 497b53af6bdde5941b5df8fa63d6fcb7, type: 2}
+  - shader: 2
+    material: {fileID: 2100000, guid: eabea2ce8fab07943afb9c90adf011d4, type: 2}
+  - shader: 3
+    material: {fileID: 2100000, guid: 3058fffd3742a4f4fa583f30e3da7aa7, type: 2}
+  - shader: 4
+    material: {fileID: 2100000, guid: 4e6696c91c4fbf4488980c50d62f5343, type: 2}
+--- !u!4 &34983056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34983054}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &106522430
 GameObject:
   m_ObjectHideFlags: 0
@@ -3077,7 +3132,7 @@ Transform:
   m_GameObject: {fileID: 1817495375}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1799.5695, y: 665.34155, z: 1.5487441}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3505,5 +3560,6 @@ SceneRoots:
   - {fileID: 1292521064}
   - {fileID: 1716099359}
   - {fileID: 1817495377}
+  - {fileID: 34983056}
   - {fileID: 1622280349}
   - {fileID: 423364797}

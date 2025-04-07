@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine;
 
@@ -9,11 +10,21 @@ public class EnderPearlItem : ScriptableObject, IUsableItem
 
     public EnderPearlItem()
     {
+
     }
 
     public void InitializeItem()
     {
         Player = GameObject.FindGameObjectsWithTag("Player").First();
+        FullScreenShaderManager.Instance.SwitchToShader(FullScreenShaderManager.FullScreenShader.Pearl);
+        SeasonsManager.Instance.OnSeasonChangeStarted += OnSeasonChanged;
+
+    }
+
+    private void OnSeasonChanged(SeasonsManager.Season season)
+    {
+
+        FullScreenShaderManager.Instance.SwitchToShader(FullScreenShaderManager.FullScreenShader.Pearl);
     }
 
     public void UseItem()
@@ -29,6 +40,10 @@ public class EnderPearlItem : ScriptableObject, IUsableItem
 
     public void UnselectItem()
     {
+        FullScreenShaderManager.Instance.SwitchToShader(FullScreenShaderManager.FullScreenShader.None);
+        SeasonsManager.Instance.OnSeasonChangeStarted -= OnSeasonChanged;
+
+
     }
 
 }

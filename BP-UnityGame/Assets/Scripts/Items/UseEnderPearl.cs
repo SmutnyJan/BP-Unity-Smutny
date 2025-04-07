@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ public class UseEnderPearl : MonoBehaviour
     public GameObject Player;
 
     private Rigidbody2D _rigidBody;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,6 +18,7 @@ public class UseEnderPearl : MonoBehaviour
         StartCoroutine(DestroyAfterTime());
 
     }
+
 
     // Update is called once per frame
     void Update()

@@ -49,6 +49,7 @@ public class LobbyInventoryController : MonoBehaviour
             }
             if (item.Amount == 0)
             {
+                ItemLibraryManager.Instance.InGameItems[ActiveUIItem.ItemType].UnselectItem();
                 SaveLoadManager.Instance.Progress.Items.RemoveAll(x => x.ItemType == item.ItemType);
                 ActiveUIItem.gameObject.SetActive(false);
                 ItemDetailsPanel.gameObject.SetActive(false);

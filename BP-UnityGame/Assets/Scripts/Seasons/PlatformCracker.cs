@@ -1,10 +1,12 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlatformCracker : MonoBehaviour
 {
-    private SpriteRenderer sr;
-    private MaterialPropertyBlock propertyBlock;
-    public CrackState _crackState;
+    private SpriteRenderer _spriteRenderer;
+    private MaterialPropertyBlock _propertyBlock;
+    private BoxCollider2D _boxCollider;
+    private CrackState _crackState;
 
     public enum CrackState
     {
@@ -16,8 +18,9 @@ public class PlatformCracker : MonoBehaviour
 
     private void Awake()
     {
-        sr = GetComponent<SpriteRenderer>();
-        propertyBlock = new MaterialPropertyBlock();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _boxCollider = GetComponent<BoxCollider2D>();
+        _propertyBlock = new MaterialPropertyBlock();
     }
 
     private void Start()
@@ -28,12 +31,12 @@ public class PlatformCracker : MonoBehaviour
 
     private void SetCrackLevel(float edgeMin, float edgeMax)
     {
-        sr.GetPropertyBlock(propertyBlock);
+        _spriteRenderer.GetPropertyBlock(_propertyBlock);
 
-        propertyBlock.SetFloat("_CrackEdgeMin", edgeMin);
-        propertyBlock.SetFloat("_CrackEdgeMax", edgeMax);
+        _propertyBlock.SetFloat("_CrackEdgeMin", edgeMin);
+        _propertyBlock.SetFloat("_CrackEdgeMax", edgeMax);
 
-        sr.SetPropertyBlock(propertyBlock);
+        _spriteRenderer.SetPropertyBlock(_propertyBlock);
     }
 
     public void Crack()
@@ -53,9 +56,30 @@ public class PlatformCracker : MonoBehaviour
                 SetCrackLevel(1f, 0.1f);
                 break;
             case CrackState.Three:
-                _crackState = CrackState.None;
-                SetCrackLevel(1f, 1f);
+                _crackState = CrackState.Three;
+                StartCoroutine(HandleBreak());
                 break;
         }
+    }
+
+    private IEnumerator HandleBreak()
+    {
+        _spriteRenderer.enabled = false;
+        _boxCollider.enabled = false;
+        yield return new WaitForSeconds(5f);
+        _spriteRenderer.enabled = true;
+        _boxCollider.enabled = true;
+        _crackState = CrackState.None;
+        SetCrackLevel(1f, 1f);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider.name == "GroundCheck") //odstranìní duplicitního volání
+        {
+            return;
+        }
+
+        Crack();
     }
 }

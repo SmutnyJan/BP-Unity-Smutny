@@ -7,6 +7,7 @@ public class SeasonsManager : MonoBehaviour
     public Transform ColliderEndPoint;
     public static SeasonsManager Instance;
     public event Action<Season> OnSeasonChangeStarted;
+    public GameObject WindArea;
 
 
 
@@ -106,10 +107,12 @@ public class SeasonsManager : MonoBehaviour
             case Season.Summer:
                 CurrentSeason = Season.Autumn;
                 LeavesParticles.SetActive(true);
+                WindArea.SetActive(true);
                 break;
             case Season.Autumn:
                 CurrentSeason = Season.Winter;
                 LeavesParticles.SetActive(false);
+                WindArea.SetActive(false);
                 SnowParticles.SetActive(true);
                 FullScreenShaderManager.Instance.SwitchToShader(FullScreenShaderManager.FullScreenShader.Freezing);
                 break;

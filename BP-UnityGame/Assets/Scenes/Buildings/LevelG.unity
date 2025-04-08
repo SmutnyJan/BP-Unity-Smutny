@@ -6174,7 +6174,7 @@ AreaEffector2D:
     m_Bits: 4294967295
   m_UseGlobalAngle: 0
   m_ForceAngle: 0
-  m_ForceMagnitude: 10
+  m_ForceMagnitude: 100
   m_ForceVariation: 0
   m_ForceTarget: 0
   m_Drag: 0
@@ -11737,6 +11737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ColliderEndPoint: {fileID: 1743186796}
+  WindArea: {fileID: 627677885}
   CurrentSeason: 0
   SnowParticles: {fileID: 450389768}
   LeavesParticles: {fileID: 1465064248}
@@ -16943,7 +16944,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1465064249
 Transform:
   m_ObjectHideFlags: 0

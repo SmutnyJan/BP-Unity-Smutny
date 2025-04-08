@@ -1,16 +1,22 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UIElements;
 using static SeasonsManager;
 
 public class SeasonMaterialController : MonoBehaviour, ISeasonChange
 {
+    public PhysicsMaterial2D platformMaterial;
     private Renderer _renderer;
     private MaterialPropertyBlock _propertyBlock;
+    private BoxCollider2D _boxCollider;
+    
+
 
     private void Awake()
     {
         _renderer = GetComponent<Renderer>();
         _propertyBlock = new MaterialPropertyBlock();
+        _boxCollider = GetComponent<BoxCollider2D>();
     }
 
     private void Start()
@@ -21,6 +27,15 @@ public class SeasonMaterialController : MonoBehaviour, ISeasonChange
 
     public void SwitchToSeason(Season season)
     {
+        if (season == Season.Winter)
+        {
+            _boxCollider.sharedMaterial = platformMaterial;
+        }
+        else
+        {
+            _boxCollider.sharedMaterial = null;
+        }
+
         float from = _propertyBlock.GetFloat("_Blend");
         float to = SeasonTransitionPoint(season);
 

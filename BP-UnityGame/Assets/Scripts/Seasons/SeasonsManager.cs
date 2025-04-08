@@ -18,6 +18,7 @@ public class SeasonsManager : MonoBehaviour
 
 
     public GameObject SnowParticles;
+    public GameObject LeavesParticles;
     private enum Axis { X, Y }
     public enum Season
     {
@@ -36,6 +37,8 @@ public class SeasonsManager : MonoBehaviour
     {
         CurrentSeason = Season.Spring;
         BoxCollider2D[] colliders = GetComponents<BoxCollider2D>();
+
+        MicrophoneManager.Instance.OnLoudNoiseDetected += NextSeason;
     }
 
     void Update()
@@ -91,6 +94,7 @@ public class SeasonsManager : MonoBehaviour
         {
             return;
         }
+        Debug.Log("Zmìna poèasí");
 
         _seasonChanging = true;
 
@@ -101,9 +105,11 @@ public class SeasonsManager : MonoBehaviour
                 break;
             case Season.Summer:
                 CurrentSeason = Season.Autumn;
+                LeavesParticles.SetActive(true);
                 break;
             case Season.Autumn:
                 CurrentSeason = Season.Winter;
+                LeavesParticles.SetActive(false);
                 SnowParticles.SetActive(true);
                 FullScreenShaderManager.Instance.SwitchToShader(FullScreenShaderManager.FullScreenShader.Freezing);
                 break;
@@ -137,6 +143,12 @@ public class SeasonsManager : MonoBehaviour
 
 
         }
+    }
+
+    private void OnDestroy()
+    {
+        MicrophoneManager.Instance.OnLoudNoiseDetected -= NextSeason;
+
     }
 
 }

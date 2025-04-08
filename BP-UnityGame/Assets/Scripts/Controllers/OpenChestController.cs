@@ -54,8 +54,14 @@ public class OpenChestController : MonoBehaviour
             {
                 GameObject spawnedItem = Instantiate(item, transform.position, Quaternion.identity);
                 Rigidbody2D rb = spawnedItem.GetComponent<Rigidbody2D>();
+
                 PickItemController pickItemController = spawnedItem.GetComponentInParent<PickItemController>();
-                pickItemController.LobbyInventoryController = _lobbyInventoryController;
+                if(pickItemController) //peníze potøebují do inventáøe
+                {
+                    pickItemController.LobbyInventoryController = _lobbyInventoryController;
+                }
+
+
                 float randomForceX = Random.Range(-2f, 2f);
                 rb.AddForce(new Vector2(randomForceX, _spawnForce), ForceMode2D.Impulse);
                 yield return new WaitForSeconds(_spawnDelay);

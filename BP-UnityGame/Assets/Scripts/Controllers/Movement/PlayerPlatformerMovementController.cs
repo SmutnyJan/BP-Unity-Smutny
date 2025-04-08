@@ -86,10 +86,11 @@ public class PlayerPlatformerMovementController : MonoBehaviour
             _spriteRenderer.flipX = false;
         }
 
-        if (!PlatformCollisionController.IsTouchingMovingPlatform)
+        if (moveDir != 0 | SeasonsManager.Instance.CurrentSeason != SeasonsManager.Season.Winter) //klouzání
         {
             _rigidbody.linearVelocity = new Vector2(moveDir * MovementSpeed, _rigidbody.linearVelocity.y);
         }
+
 
     }
 
@@ -164,23 +165,6 @@ public class PlayerPlatformerMovementController : MonoBehaviour
     #endregion
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.name == "Oneway Moving Platform" &&
-            collision.otherCollider.gameObject.tag == "Player" &&
-            !PlatformCollisionController.IsOnPlatform)
-        {
-            PlatformCollisionController.IsTouchingMovingPlatform = true;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.name == "Oneway Moving Platform" && collision.otherCollider.gameObject.tag == "Player")
-        {
-            PlatformCollisionController.IsTouchingMovingPlatform = false;
-        }
-    }
 
     private void OnDisable()
     {

@@ -103,10 +103,10 @@ TextureImporter:
       name: coilUI_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 3
-        width: 92
-        height: 94
+        x: 22
+        y: 1
+        width: 57
+        height: 98
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      coilUI_0: -7518406291002196957
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

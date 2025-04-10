@@ -278,7 +278,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7675826601332790545, guid: aab3c913962991047b8bafbb2924f8b8, type: 3}
+  m_Sprite: {fileID: -1443521620499781827, guid: 360920d10faf8b24e8a6f215e78a3e81, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -404,4 +404,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyText: {fileID: 4724673247352254671}
-  GameInputSystem: {fileID: 4399468552180125989}

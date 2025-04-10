@@ -77,12 +77,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -6418337541015408120, guid: 944b141ce51b5f344bc8658865f65ee7, type: 3}
+  m_Sprite: {fileID: 3968091297299902879, guid: 944b141ce51b5f344bc8658865f65ee7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.95, y: 0.98}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -119,9 +119,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5328199365138446427}
-  - component: {fileID: 5825399523660710682}
   - component: {fileID: 2199390899145175572}
   - component: {fileID: 7011386646454790013}
+  - component: {fileID: 4733487860188417315}
   m_Layer: 0
   m_Name: Pencil PickUp
   m_TagString: Untagged
@@ -145,63 +145,6 @@ Transform:
   - {fileID: 6348241374379028646}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &5825399523660710682
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8799757012617898120}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 8
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.42999998, y: 0.5}
-      - {x: 0.32999998, y: 0.5}
-      - {x: -0.45, y: -0.28}
-      - {x: -0.5, y: -0.41}
-      - {x: -0.5, y: -0.5}
-      - {x: -0.44, y: -0.5}
-      - {x: -0.38, y: -0.48}
-      - {x: -0.29999998, y: -0.45}
-      - {x: 0.5, y: 0.35}
-      - {x: 0.5, y: 0.42}
-  m_UseDelaunayMesh: 0
 --- !u!50 &2199390899145175572
 Rigidbody2D:
   serializedVersion: 5
@@ -243,3 +186,66 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemType: 0
   LobbyInventoryController: {fileID: 0}
+--- !u!60 &4733487860188417315
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8799757012617898120}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.95, y: 0.98}
+    newSize: {x: 0.95, y: 0.98}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.475, y: 0.47}
+      - {x: 0.465, y: 0.48999998}
+      - {x: 0.255, y: 0.48999998}
+      - {x: 0.125, y: 0.45}
+      - {x: -0.095, y: 0.22}
+      - {x: -0.114999995, y: 0.17999999}
+      - {x: -0.114999995, y: 0.14}
+      - {x: -0.095, y: 0.12}
+      - {x: -0.375, y: -0.22999999}
+      - {x: -0.475, y: -0.44}
+      - {x: -0.475, y: -0.48999998}
+      - {x: -0.39499998, y: -0.48999998}
+      - {x: -0.205, y: -0.39999998}
+      - {x: 0.195, y: 0}
+      - {x: 0.45499998, y: 0.29}
+      - {x: 0.475, y: 0.32}
+  m_UseDelaunayMesh: 0

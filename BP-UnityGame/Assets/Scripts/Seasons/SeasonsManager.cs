@@ -54,7 +54,6 @@ public class SeasonsManager : MonoBehaviour
     {
         _usedAxis = _usedAxis == Axis.X ? Axis.Y : Axis.X;
         OnSeasonChangeStarted?.Invoke(CurrentSeason);
-        Debug.Log("Invoked");
 
         StartCoroutine(MoveCollider(this.transform, _usedAxis));
 
@@ -87,6 +86,7 @@ public class SeasonsManager : MonoBehaviour
 
 
         _seasonChanging = false;
+        Debug.Log("zmena dokoncena");
     }
 
     public void NextSeason()
@@ -138,12 +138,6 @@ public class SeasonsManager : MonoBehaviour
             {
                 (comp as ISeasonChange).SwitchToSeason(CurrentSeason);
             }
-
-            if (comp is PlatformCracker)
-            {
-                (comp as PlatformCracker).Crack();
-            }
-
 
         }
     }

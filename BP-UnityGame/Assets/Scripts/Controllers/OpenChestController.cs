@@ -49,14 +49,28 @@ public class OpenChestController : MonoBehaviour
 
     IEnumerator SpawnContent()
     {
-        foreach (GameObject item in ChestContent)
+        List<GameObject> itemsToSpawn = new List<GameObject>(ChestContent);
+
+        switch (SeasonsManager.Instance.CurrentSeason)
+        {
+            case SeasonsManager.Season.Winter:
+                itemsToSpawn.AddRange(GetRandomSubset(ChestContent, ChestContent.Count / 2));
+                break;
+
+            case SeasonsManager.Season.Spring:
+                itemsToSpawn = GetRandomSubset(ChestContent, ChestContent.Count / 2);
+                break;
+        }
+
+
+        foreach (GameObject item in itemsToSpawn)
         {
             {
                 GameObject spawnedItem = Instantiate(item, transform.position, Quaternion.identity);
                 Rigidbody2D rb = spawnedItem.GetComponent<Rigidbody2D>();
 
                 PickItemController pickItemController = spawnedItem.GetComponentInParent<PickItemController>();
-                if(pickItemController) //peníze potøebují do inventáøe
+                if(pickItemController) //peníze PickItemController nemají
                 {
                     pickItemController.LobbyInventoryController = _lobbyInventoryController;
                 }
@@ -67,5 +81,18 @@ public class OpenChestController : MonoBehaviour
                 yield return new WaitForSeconds(_spawnDelay);
             }
         }
+    }
+
+    private List<GameObject> GetRandomSubset(List<GameObject> source, int count)
+    {
+        List<GameObject> temp = new List<GameObject>(source);
+        List<GameObject> result = new List<GameObject>();
+        for (int i = 0; i < count && temp.Count > 0; i++)
+        {
+            int index = Random.Range(0, temp.Count);
+            result.Add(temp[index]);
+            temp.RemoveAt(index);
+        }
+        return result;
     }
 }

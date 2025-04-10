@@ -21,7 +21,19 @@ public class PickItemController : MonoBehaviour
     {
         yield return new WaitForSeconds(_pickupDelay);
         _itemCollider.excludeLayers = 0;
+
+        StartCoroutine(DestroyAfterTime());
+
     }
+
+    private IEnumerator DestroyAfterTime()
+    {
+        yield return new WaitForSeconds(25);
+
+        Destroy(gameObject);
+
+    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

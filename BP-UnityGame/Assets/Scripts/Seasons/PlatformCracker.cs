@@ -7,6 +7,10 @@ public class PlatformCracker : MonoBehaviour
     private MaterialPropertyBlock _propertyBlock;
     private BoxCollider2D _boxCollider;
     private CrackState _crackState;
+    private float _resetTime;
+
+    private float _resetTimeDefault = 5;
+    private float _resetTimeSummer = 10;
 
     public enum CrackState
     {
@@ -27,6 +31,20 @@ public class PlatformCracker : MonoBehaviour
     {
         SetCrackLevel(1f, 1f);
         _crackState = CrackState.None;
+        _resetTime = _resetTimeDefault;
+        SeasonsManager.Instance.OnSeasonChangeStarted += OnSeasonChangeStarted;
+    }
+
+    private void OnSeasonChangeStarted(SeasonsManager.Season season)
+    {
+        if(season == SeasonsManager.Season.Summer)
+        {
+            _resetTime = _resetTimeSummer;
+        }
+        else
+        {
+            _resetTime = _resetTimeDefault;
+        }
     }
 
     private void SetCrackLevel(float edgeMin, float edgeMax)
@@ -66,7 +84,7 @@ public class PlatformCracker : MonoBehaviour
     {
         _spriteRenderer.enabled = false;
         _boxCollider.enabled = false;
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(_resetTime);
         _spriteRenderer.enabled = true;
         _boxCollider.enabled = true;
         _crackState = CrackState.None;
@@ -75,7 +93,7 @@ public class PlatformCracker : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.name == "GroundCheck") //odstranìní duplicitního volání
+        if(collision.collider.name == "GroundCheck" || SeasonsManager.Instance.CurrentSeason == SeasonsManager.Season.Winter) //odstranìní duplicitního volání
         {
             return;
         }

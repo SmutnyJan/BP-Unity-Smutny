@@ -22,6 +22,7 @@ public class PlayerPlatformerMovementController : MonoBehaviour
     private PlayerInputSystem _inputSystem;
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _spriteRenderer;
+    private bool _hasSecondJump = true;
 
 
 
@@ -54,9 +55,21 @@ public class PlayerPlatformerMovementController : MonoBehaviour
 
     private void OnJump()
     {
+        bool isSpring = SeasonsManager.Instance.CurrentSeason == SeasonsManager.Season.Spring;
+
         if (PlatformCollisionController.IsGrounded)
         {
             _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, JumpForce);
+
+            if (isSpring)
+            {
+                _hasSecondJump = true;
+            }
+        }
+        else if (isSpring && _hasSecondJump)
+        {
+            _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, JumpForce);
+            _hasSecondJump = false;
         }
     }
 
@@ -86,12 +99,10 @@ public class PlayerPlatformerMovementController : MonoBehaviour
             _spriteRenderer.flipX = false;
         }
 
-        if (moveDir != 0 | SeasonsManager.Instance.CurrentSeason != SeasonsManager.Season.Winter) //klouzání
+        if (moveDir != 0 || SeasonsManager.Instance.CurrentSeason != SeasonsManager.Season.Winter) //klouzání
         {
             _rigidbody.linearVelocity = new Vector2(moveDir * MovementSpeed, _rigidbody.linearVelocity.y);
         }
-
-
     }
 
     /*private void Update() SuperHot

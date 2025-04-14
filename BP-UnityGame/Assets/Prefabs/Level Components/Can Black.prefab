@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5653610357223461131}
   - component: {fileID: 1680715852614952555}
   m_Layer: 6
-  m_Name: Can Red
+  m_Name: Can Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 50661282637471265, guid: 2b02e1674c9429240a67bdaf7eb8aa6a, type: 3}
+  m_Sprite: {fileID: 3177273401332876539, guid: b40acdd68504f1648b7da963c0fadae1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -155,7 +155,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.68, y: 1.25}
+    oldSize: {x: 0.67, y: 1.25}
     newSize: {x: 0.68, y: 1.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

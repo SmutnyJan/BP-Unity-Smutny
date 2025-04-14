@@ -1,17 +1,14 @@
 using System.Collections;
 using UnityEngine;
-
-public class RedCanController : MonoBehaviour
+public class BlackCanController : MonoBehaviour
 {
     private bool _firstHit = false;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         StartCoroutine(DestroyAfterTimeCoroutine(5));
 
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -33,8 +30,7 @@ public class RedCanController : MonoBehaviour
         }
         if (collision.gameObject.name == "Player")
         {
-            //collision.gameObject.transform.position = SaveLoadManager.Instance.Progress.LevelConfig.SpawnPoint + new Vector3(0, 5, 0);
-            collision.gameObject.GetComponent<PlayerPlatformerMovementController>().PlayerEffectsController.AddEffect(PlayerEffectsController.PlayerEffect.ControllReverse);
+            collision.gameObject.transform.position = SaveLoadManager.Instance.Progress.LevelConfig.SpawnPoint + new Vector3(0, 5, 0);
         }
         Destroy(gameObject);
     }

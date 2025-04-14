@@ -23,7 +23,7 @@ public class PlayerPlatformerMovementController : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _spriteRenderer;
     private bool _hasSecondJump = true;
-
+    private bool _controllRevertLock = false;
 
 
     private void Awake()
@@ -55,6 +55,15 @@ public class PlayerPlatformerMovementController : MonoBehaviour
 
     private void OnJump()
     {
+        if (!_controllRevertLock && PlayerEffectsController.ActiveEffects.Contains(PlayerEffectsController.PlayerEffect.ControllReverse))
+        {
+            _controllRevertLock = true;
+            OnDown();
+            return;
+        }
+        _controllRevertLock = false;
+
+
         bool isSpring = SeasonsManager.Instance.CurrentSeason == SeasonsManager.Season.Spring;
 
         if (PlatformCollisionController.IsGrounded)
@@ -75,6 +84,13 @@ public class PlayerPlatformerMovementController : MonoBehaviour
 
     private void OnDown()
     {
+        if (!_controllRevertLock && PlayerEffectsController.ActiveEffects.Contains(PlayerEffectsController.PlayerEffect.ControllReverse))
+        {
+            _controllRevertLock = true;
+            OnJump();
+            return;
+        }
+        _controllRevertLock = false;
         if (PlatformCollisionController.IsOnPlatform)
         {
             PlatformsManager.Instance.FlipPlatform(PlatformCollisionController.TouchingPlatform);
@@ -88,7 +104,9 @@ public class PlayerPlatformerMovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float moveDir = _inputSystem.PlayerPlatformer.Horizontal.ReadValue<float>();
+        float moveDir = _inputSystem.PlayerPlatformer.Horizontal.ReadValue<float>() * PlayerEffectsController.XMoveReverseCoeficient;
+
+
 
         if (!_spriteRenderer.flipX && moveDir > 0)
         {

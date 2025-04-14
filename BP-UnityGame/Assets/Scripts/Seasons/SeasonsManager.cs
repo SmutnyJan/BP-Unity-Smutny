@@ -132,6 +132,9 @@ public class SeasonsManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+        Debug.Log(collision.gameObject.name);
+
         foreach (MonoBehaviour comp in collision.gameObject.GetComponents<MonoBehaviour>())
         {
             if (comp is ISeasonChange)

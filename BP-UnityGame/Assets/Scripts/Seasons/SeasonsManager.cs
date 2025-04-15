@@ -86,7 +86,6 @@ public class SeasonsManager : MonoBehaviour
 
 
         _seasonChanging = false;
-        Debug.Log("zmena dokoncena");
     }
 
     public void NextSeason()
@@ -95,7 +94,6 @@ public class SeasonsManager : MonoBehaviour
         {
             return;
         }
-        Debug.Log("Zmìna poèasí");
 
         _seasonChanging = true;
 
@@ -132,8 +130,6 @@ public class SeasonsManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        Debug.Log(collision.gameObject.name);
 
         foreach (MonoBehaviour comp in collision.gameObject.GetComponents<MonoBehaviour>())
         {

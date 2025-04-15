@@ -1713,6 +1713,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lobby Inventory
       objectReference: {fileID: 0}
+    - target: {fileID: 2994661704105492044, guid: eaccc5f7f28ef1341a04d8f9ba4cd916, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1398486235}
     - target: {fileID: 4515102499007034600, guid: eaccc5f7f28ef1341a04d8f9ba4cd916, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1962,10 +1966,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6506501638321576013, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
-      propertyPath: LobbyInventoryController
-      value: 
-      objectReference: {fileID: 2435166285160872724}
     - target: {fileID: 8610673326574531350, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
       propertyPath: m_Camera
       value: 
@@ -2075,10 +2075,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1398486235}
-    - target: {fileID: 6030523644171540412, guid: 62813e1059511ab4393cd55d60abc554, type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

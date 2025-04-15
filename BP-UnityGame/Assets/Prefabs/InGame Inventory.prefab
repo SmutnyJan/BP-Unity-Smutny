@@ -440,7 +440,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -24.999939}
+  m_AnchoredPosition: {x: 0, y: -25}
   m_SizeDelta: {x: 0, y: -50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &72304806177295196
@@ -1046,7 +1046,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10, y: -39.317688}
+  m_AnchoredPosition: {x: -10, y: -39.317627}
   m_SizeDelta: {x: 613.52, y: -98.6354}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &1378366741360018710
@@ -1360,7 +1360,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!114 &1375960420647375786
 MonoBehaviour:
@@ -1460,7 +1460,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -306.75964, y: 0}
+  m_AnchoredPosition: {x: -306.75977, y: 0}
   m_SizeDelta: {x: -633.5192, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &394742369004431035
@@ -1535,7 +1535,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.8016968, y: -155.28}
+  m_AnchoredPosition: {x: 0.8016968, y: -155.27997}
   m_SizeDelta: {x: -10.3752, y: 112.0319}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &991017234984709364
@@ -1749,7 +1749,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -104.9, y: -53.90497}
+  m_AnchoredPosition: {x: -104.9, y: -53.90503}
   m_SizeDelta: {x: 188.2499, y: 92.19}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &4109175219339957699
@@ -1798,6 +1798,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1967551687426410131}
     m_Modifications:
+    - target: {fileID: 1304183138611342661, guid: cf2307a1ae29c4a40a0ee65f06881351, type: 3}
+      propertyPath: m_SortingOrder
+      value: 102
+      objectReference: {fileID: 0}
+    - target: {fileID: 2608625437993959518, guid: cf2307a1ae29c4a40a0ee65f06881351, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5760330978003434591, guid: cf2307a1ae29c4a40a0ee65f06881351, type: 3}
       propertyPath: m_Name
       value: UIActiveItem
@@ -1884,6 +1892,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6152584992676425816, guid: cf2307a1ae29c4a40a0ee65f06881351, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391076361919696535, guid: cf2307a1ae29c4a40a0ee65f06881351, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

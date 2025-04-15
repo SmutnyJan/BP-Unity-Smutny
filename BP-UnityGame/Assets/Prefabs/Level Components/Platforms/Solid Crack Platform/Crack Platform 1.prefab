@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3587786971415154131}
   - component: {fileID: 1755174926762849560}
   - component: {fileID: 1044380083692626222}
-  - component: {fileID: 6913396789308774611}
   - component: {fileID: 3999588909972461475}
   m_Layer: 0
   m_Name: Crack Platform 1
@@ -170,33 +169,6 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!50 &6913396789308774611
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2121143393348394418}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &3999588909972461475
 MonoBehaviour:
   m_ObjectHideFlags: 0

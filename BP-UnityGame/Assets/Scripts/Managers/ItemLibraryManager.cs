@@ -82,7 +82,7 @@ public class ItemLibraryManager : MonoBehaviour
                 Subtitle = "Najednou vidíš, co nemáš vidìt",
                 Description = "Po použití se kamera na omezenou dobu oddálí, což hráèi poskytne širší pohled na okolní prostøedí. Umožòuje lépe plánovat pohyb, odhalit skryté cesty nebo sledovat nepøátele z bezpeèné vzdálenosti. Efekt trvá po dobu 20 vteøin, poté se pohled vrátí do normálního stavu.",
                 UnitPrice = 30,
-                UpTime = 20,
+                UpTime = 15,
                 Icon = Resources.Load<Sprite>("Sprites/binocularsUI")}
             },
 

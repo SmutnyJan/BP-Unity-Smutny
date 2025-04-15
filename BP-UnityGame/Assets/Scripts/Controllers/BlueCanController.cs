@@ -1,17 +1,15 @@
 using System.Collections;
 using UnityEngine;
 
-public class RedCanController : MonoBehaviour
+public class BlueCanController : MonoBehaviour
 {
     private bool _firstHit = false;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         StartCoroutine(DestroyAfterTimeCoroutine(5));
 
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -33,7 +31,8 @@ public class RedCanController : MonoBehaviour
         }
         if (collision.gameObject.name == "Player")
         {
-            collision.gameObject.GetComponent<PlayerPlatformerMovementController>().PlayerEffectsController.AddEffect(PlayerEffectsController.PlayerEffect.ControllReverse);
+            collision.gameObject.GetComponent<PlayerEffectsController>().AddEffect(PlayerEffectsController.PlayerEffect.DisableItems);
+
         }
         Destroy(gameObject);
     }

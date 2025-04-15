@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class PlayerEffectsController : MonoBehaviour
 {
-    public PlayerPlatformerMovementController player;
+    public PlayerPlatformerMovementController Player;
     public List<PlayerEffect> ActiveEffects = new();
     public int XMoveReverseCoeficient = 1;
 
     private Coroutine _resetJumpForceCoroutine;
     private Coroutine _resetSpeedCoroutine;
-    private Coroutine _resetZoomCoroutine;
+    private Coroutine _resetZoomOutCoroutine;
     private Coroutine _reverseCameraCoroutine;
+    private Coroutine _resetZoomInCoroutine;
+    private Coroutine _resetItemsUsageCoroutine;
 
 
     private const int _JUMP_SPEED_BONUS = 25;
@@ -29,14 +31,16 @@ public class PlayerEffectsController : MonoBehaviour
         Speed,
         ZoomOut,
         Jump,
-        ControllReverse
+        ControllReverse,
+        ZoomIn,
+        DisableItems
     }
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _backgroundScale = player.Background.transform.localScale;
+        _backgroundScale = Player.Background.transform.localScale;
     }
 
     // Update is called once per frame
@@ -56,10 +60,10 @@ public class PlayerEffectsController : MonoBehaviour
                 }
                 if (!ActiveEffects.Contains(effect))
                 {
-                    player.JumpForce += _JUMP_SPEED_BONUS;
+                    Player.JumpForce += _JUMP_SPEED_BONUS;
                 }
 
-                _resetJumpForceCoroutine = StartCoroutine(ResetJumpForceAfterDelay(ItemLibraryManager.Instance.UIItems[ItemType.JumpCoil].UpTime));
+                _resetJumpForceCoroutine = StartCoroutine(ResetJumpForceAfterDelay(ProcessUptimeChange(ItemLibraryManager.Instance.UIItems[ItemType.JumpCoil].UpTime)));
 
                 break;
             case PlayerEffect.Speed:
@@ -69,23 +73,23 @@ public class PlayerEffectsController : MonoBehaviour
                 }
                 if (!ActiveEffects.Contains(effect))
                 {
-                    player.MovementSpeed += _MOVEMENT_SPEED_BONUS;
+                    Player.MovementSpeed += _MOVEMENT_SPEED_BONUS;
                 }
-                _resetSpeedCoroutine = StartCoroutine(ResetSpeedAfterDelay(ItemLibraryManager.Instance.UIItems[ItemType.Boots].UpTime));
+                _resetSpeedCoroutine = StartCoroutine(ResetSpeedAfterDelay(ProcessUptimeChange(ItemLibraryManager.Instance.UIItems[ItemType.Boots].UpTime)));
                 break;
 
             case PlayerEffect.ZoomOut:
-                if (_resetZoomCoroutine != null)
+                if (_resetZoomOutCoroutine != null)
                 {
-                    StopCoroutine(_resetZoomCoroutine);
+                    StopCoroutine(_resetZoomOutCoroutine);
                 }
                 if (!ActiveEffects.Contains(effect))
                 {
-                    player.Camera.orthographicSize += _CAMERA_ZOOM_OUT_BONUS;
-                    player.Background.transform.localScale = _backgroundScaleZoomed;
+                    Player.Camera.orthographicSize += _CAMERA_ZOOM_OUT_BONUS;
+                    Player.Background.transform.localScale = _backgroundScaleZoomed;
                 }
 
-                _resetZoomCoroutine = StartCoroutine(ResetBinocularsAfterDelay(ItemLibraryManager.Instance.UIItems[ItemType.Binoculars].UpTime));
+                _resetZoomOutCoroutine = StartCoroutine(ResetBinocularsAfterDelay(ProcessUptimeChange(ItemLibraryManager.Instance.UIItems[ItemType.Binoculars].UpTime)));
                 break;
 
             case PlayerEffect.ControllReverse:
@@ -100,6 +104,32 @@ public class PlayerEffectsController : MonoBehaviour
 
                 _reverseCameraCoroutine = StartCoroutine(RevertControllsAfterDelay(_CAN_EFFECT_UPTIME));
                 break;
+
+            case PlayerEffect.ZoomIn:
+                if (_resetZoomInCoroutine != null)
+                {
+                    StopCoroutine(_resetZoomInCoroutine);
+                }
+                if (!ActiveEffects.Contains(effect))
+                {
+                    Player.Camera.orthographicSize -= _CAMERA_ZOOM_OUT_BONUS;
+                }
+
+                _resetZoomInCoroutine = StartCoroutine(ResetCameraZoomInAfterDelay(_CAN_EFFECT_UPTIME));
+                break;
+
+            case PlayerEffect.DisableItems:
+                if (_resetItemsUsageCoroutine != null)
+                {
+                    StopCoroutine(_resetItemsUsageCoroutine);
+                }
+                if (!ActiveEffects.Contains(effect))
+                {
+                    Player.LobbyInventoryController.ActiveUIItem.ToggleCross(true);
+                }
+
+                _resetItemsUsageCoroutine = StartCoroutine(ResetItemsUsageAfterDelay(_CAN_EFFECT_UPTIME));
+                break;
         }
 
         if (!ActiveEffects.Contains(effect))
@@ -108,10 +138,25 @@ public class PlayerEffectsController : MonoBehaviour
         }
     }
 
+    private int ProcessUptimeChange(int uptime)
+    {
+        switch (SeasonsManager.Instance.CurrentSeason)
+        {
+            case SeasonsManager.Season.Winter:
+                uptime /= 2;
+                break;
+            case SeasonsManager.Season.Spring:
+                uptime *= 2;
+                break;
+        }
+
+        return uptime;
+    }
+
     private IEnumerator ResetJumpForceAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        player.JumpForce -= _JUMP_SPEED_BONUS;
+        Player.JumpForce -= _JUMP_SPEED_BONUS;
         _resetJumpForceCoroutine = null;
         ActiveEffects.Remove(PlayerEffect.Jump);
     }
@@ -119,7 +164,7 @@ public class PlayerEffectsController : MonoBehaviour
     private IEnumerator ResetSpeedAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        player.MovementSpeed -= _MOVEMENT_SPEED_BONUS;
+        Player.MovementSpeed -= _MOVEMENT_SPEED_BONUS;
         _resetSpeedCoroutine = null;
         ActiveEffects.Remove(PlayerEffect.Speed);
     }
@@ -127,8 +172,8 @@ public class PlayerEffectsController : MonoBehaviour
     private IEnumerator ResetBinocularsAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        player.Camera.orthographicSize -= _CAMERA_ZOOM_OUT_BONUS;
-        player.Background.transform.localScale = _backgroundScale;
+        Player.Camera.orthographicSize -= _CAMERA_ZOOM_OUT_BONUS;
+        Player.Background.transform.localScale = _backgroundScale;
         ActiveEffects.Remove(PlayerEffect.ZoomOut);
 
     }
@@ -138,6 +183,22 @@ public class PlayerEffectsController : MonoBehaviour
         yield return new WaitForSeconds(delay);
         XMoveReverseCoeficient = 1;
         ActiveEffects.Remove(PlayerEffect.ControllReverse);
+
+    }
+
+    private IEnumerator ResetCameraZoomInAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Player.Camera.orthographicSize += _CAMERA_ZOOM_OUT_BONUS;
+        ActiveEffects.Remove(PlayerEffect.ZoomIn);
+
+    }
+
+    private IEnumerator ResetItemsUsageAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Player.LobbyInventoryController.ActiveUIItem.ToggleCross(false);
+        ActiveEffects.Remove(PlayerEffect.DisableItems);
 
     }
 }

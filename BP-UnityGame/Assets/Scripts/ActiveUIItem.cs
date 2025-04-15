@@ -10,6 +10,7 @@ public class ActiveUIItem : MonoBehaviour
 
     public TextMeshProUGUI AmountText;
     public Image CooldownImage;
+    public GameObject DisableCross;
 
     private Sprite _UISprite;
     private Coroutine _cooldownCoroutine;
@@ -22,6 +23,11 @@ public class ActiveUIItem : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void ToggleCross(bool show)
+    {
+        DisableCross.SetActive(show);
     }
 
     public void StartCooldown(float duration)

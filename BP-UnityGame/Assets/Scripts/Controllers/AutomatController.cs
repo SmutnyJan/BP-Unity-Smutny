@@ -18,7 +18,7 @@ public class AutomatController : MonoBehaviour, ISeasonChange
         yield return new WaitForSeconds(Random.Range(2f, 6f));
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(2f, 6f) + _timeDelayOffset);
+            yield return new WaitForSeconds(Random.Range(1f, 2f) + _timeDelayOffset);
             GameObject newCan = Instantiate(Can, transform.TransformPoint(new Vector3(0, -2.91f, 0)), Quaternion.identity);
 
             Rigidbody2D rb = newCan.GetComponent<Rigidbody2D>();

@@ -36,12 +36,28 @@ public class LobbyInventoryController : MonoBehaviour
     public void UseItem()
     {
         if (ActiveUIItem.gameObject.activeSelf)
-        {
+        {           
+
             ItemAmount item = SaveLoadManager.Instance.Progress.Items.FirstOrDefault(x => x.ItemType == ActiveUIItem.ItemType);
             if (item != null && item.Amount > 0)
             {
+                int uptime = ItemLibraryManager.Instance.UIItems[ActiveUIItem.ItemType].UpTime;
+
+                if (uptime > 0)
+                {
+                    switch (SeasonsManager.Instance.CurrentSeason)
+                    {
+                        case SeasonsManager.Season.Winter:
+                            uptime /= 2;
+                            break;
+                        case SeasonsManager.Season.Spring:
+                            uptime *= 2;
+                            break;
+                    }
+                }
+
                 ItemLibraryManager.Instance.InGameItems[ActiveUIItem.ItemType].UseItem();
-                ActiveUIItem.StartCooldown(ItemLibraryManager.Instance.UIItems[ActiveUIItem.ItemType].UpTime);
+                ActiveUIItem.StartCooldown(uptime);
                 item.Amount--;
 
                 ActiveUIItem.UpdateAmountValue(item.Amount);

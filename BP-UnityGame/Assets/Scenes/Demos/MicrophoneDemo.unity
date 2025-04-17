@@ -888,7 +888,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf4b124087c3214cac73a72de3c5700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  microphoneDropdown: {fileID: 1541634275}
   threshold: 0.5
 --- !u!4 &1385590023
 Transform:

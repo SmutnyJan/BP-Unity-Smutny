@@ -21,7 +21,7 @@ public class ShowDialogInLevelController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!HasBeenTriggered)
+        if (collision.gameObject.tag == "Player" && !HasBeenTriggered)
         {
             TipsController.Instance.ShowMessages(Messages);
             HasBeenTriggered = true;

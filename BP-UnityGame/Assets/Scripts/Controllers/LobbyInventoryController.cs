@@ -36,14 +36,57 @@ public class LobbyInventoryController : MonoBehaviour
     public void UseItem()
     {
         if (ActiveUIItem.gameObject.activeSelf)
-        {
-            ItemLibraryManager.Instance.InGameItems[ActiveUIItem.ItemType].UseItem();
+        {           
+
+            ItemAmount item = SaveLoadManager.Instance.Progress.Items.FirstOrDefault(x => x.ItemType == ActiveUIItem.ItemType);
+            if (item != null && item.Amount > 0)
+            {
+                int uptime = ItemLibraryManager.Instance.UIItems[ActiveUIItem.ItemType].UpTime;
+
+                if (uptime > 0)
+                {
+                    switch (SeasonsManager.Instance.CurrentSeason)
+                    {
+                        case SeasonsManager.Season.Winter:
+                            uptime /= 2;
+                            break;
+                        case SeasonsManager.Season.Spring:
+                            uptime *= 2;
+                            break;
+                    }
+                }
+
+                ItemLibraryManager.Instance.InGameItems[ActiveUIItem.ItemType].UseItem();
+                ActiveUIItem.StartCooldown(uptime);
+                item.Amount--;
+
+                ActiveUIItem.UpdateAmountValue(item.Amount);
+                UpdateInventoryAmount(item.Amount);
+            }
+            if (item.Amount == 0)
+            {
+                ItemLibraryManager.Instance.InGameItems[ActiveUIItem.ItemType].UnselectItem();
+                SaveLoadManager.Instance.Progress.Items.RemoveAll(x => x.ItemType == item.ItemType);
+                ActiveUIItem.gameObject.SetActive(false);
+                ItemDetailsPanel.gameObject.SetActive(false);
+
+                LoadUserInventory();
+            }
         }
     }
 
     public void ToggleInventory()
     {
         InventoryWrapper.SetActive(!InventoryWrapper.activeSelf);
+
+        if(InventoryWrapper.activeSelf)
+        {
+            AudioManager.Instance.PlayClipByName("UI_Backpack_Open", AudioManager.Instance.AudioLibrary.UI, AudioManager.Instance.SFXAudioSource);
+        }
+        else
+        {
+            AudioManager.Instance.PlayClipByName("UI_Backpack_Close", AudioManager.Instance.AudioLibrary.UI, AudioManager.Instance.SFXAudioSource);
+        }
     }
 
     private void LoadUserInventory()
@@ -67,6 +110,31 @@ public class LobbyInventoryController : MonoBehaviour
         }
     }
 
+    public void NewItemRecieved(ItemType type, int newAmount)
+    {
+        LoadUserInventory();
+        if (ActiveUIItem.ItemType == type) { 
+            AmountText.text = newAmount.ToString();
+            ActiveUIItem.UpdateAmountValue(newAmount);
+        }
+    }
+
+    private void UpdateInventoryAmount(int newAmount)
+    {
+        foreach (Transform child in InventoryGrid.transform)
+        {
+            InventoryUIItem itemController = child.GetComponent<InventoryUIItem>();
+            if (itemController.ItemType == ActiveUIItem.ItemType)
+            {
+                itemController.UpdateAmountText(newAmount);
+                break;
+            }
+        }
+
+
+        AmountText.text = newAmount.ToString();
+    }
+
     public void ChangeDetailsInventory(ItemType itemType)
     {
 
@@ -79,6 +147,7 @@ public class LobbyInventoryController : MonoBehaviour
                 ItemLibraryManager.Instance.InGameItems[ActiveUIItem.ItemType].UnselectItem();
             }
 
+            ActiveUIItem.ResetCoolDownUI();
             ActiveUIItem.gameObject.SetActive(true);
             ActiveUIItem.ItemType = itemType;
             ActiveUIItem.LoadValues();

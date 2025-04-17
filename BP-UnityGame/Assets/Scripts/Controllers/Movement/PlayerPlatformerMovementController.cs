@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class PlayerPlatformerMovementController : MonoBehaviour
 {
-    public int MovementSpeed;
-    public int JumpForce;
+
+    [HideInInspector]
+    public int MovementSpeed = 10;
+    [HideInInspector]
+    public int JumpForce = 25;
+    public Camera Camera;
+    public GameObject Background;
     public PlatformCollisionController PlatformCollisionController;
     public LobbyInventoryController LobbyInventoryController;
     public GameObject TimewarpPoint;
+    public BuildingMenuController BuildingMenuController;
+    public PlayerEffectsController PlayerEffectsController;
+
+
 
     private PlayerInputSystem _inputSystem;
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _spriteRenderer;
+    private bool _hasSecondJump = true;
+    private bool _controllRevertLock = false;
 
 
     private void Awake()
@@ -30,7 +41,6 @@ public class PlayerPlatformerMovementController : MonoBehaviour
 
     void Start()
     {
-
     }
 
     private void OnDisplayInventory()
@@ -38,16 +48,49 @@ public class PlayerPlatformerMovementController : MonoBehaviour
         LobbyInventoryController.ToggleInventory();
     }
 
+    private void OnDisplayMenu()
+    {
+        BuildingMenuController.ToggleMenu();
+    }
+
     private void OnJump()
     {
+        if (!_controllRevertLock && PlayerEffectsController.ActiveEffects.Contains(PlayerEffectsController.PlayerEffect.ControllReverse))
+        {
+            _controllRevertLock = true;
+            OnDown();
+            return;
+        }
+        _controllRevertLock = false;
+
+
+        bool isSpring = SeasonsManager.Instance.CurrentSeason == SeasonsManager.Season.Spring;
+
         if (PlatformCollisionController.IsGrounded)
         {
             _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, JumpForce);
+
+            if (isSpring)
+            {
+                _hasSecondJump = true;
+            }
+        }
+        else if (isSpring && _hasSecondJump)
+        {
+            _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, JumpForce);
+            _hasSecondJump = false;
         }
     }
 
     private void OnDown()
     {
+        if (!_controllRevertLock && PlayerEffectsController.ActiveEffects.Contains(PlayerEffectsController.PlayerEffect.ControllReverse))
+        {
+            _controllRevertLock = true;
+            OnJump();
+            return;
+        }
+        _controllRevertLock = false;
         if (PlatformCollisionController.IsOnPlatform)
         {
             PlatformsManager.Instance.FlipPlatform(PlatformCollisionController.TouchingPlatform);
@@ -56,12 +99,21 @@ public class PlayerPlatformerMovementController : MonoBehaviour
 
     private void OnUseItem()
     {
+        if(PlayerEffectsController.ActiveEffects.Contains(PlayerEffectsController.PlayerEffect.DisableItems))
+        {
+            //play error sound
+            Debug.Log("Blok!");
+            return;
+        }
         LobbyInventoryController.UseItem();
     }
 
     private void FixedUpdate()
     {
-        float moveDir = _inputSystem.PlayerPlatformer.Horizontal.ReadValue<float>();
+        float moveDir = _inputSystem.PlayerPlatformer.Horizontal.ReadValue<float>() * PlayerEffectsController.XMoveReverseCoeficient;
+
+
+
         if (!_spriteRenderer.flipX && moveDir > 0)
         {
             _spriteRenderer.flipX = true;
@@ -71,12 +123,25 @@ public class PlayerPlatformerMovementController : MonoBehaviour
             _spriteRenderer.flipX = false;
         }
 
-        if (!PlatformCollisionController.IsTouchingMovingPlatform)
+        if (moveDir != 0 || SeasonsManager.Instance.CurrentSeason != SeasonsManager.Season.Winter) //klouzání
         {
             _rigidbody.linearVelocity = new Vector2(moveDir * MovementSpeed, _rigidbody.linearVelocity.y);
         }
-
     }
+
+    /*private void Update() SuperHot
+    {
+
+        if (this._rigidbody.linearVelocity == Vector2.zero)
+        {
+            Time.timeScale = 0.1f;
+        }
+        else
+        {
+            Time.timeScale = 1;
+
+        }
+    }*/
 
 
     #region TimeWarping
@@ -135,23 +200,6 @@ public class PlayerPlatformerMovementController : MonoBehaviour
     #endregion
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.name == "Oneway Moving Platform" &&
-            collision.otherCollider.gameObject.tag == "Player" &&
-            !PlatformCollisionController.IsOnPlatform)
-        {
-            PlatformCollisionController.IsTouchingMovingPlatform = true;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.name == "Oneway Moving Platform" && collision.otherCollider.gameObject.tag == "Player")
-        {
-            PlatformCollisionController.IsTouchingMovingPlatform = false;
-        }
-    }
 
     private void OnDisable()
     {

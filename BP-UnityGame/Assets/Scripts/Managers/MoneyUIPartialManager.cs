@@ -4,7 +4,6 @@ using UnityEngine;
 public class MoneyUIPartialManager : MonoBehaviour
 {
     public TextMeshProUGUI MoneyText;
-    public GameObject GameInputSystem;
 
     void Start()
     {

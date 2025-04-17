@@ -132,6 +132,15 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DisplayMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""85ef4fa7-abc3-486e-becb-8a3ad16c40f8"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -169,6 +178,50 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""150085fa-7fe6-4089-8436-1659016abe2a"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Horizontal"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""88a01696-2c38-4f2a-9d3c-f256c9ab3f15"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Horizontal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""7b11df4a-7e59-4657-9f4f-3322b51aab0b"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Horizontal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8348752a-d2db-4910-8c6c-b147089ff342"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DisplayMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
                     ""name"": """",
                     ""id"": ""9ab30a14-7341-4029-903f-8e2d6eb567a2"",
                     ""path"": ""<Keyboard>/tab"",
@@ -192,8 +245,41 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""68aa2a7a-5c48-4d28-af78-fc3c46289f7f"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8e9486af-5609-4c0c-a839-cd35d14b956b"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""da9c8f1d-b7c8-4a16-b1c2-2944a5971a09"",
                     ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7a95ae35-284d-443d-a32f-878796acce17"",
+                    ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -231,6 +317,15 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                     ""name"": ""DisplayInventory"",
                     ""type"": ""Button"",
                     ""id"": ""ad67673c-af47-4ada-8f24-daab36c1d22b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DisplayMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""fe4a4d78-5b7a-4024-bd94-1801ed015127"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -294,6 +389,61 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""149bd61a-8a1a-4f31-8171-7952de33e46e"",
+                    ""path"": ""2DVector(mode=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""f6e3f636-26f0-4bc6-a7ef-55571e38f02b"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""11d35608-3df8-4da2-91f6-edf70ad7702d"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""273e01e8-3e6b-41e0-bc74-1b11a519fdac"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""93502899-76af-4e3f-a932-4bfec45eb475"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""8a7cd567-a7bb-45b3-bcf3-bd42cb42216b"",
                     ""path"": ""<Keyboard>/tab"",
@@ -301,6 +451,17 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""DisplayInventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6e0dbadd-fe77-4b17-9950-e22c0ca0ffc5"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DisplayMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -319,10 +480,12 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         m_PlayerPlatformer_Down = m_PlayerPlatformer.FindAction("Down", throwIfNotFound: true);
         m_PlayerPlatformer_DisplayInventory = m_PlayerPlatformer.FindAction("DisplayInventory", throwIfNotFound: true);
         m_PlayerPlatformer_UseItem = m_PlayerPlatformer.FindAction("UseItem", throwIfNotFound: true);
+        m_PlayerPlatformer_DisplayMenu = m_PlayerPlatformer.FindAction("DisplayMenu", throwIfNotFound: true);
         // PlayerLobby
         m_PlayerLobby = asset.FindActionMap("PlayerLobby", throwIfNotFound: true);
         m_PlayerLobby_Movement = m_PlayerLobby.FindAction("Movement", throwIfNotFound: true);
         m_PlayerLobby_DisplayInventory = m_PlayerLobby.FindAction("DisplayInventory", throwIfNotFound: true);
+        m_PlayerLobby_DisplayMenu = m_PlayerLobby.FindAction("DisplayMenu", throwIfNotFound: true);
     }
 
     ~@PlayerInputSystem()
@@ -442,6 +605,7 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerPlatformer_Down;
     private readonly InputAction m_PlayerPlatformer_DisplayInventory;
     private readonly InputAction m_PlayerPlatformer_UseItem;
+    private readonly InputAction m_PlayerPlatformer_DisplayMenu;
     public struct PlayerPlatformerActions
     {
         private @PlayerInputSystem m_Wrapper;
@@ -451,6 +615,7 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         public InputAction @Down => m_Wrapper.m_PlayerPlatformer_Down;
         public InputAction @DisplayInventory => m_Wrapper.m_PlayerPlatformer_DisplayInventory;
         public InputAction @UseItem => m_Wrapper.m_PlayerPlatformer_UseItem;
+        public InputAction @DisplayMenu => m_Wrapper.m_PlayerPlatformer_DisplayMenu;
         public InputActionMap Get() { return m_Wrapper.m_PlayerPlatformer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -475,6 +640,9 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
             @UseItem.started += instance.OnUseItem;
             @UseItem.performed += instance.OnUseItem;
             @UseItem.canceled += instance.OnUseItem;
+            @DisplayMenu.started += instance.OnDisplayMenu;
+            @DisplayMenu.performed += instance.OnDisplayMenu;
+            @DisplayMenu.canceled += instance.OnDisplayMenu;
         }
 
         private void UnregisterCallbacks(IPlayerPlatformerActions instance)
@@ -494,6 +662,9 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
             @UseItem.started -= instance.OnUseItem;
             @UseItem.performed -= instance.OnUseItem;
             @UseItem.canceled -= instance.OnUseItem;
+            @DisplayMenu.started -= instance.OnDisplayMenu;
+            @DisplayMenu.performed -= instance.OnDisplayMenu;
+            @DisplayMenu.canceled -= instance.OnDisplayMenu;
         }
 
         public void RemoveCallbacks(IPlayerPlatformerActions instance)
@@ -517,12 +688,14 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
     private List<IPlayerLobbyActions> m_PlayerLobbyActionsCallbackInterfaces = new List<IPlayerLobbyActions>();
     private readonly InputAction m_PlayerLobby_Movement;
     private readonly InputAction m_PlayerLobby_DisplayInventory;
+    private readonly InputAction m_PlayerLobby_DisplayMenu;
     public struct PlayerLobbyActions
     {
         private @PlayerInputSystem m_Wrapper;
         public PlayerLobbyActions(@PlayerInputSystem wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_PlayerLobby_Movement;
         public InputAction @DisplayInventory => m_Wrapper.m_PlayerLobby_DisplayInventory;
+        public InputAction @DisplayMenu => m_Wrapper.m_PlayerLobby_DisplayMenu;
         public InputActionMap Get() { return m_Wrapper.m_PlayerLobby; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -538,6 +711,9 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
             @DisplayInventory.started += instance.OnDisplayInventory;
             @DisplayInventory.performed += instance.OnDisplayInventory;
             @DisplayInventory.canceled += instance.OnDisplayInventory;
+            @DisplayMenu.started += instance.OnDisplayMenu;
+            @DisplayMenu.performed += instance.OnDisplayMenu;
+            @DisplayMenu.canceled += instance.OnDisplayMenu;
         }
 
         private void UnregisterCallbacks(IPlayerLobbyActions instance)
@@ -548,6 +724,9 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
             @DisplayInventory.started -= instance.OnDisplayInventory;
             @DisplayInventory.performed -= instance.OnDisplayInventory;
             @DisplayInventory.canceled -= instance.OnDisplayInventory;
+            @DisplayMenu.started -= instance.OnDisplayMenu;
+            @DisplayMenu.performed -= instance.OnDisplayMenu;
+            @DisplayMenu.canceled -= instance.OnDisplayMenu;
         }
 
         public void RemoveCallbacks(IPlayerLobbyActions instance)
@@ -576,10 +755,12 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         void OnDown(InputAction.CallbackContext context);
         void OnDisplayInventory(InputAction.CallbackContext context);
         void OnUseItem(InputAction.CallbackContext context);
+        void OnDisplayMenu(InputAction.CallbackContext context);
     }
     public interface IPlayerLobbyActions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnDisplayInventory(InputAction.CallbackContext context);
+        void OnDisplayMenu(InputAction.CallbackContext context);
     }
 }

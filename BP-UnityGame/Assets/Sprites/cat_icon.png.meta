@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e92ed00baafe2b444a174ec22d9d3dd6
+guid: eb8c522616b0f0e41982b0ec14ff71c2
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -103,10 +103,10 @@ TextureImporter:
       name: cat_icon_0
       rect:
         serializedVersion: 2
-        x: 279
-        y: 309
-        width: 2320
-        height: 2468
+        x: 550
+        y: 274
+        width: 324
+        height: 414
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

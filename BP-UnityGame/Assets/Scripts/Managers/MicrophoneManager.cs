@@ -32,7 +32,15 @@ public class MicrophoneManager : MonoBehaviour
     {
         if(SaveLoadManager.Instance.Settings.Microphone == "")
         {
-            return;
+
+            if(!Microphone.devices.Any())
+            {
+                return;
+            }
+            _selectedMic = Microphone.devices[0];
+            StartMicrophone();
+            SaveLoadManager.Instance.Settings.Microphone = _selectedMic;
+            SaveLoadManager.Instance.Save(SaveLoadManager.SaveType.Settings);
         }
         else
         {

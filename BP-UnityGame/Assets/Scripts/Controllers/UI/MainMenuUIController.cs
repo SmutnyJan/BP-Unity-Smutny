@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using static SceneLoaderManager;
@@ -5,14 +6,16 @@ using static SceneLoaderManager;
 public class MainMenuUIController : MonoBehaviour
 {
     public Button LoadGameButton;
+    public TextMeshProUGUI VersionText;
 
     void Start()
     {
+        VersionText.text = "Verze: " + Application.version;
         if (SaveLoadManager.Instance.Progress.SpawnScene == ActiveScene.None)
         {
             LoadGameButton.interactable = false;
         }
-        if(!AudioManager.Instance.MusicAudioSource.isPlaying)
+        if (!AudioManager.Instance.MusicAudioSource.isPlaying)
         {
             AudioManager.Instance.PlayClipByName("Resonant Victory - Glbml", AudioManager.Instance.AudioLibrary.Music, AudioManager.Instance.MusicAudioSource, AudioManager.PlayType.Play);
         }

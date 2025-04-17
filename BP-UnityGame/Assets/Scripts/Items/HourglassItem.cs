@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine;
 
@@ -8,9 +9,18 @@ public class HourglassItem : ScriptableObject, IUsableItem
     public void InitializeItem()
     {
         PlayerPlatformerMovementController = GameObject.FindGameObjectsWithTag("Player").First().GetComponent<PlayerPlatformerMovementController>();
+        FullScreenShaderManager.Instance.SwitchToShader(FullScreenShaderManager.FullScreenShader.Magic);
 
         PlayerPlatformerMovementController.StartPositionTracking();
 
+        SeasonsManager.Instance.OnSeasonChangeStarted += OnSeasonChanged;
+
+
+    }
+
+    private void OnSeasonChanged(SeasonsManager.Season season)
+    {
+        FullScreenShaderManager.Instance.SwitchToShader(FullScreenShaderManager.FullScreenShader.Magic);
     }
 
     public void UseItem()
@@ -21,6 +31,9 @@ public class HourglassItem : ScriptableObject, IUsableItem
     public void UnselectItem()
     {
         PlayerPlatformerMovementController.StopPositionTracking();
+
+        FullScreenShaderManager.Instance.SwitchToShader(FullScreenShaderManager.FullScreenShader.None);
+        SeasonsManager.Instance.OnSeasonChangeStarted -= OnSeasonChanged;
     }
 
 

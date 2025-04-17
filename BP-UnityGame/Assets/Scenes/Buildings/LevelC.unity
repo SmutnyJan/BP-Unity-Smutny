@@ -472,8 +472,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementSpeed: 10
   JumpForce: 25
+  Camera: {fileID: 0}
+  Background: {fileID: 0}
   PlatformCollisionController: {fileID: 1782387521}
   LobbyInventoryController: {fileID: 0}
+  TimewarpPoint: {fileID: 0}
 --- !u!61 &978597044
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -804,6 +807,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SetGameStateAfterFinish: 5
   LoadSceneAfterFinish: 5
+  Player: {fileID: 0}
+  StartSpawningPoint: {fileID: 0}
+  YDespawn: 0
 --- !u!4 &1326376405
 Transform:
   m_ObjectHideFlags: 0
@@ -1156,6 +1162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsGrounded: 0
   IsOnPlatform: 0
+  IsTouchingMovingPlatform: 0
   TouchingPlatform: {fileID: 0}
 --- !u!61 &1782387522
 BoxCollider2D:
@@ -1529,7 +1536,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &1900227815
 Canvas:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@ using UnityEngine;
 public class LobbyGameFlowController : MonoBehaviour
 {
     public ArrowNavigationController ArrowNavigationController;
-    public PathFinder PathFinder; 
+    public PathFinder PathFinder;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -69,7 +69,7 @@ public class LobbyGameFlowController : MonoBehaviour
                 break;
 
             case SaveLoadManager.GameState.RoadToC:
-                if (CurrentScene != SceneLoaderManager.ActiveScene.LobbyC)
+                if (CurrentScene != SceneLoaderManager.ActiveScene.LobbyC && CurrentScene != SceneLoaderManager.ActiveScene.Menza && CurrentScene != SceneLoaderManager.ActiveScene.LobbyMenza)
                 {
                     PathFinder.BuildingEnter.SetActive(false);
                 }
@@ -77,7 +77,7 @@ public class LobbyGameFlowController : MonoBehaviour
                 break;
 
             case SaveLoadManager.GameState.CFinished:
-                if (CurrentScene != SceneLoaderManager.ActiveScene.LobbyAB)
+                if (CurrentScene != SceneLoaderManager.ActiveScene.LobbyAB && CurrentScene != SceneLoaderManager.ActiveScene.Menza && CurrentScene != SceneLoaderManager.ActiveScene.LobbyMenza)
                 {
                     PathFinder.BuildingEnter.SetActive(false);
                 }
@@ -91,7 +91,7 @@ public class LobbyGameFlowController : MonoBehaviour
                 break;
 
             case SaveLoadManager.GameState.RoadToA:
-                if (CurrentScene != SceneLoaderManager.ActiveScene.LobbyAB)
+                if (CurrentScene != SceneLoaderManager.ActiveScene.LobbyAB && CurrentScene != SceneLoaderManager.ActiveScene.Menza && CurrentScene != SceneLoaderManager.ActiveScene.LobbyMenza)
                 {
                     PathFinder.BuildingEnter.SetActive(false);
                 }

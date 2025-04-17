@@ -8,7 +8,7 @@ using static SceneLoaderManager;
 
 public class SaveLoadManager : MonoBehaviour
 {
-    // C:\Users\smutn\AppData\LocalLow\DefaultCompany\BP-UnityGame
+    // C:\Users\smutn\AppData\LocalLow\FM TUL Smutny Strecanska\TULtimátní hra
     public static SaveLoadManager Instance;
     public MainMenuSettings Settings;
     public Progress Progress;
@@ -69,6 +69,7 @@ public class SaveLoadManager : MonoBehaviour
     void Start()
     {
         AudioManager.Instance.UpdateAudioSettings(Settings);
+        FPSDisplayController.Instance.UpdateFPSText(Settings);
 
     }
 
@@ -137,6 +138,8 @@ public class SaveLoadManager : MonoBehaviour
                     SFXVolume = AudioManager.Instance.SFXVolume,
                     MusicVolume = AudioManager.Instance.MusicVolume,
                     IsFullScreen = Screen.fullScreen,
+                    IsShowingFPS = false,
+                    VSync = false,
                     Microphone = ""
                 };
                 break;
@@ -151,7 +154,10 @@ public class SaveLoadManager : MonoBehaviour
                     {
                         new() { ItemType = ItemType.Pencil, Amount = 5},
                         new() { ItemType = ItemType.Pearl, Amount = 50},
-                        new() { ItemType = ItemType.Hourglass, Amount = 10}
+                        new() { ItemType = ItemType.Hourglass, Amount = 10},
+                        new() { ItemType = ItemType.Boots, Amount = 10},
+                        new() { ItemType = ItemType.JumpCoil, Amount = 10},
+                        new() { ItemType = ItemType.Binoculars, Amount = 10},
 
                     },
                     //Items = new List<ItemAmount>()
@@ -190,6 +196,8 @@ public class SaveLoadManager : MonoBehaviour
     private void OnSettingsLoadedLocal(MainMenuSettings settings)
     {
         Screen.fullScreen = settings.IsFullScreen;
+        QualitySettings.vSyncCount = settings.VSync ? 1 : 0;
+
     }
 
     private IEnumerator DisableTextAfter(TextMeshProUGUI text)
@@ -208,6 +216,8 @@ public class MainMenuSettings
     public float SFXVolume;
     public float MusicVolume;
     public bool IsFullScreen;
+    public bool IsShowingFPS;
+    public bool VSync;
     public string Microphone;
 }
 
@@ -233,4 +243,7 @@ public class LevelProgress
 {
     public ActiveScene Scene;
     public Vector3 SpawnPoint;
+    public List<int> ChestsOpenedIndexes;
+    public List<ItemAmount> ItemsRevert;
+
 }

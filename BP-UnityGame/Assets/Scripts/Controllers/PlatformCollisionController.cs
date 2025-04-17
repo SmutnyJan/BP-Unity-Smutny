@@ -4,7 +4,6 @@ public class PlatformCollisionController : MonoBehaviour
 {
     public bool IsGrounded = false;
     public bool IsOnPlatform = false;
-    public bool IsTouchingMovingPlatform = false;
     public GameObject TouchingPlatform = null;
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -15,6 +14,7 @@ public class PlatformCollisionController : MonoBehaviour
         {
             IsOnPlatform = true;
             TouchingPlatform = collision.gameObject;
+
         }
 
         if (collision.gameObject.name == "Oneway Moving Platform")
@@ -30,30 +30,13 @@ public class PlatformCollisionController : MonoBehaviour
         IsOnPlatform = false;
         TouchingPlatform = null;
 
-        if (collision.gameObject.name == "Oneway Moving Platform")
+        if (collision.gameObject.name == "Oneway Moving Platform" && this.transform.parent.gameObject.activeInHierarchy)
         {
+
             this.transform.parent.SetParent(null, true);
         }
     }
 
-    /*private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Groundcheck"))
-        {
-
-            collision.transform.parent = this.transform;
-
-
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Groundcheck"))
-        {
-            collision.transform.parent = null;
-        }
-    }*/
 
 }
 

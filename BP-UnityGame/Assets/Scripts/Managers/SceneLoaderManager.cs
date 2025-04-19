@@ -72,6 +72,7 @@ public class SceneLoaderManager : MonoBehaviour
     {
         PreviousScene = CurrentScene;
         CurrentScene = scene;
+        FullScreenShaderManager.Instance.SwitchToShader(FullScreenShaderManager.FullScreenShader.NoneForced);
         StartCoroutine(LoadWithAnimationCoroutine(scene));
     }
 

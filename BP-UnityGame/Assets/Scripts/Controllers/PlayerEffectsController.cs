@@ -102,7 +102,7 @@ public class PlayerEffectsController : MonoBehaviour
                     XMoveReverseCoeficient = -1;
                 }
 
-                _reverseCameraCoroutine = StartCoroutine(RevertControllsAfterDelay(_CAN_EFFECT_UPTIME));
+                _reverseCameraCoroutine = StartCoroutine(RevertControllsAfterDelay(ProcessCanTimeChange()));
                 break;
 
             case PlayerEffect.ZoomIn:
@@ -115,7 +115,7 @@ public class PlayerEffectsController : MonoBehaviour
                     Player.Camera.orthographicSize -= _CAMERA_ZOOM_OUT_BONUS;
                 }
 
-                _resetZoomInCoroutine = StartCoroutine(ResetCameraZoomInAfterDelay(_CAN_EFFECT_UPTIME));
+                _resetZoomInCoroutine = StartCoroutine(ResetCameraZoomInAfterDelay(ProcessCanTimeChange()));
                 break;
 
             case PlayerEffect.DisableItems:
@@ -128,7 +128,7 @@ public class PlayerEffectsController : MonoBehaviour
                     Player.LobbyInventoryController.ActiveUIItem.ToggleCross(true);
                 }
 
-                _resetItemsUsageCoroutine = StartCoroutine(ResetItemsUsageAfterDelay(_CAN_EFFECT_UPTIME));
+                _resetItemsUsageCoroutine = StartCoroutine(ResetItemsUsageAfterDelay(ProcessCanTimeChange()));
                 break;
         }
 
@@ -151,6 +151,19 @@ public class PlayerEffectsController : MonoBehaviour
         }
 
         return uptime;
+    }
+
+    private int ProcessCanTimeChange()
+    {
+        switch (SeasonsManager.Instance.CurrentSeason)
+        {
+            case SeasonsManager.Season.Autumn:
+                return _CAN_EFFECT_UPTIME * 2;
+            case SeasonsManager.Season.Spring:
+                return _CAN_EFFECT_UPTIME / 2;
+            default:
+                return _CAN_EFFECT_UPTIME;
+        }
     }
 
     private IEnumerator ResetJumpForceAfterDelay(float delay)

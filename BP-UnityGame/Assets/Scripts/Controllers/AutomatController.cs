@@ -7,10 +7,11 @@ public class AutomatController : MonoBehaviour, ISeasonChange
     private float _shootForce = 10f;
     private int _directionMultiplier;
     private int _timeDelayOffset = 0;
+    private Coroutine _spawnCoroutine;
     private void Start()
     {
         _directionMultiplier = GetComponent<SpriteRenderer>().flipX ? 1 : -1;
-        StartCoroutine(SpawnCanRoutine());
+        _spawnCoroutine = StartCoroutine(SpawnCanRoutine());
     }
 
     private IEnumerator SpawnCanRoutine()
@@ -31,13 +32,16 @@ public class AutomatController : MonoBehaviour, ISeasonChange
 
     public void SwitchToSeason(SeasonsManager.Season season)
     {
-        Debug.Log("Automat switch");
         switch (season)
         {
             case SeasonsManager.Season.Spring:
                 _timeDelayOffset = 0;
                 break;
+            case SeasonsManager.Season.Autumn:
+                StopCoroutine(_spawnCoroutine);
+                break;
             case SeasonsManager.Season.Winter:
+                _spawnCoroutine = StartCoroutine(SpawnCanRoutine());
                 _timeDelayOffset = 10;
                 break;
             default:

@@ -35,6 +35,10 @@ public class LevelFlowManager : MonoBehaviour
             {
                 GameObject.Find("Chest (" + chestIndex + ")").GetComponent<OpenChestController>().SetStateToOpen();
             }
+            foreach (int chestIndex in SaveLoadManager.Instance.Progress.LevelConfig.PlanesDestroyedIndexes)
+            {
+                GameObject.Destroy(GameObject.Find("Moving Paper Plane (" + chestIndex + ")"));
+            }
         }
         else
         {
@@ -43,11 +47,13 @@ public class LevelFlowManager : MonoBehaviour
                 Scene = SceneLoaderManager.Instance.CurrentScene,
                 SpawnPoint = StartSpawningPoint.position,
                 ChestsOpenedIndexes = new System.Collections.Generic.List<int>(),
+                PlanesDestroyedIndexes = new System.Collections.Generic.List<int>(),
                 ItemsRevert = SaveLoadManager.Instance.Progress.Items.Select(item => new ItemAmount
                 {
                     ItemType = item.ItemType,
                     Amount = item.Amount,
-                }).ToList()
+                }).ToList(),
+                MoneyRevert = SaveLoadManager.Instance.Progress.Money
             };
         }
 

@@ -1,11 +1,10 @@
-using UnityEngine;
 using System.Collections;
 using System.Linq;
+using UnityEngine;
 
 public class PickItemController : MonoBehaviour
 {
     public ItemType ItemType;
-    public LobbyInventoryController LobbyInventoryController;
 
     private Collider2D _itemCollider;
     private float _pickupDelay = 3f;
@@ -40,8 +39,8 @@ public class PickItemController : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             int newAmount = ++SaveLoadManager.Instance.Progress.Items.First(x => x.ItemType == ItemType).Amount;
-            LobbyInventoryController.NewItemRecieved(ItemType, newAmount);
 
+            collision.gameObject.GetComponent<PlayerPlatformerMovementController>().LobbyInventoryController.NewItemRecieved(ItemType, newAmount);
             Destroy(gameObject);
         }
     }

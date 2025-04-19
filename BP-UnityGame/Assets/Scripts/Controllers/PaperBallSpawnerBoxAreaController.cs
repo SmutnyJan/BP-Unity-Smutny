@@ -1,30 +1,38 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class RandomSpawnerBoxAreaController : MonoBehaviour
+public class PaperBallSpawnerBoxAreaController : MonoBehaviour
 {
-    public List<GameObject> Objects;
+    public GameObject PaperBall;
+    private float _defaultSpawnInterval = 5;
+    private float _spawnInterval;
 
-    private float _spawnInterval = 10f;
+    private int _defaultRecursiveLives = 2;
+    private int _recursiveLives;
+
     private BoxCollider2D _boxCollider;
-    private Coroutine _spawnCoroutine;
 
     void Start()
     {
         _boxCollider = GetComponent<BoxCollider2D>();
         SeasonsManager.Instance.OnSeasonChangeStarted += OnSeasonChangeStarted;
+        _spawnInterval = _defaultSpawnInterval;
+        _recursiveLives = _defaultRecursiveLives;
+        StartCoroutine(SpawnRoutine());
     }
 
     private void OnSeasonChangeStarted(SeasonsManager.Season season)
     {
-        if (season == SeasonsManager.Season.Summer)
+        _spawnInterval = _defaultSpawnInterval;
+        _recursiveLives = _defaultRecursiveLives;
+        switch (season)
         {
-            _spawnCoroutine = StartCoroutine(SpawnRoutine());
-        }
-        else
-        {
-            StopCoroutine(_spawnCoroutine);
+            case SeasonsManager.Season.Summer:
+                _spawnInterval *= 2;
+                break;
+            case SeasonsManager.Season.Winter:
+                _recursiveLives *= 2;
+                break;
         }
     }
 
@@ -33,7 +41,7 @@ public class RandomSpawnerBoxAreaController : MonoBehaviour
         while (true)
         {
             Vector2 spawnPos = GetRandomPointInBox();
-            Instantiate(Objects[Random.Range(0, Objects.Count)], spawnPos, Quaternion.identity);
+            Instantiate(PaperBall, spawnPos, Quaternion.identity).GetComponent<PaperBallController>().RecursiveLives = _recursiveLives;
             yield return new WaitForSeconds(_spawnInterval);
         }
     }
@@ -53,6 +61,4 @@ public class RandomSpawnerBoxAreaController : MonoBehaviour
     {
         SeasonsManager.Instance.OnSeasonChangeStarted -= OnSeasonChangeStarted;
     }
-
-
 }

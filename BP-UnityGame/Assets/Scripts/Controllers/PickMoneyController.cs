@@ -1,10 +1,11 @@
 using System.Collections;
-using System.Linq;
 using TMPro;
 using UnityEngine;
 
 public class PickMoneyController : MonoBehaviour
 {
+    public int MoneyValue = 1;
+
     private Collider2D _itemCollider;
     private float _pickupDelay = 3f;
 
@@ -36,7 +37,8 @@ public class PickMoneyController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            int money = ++SaveLoadManager.Instance.Progress.Money;
+            SaveLoadManager.Instance.Progress.Money += MoneyValue;
+            int money = SaveLoadManager.Instance.Progress.Money;
 
             TextMeshProUGUI moneyText = GameObject.Find("Money Canvas").GetComponent<MoneyUIPartialManager>().MoneyText;
 

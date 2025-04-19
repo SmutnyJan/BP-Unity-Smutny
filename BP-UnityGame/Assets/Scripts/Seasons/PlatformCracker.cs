@@ -37,7 +37,7 @@ public class PlatformCracker : MonoBehaviour
 
     private void OnSeasonChangeStarted(SeasonsManager.Season season)
     {
-        if(season == SeasonsManager.Season.Summer)
+        if (season == SeasonsManager.Season.Summer)
         {
             _resetTime = _resetTimeSummer;
         }
@@ -93,11 +93,16 @@ public class PlatformCracker : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.name == "GroundCheck" || SeasonsManager.Instance.CurrentSeason == SeasonsManager.Season.Winter) //odstranìní duplicitního volání
+        if (collision.collider.name == "GroundCheck" || SeasonsManager.Instance.CurrentSeason == SeasonsManager.Season.Winter) //odstranìní duplicitního volání
         {
             return;
         }
 
         Crack();
+    }
+
+    private void OnDestroy()
+    {
+        SeasonsManager.Instance.OnSeasonChangeStarted -= OnSeasonChangeStarted;
     }
 }

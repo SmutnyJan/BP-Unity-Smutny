@@ -6,8 +6,6 @@ using UnityEngine;
 public class OpenChestController : MonoBehaviour
 {
     public List<GameObject> ChestContent;
-
-    private LobbyInventoryController _lobbyInventoryController;
     private float _spawnForce = 7.5f;
     private float _spawnDelay = 0.2f;
     private Animator _animator;
@@ -21,7 +19,6 @@ public class OpenChestController : MonoBehaviour
         }
 
         _animator = GetComponent<Animator>();
-        _lobbyInventoryController = GameObject.FindGameObjectWithTag("Inventory").GetComponent<LobbyInventoryController>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -49,7 +46,7 @@ public class OpenChestController : MonoBehaviour
 
     IEnumerator SpawnContent()
     {
-        List<GameObject> itemsToSpawn = new List<GameObject>(ChestContent);
+        List<GameObject> itemsToSpawn = new(ChestContent);
 
         switch (SeasonsManager.Instance.CurrentSeason)
         {
@@ -69,13 +66,6 @@ public class OpenChestController : MonoBehaviour
                 GameObject spawnedItem = Instantiate(item, transform.position, Quaternion.identity);
                 Rigidbody2D rb = spawnedItem.GetComponent<Rigidbody2D>();
 
-                PickItemController pickItemController = spawnedItem.GetComponentInParent<PickItemController>();
-                if(pickItemController) //peníze PickItemController nemají
-                {
-                    pickItemController.LobbyInventoryController = _lobbyInventoryController;
-                }
-
-
                 float randomForceX = Random.Range(-2f, 2f);
                 rb.AddForce(new Vector2(randomForceX, _spawnForce), ForceMode2D.Impulse);
                 yield return new WaitForSeconds(_spawnDelay);
@@ -85,8 +75,8 @@ public class OpenChestController : MonoBehaviour
 
     private List<GameObject> GetRandomSubset(List<GameObject> source, int count)
     {
-        List<GameObject> temp = new List<GameObject>(source);
-        List<GameObject> result = new List<GameObject>();
+        List<GameObject> temp = new(source);
+        List<GameObject> result = new();
         for (int i = 0; i < count && temp.Count > 0; i++)
         {
             int index = Random.Range(0, temp.Count);

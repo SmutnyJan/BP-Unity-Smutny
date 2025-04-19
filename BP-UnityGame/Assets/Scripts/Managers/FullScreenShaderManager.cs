@@ -26,7 +26,8 @@ public class FullScreenShaderManager : MonoBehaviour
         Pearl,
         Freezing,
         Magic,
-        Damage
+        Damage,
+        NoneForced
     }
 
     void Awake()
@@ -48,7 +49,7 @@ public class FullScreenShaderManager : MonoBehaviour
     {
         _fullScreenShaders = new Dictionary<FullScreenShader, Material>();
 
-        foreach (var entry in ShaderList)
+        foreach (ShaderEntry entry in ShaderList)
         {
             _fullScreenShaders.Add(entry.shader, entry.material);
         }
@@ -64,6 +65,12 @@ public class FullScreenShaderManager : MonoBehaviour
 
     public void SwitchToShader(FullScreenShader fullScreenShader)
     {
+        if (fullScreenShader == FullScreenShader.NoneForced)
+        {
+            _feature.passMaterial = _fullScreenShaders[FullScreenShader.None];
+            return;
+        }
+
         if (_feature.passMaterial == _fullScreenShaders[FullScreenShader.Freezing] && SeasonsManager.Instance.CurrentSeason == SeasonsManager.Season.Winter)
         {
             return;

@@ -99,7 +99,7 @@ public class PlayerPlatformerMovementController : MonoBehaviour
 
     private void OnUseItem()
     {
-        if(PlayerEffectsController.ActiveEffects.Contains(PlayerEffectsController.PlayerEffect.DisableItems))
+        if (PlayerEffectsController.ActiveEffects.Contains(PlayerEffectsController.PlayerEffect.DisableItems))
         {
             //play error sound
             Debug.Log("Blok!");

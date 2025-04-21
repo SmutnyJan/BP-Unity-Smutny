@@ -141,6 +141,15 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DisplaySeasonInfo"",
+                    ""type"": ""Button"",
+                    ""id"": ""3ea8cf15-ef2d-4af6-b5d2-d29d548139f6"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -218,6 +227,17 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""DisplayMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""18fbf5bc-f7b2-43c4-bedc-1d914b962300"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DisplaySeasonInfo"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -481,6 +501,7 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         m_PlayerPlatformer_DisplayInventory = m_PlayerPlatformer.FindAction("DisplayInventory", throwIfNotFound: true);
         m_PlayerPlatformer_UseItem = m_PlayerPlatformer.FindAction("UseItem", throwIfNotFound: true);
         m_PlayerPlatformer_DisplayMenu = m_PlayerPlatformer.FindAction("DisplayMenu", throwIfNotFound: true);
+        m_PlayerPlatformer_DisplaySeasonInfo = m_PlayerPlatformer.FindAction("DisplaySeasonInfo", throwIfNotFound: true);
         // PlayerLobby
         m_PlayerLobby = asset.FindActionMap("PlayerLobby", throwIfNotFound: true);
         m_PlayerLobby_Movement = m_PlayerLobby.FindAction("Movement", throwIfNotFound: true);
@@ -606,6 +627,7 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerPlatformer_DisplayInventory;
     private readonly InputAction m_PlayerPlatformer_UseItem;
     private readonly InputAction m_PlayerPlatformer_DisplayMenu;
+    private readonly InputAction m_PlayerPlatformer_DisplaySeasonInfo;
     public struct PlayerPlatformerActions
     {
         private @PlayerInputSystem m_Wrapper;
@@ -616,6 +638,7 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         public InputAction @DisplayInventory => m_Wrapper.m_PlayerPlatformer_DisplayInventory;
         public InputAction @UseItem => m_Wrapper.m_PlayerPlatformer_UseItem;
         public InputAction @DisplayMenu => m_Wrapper.m_PlayerPlatformer_DisplayMenu;
+        public InputAction @DisplaySeasonInfo => m_Wrapper.m_PlayerPlatformer_DisplaySeasonInfo;
         public InputActionMap Get() { return m_Wrapper.m_PlayerPlatformer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -643,6 +666,9 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
             @DisplayMenu.started += instance.OnDisplayMenu;
             @DisplayMenu.performed += instance.OnDisplayMenu;
             @DisplayMenu.canceled += instance.OnDisplayMenu;
+            @DisplaySeasonInfo.started += instance.OnDisplaySeasonInfo;
+            @DisplaySeasonInfo.performed += instance.OnDisplaySeasonInfo;
+            @DisplaySeasonInfo.canceled += instance.OnDisplaySeasonInfo;
         }
 
         private void UnregisterCallbacks(IPlayerPlatformerActions instance)
@@ -665,6 +691,9 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
             @DisplayMenu.started -= instance.OnDisplayMenu;
             @DisplayMenu.performed -= instance.OnDisplayMenu;
             @DisplayMenu.canceled -= instance.OnDisplayMenu;
+            @DisplaySeasonInfo.started -= instance.OnDisplaySeasonInfo;
+            @DisplaySeasonInfo.performed -= instance.OnDisplaySeasonInfo;
+            @DisplaySeasonInfo.canceled -= instance.OnDisplaySeasonInfo;
         }
 
         public void RemoveCallbacks(IPlayerPlatformerActions instance)
@@ -756,6 +785,7 @@ public partial class @PlayerInputSystem: IInputActionCollection2, IDisposable
         void OnDisplayInventory(InputAction.CallbackContext context);
         void OnUseItem(InputAction.CallbackContext context);
         void OnDisplayMenu(InputAction.CallbackContext context);
+        void OnDisplaySeasonInfo(InputAction.CallbackContext context);
     }
     public interface IPlayerLobbyActions
     {

@@ -162,18 +162,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lobby Inventory
       objectReference: {fileID: 0}
-    - target: {fileID: 2850395836799147423, guid: eaccc5f7f28ef1341a04d8f9ba4cd916, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -46.097015
-      objectReference: {fileID: 0}
     - target: {fileID: 2994661704105492044, guid: eaccc5f7f28ef1341a04d8f9ba4cd916, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 673809197}
-    - target: {fileID: 3631412802985050884, guid: eaccc5f7f28ef1341a04d8f9ba4cd916, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -34.317688
-      objectReference: {fileID: 0}
     - target: {fileID: 4515102499007034600, guid: eaccc5f7f28ef1341a04d8f9ba4cd916, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -253,14 +245,6 @@ PrefabInstance:
     - target: {fileID: 4515102499007034600, guid: eaccc5f7f28ef1341a04d8f9ba4cd916, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5743212242583297029, guid: eaccc5f7f28ef1341a04d8f9ba4cd916, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -218.13007
-      objectReference: {fileID: 0}
-    - target: {fileID: 8154824287095625759, guid: eaccc5f7f28ef1341a04d8f9ba4cd916, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -101.880005
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -405,10 +389,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 673809197}
-    - target: {fileID: 6030523644171540412, guid: 62813e1059511ab4393cd55d60abc554, type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1820,10 +1800,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6506501638321576013, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
-      propertyPath: LobbyInventoryController
-      value: 
-      objectReference: {fileID: 128532540}
     - target: {fileID: 8610673326574531350, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
       propertyPath: m_Camera
       value: 

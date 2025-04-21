@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class BuildingMenuController : MonoBehaviour
 {
-    public GameObject Overlay;
     public GameObject MenuPanel;
     public LevelFlowManager LevelFlowManager;
 
@@ -24,12 +23,10 @@ public class BuildingMenuController : MonoBehaviour
         if (MenuPanel.gameObject.activeSelf)
         {
             MenuPanel.SetActive(false);
-            Overlay.SetActive(false);
         }
         else
         {
             MenuPanel.SetActive(true);
-            Overlay.SetActive(true);
         }
     }
 
@@ -72,8 +69,6 @@ public class BuildingMenuController : MonoBehaviour
         }).ToList();
         SaveLoadManager.Instance.Progress.Money = SaveLoadManager.Instance.Progress.LevelConfig.MoneyRevert;
         SaveLoadManager.Instance.Save(SaveLoadManager.SaveType.Progress);
-
-        FullScreenShaderManager.Instance.SwitchToShader(FullScreenShaderManager.FullScreenShader.NoneForced);
 
         SceneLoaderManager.Instance.LoadScene(SceneLoaderManager.Instance.CurrentScene);
     }

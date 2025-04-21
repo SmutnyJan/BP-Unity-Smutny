@@ -15,10 +15,12 @@ public class LobbyGameFlowController : MonoBehaviour
                 {
                     PathFinder.BuildingEnter.SetActive(false);
                 }
-                TipsController.Instance.ShowMessages(new string[] { "Poøádnì ses prospal, ale teï je naèase odhodit splín stranou a pustit se do práce.",
-                    "Možná budeš mít trochu výpadky pamìti, ale to je normální. Já ti všechno pøipomenu.",
-                    "Nejdøíve jdi na budovu G. Èerná šipka ti ukáže cestu.",
-                "Ta velká budova pøed tebou je menza. Až se vrátíš z budovy G, tak se tam zastavíš. Teï mají totiž zavøeno."});
+                TipsController.Instance.ShowMessages(new string[] {
+                    "Tak co, vyspáno? Je naèase nechat noèní dobrodružství za sebou a pustit se do práce.",
+                    "Pokud máš pocit, že si všechno nepamatuješ, klid — já ti to pøipomenu.",
+                    "Tvùj první cíl je budova G. Sleduj èernou šipku nad sebou, dovede tì tam.",
+                    "Ta velká budova pøed tebou je menza. Teï mají zavøeno, ale pozdìji se tam stavíš po návratu z G."
+                });
 
                 SaveLoadManager.Instance.Progress.GameState = SaveLoadManager.GameState.RoadToG;
                 SaveLoadManager.Instance.Progress.SpawnScene = SceneLoaderManager.ActiveScene.LobbyMenza;

@@ -148,19 +148,17 @@ public class SaveLoadManager : MonoBehaviour
                 {
                     SpawnScene = SceneLoaderManager.ActiveScene.None,
                     GameState = GameState.Beggining,
-                    //Money = UnityEngine.Random.Range(0, 100),
-                    Money = 1000,
+                    Money = UnityEngine.Random.Range(0, 100),
                     Items = new List<ItemAmount>()
                     {
                         new() { ItemType = ItemType.Pencil, Amount = 5},
-                        new() { ItemType = ItemType.Pearl, Amount = 50},
-                        new() { ItemType = ItemType.Hourglass, Amount = 10},
-                        new() { ItemType = ItemType.Boots, Amount = 10},
-                        new() { ItemType = ItemType.JumpCoil, Amount = 10},
-                        new() { ItemType = ItemType.Binoculars, Amount = 10},
+                        new() { ItemType = ItemType.Pearl, Amount = 1},
+                        new() { ItemType = ItemType.Hourglass, Amount = 1},
+                        new() { ItemType = ItemType.Boots, Amount = 2},
+                        new() { ItemType = ItemType.JumpCoil, Amount = 2},
+                        new() { ItemType = ItemType.Binoculars, Amount = 2},
 
                     },
-                    //Items = new List<ItemAmount>()
                     LevelConfig = new LevelProgress()
                 };
                 break;

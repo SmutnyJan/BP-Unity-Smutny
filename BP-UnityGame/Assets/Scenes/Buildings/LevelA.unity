@@ -168,26 +168,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4616493256877058762, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
       propertyPath: 'Messages.Array.data[0]'
-      value: "Vstoupil jsi do auly budovy G. Mo\u017En\xE1 ti to na prvn\xED pohled
-        nebude d\xE1vat smysl \u2014 plo\u0161iny, rostliny, jin\xE1 perspektiva\u2026
-        Ale nev\u011B\u0161 hlavu. To, co vid\xED\u0161, je \xFA\u010Dinek m\xE9ho
-        n\xE1poje. Sv\u011Bt se ti ob\u010Das uk\xE1\u017Ee jinak, ne\u017E ho vid\xED
-        ostatn\xED. Vn\xEDmej to jako v\xFDhodu. N\u011Bkter\xE9 v\u011Bci jsou te\u010F
-        p\u0159\xEDstupn\xE9 jen tob\u011B."
+      value: "Te\u010F jsme na budov\u011B A. Tady je to je\u0161t\u011B nebezpe\u010Dn\u011Bj\u0161\xED
+        ne\u017E na c\xE9\u010Dku. Nikdy nev\xED\u0161, odkud co p\u0159ilet\xED
+        \u2014 bu\u010F po\u0159\xE1d ve st\u0159ehu."
       objectReference: {fileID: 0}
     - target: {fileID: 4616493256877058762, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
       propertyPath: 'Messages.Array.data[1]'
-      value: "Do batohu jsem ti p\u0159idal p\xE1r p\u0159edm\u011Bt\u016F, kter\xE9
-        si m\u016F\u017Ee\u0161 hned vyzkou\u0161et. Batoh otev\u0159e\u0161 kl\xE1vesou
-        TAB, p\u0159edm\u011Bt pou\u017Eije\u0161 kl\xE1vesou E. T\u011Bchto p\xE1r
-        m\xE1\u0161 zdarma na zkou\u0161ku. Dal\u0161\xED si bude\u0161 muset po\u0159\xEDdit
-        v menze \u2014 a tam u\u017E bez pen\u011Bz nepochod\xED\u0161."
+      value: "Poletuj\xED tu pap\xEDrov\xE9 koule, kter\xE9 se po dopadu rozdvoj\xED
+        a vytvo\u0159\xED dal\u0161\xED dv\u011B."
       objectReference: {fileID: 0}
     - target: {fileID: 4616493256877058762, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
       propertyPath: 'Messages.Array.data[2]'
-      value: "Te\u010F se p\u0159esu\u0148 k dal\u0161\xEDmu checkpointu. Tam si
-        odpo\u010Dine\u0161 a j\xE1 ti \u0159eknu, co d\xE1l. Pohybuj se pomoc\xED
-        \u0161ipek nebo kl\xE1ves WASD."
+      value: "Ka\u017Ed\xE1 z nich to m\u016F\u017Ee ud\u011Blat znovu. Rad\u0161i
+        se jim vyh\xFDbej, ne\u017E se ti to cel\xE9 vymkne z rukou."
       objectReference: {fileID: 0}
     - target: {fileID: 8987261367300731751, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5720,7 +5713,7 @@ SpriteRenderer:
   m_SortingLayerID: -1766351681
   m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6498274341116444086, guid: 6334bbd52cd9e3f44a522d392742eabb, type: 3}
+  m_Sprite: {fileID: 6271247167395266861, guid: f83727cab59b79c47be044b48f62a10a, type: 3}
   m_Color: {r: 0.5018867, g: 0.5018867, b: 0.5018867, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -79,6 +79,7 @@ public class PaperPlaneController : MonoBehaviour, ISeasonChange
         if (collision.gameObject.name == "Player")
         {
             collision.gameObject.transform.position = SaveLoadManager.Instance.Progress.LevelConfig.SpawnPoint + new Vector3(0, 5, 0);
+            return;
         }
         else
         {

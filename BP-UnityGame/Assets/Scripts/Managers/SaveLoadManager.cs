@@ -8,7 +8,6 @@ using static SceneLoaderManager;
 
 public class SaveLoadManager : MonoBehaviour
 {
-    // C:\Users\smutn\AppData\LocalLow\FM TUL Smutny Strecanska\TULtimátní hra
     public static SaveLoadManager Instance;
     public MainMenuSettings Settings;
     public Progress Progress;
@@ -71,6 +70,18 @@ public class SaveLoadManager : MonoBehaviour
         AudioManager.Instance.UpdateAudioSettings(Settings);
         FPSDisplayController.Instance.UpdateFPSText(Settings);
 
+        string cpu = SystemInfo.processorType;
+        int cpuCores = SystemInfo.processorCount;
+        string gpu = SystemInfo.graphicsDeviceName;
+        int gpuMemory = SystemInfo.graphicsMemorySize;
+        int ram = SystemInfo.systemMemorySize;
+
+        Debug.Log($"CPU: {cpu} ({cpuCores} cores)");
+        Debug.Log($"GPU: {gpu} ({gpuMemory} MB VRAM)");
+        Debug.Log($"RAM: {ram} MB");
+
+        Debug.Log(JsonUtility.ToJson(Settings, true));
+        Debug.Log(JsonUtility.ToJson(Progress, true));
     }
 
     void Update()

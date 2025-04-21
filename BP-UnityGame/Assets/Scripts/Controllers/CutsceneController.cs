@@ -38,6 +38,12 @@ public class IntroController : MonoBehaviour
 
     void OnTimelineEnd(PlayableDirector pd)
     {
+
+        if (LoadAfterScene == SceneLoaderManager.ActiveScene.MainMenu)
+        {
+            SaveLoadManager.Instance.ResetToDefaults(SaveLoadManager.SaveType.Progress);
+            SaveLoadManager.Instance.Save(SaveLoadManager.SaveType.Progress);
+        }
         SceneLoaderManager.Instance.LoadScene(LoadAfterScene);
     }
 

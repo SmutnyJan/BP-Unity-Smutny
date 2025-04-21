@@ -292,7 +292,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &193404218
 RectTransform:
@@ -1968,42 +1968,46 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 193115535402101095, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 193115535402101095, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 193115535402101095, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 193115535402101095, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 960.2558
       objectReference: {fileID: 0}
     - target: {fileID: 193115535402101095, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -489.85614
       objectReference: {fileID: 0}
     - target: {fileID: 5301644776517087631, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5301644776517087631, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5301644776517087631, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 289.85614
       objectReference: {fileID: 0}
     - target: {fileID: 5301644776517087631, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 960.2558
       objectReference: {fileID: 0}
     - target: {fileID: 5301644776517087631, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: -250
+      objectReference: {fileID: 0}
+    - target: {fileID: 6516398044943132289, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8610673326574531350, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}

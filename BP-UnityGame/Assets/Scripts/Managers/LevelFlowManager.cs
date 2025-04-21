@@ -75,6 +75,7 @@ public class LevelFlowManager : MonoBehaviour
     public void EndLevel()
     {
         SaveLoadManager.Instance.Progress.GameState = SetGameStateAfterFinish;
+        SaveLoadManager.Instance.Progress.Money += 125;
         SaveLoadManager.Instance.Save(SaveLoadManager.SaveType.Progress);
 
         SceneLoaderManager.Instance.LoadScene(LoadSceneAfterFinish);

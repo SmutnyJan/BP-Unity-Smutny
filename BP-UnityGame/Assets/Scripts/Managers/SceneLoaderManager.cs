@@ -33,7 +33,8 @@ public class SceneLoaderManager : MonoBehaviour
         LevelG,
         LevelC,
         LevelA,
-        Ending
+        Ending,
+        Titles
     }
 
     void Awake()

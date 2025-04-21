@@ -103,13 +103,11 @@ public class SaveLoadManager : MonoBehaviour
             Save(saveType);
         }
 
-        //StartCoroutine(DisableTextAfter(LoadingText));
     }
 
 
     public void Save(SaveType saveType)
     {
-        //SavingText.gameObject.SetActive(true);
 
         string json = "";
         switch (saveType)
@@ -123,7 +121,6 @@ public class SaveLoadManager : MonoBehaviour
         }
 
         File.WriteAllText(GetSettingsFilePath(saveType), json);
-        //StartCoroutine(DisableTextAfter(SavingText));
 
 
     }
@@ -202,9 +199,7 @@ public class SaveLoadManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2.5f);
         text.gameObject.SetActive(false);
-
     }
-
 }
 
 

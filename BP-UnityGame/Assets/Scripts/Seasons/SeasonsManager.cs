@@ -12,7 +12,7 @@ public class SeasonsManager : MonoBehaviour
 
 
     public Season CurrentSeason;
-    private float _colliderMoveSpeed = 15f;
+    private float _colliderMoveSpeed = 20f;
     private Axis _usedAxis = Axis.X;
     private bool _seasonChanging = false;
 

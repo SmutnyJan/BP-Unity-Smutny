@@ -32,11 +32,6 @@ public class BuildingMenuController : MonoBehaviour
 
     public void BackToLobby()
     {
-        if (SceneLoaderManager.Instance.CurrentScene == SceneLoaderManager.ActiveScene.LevelA)
-        {
-            Debug.LogError("pozor, pøedìlat, nelze používat LoadSceneAfterFinish");
-            return;
-        }
 
         SaveLoadManager.Instance.Progress.Items = SaveLoadManager.Instance.Progress.LevelConfig.ItemsRevert.Select(item => new ItemAmount
         {
@@ -48,8 +43,12 @@ public class BuildingMenuController : MonoBehaviour
         SaveLoadManager.Instance.Progress.LevelConfig.Scene = SceneLoaderManager.ActiveScene.None;
         SaveLoadManager.Instance.Save(SaveLoadManager.SaveType.Progress);
 
+        if (SceneLoaderManager.Instance.CurrentScene == SceneLoaderManager.ActiveScene.LevelA)
+        {
+            SceneLoaderManager.Instance.LoadScene(SceneLoaderManager.ActiveScene.LobbyAB);
+            return;
+        }
         SceneLoaderManager.Instance.LoadScene(LevelFlowManager.LoadSceneAfterFinish);
-
     }
 
     public void BackToMenu()

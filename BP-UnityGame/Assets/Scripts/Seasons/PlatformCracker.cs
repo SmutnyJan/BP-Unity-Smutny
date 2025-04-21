@@ -6,9 +6,9 @@ public class PlatformCracker : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private MaterialPropertyBlock _propertyBlock;
     private BoxCollider2D _boxCollider;
+    private SeasonMaterialController _seasonMaterialController;
     private CrackState _crackState;
     private float _resetTime;
-
     private float _resetTimeDefault = 5;
     private float _resetTimeSummer = 10;
 
@@ -25,6 +25,7 @@ public class PlatformCracker : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _boxCollider = GetComponent<BoxCollider2D>();
         _propertyBlock = new MaterialPropertyBlock();
+        _seasonMaterialController = GetComponent<SeasonMaterialController>();
     }
 
     private void Start()
@@ -85,6 +86,7 @@ public class PlatformCracker : MonoBehaviour
         _spriteRenderer.enabled = false;
         _boxCollider.enabled = false;
         yield return new WaitForSeconds(_resetTime);
+        _seasonMaterialController.SwitchToSeason(SeasonsManager.Instance.CurrentSeason);
         _spriteRenderer.enabled = true;
         _boxCollider.enabled = true;
         _crackState = CrackState.None;

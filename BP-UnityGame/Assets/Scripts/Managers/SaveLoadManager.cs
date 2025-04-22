@@ -132,8 +132,6 @@ public class SaveLoadManager : MonoBehaviour
         }
 
         File.WriteAllText(GetSettingsFilePath(saveType), json);
-
-
     }
 
     public void ResetToDefaults(SaveType saveType)

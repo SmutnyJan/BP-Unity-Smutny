@@ -158,6 +158,7 @@ public class PlayerPlatformerMovementController : MonoBehaviour
         Positions = new Queue<Vector3>();
 
         TimewarpPoint.transform.SetParent(null);
+        TimewarpPoint.SetActive(true);
 
 
         StartCoroutine("Track");
@@ -179,6 +180,7 @@ public class PlayerPlatformerMovementController : MonoBehaviour
 
         TimewarpPoint.transform.SetParent(this.transform);
         TimewarpPoint.transform.localPosition = new Vector3(0, 0, 0);
+        TimewarpPoint.SetActive(false);
     }
 
 

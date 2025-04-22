@@ -8092,7 +8092,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3983608396278408346, guid: 5ebf692984d6ad745a92887592ab1cff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.7
+      value: 66.7
       objectReference: {fileID: 0}
     - target: {fileID: 3983608396278408346, guid: 5ebf692984d6ad745a92887592ab1cff, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8129,6 +8129,14 @@ PrefabInstance:
     - target: {fileID: 5768742879180492073, guid: 5ebf692984d6ad745a92887592ab1cff, type: 3}
       propertyPath: m_Name
       value: Item Spawn Area
+      objectReference: {fileID: 0}
+    - target: {fileID: 6724899641595698526, guid: 5ebf692984d6ad745a92887592ab1cff, type: 3}
+      propertyPath: m_Size.x
+      value: 407.90054
+      objectReference: {fileID: 0}
+    - target: {fileID: 6724899641595698526, guid: 5ebf692984d6ad745a92887592ab1cff, type: 3}
+      propertyPath: m_Offset.x
+      value: 103.95027
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

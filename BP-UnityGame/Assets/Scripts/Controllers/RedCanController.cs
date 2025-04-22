@@ -7,7 +7,7 @@ public class RedCanController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartCoroutine(DestroyAfterTimeCoroutine(5));
+        StartCoroutine(DestroyAfterTimeCoroutine(Random.Range(3, 7)));
 
     }
 

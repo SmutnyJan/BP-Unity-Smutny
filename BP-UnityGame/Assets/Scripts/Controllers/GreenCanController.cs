@@ -5,7 +5,7 @@ public class GreenCanController : MonoBehaviour
     private bool _firstHit = false;
     void Start()
     {
-        StartCoroutine(DestroyAfterTimeCoroutine(5));
+        StartCoroutine(DestroyAfterTimeCoroutine(Random.Range(3, 7)));
 
     }
 

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PaperBallController : MonoBehaviour
@@ -5,10 +6,28 @@ public class PaperBallController : MonoBehaviour
     public int RecursiveLives;
     private bool hasCollided = false;
 
+    void Start()
+    {
+        StartCoroutine(DestroyAfterTimeCoroutine(7));
+
+    }
+
+    private IEnumerator DestroyAfterTimeCoroutine(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(gameObject);
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (hasCollided) return;
         hasCollided = true;
+
+        if (collision.gameObject.name == "Player")
+        {
+            collision.gameObject.transform.position = SaveLoadManager.Instance.Progress.LevelConfig.SpawnPoint + new Vector3(0, 5, 0);
+            Destroy(gameObject);
+            return;
+        }
 
         if (RecursiveLives <= 0)
         {

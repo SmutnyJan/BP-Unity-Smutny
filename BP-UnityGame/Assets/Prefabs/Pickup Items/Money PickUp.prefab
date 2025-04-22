@@ -100,8 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a68a7f1ccbb1244db6d18548c5b81e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 2
-  speed: 1
 --- !u!1 &8799757012617898120
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,7 +145,7 @@ CircleCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c25234156737846468c705eb054de87e, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

@@ -1501,12 +1501,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ticho p\u0159eru\u0161\xED vzd\xE1len\xFD zvuk autobusu. Otev\u0159u o\u010Di
-    a chv\xEDli nehybn\u011B sed\xEDm na posteli. M\u016Fj pokoj se pomalu no\u0159\xED
-    do rann\xEDho sv\u011Btla, z\xE1clony se lehce h\xFDbou v pr\u016Fvanu z pootev\u0159en\xE9ho
-    okna. V\u0161echno p\u016Fsob\xED a\u017E nezvykle klidn\u011B. Ale v hlav\u011B
-    m\xE1m jasno. Dne\u0161n\xED zkou\u0161ku mus\xEDm zvl\xE1dnout. Jinak tu \u0161kolu
-    asi nikdy nedokon\u010D\xEDm."
+  m_text: "Ticho p\u0159eru\u0161\xED ohlu\u0161uj\xEDc\xED zvuk bud\xEDku. Otev\u0159u
+    o\u010Di a chv\xEDli nehybn\u011B sed\xEDm na posteli. M\u016Fj pokoj se pomalu
+    no\u0159\xED do rann\xEDho sv\u011Btla, z\xE1clony se lehce h\xFDbou v pr\u016Fvanu
+    z pootev\u0159en\xE9ho okna. V\u0161echno p\u016Fsob\xED a\u017E nezvykle klidn\u011B.
+    Ale v hlav\u011B m\xE1m jasno. Dne\u0161n\xED zkou\u0161ku mus\xEDm zvl\xE1dnout.
+    Jinak tu \u0161kolu asi nikdy nedokon\u010D\xEDm."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
   m_sharedMaterial: {fileID: 2825862324939018218, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
@@ -1515,7 +1515,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3

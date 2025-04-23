@@ -70,18 +70,18 @@ public class PlayerPlatformerMovementController : MonoBehaviour
         _controllRevertLock = false;
 
 
-        bool isSpring = SeasonsManager.Instance.CurrentSeason == SeasonsManager.Season.Spring;
+        bool isSummer = SeasonsManager.Instance.CurrentSeason == SeasonsManager.Season.Summer;
 
         if (PlatformCollisionController.IsGrounded)
         {
             _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, JumpForce);
 
-            if (isSpring)
+            if (isSummer)
             {
                 _hasSecondJump = true;
             }
         }
-        else if (isSpring && _hasSecondJump)
+        else if (isSummer && _hasSecondJump)
         {
             _rigidbody.linearVelocity = new Vector2(_rigidbody.linearVelocity.x, JumpForce);
             _hasSecondJump = false;

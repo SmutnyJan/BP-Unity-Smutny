@@ -7,7 +7,7 @@ public class PickMoneyController : MonoBehaviour
     public int MoneyValue = 1;
 
     private Collider2D _itemCollider;
-    private float _pickupDelay = 3f;
+    private float _pickupDelay = 1.5f;
 
     void Start()
     {

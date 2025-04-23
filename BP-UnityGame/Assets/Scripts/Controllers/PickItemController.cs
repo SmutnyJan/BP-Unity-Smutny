@@ -7,7 +7,7 @@ public class PickItemController : MonoBehaviour
     public ItemType ItemType;
 
     private Collider2D _itemCollider;
-    private float _pickupDelay = 3f;
+    private float _pickupDelay = 1.5f;
 
     void Start()
     {

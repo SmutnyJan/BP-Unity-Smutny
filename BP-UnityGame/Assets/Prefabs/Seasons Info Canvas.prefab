@@ -201,8 +201,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "+ Dvojit\xFD skok\n+ Efekty p\u0159edm\u011Bt\u016F trvaj\xED d\xE9le\n+
-    Efekty plechovek trvaj\xED krat\u0161\xED dobu"
+  m_text: "+ Efekty p\u0159edm\u011Bt\u016F trvaj\xED d\xE9le\n+ Efekty plechovek
+    trvaj\xED krat\u0161\xED dobu"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
   m_sharedMaterial: {fileID: 2825862324939018218, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
@@ -291,7 +291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6251263208157620361
 RectTransform:
   m_ObjectHideFlags: 0
@@ -870,8 +870,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "+ M\xE9n\u011B \u010Dast\xE9 pap\xEDrov\xE9 bomby\n+ Ze stropu pr\u0161\xED
-    p\u0159edm\u011Bty"
+  m_text: "+ Dvojit\xFD skok\n+ M\xE9n\u011B \u010Dast\xE9 pap\xEDrov\xE9 bomby\n+
+    Ze stropu pr\u0161\xED p\u0159edm\u011Bty"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
   m_sharedMaterial: {fileID: 2825862324939018218, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
@@ -1575,7 +1575,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "+ Platformy se pohybuj\xED pomaleji\n+ Platformy nepraskaj\xED\n+ Automaty
-    st\u0159\xEDlej\xED pomaleji\n+ V truhl\xE1ch je p\u0159o otev\u0159en\xED v\u011Bt\u0161\xED
+    st\u0159\xEDlej\xED pomaleji\n+ V truhl\xE1ch je p\u0159i otev\u0159en\xED v\u011Bt\u0161\xED
     odm\u011Bna\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
@@ -2064,7 +2064,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "- Praskaj\xEDc\xED platformy se pomaleji obnovuj\xED\n- Vla\u0161tovky
-    se pohybuj\xED rychleji"
+    se pohybuj\xED rychleji\n- Truhly nejdou otev\u0159\xEDt a nejsou vid\u011Bt"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
   m_sharedMaterial: {fileID: 2825862324939018218, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}

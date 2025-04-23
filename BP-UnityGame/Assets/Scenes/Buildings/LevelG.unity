@@ -734,33 +734,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 890717236}
     m_Modifications:
-    - target: {fileID: 1184616129309828507, guid: 0c6d004d9a5343344b86decfb8af8d9e, type: 3}
-      propertyPath: Messages.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1184616129309828507, guid: 0c6d004d9a5343344b86decfb8af8d9e, type: 3}
-      propertyPath: 'Messages.Array.data[0]'
-      value: "Super, jde ti to. Prvn\xED \u010D\xE1st m\xE1\u0161 za sebou."
-      objectReference: {fileID: 0}
-    - target: {fileID: 1184616129309828507, guid: 0c6d004d9a5343344b86decfb8af8d9e, type: 3}
-      propertyPath: 'Messages.Array.data[1]'
-      value: "Dal\u0161\xED zdroj pen\u011Bz a p\u0159edm\u011Bt\u016F, kter\xE9
-        ti m\u016F\u017Eou pomoct, jsou takov\xE9hle truhly. Nach\xE1z\xED se r\u016Fzn\u011B
-        po aule a mohou p\u0159edstavovat rozd\xEDl mezi t\xEDm, jestli \u0161kolu
-        dokon\u010D\xED\u0161 nebo ne."
-      objectReference: {fileID: 0}
-    - target: {fileID: 1184616129309828507, guid: 0c6d004d9a5343344b86decfb8af8d9e, type: 3}
-      propertyPath: 'Messages.Array.data[2]'
-      value: "V dal\u0161\xED \u010D\xE1sti najde\u0161 i pohybliv\xE9 plo\u0161iny.
-        D\xE1vej si pozor, um\u011Bj\xED b\xFDt zr\xE1dn\xE9."
-      objectReference: {fileID: 0}
     - target: {fileID: 4085833992736080925, guid: 0c6d004d9a5343344b86decfb8af8d9e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 28.97
       objectReference: {fileID: 0}
     - target: {fileID: 4085833992736080925, guid: 0c6d004d9a5343344b86decfb8af8d9e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.92
+      value: 3.987
       objectReference: {fileID: 0}
     - target: {fileID: 4085833992736080925, guid: 0c6d004d9a5343344b86decfb8af8d9e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1559,7 +1539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4085833992736080925, guid: 0c6d004d9a5343344b86decfb8af8d9e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.8
+      value: 2.855
       objectReference: {fileID: 0}
     - target: {fileID: 4085833992736080925, guid: 0c6d004d9a5343344b86decfb8af8d9e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4158,7 +4138,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: bf9cb79653637aa500000000
+  m_ApplyToSortingLayers: bf9cb79653637aa500000000cb2d948e
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -4808,7 +4788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4085833992736080925, guid: 0c6d004d9a5343344b86decfb8af8d9e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.7724574
+      value: 1.852
       objectReference: {fileID: 0}
     - target: {fileID: 4085833992736080925, guid: 0c6d004d9a5343344b86decfb8af8d9e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7012,7 +6992,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4085833992736080925, guid: 0c6d004d9a5343344b86decfb8af8d9e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8139311
+      value: -1.704
       objectReference: {fileID: 0}
     - target: {fileID: 4085833992736080925, guid: 0c6d004d9a5343344b86decfb8af8d9e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8325,32 +8305,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Start Level Point
       objectReference: {fileID: 0}
-    - target: {fileID: 4616493256877058762, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
-      propertyPath: Messages.Array.size
+    - target: {fileID: 6735649519677366132, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
+      propertyPath: m_LightType
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 4616493256877058762, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
-      propertyPath: 'Messages.Array.data[0]'
-      value: "Vstoupil jsi do auly budovy G. Mo\u017En\xE1 ti to na prvn\xED pohled
-        nebude d\xE1vat smysl \u2014 plo\u0161iny, rostliny, jin\xE1 perspektiva\u2026
-        Ale nev\u011B\u0161 hlavu. To, co vid\xED\u0161, je \xFA\u010Dinek m\xE9ho
-        n\xE1poje. Sv\u011Bt se ti ob\u010Das uk\xE1\u017Ee jinak, ne\u017E ho vid\xED
-        ostatn\xED. Vn\xEDmej to jako v\xFDhodu. N\u011Bkter\xE9 v\u011Bci jsou te\u010F
-        p\u0159\xEDstupn\xE9 jen tob\u011B."
+    - target: {fileID: 6735649519677366132, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
+      propertyPath: m_LightCookieSprite
+      value: 
+      objectReference: {fileID: -765150924802650856, guid: edbd0dcdef110e047940d2d4fb72422d, type: 3}
+    - target: {fileID: 6735649519677366132, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
+      propertyPath: m_LocalBounds.m_Center.y
+      value: -0.00000011920929
       objectReference: {fileID: 0}
-    - target: {fileID: 4616493256877058762, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
-      propertyPath: 'Messages.Array.data[1]'
-      value: "Do batohu jsem ti p\u0159idal p\xE1r p\u0159edm\u011Bt\u016F, kter\xE9
-        si m\u016F\u017Ee\u0161 hned vyzkou\u0161et. Batoh otev\u0159e\u0161 kl\xE1vesou
-        TAB, p\u0159edm\u011Bt pou\u017Eije\u0161 kl\xE1vesou E. T\u011Bchto p\xE1r
-        m\xE1\u0161 zdarma na zkou\u0161ku. Dal\u0161\xED si bude\u0161 muset po\u0159\xEDdit
-        v menze \u2014 a tam u\u017E bez pen\u011Bz nepochod\xED\u0161."
+    - target: {fileID: 6735649519677366132, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.x
+      value: 0.9985302
       objectReference: {fileID: 0}
-    - target: {fileID: 4616493256877058762, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
-      propertyPath: 'Messages.Array.data[2]'
-      value: "Te\u010F se p\u0159esu\u0148 k dal\u0161\xEDmu checkpointu. Tam si
-        odpo\u010Dine\u0161 a j\xE1 ti \u0159eknu, co d\xE1l. Pohybuj se pomoc\xED
-        \u0161ipek nebo kl\xE1ves WASD."
+    - target: {fileID: 6735649519677366132, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.y
+      value: 0.99853027
+      objectReference: {fileID: 0}
+    - target: {fileID: 6735649519677366132, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6735649519677366132, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
+      propertyPath: 'm_ApplyToSortingLayers.Array.data[0]'
+      value: -1518705837
+      objectReference: {fileID: 0}
+    - target: {fileID: 6735649519677366132, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
+      propertyPath: 'm_ApplyToSortingLayers.Array.data[1]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6735649519677366132, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
+      propertyPath: 'm_ApplyToSortingLayers.Array.data[2]'
+      value: -1766351681
       objectReference: {fileID: 0}
     - target: {fileID: 8987261367300731751, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8358,7 +8347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8987261367300731751, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.28
+      value: 4.398
       objectReference: {fileID: 0}
     - target: {fileID: 8987261367300731751, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8415,7 +8404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7064800666674508013, guid: 28a8c864ac5a2ec459ed6c6b7ec94a01, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.86
+      value: 5.002
       objectReference: {fileID: 0}
     - target: {fileID: 7064800666674508013, guid: 28a8c864ac5a2ec459ed6c6b7ec94a01, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8697,11 +8686,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4010760884554247871, guid: 0683002ffc09bfe49bbe02985ff2827e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 41.78
       objectReference: {fileID: 0}
     - target: {fileID: 4010760884554247871, guid: 0683002ffc09bfe49bbe02985ff2827e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 5.01
       objectReference: {fileID: 0}
     - target: {fileID: 4010760884554247871, guid: 0683002ffc09bfe49bbe02985ff2827e, type: 3}
       propertyPath: m_LocalPosition.z

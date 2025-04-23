@@ -10,6 +10,8 @@ public class OpenChestController : MonoBehaviour
     private float _spawnDelay = 0.2f;
     private Animator _animator;
     private bool _isOpened = false;
+    private SpriteRenderer _spriteRenderer;
+    private BoxCollider2D _boxCollider;
 
     void Start()
     {
@@ -17,8 +19,26 @@ public class OpenChestController : MonoBehaviour
         {
             Debug.LogWarning("Chest name " + this.name + " incorrect format!");
         }
-
+        SeasonsManager.Instance.OnSeasonChangeStarted += OnSeasonChangeStarted;
         _animator = GetComponent<Animator>();
+
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _boxCollider = GetComponent<BoxCollider2D>();
+
+    }
+
+    private void OnSeasonChangeStarted(SeasonsManager.Season season)
+    {
+        if (season == SeasonsManager.Season.Summer) 
+        {
+            _spriteRenderer.enabled = false;
+            _boxCollider.enabled = false;
+        }
+        else if(season == SeasonsManager.Season.Autumn)
+        {
+            _spriteRenderer.enabled = true;
+            _boxCollider.enabled = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

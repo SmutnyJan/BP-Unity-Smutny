@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -54,6 +55,36 @@ public class SceneLoaderManager : MonoBehaviour
 
     }
 
+
+    void Start()
+    {
+        SceneManager.sceneLoaded += MusicSwitcher;
+
+    }
+    private void MusicSwitcher(Scene arg0, LoadSceneMode arg1)
+    {
+        if (CurrentScene == ActiveScene.MainMenu && AudioManager.Instance.MusicAudioSource.clip.name != "Resonant Victory - Glbml")
+        {
+            AudioManager.Instance.PlayClipByName("Resonant Victory - Glbml", AudioManager.Instance.AudioLibrary.Music, AudioManager.Instance.MusicAudioSource, AudioManager.PlayType.Play);
+        }
+        else if((CurrentScene == ActiveScene.LobbyMenza || CurrentScene == ActiveScene.LobbyG || CurrentScene == ActiveScene.LobbyC || CurrentScene == ActiveScene.LobbyAB) && AudioManager.Instance.MusicAudioSource.clip.name != "MAXAN - The Lost Time")
+        {
+            AudioManager.Instance.PlayClipByName("MAXAN - The Lost Time", AudioManager.Instance.AudioLibrary.Music, AudioManager.Instance.MusicAudioSource, AudioManager.PlayType.Play);
+        }
+        else if (CurrentScene == ActiveScene.LevelG && AudioManager.Instance.MusicAudioSource.clip.name != "Under the Neon Breeze")
+        {
+            AudioManager.Instance.PlayClipByName("Under the Neon Breeze", AudioManager.Instance.AudioLibrary.Music, AudioManager.Instance.MusicAudioSource, AudioManager.PlayType.Play);
+        }
+        else if (CurrentScene == ActiveScene.LevelC && AudioManager.Instance.MusicAudioSource.clip.name != "Drifting in Bliss")
+        {
+            AudioManager.Instance.PlayClipByName("Drifting in Bliss", AudioManager.Instance.AudioLibrary.Music, AudioManager.Instance.MusicAudioSource, AudioManager.PlayType.Play);
+        }
+        else if (CurrentScene == ActiveScene.LevelA && AudioManager.Instance.MusicAudioSource.clip.name != "Chillpeach - Purple")
+        {
+            AudioManager.Instance.PlayClipByName("Chillpeach - Purple", AudioManager.Instance.AudioLibrary.Music, AudioManager.Instance.MusicAudioSource, AudioManager.PlayType.Play);
+        }
+    }
+
     private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
     {
         if (_firstSceneLoaded)
@@ -61,12 +92,13 @@ public class SceneLoaderManager : MonoBehaviour
             SceneTransitionAnimator.SetTrigger("End");
         }
         _firstSceneLoaded = true;
-
     }
 
     void OnDestroy()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneLoaded -= MusicSwitcher;
+
     }
 
     public void LoadScene(ActiveScene scene)
@@ -84,13 +116,6 @@ public class SceneLoaderManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         SceneManager.LoadScene(scene.ToString(), LoadSceneMode.Single);
-    }
-
-
-
-    void Start()
-    {
-        //Application.targetFrameRate = -1;
     }
 
     void Update()

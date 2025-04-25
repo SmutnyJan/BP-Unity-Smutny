@@ -13,6 +13,8 @@ public class IntroController : MonoBehaviour
     private void Awake()
     {
         _inputSystem = new PlayerInputSystem();
+        AudioManager.Instance.MusicAudioSource.Stop();
+
     }
 
     void Start()

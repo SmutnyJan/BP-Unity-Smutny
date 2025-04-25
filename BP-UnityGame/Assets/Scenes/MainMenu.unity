@@ -836,8 +836,17 @@ MonoBehaviour:
       Clips: []
     Music:
       Clips:
+      - Clip: {fileID: 8300000, guid: 144b63649b4a64b46a25eed7cd824309, type: 3}
+      - Clip: {fileID: 8300000, guid: f6edea3cd4078214898770fa2056f4a2, type: 3}
       - Clip: {fileID: 8300000, guid: 2573d2448ce3b3b448619dade6aec78f, type: 3}
+      - Clip: {fileID: 8300000, guid: 059ac5ace83faa74eb42a78ad1554314, type: 3}
+      - Clip: {fileID: 8300000, guid: 0425bb50217d8464fb51dbe7fa219a24, type: 3}
+      - Clip: {fileID: 8300000, guid: 50c1d09398a212e4cb5e20fb2dbc9f9e, type: 3}
+      - Clip: {fileID: 8300000, guid: b8a6f1578a85bb1409e12b806c0a7721, type: 3}
       - Clip: {fileID: 8300000, guid: fb4b00d2b56aaf44d945d0e8578b3dba, type: 3}
+      - Clip: {fileID: 8300000, guid: 9b063f8e5bae72547b6af57e37510075, type: 3}
+      - Clip: {fileID: 8300000, guid: b78f8c355ef7c7b4185a4f5345a330a6, type: 3}
+      - Clip: {fileID: 8300000, guid: b1b948cea2058c846aeb3e0b67b3a348, type: 3}
 --- !u!82 &359446619
 AudioSource:
   m_ObjectHideFlags: 0
@@ -848,9 +857,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1445409514525990874, guid: 80bb04fc6bc22df4192fa44772311d83, type: 2}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: fb4b00d2b56aaf44d945d0e8578b3dba, type: 3}
+  m_Resource: {fileID: 8300000, guid: fb4b00d2b56aaf44d945d0e8578b3dba, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1

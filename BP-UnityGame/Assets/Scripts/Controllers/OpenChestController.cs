@@ -29,12 +29,12 @@ public class OpenChestController : MonoBehaviour
 
     private void OnSeasonChangeStarted(SeasonsManager.Season season)
     {
-        if (season == SeasonsManager.Season.Summer) 
+        if (season == SeasonsManager.Season.Summer)
         {
             _spriteRenderer.enabled = false;
             _boxCollider.enabled = false;
         }
-        else if(season == SeasonsManager.Season.Autumn)
+        else if (season == SeasonsManager.Season.Autumn)
         {
             _spriteRenderer.enabled = true;
             _boxCollider.enabled = true;
@@ -46,8 +46,7 @@ public class OpenChestController : MonoBehaviour
         if (!_isOpened && collision.gameObject.CompareTag("Player"))
         {
             SetStateToOpen();
-            //_animator.SetTrigger("Open");
-            GetComponent<SpriteRenderer>().color = (Color)(new Color32(255, 0, 0, 255));
+            _animator.SetTrigger("Open");
 
             SaveLoadManager.Instance.Progress.LevelConfig.ChestsOpenedIndexes.Add(
                 int.Parse(Regex.Match(this.name, @"\((\d+)\)").Groups[1].Value)
@@ -60,8 +59,7 @@ public class OpenChestController : MonoBehaviour
     public void SetStateToOpen()
     {
         _isOpened = true;
-        //animator.Play("Opened", 0, 1f); pøeskoèí pøehrávání animace
-        GetComponent<SpriteRenderer>().color = (Color)(new Color32(255, 0, 0, 255));
+        _animator.Play("Chest_Open", 0, 1f);
     }
 
     IEnumerator SpawnContent()
@@ -82,15 +80,15 @@ public class OpenChestController : MonoBehaviour
 
         foreach (GameObject item in itemsToSpawn)
         {
-            {
-                GameObject spawnedItem = Instantiate(item, transform.position, Quaternion.identity);
-                Rigidbody2D rb = spawnedItem.GetComponent<Rigidbody2D>();
+            GameObject spawnedItem = Instantiate(item, transform.position, Quaternion.identity);
+            Rigidbody2D rb = spawnedItem.GetComponent<Rigidbody2D>();
 
-                float randomForceX = Random.Range(-2f, 2f);
-                rb.AddForce(new Vector2(randomForceX, _spawnForce), ForceMode2D.Impulse);
-                yield return new WaitForSeconds(_spawnDelay);
-            }
+            float randomForceX = Random.Range(-2f, 2f);
+            rb.AddForce(new Vector2(randomForceX, _spawnForce), ForceMode2D.Impulse);
+            yield return new WaitForSeconds(_spawnDelay);
         }
+
+
     }
 
     private List<GameObject> GetRandomSubset(List<GameObject> source, int count)

@@ -832,8 +832,16 @@ MonoBehaviour:
       - Clip: {fileID: 8300000, guid: bf099225f6a621743b7cff1784011275, type: 3}
       - Clip: {fileID: 8300000, guid: 21195101abf13b84088b82fdc07f484f, type: 3}
       - Clip: {fileID: 8300000, guid: a61ff627558059e4db7119384101dfed, type: 3}
+      - Clip: {fileID: 8300000, guid: c11b4fe7cb6834d4b9a48f2f53f1ca41, type: 3}
     Player:
-      Clips: []
+      Clips:
+      - Clip: {fileID: 8300000, guid: 473265577b92a5b498838248f0bb9c67, type: 3}
+      - Clip: {fileID: 8300000, guid: d6f40587affc5454595cc5b9d42cea97, type: 3}
+      - Clip: {fileID: 8300000, guid: b744dbf4016c67946a49a070d89aa55e, type: 3}
+      - Clip: {fileID: 8300000, guid: f77f26c869679e64397fb41b7fe5e391, type: 3}
+      - Clip: {fileID: 8300000, guid: d5cf663a2b98b5d44a1151a2d4c47839, type: 3}
+      - Clip: {fileID: 8300000, guid: 4c29e02372a4bc84a91585e2c75fc2d5, type: 3}
+      - Clip: {fileID: 8300000, guid: e05ea2b3783ac0145ac6033027184138, type: 3}
     Music:
       Clips:
       - Clip: {fileID: 8300000, guid: 144b63649b4a64b46a25eed7cd824309, type: 3}

@@ -11,7 +11,7 @@ public class PlatformCracker : MonoBehaviour
     private float _resetTime;
     private float _resetTimeDefault = 5;
     private float _resetTimeSummer = 10;
-
+    private AudioSource _audioSource;
     public enum CrackState
     {
         None,
@@ -26,6 +26,8 @@ public class PlatformCracker : MonoBehaviour
         _boxCollider = GetComponent<BoxCollider2D>();
         _propertyBlock = new MaterialPropertyBlock();
         _seasonMaterialController = GetComponent<SeasonMaterialController>();
+        _audioSource = GetComponent<AudioSource>();
+        _audioSource.outputAudioMixerGroup = AudioManager.Instance.SFXAudioSource.outputAudioMixerGroup;
     }
 
     private void Start()
@@ -85,6 +87,10 @@ public class PlatformCracker : MonoBehaviour
     {
         _spriteRenderer.enabled = false;
         _boxCollider.enabled = false;
+
+        int random = Random.Range(1, 3);
+        AudioManager.Instance.PlayClipByName("Platform_Break_" + random, AudioManager.Instance.AudioLibrary.Player, _audioSource);
+
         yield return new WaitForSeconds(_resetTime);
         _seasonMaterialController.SwitchToSeason(SeasonsManager.Instance.CurrentSeason);
         _spriteRenderer.enabled = true;

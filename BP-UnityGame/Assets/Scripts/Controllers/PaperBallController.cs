@@ -9,7 +9,6 @@ public class PaperBallController : MonoBehaviour
     void Start()
     {
         StartCoroutine(DestroyAfterTimeCoroutine(7));
-
     }
 
     private IEnumerator DestroyAfterTimeCoroutine(float delay)
@@ -47,4 +46,5 @@ public class PaperBallController : MonoBehaviour
 
         Destroy(gameObject);
     }
+
 }

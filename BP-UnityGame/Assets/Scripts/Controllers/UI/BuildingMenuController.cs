@@ -20,6 +20,7 @@ public class BuildingMenuController : MonoBehaviour
 
     public void ToggleMenu()
     {
+        AudioManager.Instance.PlayClipByName("UI_Button_Click_1", AudioManager.Instance.AudioLibrary.UI, AudioManager.Instance.SFXAudioSource);
         if (MenuPanel.gameObject.activeSelf)
         {
             MenuPanel.SetActive(false);
@@ -32,7 +33,7 @@ public class BuildingMenuController : MonoBehaviour
 
     public void BackToLobby()
     {
-
+        AudioManager.Instance.PlayClipByName("UI_Button_Click_1", AudioManager.Instance.AudioLibrary.UI, AudioManager.Instance.SFXAudioSource);
         SaveLoadManager.Instance.Progress.Items = SaveLoadManager.Instance.Progress.LevelConfig.ItemsRevert.Select(item => new ItemAmount
         {
             ItemType = item.ItemType,
@@ -53,13 +54,14 @@ public class BuildingMenuController : MonoBehaviour
 
     public void BackToMenu()
     {
-
+        AudioManager.Instance.PlayClipByName("UI_Button_Click_1", AudioManager.Instance.AudioLibrary.UI, AudioManager.Instance.SFXAudioSource);
         SaveLoadManager.Instance.Load(SaveLoadManager.SaveType.Progress);
         SceneLoaderManager.Instance.LoadScene(SceneLoaderManager.ActiveScene.MainMenu);
     }
 
     public void ResetLevel()
     {
+        AudioManager.Instance.PlayClipByName("UI_Button_Click_1", AudioManager.Instance.AudioLibrary.UI, AudioManager.Instance.SFXAudioSource);
         SaveLoadManager.Instance.Progress.LevelConfig.Scene = SceneLoaderManager.ActiveScene.None;
         SaveLoadManager.Instance.Progress.Items = SaveLoadManager.Instance.Progress.LevelConfig.ItemsRevert.Select(item => new ItemAmount
         {

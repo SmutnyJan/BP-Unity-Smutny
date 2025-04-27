@@ -17,6 +17,7 @@ public class PaperPlaneController : MonoBehaviour, ISeasonChange
     private float _maxRotationAngle = 15f;
     private SpriteRenderer _spriteRenderer;
 
+
     void Start()
     {
         if (!Regex.Match(this.transform.parent.name, @"^Moving Paper Plane \((\d+)\)$").Success)

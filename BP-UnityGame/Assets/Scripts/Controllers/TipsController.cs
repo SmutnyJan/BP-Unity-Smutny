@@ -2,8 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 public class TipsController : MonoBehaviour
 {
@@ -28,12 +26,14 @@ public class TipsController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
 
     public void OnCloseContinueButtonClicked()
     {
+        AudioManager.Instance.PlayClipByName("UI_Page_Flip", AudioManager.Instance.AudioLibrary.UI, AudioManager.Instance.SFXAudioSource);
+
         if (messageBuffer.Any())
         {
             TipsText.text = messageBuffer.Pop();
@@ -46,9 +46,6 @@ public class TipsController : MonoBehaviour
         {
             MessagesPanel.SetActive(false);
         }
-
-
-
     }
 
     public void ShowMessages(string[] messages)
@@ -56,7 +53,7 @@ public class TipsController : MonoBehaviour
         MessagesPanel.SetActive(true);
         messageBuffer = new Stack<string>(messages.Reverse());
         TipsText.text = messageBuffer.Pop();
-        if(messageBuffer.Any())
+        if (messageBuffer.Any())
         {
             CloseContinueButtonText.text = ">";
         }
@@ -64,8 +61,5 @@ public class TipsController : MonoBehaviour
         {
             CloseContinueButtonText.text = "X";
         }
-
     }
-
-
 }

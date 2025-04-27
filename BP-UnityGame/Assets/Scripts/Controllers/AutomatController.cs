@@ -8,10 +8,14 @@ public class AutomatController : MonoBehaviour, ISeasonChange
     private int _directionMultiplier;
     private int _timeDelayOffset = 0;
     private Coroutine _spawnCoroutine;
+    private AudioSource _audioSource;
     private void Start()
     {
         _directionMultiplier = GetComponent<SpriteRenderer>().flipX ? 1 : -1;
         _spawnCoroutine = StartCoroutine(SpawnCanRoutine());
+        _audioSource = GetComponent<AudioSource>();
+        _audioSource.outputAudioMixerGroup = AudioManager.Instance.SFXAudioSource.outputAudioMixerGroup;
+
     }
 
     private IEnumerator SpawnCanRoutine()
@@ -20,13 +24,15 @@ public class AutomatController : MonoBehaviour, ISeasonChange
         while (true)
         {
             yield return new WaitForSeconds(Random.Range(1f, 2f) + _timeDelayOffset);
+            int random = Random.Range(1, 5);
+            AudioManager.Instance.PlayClipByName("Can_" + random, AudioManager.Instance.AudioLibrary.Player, _audioSource);
+
             GameObject newCan = Instantiate(Can, transform.TransformPoint(new Vector3(0, -2.91f, 0)), Quaternion.identity);
 
             Rigidbody2D rb = newCan.GetComponent<Rigidbody2D>();
 
             rb.AddForce(_directionMultiplier * transform.right * _shootForce, ForceMode2D.Impulse);
             rb.AddTorque(10f, ForceMode2D.Impulse);
-
         }
     }
 

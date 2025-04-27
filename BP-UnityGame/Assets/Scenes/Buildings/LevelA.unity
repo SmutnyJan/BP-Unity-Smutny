@@ -348,6 +348,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Start Level Point
       objectReference: {fileID: 0}
+    - target: {fileID: 4616493256877058762, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
+      propertyPath: Messages.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4616493256877058762, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
+      propertyPath: 'Messages.Array.data[0]'
+      value: "Te\u010F jsme na budov\u011B A. Tady je to je\u0161t\u011B nebezpe\u010Dn\u011Bj\u0161\xED
+        ne\u017E na c\xE9\u010Dku."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4616493256877058762, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
+      propertyPath: 'Messages.Array.data[1]'
+      value: "Nikdy nev\xED\u0161, odkud co p\u0159ilet\xED \u2014 bu\u010F po\u0159\xE1d
+        ve st\u0159ehu."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4616493256877058762, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
+      propertyPath: 'Messages.Array.data[2]'
+      value: "Poletuj\xED tu pap\xEDrov\xE9 koule, kter\xE9 se po dopadu rozdvoj\xED
+        a vytvo\u0159\xED dal\u0161\xED dv\u011B."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4616493256877058762, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
+      propertyPath: 'Messages.Array.data[3]'
+      value: "Ka\u017Ed\xE1 z nich to m\u016F\u017Ee ud\u011Blat znovu. Rad\u0161i
+        se jim vyh\xFDbej, ne\u017E se ti to cel\xE9 vymkne z rukou."
+      objectReference: {fileID: 0}
     - target: {fileID: 8987261367300731751, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
       propertyPath: m_LocalPosition.x
       value: -30.55

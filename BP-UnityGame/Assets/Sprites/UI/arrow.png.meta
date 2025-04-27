@@ -103,10 +103,10 @@ TextureImporter:
       name: arrow_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 227
-        width: 597
-        height: 178
+        x: 11
+        y: 214
+        width: 1003
+        height: 596
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      arrow_0: -765150924802650856
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

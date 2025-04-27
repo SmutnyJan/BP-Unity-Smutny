@@ -47,6 +47,7 @@ public class ShopUIItem : MonoBehaviour
 
     private void OnItemClick()
     {
+        AudioManager.Instance.PlayClipByName("UI_Button_Click_2", AudioManager.Instance.AudioLibrary.UI, AudioManager.Instance.SFXAudioSource);
         if (IsInventoryItem)
         {
             ShopController.ChangeDetailsInventory(ItemType);

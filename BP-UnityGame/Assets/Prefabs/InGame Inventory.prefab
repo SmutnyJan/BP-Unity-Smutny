@@ -1799,9 +1799,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 1967551687426410131}
     m_Modifications:
     - target: {fileID: 1304183138611342661, guid: cf2307a1ae29c4a40a0ee65f06881351, type: 3}
-      propertyPath: m_SortingOrder
-      value: 102
+      propertyPath: m_SortingLayer
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1304183138611342661, guid: cf2307a1ae29c4a40a0ee65f06881351, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1304183138611342661, guid: cf2307a1ae29c4a40a0ee65f06881351, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 2608625437993959518, guid: cf2307a1ae29c4a40a0ee65f06881351, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0

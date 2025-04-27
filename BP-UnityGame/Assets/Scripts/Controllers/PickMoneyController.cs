@@ -37,6 +37,8 @@ public class PickMoneyController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            int random = Random.Range(1, 4);
+            AudioManager.Instance.PlayClipByName("Coin_" + random, AudioManager.Instance.AudioLibrary.Player, AudioManager.Instance.SFXAudioSource);
             SaveLoadManager.Instance.Progress.Money += MoneyValue;
             int money = SaveLoadManager.Instance.Progress.Money;
 

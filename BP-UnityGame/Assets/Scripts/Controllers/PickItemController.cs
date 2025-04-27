@@ -38,6 +38,8 @@ public class PickItemController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            AudioManager.Instance.PlayClipByName("PickUp", AudioManager.Instance.AudioLibrary.Player, AudioManager.Instance.SFXAudioSource);
+
             int newAmount = ++SaveLoadManager.Instance.Progress.Items.First(x => x.ItemType == ItemType).Amount;
 
             collision.gameObject.GetComponent<PlayerPlatformerMovementController>().LobbyInventoryController.NewItemRecieved(ItemType, newAmount);

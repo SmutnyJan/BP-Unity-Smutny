@@ -124,9 +124,10 @@ public class MenzaShopController : MonoBehaviour
         int price = ItemLibraryManager.Instance.UIItems[_selectedItem].UnitPrice;
         if (price > SaveLoadManager.Instance.Progress.Money)
         {
-            //nedostatek penìz
+            AudioManager.Instance.PlayClipByName("Item_Error", AudioManager.Instance.AudioLibrary.Player, AudioManager.Instance.SFXAudioSource);
             return;
         }
+        AudioManager.Instance.PlayClipByName("UI_Button_Click_1", AudioManager.Instance.AudioLibrary.UI, AudioManager.Instance.SFXAudioSource);
 
         SaveLoadManager.Instance.Progress.Money -= price;
 

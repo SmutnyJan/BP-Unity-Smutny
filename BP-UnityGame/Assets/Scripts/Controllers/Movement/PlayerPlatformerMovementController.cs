@@ -107,8 +107,7 @@ public class PlayerPlatformerMovementController : MonoBehaviour
     {
         if (PlayerEffectsController.ActiveEffects.Contains(PlayerEffectsController.PlayerEffect.DisableItems))
         {
-            //play error sound
-            Debug.Log("Blok!");
+            AudioManager.Instance.PlayClipByName("Item_Error", AudioManager.Instance.AudioLibrary.Player, AudioManager.Instance.SFXAudioSource);
             return;
         }
         LobbyInventoryController.UseItem();

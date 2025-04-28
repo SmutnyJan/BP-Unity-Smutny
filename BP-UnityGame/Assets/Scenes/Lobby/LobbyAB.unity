@@ -1632,18 +1632,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4724673247352254671, guid: 62813e1059511ab4393cd55d60abc554, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
-    - target: {fileID: 4724673247352254671, guid: 62813e1059511ab4393cd55d60abc554, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -4001345900356862470, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
-    - target: {fileID: 4724673247352254671, guid: 62813e1059511ab4393cd55d60abc554, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5291496579993006932, guid: 62813e1059511ab4393cd55d60abc554, type: 3}
       propertyPath: m_Name
       value: Money Canvas
@@ -1652,26 +1640,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1236574348}
-    - target: {fileID: 6030523644171540412, guid: 62813e1059511ab4393cd55d60abc554, type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262744537954322920, guid: 62813e1059511ab4393cd55d60abc554, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262744537954322920, guid: 62813e1059511ab4393cd55d60abc554, type: 3}
-      propertyPath: m_MatchWidthOrHeight
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262744537954322920, guid: 62813e1059511ab4393cd55d60abc554, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 6262744537954322920, guid: 62813e1059511ab4393cd55d60abc554, type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1080
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

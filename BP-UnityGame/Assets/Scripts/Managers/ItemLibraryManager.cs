@@ -61,18 +61,19 @@ public class ItemLibraryManager : MonoBehaviour
                 UpTime = -1,
                 Icon = Resources.Load<Sprite>("Sprites/hourglassUI")}
             },
-            { ItemType.Boots, new UIItem(){
+            {
+                ItemType.Boots, new UIItem(){
                 Title = "Bleskoboty",
                 Subtitle = "Èas na maraton? Ne, jen utíkáš o život",
-                Description = "Po použití se hráè na 10 vteøin pohybuje výraznì rychleji. Zrychlený pohyb usnadòuje vyhýbání se nepøátelským útokùm, rychlé pøesuny po mapì nebo efektivnìjší uniky pøed nebezpeèím. Pozor však na ovládání – vìtší rychlost znamená i horší manévrování v úzkých prostorách.",
+                Description = "Po použití se hráè po omezenou pohybuje výraznì rychleji. Zrychlený pohyb usnadòuje vyhýbání se nepøátelským útokùm, rychlé pøesuny po mapì nebo efektivnìjší uniky pøed nebezpeèím. Pozor však na ovládání – vìtší rychlost znamená i horší manévrování v úzkých prostorách.",
                 UnitPrice = 15,
                 UpTime = 10,
                 Icon = Resources.Load<Sprite>("Sprites/speedUI")}
             },
             { ItemType.JumpCoil, new UIItem(){
-                Title = "Skoková cívka",
+                Title = "Skoková pružina",
                 Subtitle = "Kdo potøebuje žebøíky?",
-                Description = "Po použití se hráè na omezenou dobu mùže odrážet s vìtší silou, což mu umožní vyskoèit výš než obvykle. Ideální pro dosažení tìžko dostupných míst nebo pøekonání vysokých pøekážek. Efekt trvá po 10 vteøin a poté se skoky vrátí do normálu.",
+                Description = "Po použití se hráè na omezenou dobu mùže odrážet s vìtší silou, což mu umožní vyskoèit výš než obvykle. Ideální pro dosažení tìžko dostupných míst nebo pøekonání vysokých pøekážek.",
                 UnitPrice = 15,
                 UpTime = 10,
                 Icon = Resources.Load<Sprite>("Sprites/coilUI")}
@@ -80,7 +81,7 @@ public class ItemLibraryManager : MonoBehaviour
             { ItemType.Binoculars, new UIItem(){
                 Title = "Orlí oèi",
                 Subtitle = "Najednou vidíš, co nemáš vidìt",
-                Description = "Po použití se kamera na omezenou dobu oddálí, což hráèi poskytne širší pohled na okolní prostøedí. Umožòuje lépe plánovat pohyb, odhalit skryté cesty nebo sledovat nepøátele z bezpeèné vzdálenosti. Efekt trvá po dobu 20 vteøin, poté se pohled vrátí do normálního stavu.",
+                Description = "Po použití se kamera na omezenou dobu oddálí, což hráèi poskytne širší pohled na okolní prostøedí. Umožòuje lépe plánovat pohyb, odhalit skryté cesty nebo sledovat nepøátele z bezpeèné vzdálenosti.",
                 UnitPrice = 30,
                 UpTime = 15,
                 Icon = Resources.Load<Sprite>("Sprites/binocularsUI")}

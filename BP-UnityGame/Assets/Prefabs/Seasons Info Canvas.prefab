@@ -291,7 +291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6251263208157620361
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1085,9 +1085,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "- Foukaj\xEDc\xED v\xEDtr znesnad\u0148uje pohyb\n- Foukaj\xEDc\xED v\xEDtr
-    odfoukne p\u0159edm\u011Bty z batohu (tu\u017Eky, perly)\n- Efekty plechovek
-    trvaj\xED d\xE9le"
+  m_text: "- V\xEDtr znesnad\u0148uje pohyb\n- V\xEDtr odfoukne hozen\xE9 p\u0159edm\u011Bty
+    (propisky, perly)\n- Efekty plechovek trvaj\xED d\xE9le"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
   m_sharedMaterial: {fileID: 2825862324939018218, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}

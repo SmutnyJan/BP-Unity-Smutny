@@ -8135,6 +8135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Seasons Info Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1599713485698550934, guid: 5b90ac2b5a8998f4497b42a546d9715d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6251263208157620361, guid: 5b90ac2b5a8998f4497b42a546d9715d, type: 3}
       propertyPath: m_Pivot.x
       value: 0

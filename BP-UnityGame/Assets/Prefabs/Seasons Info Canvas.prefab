@@ -291,7 +291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6251263208157620361
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1301,7 +1301,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "- Platformy klou\u017Eou\n- Efekty p\u0159edm\u011Bt\u016F trvaj\xED krat\u0161\xED
-    dobu\n- Pap\xEDrov\xE9 bomby se v\xEDcekr\xE1t rozdvojuj\xED"
+    dobu\n- Pap\xEDrov\xE9 koule se v\xEDcekr\xE1t rozdvojuj\xED"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
   m_sharedMaterial: {fileID: 2825862324939018218, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
@@ -1847,7 +1847,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "- Platformy se pohybuj\xED rychleji\n- V truhl\xE1ch je p\u0159i otev\u0159en\xED
+  m_text: "- Plo\u0161iny se pohybuj\xED rychleji\n- V truhl\xE1ch je p\u0159i otev\u0159en\xED
     men\u0161\xED odm\u011Bna\n- Automaty st\u0159\xEDlej\xED rychleji"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}
@@ -2062,7 +2062,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "- Praskaj\xEDc\xED platformy se pomaleji obnovuj\xED\n- Vla\u0161tovky
+  m_text: "- Praskaj\xEDc\xED plo\u0161iny se pomaleji obnovuj\xED\n- Vla\u0161tovky
     se pohybuj\xED rychleji\n- Truhly nejdou otev\u0159\xEDt a nejsou vid\u011Bt"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5fda5bac51884b944af2d90c48baac46, type: 2}

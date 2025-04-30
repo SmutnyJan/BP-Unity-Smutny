@@ -91,7 +91,7 @@ public class LobbyGameFlowController : MonoBehaviour
                 }
                 TipsController.Instance.ShowMessages(new string[] {
                     "Výbornì. Další výzvu máš za sebou.",
-                    "Teï míøíme k budovì A. Zase staèí sledovat šipku — víš, jak na to."
+                    "Teï míøíme k budovì B. Zase staèí sledovat šipku — víš, jak na to."
                 });
 
                 SaveLoadManager.Instance.Progress.GameState = SaveLoadManager.GameState.RoadToA;

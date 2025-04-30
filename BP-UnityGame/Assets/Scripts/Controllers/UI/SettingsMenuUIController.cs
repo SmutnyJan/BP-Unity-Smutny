@@ -69,7 +69,15 @@ public class SettingsMenuController : MonoBehaviour
 
     public void OnToggleFullScreenClick()
     {
-        Screen.fullScreen = IsFullScreenToggle.isOn;
+        if (IsFullScreenToggle.isOn)
+        {
+            Resolution currentResolution = Screen.currentResolution;
+            Screen.SetResolution(currentResolution.width, currentResolution.height, FullScreenMode.FullScreenWindow);
+        }
+        else
+        {
+            Screen.SetResolution(1280, 720, FullScreenMode.Windowed);
+        }
     }
 
     public void OnToggleFPSShowClick()

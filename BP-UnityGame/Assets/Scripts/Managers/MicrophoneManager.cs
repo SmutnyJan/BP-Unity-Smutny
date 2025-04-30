@@ -92,7 +92,4 @@ public class MicrophoneManager : MonoBehaviour
         _selectedMic = microphoneName;
         StartMicrophone();
     }
-
-
-
 }

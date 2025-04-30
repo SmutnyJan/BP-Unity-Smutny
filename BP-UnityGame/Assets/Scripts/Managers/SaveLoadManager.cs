@@ -199,9 +199,19 @@ public class SaveLoadManager : MonoBehaviour
 
     private void OnSettingsLoadedLocal(MainMenuSettings settings)
     {
-        Screen.fullScreen = settings.IsFullScreen;
         QualitySettings.vSyncCount = settings.VSync ? 1 : 0;
 
+        if (settings.IsFullScreen)
+        {
+            int width = Display.main.systemWidth;
+            int height = Display.main.systemHeight;
+
+            Screen.SetResolution(width, height, FullScreenMode.FullScreenWindow);
+        }
+        else
+        {
+            Screen.SetResolution(1280, 720, FullScreenMode.Windowed);
+        }
     }
 
     private IEnumerator DisableTextAfter(TextMeshProUGUI text)

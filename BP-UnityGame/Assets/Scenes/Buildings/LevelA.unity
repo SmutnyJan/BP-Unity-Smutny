@@ -354,7 +354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4616493256877058762, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
       propertyPath: 'Messages.Array.data[0]'
-      value: "Te\u010F jsme na budov\u011B A. Tady je to je\u0161t\u011B nebezpe\u010Dn\u011Bj\u0161\xED
+      value: "Te\u010F jsme na budov\u011B B. Tady je to je\u0161t\u011B nebezpe\u010Dn\u011Bj\u0161\xED
         ne\u017E na c\xE9\u010Dku."
       objectReference: {fileID: 0}
     - target: {fileID: 4616493256877058762, guid: bad7e74b0c7745e42ba7df840b26cd94, type: 3}
@@ -2007,7 +2007,7 @@ Transform:
   m_GameObject: {fileID: 555209264}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.575904, y: -0.57860607, z: -0.3425191}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

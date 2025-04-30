@@ -76,6 +76,12 @@ public class SaveLoadManager : MonoBehaviour
         int gpuMemory = SystemInfo.graphicsMemorySize;
         int ram = SystemInfo.systemMemorySize;
 
+        string version = Application.version;
+        string currentDate = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+        Debug.Log($"App Version: {version}");
+        Debug.Log($"Current Date: {currentDate}");
+
         Debug.Log($"CPU: {cpu} ({cpuCores} cores)");
         Debug.Log($"GPU: {gpu} ({gpuMemory} MB VRAM)");
         Debug.Log($"RAM: {ram} MB");

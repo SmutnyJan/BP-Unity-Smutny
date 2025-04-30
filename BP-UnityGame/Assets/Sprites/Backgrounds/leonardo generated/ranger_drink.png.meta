@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ranger_drink_0: 3282299252888170108
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

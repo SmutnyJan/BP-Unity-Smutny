@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bartender_0: -2339032837426595097
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

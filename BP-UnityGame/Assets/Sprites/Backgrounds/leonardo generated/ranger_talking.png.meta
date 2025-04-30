@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ranger_talking_0: 9108715188599412311
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

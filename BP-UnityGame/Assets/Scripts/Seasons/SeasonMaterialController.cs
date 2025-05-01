@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
 using static SeasonsManager;
+using static UnityEngine.Rendering.DebugUI;
 
 public class SeasonMaterialController : MonoBehaviour, ISeasonChange
 {
@@ -25,7 +26,7 @@ public class SeasonMaterialController : MonoBehaviour, ISeasonChange
     }
 
 
-    public void SwitchToSeason(Season season)
+    public void AnimateToSeason(Season season)
     {
         if (season == Season.Winter)
         {
@@ -41,6 +42,12 @@ public class SeasonMaterialController : MonoBehaviour, ISeasonChange
 
         StartCoroutine(TransitionBlend(from, to));
     }
+
+    public void SwitchToSeason(Season season)
+    {
+        SetBlend(SeasonTransitionPoint(season));
+    }
+
 
     private float SeasonTransitionPoint(Season season)
     {

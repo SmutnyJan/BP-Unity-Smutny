@@ -1,5 +1,5 @@
 public interface ISeasonChange
 {
-    void SwitchToSeason(SeasonsManager.Season season);
+    void AnimateToSeason(SeasonsManager.Season season);
 
 }

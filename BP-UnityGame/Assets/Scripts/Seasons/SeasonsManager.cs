@@ -149,7 +149,7 @@ public class SeasonsManager : MonoBehaviour
         {
             if (comp is ISeasonChange)
             {
-                (comp as ISeasonChange).SwitchToSeason(CurrentSeason);
+                (comp as ISeasonChange).AnimateToSeason(CurrentSeason);
             }
 
         }

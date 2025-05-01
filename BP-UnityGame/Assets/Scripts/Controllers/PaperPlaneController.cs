@@ -58,7 +58,7 @@ public class PaperPlaneController : MonoBehaviour, ISeasonChange
         }
     }
 
-    public void SwitchToSeason(SeasonsManager.Season season)
+    public void AnimateToSeason(SeasonsManager.Season season)
     {
         switch (season)
         {

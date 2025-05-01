@@ -847,6 +847,8 @@ MonoBehaviour:
       - Clip: {fileID: 8300000, guid: 166b2be6b2a427540a2ffcf2243aac7a, type: 3}
       - Clip: {fileID: 8300000, guid: 6d134e796a5b567419a0037b9e16d81f, type: 3}
       - Clip: {fileID: 8300000, guid: c946fc858f0c86340bd8c0cf2967c37e, type: 3}
+      - Clip: {fileID: 8300000, guid: e0bd7632015450f46b66fd92fc7c76af, type: 3}
+      - Clip: {fileID: 8300000, guid: 6ea3f511327c01d478145f760b20ce66, type: 3}
     Music:
       Clips:
       - Clip: {fileID: 8300000, guid: 144b63649b4a64b46a25eed7cd824309, type: 3}

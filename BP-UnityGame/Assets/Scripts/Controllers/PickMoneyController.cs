@@ -18,7 +18,10 @@ public class PickMoneyController : MonoBehaviour
 
     IEnumerator EnablePickup()
     {
-        yield return new WaitForSeconds(_pickupDelay);
+        if (SeasonsManager.Instance.CurrentSeason != SeasonsManager.Season.Autumn)
+        {
+            yield return new WaitForSeconds(_pickupDelay);
+        }
         _itemCollider.excludeLayers = 0;
 
         StartCoroutine(DestroyAfterTime());

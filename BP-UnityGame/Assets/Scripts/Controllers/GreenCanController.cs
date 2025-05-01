@@ -30,6 +30,8 @@ public class GreenCanController : MonoBehaviour
         }
         if (collision.gameObject.name == "Player")
         {
+            int random = Random.Range(1, 3);
+            AudioManager.Instance.PlayClipByName("Hit_" + random, AudioManager.Instance.AudioLibrary.Player, AudioManager.Instance.SFXAudioSource);
             collision.gameObject.GetComponent<PlayerEffectsController>().AddEffect(PlayerEffectsController.PlayerEffect.ZoomIn);
         }
         Destroy(gameObject);

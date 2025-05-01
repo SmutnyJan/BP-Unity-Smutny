@@ -8,11 +8,12 @@ public class SeasonsManager : MonoBehaviour
     public static SeasonsManager Instance;
     public event Action<Season> OnSeasonChangeStarted;
     public GameObject WindArea;
+    public GameObject SeasonIconCanvas;
 
 
 
     public Season CurrentSeason;
-    private float _colliderMoveSpeed = 20f;
+    private float _colliderMoveSpeed;
     private Axis _usedAxis = Axis.X;
     private bool _seasonChanging = false;
 
@@ -52,7 +53,17 @@ public class SeasonsManager : MonoBehaviour
 
     private void StartSeasonChange()
     {
-        _usedAxis = _usedAxis == Axis.X ? Axis.Y : Axis.X;
+        if (_usedAxis == Axis.X)
+        {
+            _usedAxis = Axis.Y;
+            _colliderMoveSpeed = 20;
+        }
+        else
+        {
+            _usedAxis = Axis.X;
+            _colliderMoveSpeed = 40;
+        }
+
         OnSeasonChangeStarted?.Invoke(CurrentSeason);
 
         StartCoroutine(MoveCollider(this.transform, _usedAxis));
@@ -86,6 +97,8 @@ public class SeasonsManager : MonoBehaviour
 
 
         _seasonChanging = false;
+        SeasonIconCanvas.SetActive(false);
+
     }
 
     public void NextSeason()
@@ -96,6 +109,7 @@ public class SeasonsManager : MonoBehaviour
         }
 
         _seasonChanging = true;
+        SeasonIconCanvas.SetActive(true);
 
         switch (CurrentSeason)
         {

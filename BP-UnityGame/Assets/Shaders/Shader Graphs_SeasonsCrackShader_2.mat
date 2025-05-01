@@ -40,6 +40,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: c2f95f1211856e046bb577fb2a33cef0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _CrackTexture:
+        m_Texture: {fileID: 2800000, guid: b34668f808bca0b4699c0a0ac219cfb0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_e747b5dcfdc14100974402c3fd01268a_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: 9d3474bedb846904397cef23ad314e7f, type: 3}
         m_Scale: {x: 1, y: 1}

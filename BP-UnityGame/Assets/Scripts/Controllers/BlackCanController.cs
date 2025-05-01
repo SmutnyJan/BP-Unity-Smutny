@@ -30,6 +30,8 @@ public class BlackCanController : MonoBehaviour
         }
         if (collision.gameObject.name == "Player")
         {
+            int random = Random.Range(1, 3);
+            AudioManager.Instance.PlayClipByName("Hit_" + random, AudioManager.Instance.AudioLibrary.Player, AudioManager.Instance.SFXAudioSource);
             collision.gameObject.transform.position = SaveLoadManager.Instance.Progress.LevelConfig.SpawnPoint + new Vector3(0, 5, 0);
         }
         Destroy(gameObject);

@@ -1,0 +1,550 @@
+Mono path[0] = 'C:/Users/smutn/Downloads/build test/TULtimátní hra_Data/Managed'
+Mono config path = 'C:/Users/smutn/Downloads/build test/MonoBleedingEdge/etc'
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Initialize engine version: 6000.0.25f1 (4859ab7b5a49)
+[Subsystems] Discovering subsystems at path C:/Users/smutn/Downloads/build test/TULtimátní hra_Data/UnitySubsystems
+kGfxThreadingModeSplitJobs is not supported on Direct3D 11. Reverting to kGfxThreadingModeClientWorkerJobs instead.
+GfxDevice: creating device client; kGfxThreadingModeClientWorkerJobs
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1660 SUPER (ID=0x21c4)
+    Vendor:   NVIDIA
+    VRAM:     5966 MB
+    Driver:   32.0.15.6614
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.125 seconds
+- Finished resetting the current domain, in  0.002 seconds
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+<RI> Initializing input.
+
+New input system (experimental) initialized
+Using Windows.Gaming.Input
+<RI> Input initialized.
+
+<RI> Initialized touch support.
+
+UnloadTime: 0.509100 ms
+App Version: 1.0
+Current Date: 2025-05-01 22:48:32
+CPU: AMD Ryzen 5 3600 6-Core Processor  (12 cores)
+GPU: NVIDIA GeForce GTX 1660 SUPER (5966 MB VRAM)
+RAM: 16312 MB
+{
+    "SFXVolume": 0.39642834663391116,
+    "MusicVolume": 0.2560812830924988,
+    "IsFullScreen": true,
+    "IsShowingFPS": true,
+    "VSync": false,
+    "Microphone": "Mikrofon (HyperX Cloud III Wireless)"
+}
+{
+    "SpawnScene": 12,
+    "GameState": 4,
+    "Money": 198,
+    "Items": [
+        {
+            "ItemType": 0,
+            "Amount": 5
+        },
+        {
+            "ItemType": 1,
+            "Amount": 1
+        },
+        {
+            "ItemType": 2,
+            "Amount": 1
+        },
+        {
+            "ItemType": 3,
+            "Amount": 2
+        },
+        {
+            "ItemType": 4,
+            "Amount": 2
+        },
+        {
+            "ItemType": 5,
+            "Amount": 2
+        }
+    ],
+    "LevelConfig": {
+        "Scene": 12,
+        "SpawnPoint": {
+            "x": -30.549999237060548,
+            "y": 4.389999866485596,
+            "z": 0.0
+        },
+        "ChestsOpenedIndexes": [],
+        "PlanesDestroyedIndexes": [],
+        "ItemsRevert": [
+            {
+                "ItemType": 0,
+                "Amount": 5
+            },
+            {
+                "ItemType": 1,
+                "Amount": 1
+            },
+            {
+                "ItemType": 2,
+                "Amount": 1
+            },
+            {
+                "ItemType": 3,
+                "Amount": 2
+            },
+            {
+                "ItemType": 4,
+                "Amount": 2
+            },
+            {
+                "ItemType": 5,
+                "Amount": 2
+            }
+        ],
+        "MoneyRevert": 198
+    }
+}
+Spuštěno nahrávání z mikrofonu: Mikrofon (HyperX Cloud III Wireless)
+MainMenu FPS: 4
+RenderGraph is now enabled.
+MainMenu FPS: 4
+MainMenu FPS: 17
+MainMenu FPS: 1408
+MainMenu FPS: 1326
+MainMenu FPS: 1478
+MainMenu FPS: 1397
+MainMenu FPS: 1343
+MainMenu FPS: 1451
+MainMenu FPS: 1394
+MainMenu FPS: 1386
+MainMenu FPS: 1446
+MainMenu FPS: 1490
+MainMenu FPS: 1487
+MainMenu FPS: 1393
+MainMenu FPS: 1398
+MainMenu FPS: 1500
+MainMenu FPS: 1453
+MainMenu FPS: 1460
+MainMenu FPS: 1539
+MainMenu FPS: 1513
+MainMenu FPS: 1261
+MainMenu FPS: 1064
+MainMenu FPS: 1236
+MainMenu FPS: 1115
+MainMenu FPS: 1175
+MainMenu FPS: 966
+MainMenu FPS: 1061
+MainMenu FPS: 989
+MainMenu FPS: 1002
+MainMenu FPS: 1161
+MainMenu FPS: 1173
+MainMenu FPS: 1276
+MainMenu FPS: 1297
+MainMenu FPS: 1236
+MainMenu FPS: 1230
+MainMenu FPS: 1291
+MainMenu FPS: 1265
+MainMenu FPS: 1280
+MainMenu FPS: 1255
+MainMenu FPS: 1306
+MainMenu FPS: 1298
+MainMenu FPS: 1282
+MainMenu FPS: 1269
+MainMenu FPS: 1271
+MainMenu FPS: 1268
+MainMenu FPS: 1286
+MainMenu FPS: 1286
+MainMenu FPS: 1188
+MainMenu FPS: 1251
+MainMenu FPS: 1299
+MainMenu FPS: 1282
+MainMenu FPS: 1271
+MainMenu FPS: 1283
+MainMenu FPS: 1277
+MainMenu FPS: 1171
+MainMenu FPS: 1238
+MainMenu FPS: 1228
+MainMenu FPS: 1286
+MainMenu FPS: 1283
+MainMenu FPS: 1157
+MainMenu FPS: 1285
+MainMenu FPS: 1288
+MainMenu FPS: 1309
+MainMenu FPS: 1156
+MainMenu FPS: 1285
+MainMenu FPS: 1284
+MainMenu FPS: 1242
+MainMenu FPS: 1199
+MainMenu FPS: 1305
+MainMenu FPS: 1291
+MainMenu FPS: 1286
+MainMenu FPS: 1093
+MainMenu FPS: 1272
+MainMenu FPS: 1296
+MainMenu FPS: 1284
+MainMenu FPS: 1120
+MainMenu FPS: 1212
+MainMenu FPS: 1236
+MainMenu FPS: 1184
+MainMenu FPS: 1248
+MainMenu FPS: 1296
+MainMenu FPS: 1265
+MainMenu FPS: 1280
+MainMenu FPS: 1186
+MainMenu FPS: 1191
+MainMenu FPS: 1251
+MainMenu FPS: 1210
+MainMenu FPS: 1177
+Settings FPS: 1158
+Settings FPS: 1140
+Settings FPS: 965
+Settings FPS: 915
+Settings FPS: 917
+Settings FPS: 998
+Settings FPS: 1159
+Settings FPS: 999
+Settings FPS: 1113
+Settings FPS: 1076
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.573900 ms
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 2867.
+Total: 1.783000 ms (FindLiveObjects: 0.118300 ms CreateObjectMapping: 0.058600 ms MarkObjects: 1.593000 ms  DeleteObjects: 0.012900 ms)
+
+Settings FPS: 961
+Settings FPS: 1180
+Settings FPS: 1204
+Settings FPS: 1206
+Settings FPS: 1221
+Settings FPS: 1186
+Settings FPS: 1182
+Settings FPS: 1199
+Settings FPS: 1193
+Settings FPS: 1145
+Settings FPS: 1147
+Settings FPS: 1010
+Settings FPS: 1248
+Settings FPS: 1204
+Settings FPS: 1219
+Settings FPS: 1215
+Settings FPS: 1181
+Settings FPS: 1282
+Settings FPS: 1236
+Settings FPS: 1240
+Settings FPS: 1205
+Settings FPS: 1303
+Settings FPS: 1249
+Settings FPS: 1249
+Settings FPS: 1236
+Settings FPS: 1295
+Settings FPS: 1217
+Settings FPS: 1083
+Settings FPS: 1192
+Settings FPS: 1182
+Settings FPS: 1207
+Settings FPS: 1261
+Settings FPS: 1293
+Settings FPS: 1227
+Settings FPS: 1291
+Settings FPS: 1251
+Settings FPS: 1193
+Settings FPS: 1108
+Settings FPS: 1164
+Settings FPS: 1227
+Settings FPS: 1288
+Settings FPS: 1293
+Settings FPS: 720
+Settings FPS: 1270
+Settings FPS: 1291
+Settings FPS: 1293
+Settings FPS: 1112
+Settings FPS: 1169
+Settings FPS: 1277
+Settings FPS: 1123
+Settings FPS: 1301
+Settings FPS: 1240
+Settings FPS: 1203
+Settings FPS: 1494
+Settings FPS: 1446
+Settings FPS: 1470
+Settings FPS: 1141
+Settings FPS: 1435
+Settings FPS: 1498
+Settings FPS: 1514
+Settings FPS: 1401
+Settings FPS: 1476
+Settings FPS: 1534
+Settings FPS: 1437
+Settings FPS: 1441
+Settings FPS: 1513
+Settings FPS: 1429
+Settings FPS: 1516
+Settings FPS: 1456
+Settings FPS: 1466
+Settings FPS: 1476
+Settings FPS: 1515
+Settings FPS: 1473
+Settings FPS: 1488
+Settings FPS: 1478
+Settings FPS: 1440
+Settings FPS: 1475
+Settings FPS: 1345
+Settings FPS: 1313
+Settings FPS: 1447
+Settings FPS: 1401
+Settings FPS: 1263
+Settings FPS: 1468
+Settings FPS: 1404
+Settings FPS: 1523
+Settings FPS: 1468
+Settings FPS: 1442
+Settings FPS: 1154
+Settings FPS: 1484
+Settings FPS: 1552
+Settings FPS: 1412
+Settings FPS: 1478
+Settings FPS: 1536
+Settings FPS: 1531
+Settings FPS: 1528
+Settings FPS: 1477
+Settings FPS: 1472
+Settings FPS: 1469
+Settings FPS: 1495
+Settings FPS: 1393
+Settings FPS: 1352
+Settings FPS: 1395
+Settings FPS: 1418
+Settings FPS: 1294
+Settings FPS: 1345
+Settings FPS: 1398
+MainMenu FPS: 1096
+MainMenu FPS: 1014
+MainMenu FPS: 1336
+MainMenu FPS: 1341
+MainMenu FPS: 1268
+MainMenu FPS: 1353
+MainMenu FPS: 1373
+MainMenu FPS: 1415
+MainMenu FPS: 1355
+MainMenu FPS: 1318
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.238600 ms
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 2795.
+Total: 1.708000 ms (FindLiveObjects: 0.102800 ms CreateObjectMapping: 0.053900 ms MarkObjects: 1.517400 ms  DeleteObjects: 0.033700 ms)
+
+MainMenu FPS: 716
+MainMenu FPS: 1366
+MainMenu FPS: 1333
+MainMenu FPS: 1347
+MainMenu FPS: 1292
+MainMenu FPS: 1259
+MainMenu FPS: 1405
+MainMenu FPS: 1327
+MainMenu FPS: 1383
+MainMenu FPS: 1420
+MainMenu FPS: 1313
+MainMenu FPS: 1361
+MainMenu FPS: 1191
+MainMenu FPS: 1134
+MainMenu FPS: 1375
+MainMenu FPS: 1500
+MainMenu FPS: 1360
+MainMenu FPS: 1421
+MainMenu FPS: 1455
+MainMenu FPS: 1531
+MainMenu FPS: 1562
+MainMenu FPS: 1533
+MainMenu FPS: 1498
+MainMenu FPS: 1424
+MainMenu FPS: 1440
+MainMenu FPS: 1447
+MainMenu FPS: 1513
+MainMenu FPS: 1507
+MainMenu FPS: 1470
+MainMenu FPS: 1480
+MainMenu FPS: 1503
+MainMenu FPS: 1433
+MainMenu FPS: 1548
+MainMenu FPS: 1514
+MainMenu FPS: 1526
+MainMenu FPS: 1524
+MainMenu FPS: 1513
+MainMenu FPS: 1549
+MainMenu FPS: 1512
+MainMenu FPS: 1466
+MainMenu FPS: 1523
+MainMenu FPS: 1515
+MainMenu FPS: 1561
+MainMenu FPS: 1449
+MainMenu FPS: 1283
+MainMenu FPS: 1491
+MainMenu FPS: 1379
+MainMenu FPS: 1487
+MainMenu FPS: 1277
+MainMenu FPS: 1265
+MainMenu FPS: 1292
+MainMenu FPS: 1358
+MainMenu FPS: 1318
+MainMenu FPS: 1367
+MainMenu FPS: 1507
+MainMenu FPS: 1424
+MainMenu FPS: 1432
+MainMenu FPS: 1423
+MainMenu FPS: 1537
+MainMenu FPS: 1396
+MainMenu FPS: 1248
+MainMenu FPS: 1340
+MainMenu FPS: 1382
+MainMenu FPS: 1288
+MainMenu FPS: 1440
+MainMenu FPS: 1524
+MainMenu FPS: 1510
+MainMenu FPS: 1504
+MainMenu FPS: 1512
+MainMenu FPS: 1486
+MainMenu FPS: 1524
+MainMenu FPS: 1430
+MainMenu FPS: 1473
+MainMenu FPS: 1412
+MainMenu FPS: 1497
+MainMenu FPS: 1505
+MainMenu FPS: 1536
+MainMenu FPS: 1516
+MainMenu FPS: 1510
+MainMenu FPS: 1529
+MainMenu FPS: 1540
+MainMenu FPS: 1460
+MainMenu FPS: 1543
+MainMenu FPS: 1394
+MainMenu FPS: 1513
+MainMenu FPS: 1293
+MainMenu FPS: 1505
+MainMenu FPS: 1332
+MainMenu FPS: 1524
+MainMenu FPS: 1446
+MainMenu FPS: 1476
+MainMenu FPS: 1439
+MainMenu FPS: 1540
+MainMenu FPS: 1266
+MainMenu FPS: 1494
+MainMenu FPS: 1525
+MainMenu FPS: 1478
+MainMenu FPS: 1395
+MainMenu FPS: 1439
+MainMenu FPS: 1370
+MainMenu FPS: 1313
+MainMenu FPS: 1305
+MainMenu FPS: 1372
+MainMenu FPS: 1363
+MainMenu FPS: 1320
+MainMenu FPS: 1351
+MainMenu FPS: 1529
+MainMenu FPS: 1534
+MainMenu FPS: 1359
+MainMenu FPS: 1194
+MainMenu FPS: 1269
+MainMenu FPS: 1189
+MainMenu FPS: 1343
+MainMenu FPS: 1142
+MainMenu FPS: 1335
+MainMenu FPS: 1411
+MainMenu FPS: 1442
+MainMenu FPS: 1390
+MainMenu FPS: 1466
+MainMenu FPS: 1379
+MainMenu FPS: 1563
+MainMenu FPS: 1353
+MainMenu FPS: 1522
+MainMenu FPS: 1465
+MainMenu FPS: 1546
+MainMenu FPS: 1439
+MainMenu FPS: 1388
+MainMenu FPS: 1448
+MainMenu FPS: 1482
+MainMenu FPS: 1431
+MainMenu FPS: 1533
+MainMenu FPS: 1476
+MainMenu FPS: 1449
+MainMenu FPS: 1513
+MainMenu FPS: 1510
+MainMenu FPS: 1527
+MainMenu FPS: 1524
+MainMenu FPS: 1463
+MainMenu FPS: 1422
+MainMenu FPS: 1536
+MainMenu FPS: 1455
+MainMenu FPS: 1527
+MainMenu FPS: 1574
+MainMenu FPS: 1464
+MainMenu FPS: 1544
+MainMenu FPS: 1468
+MainMenu FPS: 1477
+MainMenu FPS: 1483
+MainMenu FPS: 1489
+MainMenu FPS: 1470
+MainMenu FPS: 1510
+MainMenu FPS: 1463
+MainMenu FPS: 1535
+MainMenu FPS: 1514
+MainMenu FPS: 1524
+MainMenu FPS: 1502
+MainMenu FPS: 1263
+MainMenu FPS: 1456
+MainMenu FPS: 1388
+MainMenu FPS: 1441
+MainMenu FPS: 1344
+MainMenu FPS: 1411
+MainMenu FPS: 1283
+MainMenu FPS: 1343
+MainMenu FPS: 1408
+MainMenu FPS: 1481
+MainMenu FPS: 1387
+MainMenu FPS: 1297
+MainMenu FPS: 1386
+MainMenu FPS: 1418
+MainMenu FPS: 1303
+MainMenu FPS: 1511
+MainMenu FPS: 1443
+MainMenu FPS: 1483
+MainMenu FPS: 1282
+MainMenu FPS: 1507
+MainMenu FPS: 1449
+MainMenu FPS: 1422
+MainMenu FPS: 1365
+MainMenu FPS: 1497
+MainMenu FPS: 1362
+MainMenu FPS: 1439
+MainMenu FPS: 1406
+MainMenu FPS: 1337
+MainMenu FPS: 1389
+MainMenu FPS: 1277
+MainMenu FPS: 1272
+MainMenu FPS: 1401
+MainMenu FPS: 1189
+MainMenu FPS: 1368
+MainMenu FPS: 1478
+MainMenu FPS: 1455
+MainMenu FPS: 1396
+MainMenu FPS: 1472
+MainMenu FPS: 1420
+MainMenu FPS: 1402
+MainMenu FPS: 1377
+MainMenu FPS: 1348
+MainMenu FPS: 1408
+MainMenu FPS: 1458
+MainMenu FPS: 1417
+MainMenu FPS: 1491
+MainMenu FPS: 1468
+MainMenu FPS: 1479
+MainMenu FPS: 1329
+MainMenu FPS: 1464
+MainMenu FPS: 1571
+MainMenu FPS: 1432
+[Physics::Module] Cleanup current backned.
+[Physics::Module] Id: 0xf2b8ea05

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      season_change_icon_0: 1617451907525414806
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

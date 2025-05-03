@@ -6,7 +6,7 @@ public class UsePencil : MonoBehaviour
     public GameObject Player;
 
     private Rigidbody2D _rigidBody;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         int offset = Player.GetComponent<SpriteRenderer>().flipX ? 1 : -1;

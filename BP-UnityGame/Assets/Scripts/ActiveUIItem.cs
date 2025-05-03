@@ -20,11 +20,6 @@ public class ActiveUIItem : MonoBehaviour
 
     }
 
-    void Update()
-    {
-
-    }
-
     public void ToggleCross(bool show)
     {
         DisableCross.SetActive(show);

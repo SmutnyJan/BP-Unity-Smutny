@@ -14,20 +14,10 @@ public class InventoryUIItem : MonoBehaviour
 
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _button = GetComponent<Button>();
         _button.onClick.AddListener(() => OnItemClick());
-    }
-
-
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void LoadValues()

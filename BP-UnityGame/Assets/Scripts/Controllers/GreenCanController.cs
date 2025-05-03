@@ -9,10 +9,6 @@ public class GreenCanController : MonoBehaviour
 
     }
 
-    void Update()
-    {
-
-    }
 
     private IEnumerator DestroyAfterTimeCoroutine(float delay)
     {

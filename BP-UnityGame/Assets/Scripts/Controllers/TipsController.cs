@@ -23,13 +23,6 @@ public class TipsController : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-
     public void OnCloseContinueButtonClicked()
     {
         AudioManager.Instance.PlayClipByName("UI_Page_Flip", AudioManager.Instance.AudioLibrary.UI, AudioManager.Instance.SFXAudioSource);

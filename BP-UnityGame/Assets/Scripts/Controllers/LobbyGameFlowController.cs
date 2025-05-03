@@ -4,7 +4,7 @@ public class LobbyGameFlowController : MonoBehaviour
 {
     public ArrowNavigationController ArrowNavigationController;
     public PathFinder PathFinder;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         SceneLoaderManager.ActiveScene CurrentScene = SceneLoaderManager.Instance.CurrentScene;
@@ -108,12 +108,6 @@ public class LobbyGameFlowController : MonoBehaviour
                 ArrowNavigationController.StartNavigating(PathFinder.GetTransformOfTarget(SceneLoaderManager.ActiveScene.LobbyAB));
                 break;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
 

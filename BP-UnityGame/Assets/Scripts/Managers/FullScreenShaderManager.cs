@@ -44,7 +44,6 @@ public class FullScreenShaderManager : MonoBehaviour
 
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _fullScreenShaders = new Dictionary<FullScreenShader, Material>();
@@ -98,12 +97,6 @@ public class FullScreenShaderManager : MonoBehaviour
                 _feature.passMaterial = _fullScreenShaders[fullScreenShader];
                 break;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
 

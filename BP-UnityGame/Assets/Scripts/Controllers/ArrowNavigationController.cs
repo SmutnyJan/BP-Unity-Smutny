@@ -1,7 +1,4 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
-using static UnityEngine.GraphicsBuffer;
 
 public class ArrowNavigationController : MonoBehaviour
 {
@@ -11,7 +8,7 @@ public class ArrowNavigationController : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     public void StartNavigating(Transform target)
@@ -27,15 +24,13 @@ public class ArrowNavigationController : MonoBehaviour
 
     void Update()
     {
-        if(_IsActive)
+        if (_IsActive)
         {
             Vector2 direction = Target.position - transform.position;
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
             transform.rotation = Quaternion.Euler(0, 0, angle);
-            Debug.DrawRay(transform.position, direction.normalized * 5, Color.red);
-
         }
     }
 }

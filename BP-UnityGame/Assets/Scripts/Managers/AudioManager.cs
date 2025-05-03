@@ -77,20 +77,17 @@ public class AudioManager : MonoBehaviour
         SFXVolume = settings.SFXVolume;
     }
 
-    void Update()
-    {
-
-    }
-
     public void PlayClipByName(string name, AudioCategory audioCategory, AudioSource audioSource, PlayType playType = PlayType.PlayOneShot)
     {
         NamedAudioClip namedClip = audioCategory.Clips.Find(clip => clip.Name == name);
 
+#if UNITY_EDITOR
         if (namedClip == null)
         {
             Debug.LogError("Clip not found: " + name);
             return;
         }
+#endif
         switch (playType)
         {
             case PlayType.PlayOneShot:

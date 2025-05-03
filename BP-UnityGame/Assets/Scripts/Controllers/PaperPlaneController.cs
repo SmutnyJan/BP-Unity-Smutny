@@ -20,11 +20,13 @@ public class PaperPlaneController : MonoBehaviour, ISeasonChange
 
     void Start()
     {
+#if UNITY_EDITOR
+
         if (!Regex.Match(this.transform.parent.name, @"^Moving Paper Plane \((\d+)\)$").Success)
         {
             Debug.LogWarning("Plane name " + this.transform.parent.name + " incorrect format!");
         }
-
+#endif
         _startPosition = transform.position;
         _targetPosition = TargetDestination.transform.position;
         _currentTarget = _targetPosition;

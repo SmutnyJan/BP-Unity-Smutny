@@ -27,16 +27,10 @@ public class LobbyInventoryController : MonoBehaviour
         LoadUserInventory();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void UseItem()
     {
         if (ActiveUIItem.gameObject.activeSelf)
-        {           
+        {
 
             ItemAmount item = SaveLoadManager.Instance.Progress.Items.FirstOrDefault(x => x.ItemType == ActiveUIItem.ItemType);
             if (item != null && item.Amount > 0)
@@ -79,7 +73,7 @@ public class LobbyInventoryController : MonoBehaviour
     {
         InventoryWrapper.SetActive(!InventoryWrapper.activeSelf);
 
-        if(InventoryWrapper.activeSelf)
+        if (InventoryWrapper.activeSelf)
         {
             AudioManager.Instance.PlayClipByName("UI_Backpack_Open", AudioManager.Instance.AudioLibrary.UI, AudioManager.Instance.SFXAudioSource);
         }
@@ -113,7 +107,8 @@ public class LobbyInventoryController : MonoBehaviour
     public void NewItemRecieved(ItemType type, int newAmount)
     {
         LoadUserInventory();
-        if (ActiveUIItem.ItemType == type) { 
+        if (ActiveUIItem.ItemType == type)
+        {
             AmountText.text = newAmount.ToString();
             ActiveUIItem.UpdateAmountValue(newAmount);
         }

@@ -15,10 +15,12 @@ public class OpenChestController : MonoBehaviour
 
     void Start()
     {
+#if UNITY_EDITOR
         if (!Regex.Match(this.name, @"^Chest \((\d+)\)$").Success)
         {
             Debug.LogWarning("Chest name " + this.name + " incorrect format!");
         }
+#endif
         SeasonsManager.Instance.OnSeasonChangeStarted += OnSeasonChangeStarted;
         _animator = GetComponent<Animator>();
 

@@ -4,16 +4,9 @@ using UnityEngine;
 public class RedCanController : MonoBehaviour
 {
     private bool _firstHit = false;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         StartCoroutine(DestroyAfterTimeCoroutine(Random.Range(3, 7)));
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
 
     }
 

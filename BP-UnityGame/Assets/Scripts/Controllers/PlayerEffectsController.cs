@@ -37,17 +37,11 @@ public class PlayerEffectsController : MonoBehaviour
     }
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _backgroundScale = Player.Background.transform.localScale;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void AddEffect(PlayerEffect effect)
     {

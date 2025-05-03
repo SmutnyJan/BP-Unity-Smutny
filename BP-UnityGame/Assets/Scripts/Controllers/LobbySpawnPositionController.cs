@@ -1,10 +1,9 @@
 using UnityEngine;
 using static SceneLoaderManager;
-using UnityEngine.SceneManagement;
 
 public class LobbySpawnPositionController : MonoBehaviour
 {
-    
+
     public SceneLoaderManager.ActiveScene RightScene;
     public SceneLoaderManager.ActiveScene LeftScene;
     public Transform RightSpawnPosition;
@@ -44,12 +43,6 @@ public class LobbySpawnPositionController : MonoBehaviour
         }
 
 
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
 
     }
 }

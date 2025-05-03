@@ -9,11 +9,6 @@ public class BlackCanController : MonoBehaviour
 
     }
 
-    void Update()
-    {
-
-    }
-
     private IEnumerator DestroyAfterTimeCoroutine(float delay)
     {
 

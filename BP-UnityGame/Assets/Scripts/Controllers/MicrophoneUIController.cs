@@ -38,11 +38,6 @@ public class MicrophoneUIController : MonoBehaviour
                 SelectedMicrophone = micOptions[0];
             }
         }
-        else
-        {
-            Debug.LogWarning("Žádný mikrofon nebyl nalezen!");
-        }
-
     }
 
     void ChangeMicrophone()

@@ -1,7 +1,6 @@
 using System;
 using System.Linq;
 using UnityEngine;
-using TMPro;
 
 public class MicrophoneManager : MonoBehaviour
 {
@@ -30,10 +29,10 @@ public class MicrophoneManager : MonoBehaviour
 
     void Start()
     {
-        if(SaveLoadManager.Instance.Settings.Microphone == "")
+        if (SaveLoadManager.Instance.Settings.Microphone == "")
         {
 
-            if(!Microphone.devices.Any())
+            if (!Microphone.devices.Any())
             {
                 return;
             }
@@ -45,7 +44,7 @@ public class MicrophoneManager : MonoBehaviour
         else
         {
             _selectedMic = Microphone.devices.FirstOrDefault(x => x == SaveLoadManager.Instance.Settings.Microphone);
-            if(_selectedMic == null)
+            if (_selectedMic == null)
             {
                 return;
             }
@@ -61,7 +60,6 @@ public class MicrophoneManager : MonoBehaviour
         }
 
         _microphoneClip = Microphone.Start(_selectedMic, true, 1, 44100);
-        Debug.Log($"Spuštìno nahrávání z mikrofonu: {_selectedMic}");
     }
 
     void Update()
@@ -71,7 +69,6 @@ public class MicrophoneManager : MonoBehaviour
             float volume = GetMicrophoneLevel();
             if (volume > threshold)
             {
-                Debug.Log("Detekován hlasitý zvuk!");
                 OnLoudNoiseDetected?.Invoke();
             }
         }

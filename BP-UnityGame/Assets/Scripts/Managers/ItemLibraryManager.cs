@@ -28,11 +28,6 @@ public class ItemLibraryManager : MonoBehaviour
         LoadIngameItems();
     }
 
-    void Update()
-    {
-
-    }
-
     private void LoadUIItems()
     {
         UIItems = new Dictionary<ItemType, UIItem>

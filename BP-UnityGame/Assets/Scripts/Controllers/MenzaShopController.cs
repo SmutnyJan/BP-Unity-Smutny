@@ -34,14 +34,6 @@ public class MenzaShopController : MonoBehaviour
 
     }
 
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void LoadItemShop()
     {
         foreach (ItemType item in ItemLibraryManager.Instance.UIItems.Keys)

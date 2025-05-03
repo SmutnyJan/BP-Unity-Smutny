@@ -10,11 +10,6 @@ public class BlueCanController : MonoBehaviour
 
     }
 
-    void Update()
-    {
-
-    }
-
     private IEnumerator DestroyAfterTimeCoroutine(float delay)
     {
 

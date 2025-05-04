@@ -4,7 +4,6 @@ using UnityEngine;
 public class UseEnderPearl : MonoBehaviour
 {
     public GameObject Player;
-
     private Rigidbody2D _rigidBody;
 
     void Start()

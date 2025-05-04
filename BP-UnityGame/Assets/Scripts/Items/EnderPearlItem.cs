@@ -5,11 +5,6 @@ public class EnderPearlItem : ScriptableObject, IUsableItem
     private GameObject _player { get; set; }
     private GameObject _itemPrefab { get; set; }
 
-    public EnderPearlItem()
-    {
-
-    }
-
     public void InitializeItem()
     {
         _player = GameObject.FindWithTag("Player");

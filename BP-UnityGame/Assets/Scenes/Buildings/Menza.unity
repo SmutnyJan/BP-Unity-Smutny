@@ -5303,9 +5303,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8aaf8cc4540a75419c703a59ef25078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1969630237}
-  boundaryBottomLeft: {fileID: 1044006339}
-  boundaryTopRight: {fileID: 2073724365}
+  Player: {fileID: 1969630237}
+  BoundaryBottomLeft: {fileID: 1044006339}
+  BoundaryTopRight: {fileID: 2073724365}
 --- !u!1001 &1534292927
 PrefabInstance:
   m_ObjectHideFlags: 0

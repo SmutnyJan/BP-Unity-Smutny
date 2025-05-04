@@ -7,10 +7,10 @@ public class LobbyInventoryController : MonoBehaviour
 {
     public GameObject InventoryGrid;
     public GameObject InventoryItemPrefab;
+    public GameObject InventoryWrapper;
     public ActiveUIItem ActiveUIItem;
     public bool IsIngameInventory;
 
-    private Canvas _inventoryWrapperCanvas;
     #region Item Details
     public GameObject ItemDetailsPanel;
     public TextMeshProUGUI TitleText;
@@ -24,7 +24,6 @@ public class LobbyInventoryController : MonoBehaviour
 
     void Start()
     {
-        _inventoryWrapperCanvas = GetComponent<Canvas>();
         LoadUserInventory();
     }
 
@@ -72,9 +71,9 @@ public class LobbyInventoryController : MonoBehaviour
 
     public void ToggleInventory()
     {
-        _inventoryWrapperCanvas.enabled = !_inventoryWrapperCanvas.enabled;
+        InventoryWrapper.SetActive(!InventoryWrapper.activeSelf);
 
-        if (_inventoryWrapperCanvas.enabled)
+        if (InventoryWrapper.activeSelf)
         {
             AudioManager.Instance.PlayClipByName("UI_Backpack_Open", AudioManager.Instance.AudioLibrary.UI, AudioManager.Instance.SFXAudioSource);
         }

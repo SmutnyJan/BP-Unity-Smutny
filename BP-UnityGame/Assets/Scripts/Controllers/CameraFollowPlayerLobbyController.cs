@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class CameraFollowPlayerLobbyController : MonoBehaviour
 {
-    public Transform player;
+    public Transform Player;
 
-    public Transform boundaryBottomLeft;
-    public Transform boundaryTopRight;
+    public Transform BoundaryBottomLeft;
+    public Transform BoundaryTopRight;
 
     private Camera cam;
 
@@ -19,13 +19,13 @@ public class CameraFollowPlayerLobbyController : MonoBehaviour
         float camHalfHeight = cam.orthographicSize;
         float camHalfWidth = camHalfHeight * cam.aspect;
 
-        float minX = boundaryBottomLeft.position.x + camHalfWidth;
-        float maxX = boundaryTopRight.position.x - camHalfWidth;
-        float minY = boundaryBottomLeft.position.y + camHalfHeight;
-        float maxY = boundaryTopRight.position.y - camHalfHeight;
+        float minX = BoundaryBottomLeft.position.x + camHalfWidth;
+        float maxX = BoundaryTopRight.position.x - camHalfWidth;
+        float minY = BoundaryBottomLeft.position.y + camHalfHeight;
+        float maxY = BoundaryTopRight.position.y - camHalfHeight;
 
-        float clampedX = Mathf.Clamp(player.position.x, minX, maxX);
-        float clampedY = Mathf.Clamp(player.position.y, minY, maxY);
+        float clampedX = Mathf.Clamp(Player.position.x, minX, maxX);
+        float clampedY = Mathf.Clamp(Player.position.y, minY, maxY);
 
         transform.position = new Vector3(clampedX, clampedY, transform.position.z);
     }

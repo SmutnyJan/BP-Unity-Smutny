@@ -591,9 +591,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8aaf8cc4540a75419c703a59ef25078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 496655606}
-  boundaryBottomLeft: {fileID: 636716355}
-  boundaryTopRight: {fileID: 1982846445}
+  Player: {fileID: 496655606}
+  BoundaryBottomLeft: {fileID: 636716355}
+  BoundaryTopRight: {fileID: 1982846445}
 --- !u!114 &673809195
 MonoBehaviour:
   m_ObjectHideFlags: 0

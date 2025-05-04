@@ -9,6 +9,7 @@ public class AutomatController : MonoBehaviour, ISeasonChange
     private int _timeDelayOffset = 0;
     private Coroutine _spawnCoroutine;
     private AudioSource _audioSource;
+    private float _spawnYOffset = -2.91f;
     private void Start()
     {
         _directionMultiplier = GetComponent<SpriteRenderer>().flipX ? 1 : -1;
@@ -27,7 +28,7 @@ public class AutomatController : MonoBehaviour, ISeasonChange
             int random = Random.Range(1, 5);
             AudioManager.Instance.PlayClipByName("Can_" + random, AudioManager.Instance.AudioLibrary.Player, _audioSource);
 
-            GameObject newCan = Instantiate(Can, transform.TransformPoint(new Vector3(0, -2.91f, 0)), Quaternion.identity);
+            GameObject newCan = Instantiate(Can, transform.TransformPoint(new Vector3(0, _spawnYOffset, 0)), Quaternion.identity);
 
             Rigidbody2D rb = newCan.GetComponent<Rigidbody2D>();
 

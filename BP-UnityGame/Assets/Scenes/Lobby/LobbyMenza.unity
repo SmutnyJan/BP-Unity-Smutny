@@ -1203,9 +1203,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8aaf8cc4540a75419c703a59ef25078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1876922608}
-  boundaryBottomLeft: {fileID: 648331469}
-  boundaryTopRight: {fileID: 483122145}
+  Player: {fileID: 1876922608}
+  BoundaryBottomLeft: {fileID: 648331469}
+  BoundaryTopRight: {fileID: 483122145}
 --- !u!114 &1529501163 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6506501638321576013, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
@@ -1964,6 +1964,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 103770374791181042, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 193115535402101095, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 193115535402101095, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 193115535402101095, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5301644776517087631, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5301644776517087631, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5301644776517087631, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8610673326574531350, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}

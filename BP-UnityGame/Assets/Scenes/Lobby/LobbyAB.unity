@@ -539,6 +539,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 193115535402101095, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 193115535402101095, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 193115535402101095, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5301644776517087631, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5301644776517087631, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5301644776517087631, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6506501638321576013, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
       propertyPath: LobbyInventoryController
       value: 
@@ -1361,9 +1385,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8aaf8cc4540a75419c703a59ef25078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 828062855}
-  boundaryBottomLeft: {fileID: 1532060852}
-  boundaryTopRight: {fileID: 665513600}
+  Player: {fileID: 828062855}
+  BoundaryBottomLeft: {fileID: 1532060852}
+  BoundaryTopRight: {fileID: 665513600}
 --- !u!114 &1236574346
 MonoBehaviour:
   m_ObjectHideFlags: 0

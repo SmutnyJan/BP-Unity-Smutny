@@ -41,8 +41,5 @@ public class LobbySpawnPositionController : MonoBehaviour
             Player.transform.position = RightSpawnPosition.position;
             return;
         }
-
-
-
     }
 }

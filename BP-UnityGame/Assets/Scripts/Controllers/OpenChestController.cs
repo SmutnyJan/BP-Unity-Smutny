@@ -47,8 +47,8 @@ public class OpenChestController : MonoBehaviour
     {
         if (!_isOpened && collision.gameObject.CompareTag("Player"))
         {
-            SetStateToOpen();
             _animator.SetTrigger("Open");
+            _isOpened = true;
 
             SaveLoadManager.Instance.Progress.LevelConfig.ChestsOpenedIndexes.Add(
                 int.Parse(Regex.Match(this.name, @"\((\d+)\)").Groups[1].Value)

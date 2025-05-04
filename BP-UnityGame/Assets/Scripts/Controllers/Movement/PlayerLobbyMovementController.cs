@@ -39,11 +39,6 @@ public class PlayerLobbyMovementController : MonoBehaviour
     {
         LobbyMenuController.ToggleMenu();
     }
-    void Start()
-    {
-
-    }
-
 
     private void FixedUpdate()
     {
@@ -58,7 +53,6 @@ public class PlayerLobbyMovementController : MonoBehaviour
         {
             _spriteRenderer.flipX = false;
         }
-
 
         _rigidbody.linearVelocity = moveDir * MovementSpeed;
     }

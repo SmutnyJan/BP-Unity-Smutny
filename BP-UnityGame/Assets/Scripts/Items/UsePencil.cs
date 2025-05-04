@@ -4,7 +4,6 @@ using UnityEngine;
 public class UsePencil : MonoBehaviour
 {
     public GameObject Player;
-
     private Rigidbody2D _rigidBody;
 
     void Start()
@@ -16,7 +15,6 @@ public class UsePencil : MonoBehaviour
         StartCoroutine(DestroyAfterTime());
 
     }
-
 
     private IEnumerator DestroyAfterTime()
     {

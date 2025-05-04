@@ -59,7 +59,4 @@ public class MovingPlatformController : MonoBehaviour
     {
         SeasonsManager.Instance.OnSeasonChangeStarted -= OnSeasonChangeStarted;
     }
-
-
-
 }

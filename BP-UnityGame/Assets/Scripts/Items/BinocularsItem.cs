@@ -1,22 +1,18 @@
-using System.Collections;
-using System.Linq;
 using UnityEngine;
 
 public class BinocularsItem : ScriptableObject, IUsableItem
 {
-    private PlayerPlatformerMovementController PlayerPlatformerMovementController { get; set; }
+    private PlayerPlatformerMovementController _playerPlatformerMovementController { get; set; }
 
     public void InitializeItem()
     {
-        PlayerPlatformerMovementController = GameObject.FindGameObjectsWithTag("Player").First().GetComponent<PlayerPlatformerMovementController>();
+        _playerPlatformerMovementController = GameObject.FindWithTag("Player").GetComponent<PlayerPlatformerMovementController>();
     }
 
     public void UseItem()
     {
-        PlayerPlatformerMovementController.PlayerEffectsController.AddEffect(PlayerEffectsController.PlayerEffect.ZoomOut);
-
+        _playerPlatformerMovementController.PlayerEffectsController.AddEffect(PlayerEffectsController.PlayerEffect.ZoomOut);
     }
-
 
     public void UnselectItem()
     {

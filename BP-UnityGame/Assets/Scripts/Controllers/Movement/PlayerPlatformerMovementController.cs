@@ -40,10 +40,6 @@ public class PlayerPlatformerMovementController : MonoBehaviour
         _inputSystem.PlayerPlatformer.Enable();
     }
 
-    void Start()
-    {
-    }
-
     private void OnDisplayInventory()
     {
         LobbyInventoryController.ToggleInventory();

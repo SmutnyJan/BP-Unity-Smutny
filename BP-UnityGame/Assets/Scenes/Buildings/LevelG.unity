@@ -6441,11 +6441,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2322479718923607646, guid: 9483363b14ec3944e924e632818831be, type: 3}
   m_PrefabInstance: {fileID: 1759415989}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1762136437 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1599713485698550934, guid: 5b90ac2b5a8998f4497b42a546d9715d, type: 3}
-  m_PrefabInstance: {fileID: 2006518811421676800}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1779230686
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8137,7 +8132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1599713485698550934, guid: 5b90ac2b5a8998f4497b42a546d9715d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6251263208157620361, guid: 5b90ac2b5a8998f4497b42a546d9715d, type: 3}
       propertyPath: m_Pivot.x
@@ -8228,6 +8223,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b90ac2b5a8998f4497b42a546d9715d, type: 3}
+--- !u!223 &2006518811421676801 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 7718134422204133844, guid: 5b90ac2b5a8998f4497b42a546d9715d, type: 3}
+  m_PrefabInstance: {fileID: 2006518811421676800}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2541772712121554082
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8459,6 +8459,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 424935863451620178, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424935863451620178, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424935863451620178, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 721180895278204789, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
       propertyPath: m_Camera
       value: 
@@ -8467,6 +8479,18 @@ PrefabInstance:
       propertyPath: LevelFlowManager
       value: 
       objectReference: {fileID: 1370066717}
+    - target: {fileID: 4124499567679990092, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124499567679990092, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124499567679990092, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5885055815308354299, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
       propertyPath: m_Name
       value: Building Menu Canvas
@@ -8549,6 +8573,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6067751322801641213, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6364275916813847865, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6364275916813847865, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6364275916813847865, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920332823882773762, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920332823882773762, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920332823882773762, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -8679,7 +8727,7 @@ PrefabInstance:
     - target: {fileID: 608882231960626362, guid: 0683002ffc09bfe49bbe02985ff2827e, type: 3}
       propertyPath: SeasonInfoCanvas
       value: 
-      objectReference: {fileID: 1762136437}
+      objectReference: {fileID: 2006518811421676801}
     - target: {fileID: 608882231960626362, guid: 0683002ffc09bfe49bbe02985ff2827e, type: 3}
       propertyPath: BuildingMenuController
       value: 

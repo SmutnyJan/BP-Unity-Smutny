@@ -16,7 +16,7 @@ public class PlayerPlatformerMovementController : MonoBehaviour
     public GameObject TimewarpPoint;
     public BuildingMenuController BuildingMenuController;
     public PlayerEffectsController PlayerEffectsController;
-    public GameObject SeasonInfoCanvas;
+    public Canvas SeasonInfoCanvas;
 
 
 
@@ -56,7 +56,7 @@ public class PlayerPlatformerMovementController : MonoBehaviour
 
     private void OnDisplaySeasonInfo()
     {
-        SeasonInfoCanvas.SetActive(!SeasonInfoCanvas.activeSelf);
+        SeasonInfoCanvas.enabled = !SeasonInfoCanvas.enabled;
     }
 
     private void OnJump()

@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -67,7 +66,7 @@ public class SceneLoaderManager : MonoBehaviour
         {
             AudioManager.Instance.PlayClipByName("Resonant Victory - Glbml", AudioManager.Instance.AudioLibrary.Music, AudioManager.Instance.MusicAudioSource, AudioManager.PlayType.Play);
         }
-        else if((CurrentScene == ActiveScene.LobbyMenza || CurrentScene == ActiveScene.LobbyG || CurrentScene == ActiveScene.LobbyC || CurrentScene == ActiveScene.LobbyAB) && AudioManager.Instance.MusicAudioSource.clip.name != "MAXAN - The Lost Time")
+        else if ((CurrentScene == ActiveScene.LobbyMenza || CurrentScene == ActiveScene.LobbyG || CurrentScene == ActiveScene.LobbyC || CurrentScene == ActiveScene.LobbyAB) && AudioManager.Instance.MusicAudioSource.clip.name != "MAXAN - The Lost Time")
         {
             AudioManager.Instance.PlayClipByName("MAXAN - The Lost Time", AudioManager.Instance.AudioLibrary.Music, AudioManager.Instance.MusicAudioSource, AudioManager.PlayType.Play);
         }
@@ -116,10 +115,5 @@ public class SceneLoaderManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         SceneManager.LoadScene(scene.ToString(), LoadSceneMode.Single);
-    }
-
-    void Update()
-    {
-
     }
 }

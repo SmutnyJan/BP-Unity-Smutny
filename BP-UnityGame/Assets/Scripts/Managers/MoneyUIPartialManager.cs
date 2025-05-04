@@ -9,10 +9,4 @@ public class MoneyUIPartialManager : MonoBehaviour
     {
         MoneyText.text = SaveLoadManager.Instance.Progress.Money.ToString();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

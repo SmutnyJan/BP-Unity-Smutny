@@ -1129,8 +1129,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 424935863451620178, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424935863451620178, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 424935863451620178, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -599.8721
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 721180895278204789, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
       propertyPath: m_Camera
@@ -1141,8 +1149,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 256099307}
     - target: {fileID: 4124499567679990092, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124499567679990092, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124499567679990092, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -769.80835
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5885055815308354299, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
       propertyPath: m_Name
@@ -1228,9 +1244,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6364275916813847865, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6364275916813847865, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6364275916813847865, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920332823882773762, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920332823882773762, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6920332823882773762, guid: 1844745a5c8d3814587b4f49df1b389e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -429.93604
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6220,7 +6256,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1599713485698550934, guid: 5b90ac2b5a8998f4497b42a546d9715d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6251263208157620361, guid: 5b90ac2b5a8998f4497b42a546d9715d, type: 3}
       propertyPath: m_Pivot.x
@@ -6311,9 +6347,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b90ac2b5a8998f4497b42a546d9715d, type: 3}
---- !u!1 &1798192739 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1599713485698550934, guid: 5b90ac2b5a8998f4497b42a546d9715d, type: 3}
+--- !u!223 &1798192739 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 7718134422204133844, guid: 5b90ac2b5a8998f4497b42a546d9715d, type: 3}
   m_PrefabInstance: {fileID: 1798192738}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1798892216
@@ -7070,7 +7106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5998254013607206236, guid: 3b4dd913654922545a563a370b18dac2, type: 3}
       propertyPath: m_Name
-      value: Moving Paper Plane (0)
+      value: Moving Paper Plane (0)dd
       objectReference: {fileID: 0}
     - target: {fileID: 8299746805766716635, guid: 3b4dd913654922545a563a370b18dac2, type: 3}
       propertyPath: m_LocalPosition.x

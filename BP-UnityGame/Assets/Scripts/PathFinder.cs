@@ -8,16 +8,9 @@ public class PathFinder : MonoBehaviour
     public GameObject BuildingEnter;
 
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public Transform GetTransformOfTarget(ActiveScene DestinationScene)
@@ -31,5 +24,5 @@ public class PathFinder : MonoBehaviour
             return LeftExit.gameObject.transform;
         }
         return RightExit.gameObject.transform;
-    } 
+    }
 }

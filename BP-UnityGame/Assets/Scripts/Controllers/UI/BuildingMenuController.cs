@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BuildingMenuController : MonoBehaviour
 {
-    public GameObject MenuPanel;
+    public Canvas MenuPanelCanvas;
     public LevelFlowManager LevelFlowManager;
 
     void Start()
@@ -14,14 +14,7 @@ public class BuildingMenuController : MonoBehaviour
     public void ToggleMenu()
     {
         AudioManager.Instance.PlayClipByName("UI_Button_Click_1", AudioManager.Instance.AudioLibrary.UI, AudioManager.Instance.SFXAudioSource);
-        if (MenuPanel.gameObject.activeSelf)
-        {
-            MenuPanel.SetActive(false);
-        }
-        else
-        {
-            MenuPanel.SetActive(true);
-        }
+        MenuPanelCanvas.enabled = !MenuPanelCanvas.enabled;
     }
 
     public void BackToLobby()

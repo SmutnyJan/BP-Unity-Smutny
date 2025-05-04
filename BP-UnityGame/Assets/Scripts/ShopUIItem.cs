@@ -13,19 +13,10 @@ public class ShopUIItem : MonoBehaviour
     private Sprite _UISprite;
     private Button _button;
 
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _button = GetComponent<Button>();
         _button.onClick.AddListener(() => OnItemClick());
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
 
     }
 
@@ -35,7 +26,7 @@ public class ShopUIItem : MonoBehaviour
 
         this.GetComponent<Image>().sprite = _UISprite;
 
-        if(IsInventoryItem)
+        if (IsInventoryItem)
         {
             AmountText.text = SaveLoadManager.Instance.Progress.Items.First(x => x.ItemType == ItemType).Amount.ToString();
         }

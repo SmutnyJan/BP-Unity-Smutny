@@ -11,15 +11,15 @@ with open(log_file_path, 'r', encoding='utf-8') as file:
     for line in file:
         line = line.strip()
         if line.startswith("MainMenu FPS:") or line.startswith("Settings FPS:"):
-            fps = int(line.split(":")[1].strip())
+            fps = float(line.split(":")[1].strip().replace(",", "."))
             mainmenu_sum += fps
             mainmenu_count += 1
         elif line.startswith("LobbyMenza FPS:") or line.startswith("LobbyG FPS:"):
-            fps = int(line.split(":")[1].strip())
+            fps = float(line.split(":")[1].strip().replace(",", "."))
             lobby_sum += fps
             lobby_count += 1
         elif line.startswith("LevelG FPS:"):
-            fps = int(line.split(":")[1].strip())
+            fps = float(line.split(":")[1].strip().replace(",", "."))
             levelg_sum += fps
             levelg_count += 1
 

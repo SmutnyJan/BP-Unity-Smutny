@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using TMPro;
 using UnityEngine;
 using static SceneLoaderManager;
 
@@ -11,8 +9,6 @@ public class SaveLoadManager : MonoBehaviour
     public static SaveLoadManager Instance;
     public MainMenuSettings Settings;
     public Progress Progress;
-    public TextMeshProUGUI SavingText;
-    public TextMeshProUGUI LoadingText;
 
     public delegate void SettingsLoadedHandler(MainMenuSettings settings);
     public event SettingsLoadedHandler OnSettingsLoaded;
@@ -90,14 +86,8 @@ public class SaveLoadManager : MonoBehaviour
         Debug.Log(JsonUtility.ToJson(Progress, true));
     }
 
-    void Update()
-    {
-
-    }
-
     public void Load(SaveType saveType)
     {
-        //LoadingText.gameObject.SetActive(true);
         string filePath = GetSettingsFilePath(saveType);
 
         if (File.Exists(filePath))
@@ -218,12 +208,6 @@ public class SaveLoadManager : MonoBehaviour
         {
             Screen.SetResolution(1280, 720, FullScreenMode.Windowed);
         }
-    }
-
-    private IEnumerator DisableTextAfter(TextMeshProUGUI text)
-    {
-        yield return new WaitForSeconds(2.5f);
-        text.gameObject.SetActive(false);
     }
 }
 

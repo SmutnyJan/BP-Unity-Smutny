@@ -47,7 +47,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 379908827204502099}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 0}
@@ -117,7 +117,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InventoryGrid: {fileID: 2081077552728267594}
   InventoryItemPrefab: {fileID: 2512359814194672640, guid: e9635a4adc931c646a6a02ee64d49e71, type: 3}
-  InventoryWrapper: {fileID: 8475134607435153409}
   ActiveUIItem: {fileID: 0}
   IsIngameInventory: 0
   ItemDetailsPanel: {fileID: 9188774323963106692}
@@ -1360,7 +1359,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3533376059944643797
 RectTransform:
   m_ObjectHideFlags: 0

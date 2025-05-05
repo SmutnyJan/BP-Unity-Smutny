@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerPlatformerMovementController : MonoBehaviour
 {
@@ -17,21 +18,23 @@ public class PlayerPlatformerMovementController : MonoBehaviour
     public BuildingMenuController BuildingMenuController;
     public PlayerEffectsController PlayerEffectsController;
     public Canvas SeasonInfoCanvas;
-
+    public Animator Animator;
+    public GameObject PlayerRig;
 
 
     private PlayerInputSystem _inputSystem;
     private Rigidbody2D _rigidbody;
-    private SpriteRenderer _spriteRenderer;
     private bool _hasSecondJump = true;
     private bool _controllRevertLock = false;
+    private Vector3 _scale;
 
 
     private void Awake()
     {
         _inputSystem = new PlayerInputSystem();
         _rigidbody = GetComponent<Rigidbody2D>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _scale = PlayerRig.transform.localScale;
+
     }
 
     private void OnEnable()
@@ -64,7 +67,6 @@ public class PlayerPlatformerMovementController : MonoBehaviour
             return;
         }
         _controllRevertLock = false;
-
 
         bool isSummer = SeasonsManager.Instance.CurrentSeason == SeasonsManager.Season.Summer;
 
@@ -113,16 +115,28 @@ public class PlayerPlatformerMovementController : MonoBehaviour
     {
         float moveDir = _inputSystem.PlayerPlatformer.Horizontal.ReadValue<float>() * PlayerEffectsController.XMoveReverseCoeficient;
 
+        if (!Animator.GetBool("IsRunning") && moveDir != 0)
+        {
+            Animator.SetBool("IsRunning", true);
+        }
+        else if (Animator.GetBool("IsRunning") && moveDir == 0)
+        {
+            Animator.SetBool("IsRunning", false);
+        }
 
 
-        if (!_spriteRenderer.flipX && moveDir > 0)
+        if (PlayerRig.transform.localScale.x == -_scale.x && moveDir > 0)
         {
-            _spriteRenderer.flipX = true;
+            PlayerRig.transform.localScale = new Vector3(_scale.x, _scale.y, _scale.z);
         }
-        else if (_spriteRenderer.flipX && moveDir < 0)
+        else if (PlayerRig.transform.localScale.x == _scale.x && moveDir < 0)
         {
-            _spriteRenderer.flipX = false;
+            PlayerRig.transform.localScale = new Vector3(-_scale.x, _scale.y, _scale.z);
         }
+
+
+        Debug.Log(_rigidbody.linearVelocityY);
+        Animator.SetFloat("VerticalVelocity", _rigidbody.linearVelocityY);
 
         if (moveDir != 0 || SeasonsManager.Instance.CurrentSeason != SeasonsManager.Season.Winter) //klouzání
         {

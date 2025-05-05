@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class UseEnderPearl : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class UseEnderPearl : MonoBehaviour
 
     void Start()
     {
-        int offset = Player.GetComponent<SpriteRenderer>().flipX ? 1 : -1;
+        int offset = Player.GetComponent<PlayerPlatformerMovementController>().PlayerRig.transform.localScale.x < 0 ? -1 : 1;
         _rigidBody = GetComponent<Rigidbody2D>();
         _rigidBody.AddForce(new Vector2(1 * offset, 1) * 10, ForceMode2D.Impulse);
         StartCoroutine(DestroyAfterTime());

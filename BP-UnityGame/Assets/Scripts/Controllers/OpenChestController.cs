@@ -6,7 +6,7 @@ using UnityEngine;
 public class OpenChestController : MonoBehaviour
 {
     public List<GameObject> ChestContent;
-    private float _spawnForce = 7.5f;
+    private float _spawnForce = 1.5f;
     private float _spawnDelay = 0.2f;
     private Animator _animator;
     private bool _isOpened = false;

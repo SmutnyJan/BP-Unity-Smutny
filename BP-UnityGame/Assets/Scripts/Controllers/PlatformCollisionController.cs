@@ -5,10 +5,13 @@ public class PlatformCollisionController : MonoBehaviour
     public bool IsGrounded = false;
     public bool IsOnPlatform = false;
     public GameObject TouchingPlatform = null;
+    public Animator Animator;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         IsGrounded = true;
+        Animator.SetBool("IsGrounded", true);
+        Debug.Log("True IsGrounded");
 
         if (collision.gameObject.tag == "Platform")
         {
@@ -29,6 +32,8 @@ public class PlatformCollisionController : MonoBehaviour
         IsGrounded = false;
         IsOnPlatform = false;
         TouchingPlatform = null;
+        Animator.SetBool("IsGrounded", false);
+        Debug.Log("false IsGrounded");
 
         if (collision.gameObject.name == "Oneway Moving Platform" && this.transform.parent.gameObject.activeInHierarchy)
         {

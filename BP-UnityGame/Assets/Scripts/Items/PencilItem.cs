@@ -2,21 +2,21 @@ using UnityEngine;
 
 public class PencilItem : ScriptableObject, IUsableItem
 {
-    private GameObject _player { get; set; }
+    private PlayerPlatformerMovementController _player { get; set; }
     private GameObject _itemPrefab { get; set; }
 
     public void InitializeItem()
     {
-        _player = GameObject.FindWithTag("Player");
+        _player = GameObject.FindWithTag("Player").GetComponent<PlayerPlatformerMovementController>();
     }
 
     public void UseItem()
     {
         _itemPrefab = Resources.Load<GameObject>("InGameItems/PencilInGameItem");
         UsePencil usePencil = _itemPrefab.GetComponent<UsePencil>();
-        usePencil.Player = _player;
-        int offset = _player.GetComponent<SpriteRenderer>().flipX ? 1 : -1;
-        Instantiate(_itemPrefab, _player.transform.position + new Vector3(2 * offset, 0, 0), _player.transform.localRotation);
+        usePencil.Player = _player.gameObject;
+        int offset = _player.PlayerRig.transform.localScale.x < 0 ? -1 : 1;
+        Instantiate(_itemPrefab, _player.PlayerRig.transform.position + new Vector3(1.5f * offset, 2.0f, 0), _player.transform.localRotation);
     }
 
     public void UnselectItem()

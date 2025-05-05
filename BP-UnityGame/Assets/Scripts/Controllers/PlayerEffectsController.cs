@@ -25,6 +25,7 @@ public class PlayerEffectsController : MonoBehaviour
     private Vector3 _backgroundScale;
     private Vector3 _backgroundScaleZoomed = new(12.1f, 12.1f, 0);
 
+    private Animator _animator;
 
     public enum PlayerEffect
     {
@@ -40,6 +41,7 @@ public class PlayerEffectsController : MonoBehaviour
     void Start()
     {
         _backgroundScale = Player.Background.transform.localScale;
+        _animator = Player.PlayerRig.GetComponent<Animator>();
     }
 
 
@@ -68,6 +70,7 @@ public class PlayerEffectsController : MonoBehaviour
                 if (!ActiveEffects.Contains(effect))
                 {
                     Player.MovementSpeed += _MOVEMENT_SPEED_BONUS;
+                    _animator.SetFloat("RunMultiplier", 2.5f);
                 }
                 _resetSpeedCoroutine = StartCoroutine(ResetSpeedAfterDelay(ProcessUptimeChange(ItemLibraryManager.Instance.UIItems[ItemType.Boots].UpTime)));
                 break;
@@ -172,6 +175,7 @@ public class PlayerEffectsController : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         Player.MovementSpeed -= _MOVEMENT_SPEED_BONUS;
+        _animator.SetFloat("RunMultiplier", 1f);
         _resetSpeedCoroutine = null;
         ActiveEffects.Remove(PlayerEffect.Speed);
     }

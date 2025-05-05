@@ -20,7 +20,7 @@ public class CheckpointController : MonoBehaviour
             _isActive = true;
             return;
         }
-        LampLight.color = (Color)(new Color32(255, 255, 255, 255));
+        LampLight.color = (Color)(new Color32(255, 0, 0, 255));
         _isActive = false;
     }
     private void OnTriggerEnter2D(Collider2D other)

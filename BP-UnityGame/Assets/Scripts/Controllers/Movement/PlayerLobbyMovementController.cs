@@ -8,7 +8,8 @@ public class PlayerLobbyMovementController : MonoBehaviour
 
     private PlayerInputSystem _inputSystem;
     private Rigidbody2D _rigidbody;
-    private SpriteRenderer _spriteRenderer;
+    private Vector3 _scale;
+    private Animator _animator;
 
 
 
@@ -18,8 +19,8 @@ public class PlayerLobbyMovementController : MonoBehaviour
     {
         _inputSystem = new PlayerInputSystem();
         _rigidbody = GetComponent<Rigidbody2D>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-
+        _animator = GetComponent<Animator>();
+        _scale = this.transform.localScale;
     }
 
     private void OnEnable()
@@ -43,17 +44,23 @@ public class PlayerLobbyMovementController : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 moveDir = _inputSystem.PlayerLobby.Movement.ReadValue<Vector2>();
-
-
-        if (!_spriteRenderer.flipX && moveDir.x > 0)
+        if(!_animator.GetBool("IsMoving") && (moveDir.x != 0 || moveDir.y != 0))
         {
-            _spriteRenderer.flipX = true;
+            _animator.SetBool("IsMoving", true);
         }
-        else if (_spriteRenderer.flipX && moveDir.x < 0)
+        else if(_animator.GetBool("IsMoving") && (moveDir.x == 0 && moveDir.y == 0))
         {
-            _spriteRenderer.flipX = false;
+            _animator.SetBool("IsMoving", false);
         }
 
+        if (transform.localScale.x == -_scale.x && moveDir.x > 0)
+        {
+            transform.localScale = new Vector3(_scale.x, _scale.y, _scale.z);
+        }
+        else if (transform.localScale.x == _scale.x && moveDir.x < 0)
+        {
+            transform.localScale = new Vector3(-_scale.x, _scale.y, _scale.z);
+        }
         _rigidbody.linearVelocity = moveDir * MovementSpeed;
     }
 

@@ -38,17 +38,7 @@ public class SeasonsManager : MonoBehaviour
     void Start()
     {
         CurrentSeason = Season.Spring;
-        BoxCollider2D[] colliders = GetComponents<BoxCollider2D>();
-
         MicrophoneManager.Instance.OnLoudNoiseDetected += NextSeason;
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            NextSeason();
-        }
     }
 
     private void StartSeasonChange()

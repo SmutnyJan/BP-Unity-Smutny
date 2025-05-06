@@ -44,13 +44,13 @@ public class PlayerLobbyMovementController : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 moveDir = _inputSystem.PlayerLobby.Movement.ReadValue<Vector2>();
-        if(!_animator.GetBool("IsMoving") && (moveDir.x != 0 || moveDir.y != 0))
+        if(!_animator.GetBool("IsRunning") && (moveDir.x != 0 || moveDir.y != 0))
         {
-            _animator.SetBool("IsMoving", true);
+            _animator.SetBool("IsRunning", true);
         }
-        else if(_animator.GetBool("IsMoving") && (moveDir.x == 0 && moveDir.y == 0))
+        else if(_animator.GetBool("IsRunning") && (moveDir.x == 0 && moveDir.y == 0))
         {
-            _animator.SetBool("IsMoving", false);
+            _animator.SetBool("IsRunning", false);
         }
 
         if (transform.localScale.x == -_scale.x && moveDir.x > 0)

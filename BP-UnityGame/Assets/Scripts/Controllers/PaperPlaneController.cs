@@ -41,18 +41,13 @@ public class PaperPlaneController : MonoBehaviour, ISeasonChange
 
         float yOffset = Mathf.Sin(Time.time * _floatFrequency) * _floatAmplitude;
 
-
-        // Pokud je sprite zrcadlený (flipX), otoè smìr rotace
         float directionMultiplier = _spriteRenderer.flipX ? -1f : 1f;
 
-        //využíváme derivace sinus (cosinus) pro výpoèet sklonu
         float rotationZ = Mathf.Cos(Time.time * _floatFrequency) * _maxRotationAngle * directionMultiplier;
         transform.rotation = Quaternion.Euler(0, 0, rotationZ);
 
-        // Nastavení výsledné pozice
         transform.position = new Vector2(basePosition.x, _startPosition.y + yOffset);
 
-        // Pøepnutí smìru
         if (Mathf.Abs(transform.position.x - _currentTarget.x) < 0.1)
         {
             _currentTarget = (_currentTarget == _targetPosition) ? _startPosition : _targetPosition;

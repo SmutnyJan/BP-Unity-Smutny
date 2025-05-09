@@ -57,9 +57,6 @@ public class SeasonsManager : MonoBehaviour
         OnSeasonChangeStarted?.Invoke(CurrentSeason);
 
         StartCoroutine(MoveCollider(this.transform, _usedAxis));
-
-
-
     }
 
     private IEnumerator MoveCollider(Transform targetTransform, Axis axis)

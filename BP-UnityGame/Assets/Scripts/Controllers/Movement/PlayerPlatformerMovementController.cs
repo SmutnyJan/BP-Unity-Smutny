@@ -135,7 +135,6 @@ public class PlayerPlatformerMovementController : MonoBehaviour
         }
 
 
-        Debug.Log(_rigidbody.linearVelocityY);
         Animator.SetFloat("VerticalVelocity", _rigidbody.linearVelocityY);
 
         if (moveDir != 0 || SeasonsManager.Instance.CurrentSeason != SeasonsManager.Season.Winter) //klouzání

@@ -26,7 +26,6 @@ public class FullScreenShaderManager : MonoBehaviour
         Pearl,
         Freezing,
         Magic,
-        Damage,
         NoneForced
     }
 
@@ -91,9 +90,6 @@ public class FullScreenShaderManager : MonoBehaviour
                 _feature.passMaterial = _fullScreenShaders[fullScreenShader];
                 break;
             case FullScreenShader.Magic:
-                _feature.passMaterial = _fullScreenShaders[fullScreenShader];
-                break;
-            case FullScreenShader.Damage:
                 _feature.passMaterial = _fullScreenShaders[fullScreenShader];
                 break;
         }

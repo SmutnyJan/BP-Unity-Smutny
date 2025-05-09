@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_DamageFullscreenShader
-  m_Shader: {fileID: -6465566751694194690, guid: d6aa16e7e33fc354abf4af3126ce03d7, type: 3}
+  m_Name: FreezingFullscreenShader
+  m_Shader: {fileID: -6465566751694194690, guid: e8a0f0e513702e34f91022c5096bdff7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -37,12 +37,18 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _VignetteIntensity: 1.326
-    - _VignettePower: 3.95
-    - _VoronioPower: 3.68
-    - _VoronoiIntensity: 2
-    - _VoronoiSpeed: 2
+    - _Fullscreen_AlphaBlendOperation: 0
+    - _Fullscreen_BlendMode: 1
+    - _Fullscreen_ColorBlendOperation: 0
+    - _Fullscreen_DepthWrite: 0
+    - _Fullscreen_DstAlphaBlend: 10
+    - _Fullscreen_DstColorBlend: 10
+    - _Fullscreen_SrcAlphaBlend: 1
+    - _Fullscreen_SrcColorBlend: 5
+    - _InnerRadius: 5
+    - _NoiseStrength: 2761
+    - _OuterRadius: 4.2
     m_Colors:
-    - _VignetteColor: {r: 1, g: 0, b: 0, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

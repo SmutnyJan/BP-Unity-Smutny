@@ -6,7 +6,7 @@ using UnityEngine;
 public class OpenChestController : MonoBehaviour
 {
     public List<GameObject> ChestContent;
-    private float _spawnForce = 1.5f;
+    private float _spawnForce = 2f;
     private float _spawnDelay = 0.2f;
     private Animator _animator;
     private bool _isOpened = false;
@@ -85,7 +85,7 @@ public class OpenChestController : MonoBehaviour
             GameObject spawnedItem = Instantiate(item, transform.position, Quaternion.identity);
             Rigidbody2D rb = spawnedItem.GetComponent<Rigidbody2D>();
 
-            float randomForceX = Random.Range(-2f, 2f);
+            float randomForceX = Random.Range(-1f, 1f);
             rb.AddForce(new Vector2(randomForceX, _spawnForce), ForceMode2D.Impulse);
             yield return new WaitForSeconds(_spawnDelay);
         }

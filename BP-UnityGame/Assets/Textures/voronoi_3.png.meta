@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9d3474bedb846904397cef23ad314e7f
+guid: 78a757a583e6ccc44859913556646958
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8887088605058887284
-    second: voronoi_py_0
+      213: 1901161694841302643
+    second: voronoi_3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: voronoi_py_0
+      name: voronoi_3_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 512
+        width: 1323
+        height: 525
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 47ee4ff1008455b70800000000000000
-      internalID: 8887088605058887284
+      spriteID: 37e68991d78426a10800000000000000
+      internalID: 1901161694841302643
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      voronoi_py_0: 8887088605058887284
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

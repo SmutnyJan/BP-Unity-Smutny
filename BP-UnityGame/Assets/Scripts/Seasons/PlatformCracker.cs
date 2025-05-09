@@ -66,15 +66,15 @@ public class PlatformCracker : MonoBehaviour
         {
             case CrackState.None:
                 _crackState = CrackState.One;
-                SetCrackLevel(0.5f, 0);
+                SetCrackLevel(0.2f, 0);
                 break;
             case CrackState.One:
                 _crackState = CrackState.Two;
-                SetCrackLevel(0.7f, 0.1f);
+                SetCrackLevel(0.5f, 0.1f);
                 break;
             case CrackState.Two:
                 _crackState = CrackState.Three;
-                SetCrackLevel(1f, 0.1f);
+                SetCrackLevel(0.7f, 0.1f);
                 break;
             case CrackState.Three:
                 _crackState = CrackState.Three;

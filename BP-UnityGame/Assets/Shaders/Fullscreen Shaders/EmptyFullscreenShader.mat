@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_FreezingFullscreenShader
-  m_Shader: {fileID: -6465566751694194690, guid: e8a0f0e513702e34f91022c5096bdff7, type: 3}
+  m_Name: EmptyFullscreenShader
+  m_Shader: {fileID: -6465566751694194690, guid: 1a597bdd9bd5258428725d281a6bd681, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -45,9 +45,6 @@ Material:
     - _Fullscreen_DstColorBlend: 10
     - _Fullscreen_SrcAlphaBlend: 1
     - _Fullscreen_SrcColorBlend: 5
-    - _VignetteIntensity: -1.96
-    - _VignettePower: 2.94
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 0}
+    m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1

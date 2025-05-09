@@ -1106,6 +1106,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4724673247352254671, guid: 62813e1059511ab4393cd55d60abc554, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724673247352254671, guid: 62813e1059511ab4393cd55d60abc554, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724673247352254671, guid: 62813e1059511ab4393cd55d60abc554, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724673247352254671, guid: 62813e1059511ab4393cd55d60abc554, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     - target: {fileID: 5291496579993006932, guid: 62813e1059511ab4393cd55d60abc554, type: 3}
       propertyPath: m_Name
       value: Money Canvas
@@ -5546,7 +5562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 193115535402101095, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 193115535402101095, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -5554,7 +5570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 193115535402101095, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5301644776517087631, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5566,7 +5582,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5301644776517087631, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -250
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5301644776517087631, guid: db0e9f9a7884e7c4aafa04864019bce7, type: 3}
       propertyPath: m_AnchoredPosition.x

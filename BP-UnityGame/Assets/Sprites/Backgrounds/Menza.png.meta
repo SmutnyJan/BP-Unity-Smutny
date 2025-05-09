@@ -3,8 +3,8 @@ guid: 3889b1cc98b49b741bf583e6fb75dca8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2211441180161871448
-    second: Menza_0
+      213: -2370240211543500419
+    second: menza_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Menza_0
+      name: menza_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 4001
+        width: 4004
         height: 2517
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 85e0831690e90be10800000000000000
-      internalID: 2211441180161871448
+      spriteID: d795a9ee5173b1fd0800000000000000
+      internalID: -2370240211543500419
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Menza_0: 2211441180161871448
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
